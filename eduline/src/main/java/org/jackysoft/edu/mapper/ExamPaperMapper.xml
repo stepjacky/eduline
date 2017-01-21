@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jackysoft.edu.mapper.ExamPaperMapper">
+   
+        <select id="findAll" resultType="exampaper">
+        select * from jq_exampaper;
+    </select>
+    
+        
+    <select id="findList" parameterType="querybuilder" resultType="exampaper">
+        select * from jq_exampaper where ${qc.where};
+    </select>
+    
+    <select id="findByQuery" resultType="exampaper">
+       select * from jq_exampaper where ${qc.where} limit ${start},${offset};
+    </select>
+    	
+	<select id="findPageList" resultType="exampaper">
+	    select * from jq_exampaper limit ${start},${offset};
+	</select>
+	
+		
+	<select id="findById" parameterType="string" resultType="exampaper">
+	   select * from jq_exampaper where id=#{id};
+	</select>
+	
+		
+	<select id="counts" resultType="long">
+	   select count(*) from jq_exampaper;
+	</select>	
+	
+		
+	<select id="countByQuery" parameterType="querybuilder" resultType="long">
+	   select count(*) from jq_exampaper where ${qc.where};
+	</select>
+	
+	     
+    <insert id="insert" parameterType="exampaper">
+       insert into jq_exampaper (
+       `year`,
+       `name`,
+       `course`,
+       `courseName`,
+       `realPath`,
+       `id`,
+       `category`,
+       `fileType`,
+       `fireTime`,
+       `size`
+       
+       ) values(
+       #{year},
+       #{name},
+       #{course},
+       #{courseName},
+       #{realPath},
+       #{id},
+       #{category},
+       #{fileType},
+       #{fireTime},
+       #{size}
+       )
+       ON DUPLICATE KEY UPDATE
+       realPath=VALUES(`realPath`);
+    </insert> 
+   
+    
+		
+	<delete id="delete" parameterType="string">
+	   delete from jq_exampaper where id=#{id};
+	</delete>
+	
+	
+    <delete id="deleteByQuery" parameterType="querybuilder">
+       delete from jq_exampaper where ${qc.where};
+    </delete>
+    
+    
+</mapper>

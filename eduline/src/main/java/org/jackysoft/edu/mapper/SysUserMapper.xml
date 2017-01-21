@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jackysoft.edu.mapper.SysUserMapper">
+   
+        <select id="findAll" resultType="sysuser">
+        select * from jq_sysuser;
+    </select>
+    
+        
+    <select id="findList" parameterType="querybuilder" resultType="sysuser">
+        select * from jq_sysuser where ${qc.where};
+    </select>
+    
+      <select id="findByQuery" resultType="sysuser">
+       select * from jq_sysuser where ${qc.where} limit ${start},${offset};
+    </select>
+    
+    <select id="search" parameterType="querybuilder" resultType="sysuser">
+       select username ,nickname,pyname from jq_sysuser where userType=1 and (${qc.where})  ;
+    </select>
+    
+    	
+	<select id="findPageList" resultType="sysuser">
+	    select * from jq_sysuser limit ${start},${offset};
+	</select>
+	
+		
+	<select id="findById" parameterType="string" resultType="sysuser">
+	   select * from jq_sysuser where username=#{id};
+	</select>
+	
+		
+	<select id="counts" resultType="long">
+	   select count(*) from jq_sysuser;
+	</select>	
+	
+		
+	<select id="countByQuery" parameterType="querybuilder" resultType="long">
+	   select count(*) from jq_sysuser where ${qc.where};
+	</select>
+	
+	     
+    <insert id="insert" parameterType="sysuser">
+       insert into jq_sysuser (
+       `password`,
+       `nickname`,
+       `userType`,
+       `username`,
+       `pyname`,
+       `sex`,
+       `birthday`,
+       `children`,
+       `firstName`,
+       `lastName`,
+       `surname`,
+       `givename`
+       ) 
+       values(
+       #{password},
+       #{nickname},
+       #{userType},
+       #{username},
+       #{pyname},
+       #{sex},
+       #{birthday},
+       #{children},
+       #{firstName},
+       #{lastName},
+       #{surname},
+       #{givename}
+       )
+       ON DUPLICATE KEY UPDATE
+       sex=VALUES(`sex`),
+       birthday=VALUES(`birthday`),
+       nickname=VALUES(`nickname`),
+       pyname=VALUES(`pyname`),
+       firstName=VALUES(`firstName`),
+       lastName=VALUES(`lastName`),
+       surname=VALUES(`surname`),
+       givename=VALUES(`givename`),
+       userType=VALUES(`userType`);
+    </insert> 
+   
+    
+		
+	<delete id="delete" parameterType="string">
+	   delete from jq_sysuser where username=#{id};
+	</delete>
+	
+	
+    <delete id="deleteByQuery" parameterType="querybuilder">
+       delete from jq_sysuser where ${qc.where};
+    </delete>
+    
+    <update id="updatePartial">
+       update jq_sysuser ${sets} where username=#{id};
+    </update>
+    
+</mapper>

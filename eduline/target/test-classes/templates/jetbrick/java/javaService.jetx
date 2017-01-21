@@ -1,0 +1,25 @@
+package org.jackysoft.edu.service;
+
+import org.jackysoft.edu.entity.${entityShortname};
+import org.jackysoft.edu.mapper.AbstractMapper;
+import org.jackysoft.edu.mapper.${entityShortname}Mapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+
+@Service
+@Transactional("transactionManager")
+public class ${entityShortname}Service extends AbstractService<${pktype}, ${entityShortname}> {
+
+	
+	@Autowired
+	private ${entityShortname}Mapper mapper;
+
+		
+	@Override
+	public AbstractMapper<${pktype}, ${entityShortname}> getMapper() {
+		return mapper;
+	}
+
+}

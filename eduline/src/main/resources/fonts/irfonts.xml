@@ -1,0 +1,9 @@
+<fontfamilies>
+   <fontfamily name="仿宋">
+       <normal><!--[CDATA[simfang.ttf]]--></normal>
+       <bold><!--[CDATA[simfang.ttf]]--></bold>
+       <italic><!--[CDATA[simfang.ttf]]--></italic>
+       <bolditalic><!--[CDATA[simfang.ttf]]--></bolditalic>
+       <pdfembedded><!--[CDATA[true]]--></pdfembedded>
+   </fontfamily>
+</fontfamilies>

@@ -1,0 +1,28 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf"%>
+<link href="static/css/${pathspace}/edit.css" rel="stylesheet">
+<p class="lead">
+
+编辑<span class="label label-info">${entityLabel}</span>
+</p>
+<form class="form-horizontal">
+  #for(formInput:formInputs)
+  <div class="form-group">
+    <label for="${formInput.name}" class="col-sm-2 control-label">${formInput.label}</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" 
+      id="${formInput.name}" 
+      name="${formInput.name}" value="\${bean.${formInput.name}}"  placeholder="${formInput.label}">
+    </div>
+  </div>
+  #end
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="button" class="btn btn-info persisteFormItem">
+    <span class="glyphicon glyphicon-floppy-saved"></span>    
+      保存</button>
+    </div>
+  </div>
+</form>
+<script src="static/scripts/${pathspace}/edit.js"></script>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jackysoft.edu.mapper.EbookMapper">
+   
+        <select id="findAll" resultType="ebook">
+        select * from jq_ebook;
+    </select>
+    
+        
+    <select id="findList" parameterType="querybuilder" resultType="ebook">
+        select * from jq_ebook where ${qc.where};
+    </select>
+    
+    <select id="findByQuery" resultType="ebook">
+       select * from jq_ebook where ${qc.where} limit ${start},${offset};
+    </select>
+    	
+	<select id="findPageList" resultType="ebook">
+	    select * from jq_ebook order by clicknum desc,firetime desc limit ${start},${offset};
+	</select>
+	
+		
+	<select id="findById" parameterType="string" resultType="ebook">
+	   select * from jq_ebook where id=#{id};
+	</select>
+	
+		
+	<select id="counts" resultType="long">
+	   select count(*) from jq_ebook;
+	</select>	
+	
+		
+	<select id="countByQuery" parameterType="querybuilder" resultType="long">
+	   select count(*) from jq_ebook where ${qc.where};
+	</select>
+	
+	     
+    <insert id="insert" parameterType="ebook">
+       insert into jq_ebook (
+       `size`,
+       `firetime`,
+       `name`,
+       `realPath`,
+       `id`,
+       `fileType`,
+       `coverPath`,
+       `douban`,
+       `remark`,
+       `tags`,
+       `clicknum`
+       ) values(
+       #{size},
+       #{firetime},
+       #{name},
+       #{realPath},
+       #{id},
+       #{fileType},
+       #{coverPath},
+       #{douban},
+       #{remark},
+       #{tags},
+       #{clicknum}
+       )
+       ON DUPLICATE KEY UPDATE
+       realPath=VALUES(`realPath`);
+    </insert> 
+   
+    
+		
+	<delete id="delete" parameterType="string">
+	   delete from jq_ebook where id=#{id};
+	</delete>
+	
+	
+    <delete id="deleteByQuery" parameterType="querybuilder">
+       delete from jq_ebook where ${qc.where};
+    </delete>
+    
+    
+</mapper>

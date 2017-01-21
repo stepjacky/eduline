@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2016-03-21T22:40:01 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rpt_scoredetail" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ba1c2fcf-4c66-4d60-9df8-cfc83011c3a1">
+	<property name="template.engine" value="tabular_template"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#000000">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#D8D8D8"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="tableDataset" uuid="a2daafc2-c486-41fc-b66c-df1a03681ede">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="scoreBeans"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="course" class="java.lang.String"/>
+		<field name="teacher" class="java.lang.String"/>
+		<field name="scoreValue" class="java.lang.String"/>
+		<field name="remark" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="title" class="java.lang.String"/>
+	<field name="details" class="java.util.List"/>
+	<title>
+		<band height="72" splitType="Stretch">
+			<textField>
+				<reportElement mode="Transparent" x="0" y="18" width="802" height="30" forecolor="#000000" backcolor="#FFFFFF" uuid="cc729a7c-8724-45f5-8600-00ff5f19977b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="仿宋" size="16" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="仿宋" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="23" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="103" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<componentElement>
+				<reportElement mode="Opaque" x="0" y="5" width="802" height="60" forecolor="#000000" backcolor="#FFFFFF" uuid="b57e3c66-257a-4d1a-b422-86351e95f9d8"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="Blank">
+					<datasetRun subDataset="tableDataset" uuid="88b4f606-96bb-4a13-af33-d66aec1bf277">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{details})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="140" uuid="4e1d5e01-6a06-49ad-b2f1-532cf1def6d6">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader style="Table_TH" height="30">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<frame>
+								<reportElement x="0" y="0" width="140" height="30" uuid="33f50349-2be5-47c4-b0c3-6a16d529d84c"/>
+								<staticText>
+									<reportElement mode="Transparent" x="0" y="0" width="140" height="30" forecolor="#000000" backcolor="#FFFFFF" uuid="630c50c1-7968-48de-ab97-7af4e9342a51"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+										<font fontName="仿宋" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="仿宋" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+									</textElement>
+									<text><![CDATA[科目(Subject)]]></text>
+								</staticText>
+							</frame>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="70">
+							<box>
+								<topPen lineWidth="0.1"/>
+								<leftPen lineWidth="0.1"/>
+								<bottomPen lineWidth="0.1"/>
+								<rightPen lineWidth="0.1"/>
+							</box>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="140" height="70" forecolor="#000000" backcolor="#FFFFFF" uuid="6723d9e1-a61d-46ac-b79d-7c95ef309fae"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="仿宋" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="仿宋" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{course}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="63230520-bf75-421f-83d0-b13712b0ae1a">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader style="Table_TH" height="30">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="100" height="30" forecolor="#000000" backcolor="#FFFFFF" uuid="1eedddcc-ee08-46f0-805f-b237a3a2972a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="仿宋" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="仿宋" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+								</textElement>
+								<text><![CDATA[教师(Teacher)]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="70">
+							<box>
+								<topPen lineWidth="0.1"/>
+								<leftPen lineWidth="0.1"/>
+								<bottomPen lineWidth="0.1"/>
+								<rightPen lineWidth="0.1"/>
+							</box>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="100" height="70" forecolor="#000000" backcolor="#FFFFFF" uuid="831d00bc-59ba-45cf-98b3-c3877fa0dd83"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="仿宋" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="仿宋" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{teacher}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="ebb28183-b67c-43a6-8b25-fccedac93579">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader style="Table_TH" height="30">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<box>
+								<topPen lineWidth="0.2"/>
+								<leftPen lineWidth="0.2"/>
+								<bottomPen lineWidth="0.2"/>
+								<rightPen lineWidth="0.2"/>
+							</box>
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="80" height="30" forecolor="#000000" backcolor="#FFFFFF" uuid="db1f40ac-0868-4749-ad15-22cb815baead"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="仿宋" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="仿宋" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+								</textElement>
+								<text><![CDATA[考试成绩]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="70">
+							<box>
+								<topPen lineWidth="0.1"/>
+								<leftPen lineWidth="0.1"/>
+								<bottomPen lineWidth="0.1"/>
+								<rightPen lineWidth="0.1"/>
+							</box>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="80" height="70" forecolor="#000000" backcolor="#FFFFFF" uuid="c30582a1-752c-48bf-878e-6437c4bb069c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="仿宋" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="仿宋" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{scoreValue}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="482" uuid="edc57bd5-a337-4152-b272-2ca270109f52">
+						<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+						<jr:tableHeader style="Table_TH" height="30">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<box>
+								<topPen lineWidth="0.2"/>
+								<leftPen lineWidth="0.2"/>
+								<bottomPen lineWidth="0.2"/>
+								<rightPen lineWidth="0.2"/>
+							</box>
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="482" height="30" forecolor="#000000" backcolor="#FFFFFF" uuid="30c73585-72f9-447a-a02e-b8b99da7827f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="仿宋" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="仿宋" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+								</textElement>
+								<text><![CDATA[老师评语]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="Table_TD" height="70">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+							<box>
+								<topPen lineWidth="0.1"/>
+								<leftPen lineWidth="0.1"/>
+								<bottomPen lineWidth="0.1"/>
+								<rightPen lineWidth="0.1"/>
+							</box>
+							<textField>
+								<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="482" height="70" forecolor="#000000" backcolor="#FFFFFF" uuid="fb0d7022-5711-42c8-a8e8-b2ba1fa07fce"/>
+								<box topPadding="5" leftPadding="5" bottomPadding="5" rightPadding="5"/>
+								<textElement textAlignment="Justified" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="仿宋" size="14" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="仿宋" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{remark}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

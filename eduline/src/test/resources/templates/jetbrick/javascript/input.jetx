@@ -1,0 +1,15 @@
+$(function(){
+   
+    var dataAdmin  =  window.DataAdmin;
+    dataAdmin.init(
+    {
+   	 		context:'${contextPath}',       		
+			namespace : '${pathspace}',			
+			dataFormId:  '${pathspace}_form'
+    }); 
+    dataAdmin.addAppendListener();
+    dataAdmin.addEarseListener();
+    dataAdmin.addPersisteDataListener(); 
+    dataAdmin.addJsonSourceListener();  
+    dataAdmin.addDatePickerListener();    
+});

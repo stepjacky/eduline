@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+  version="2.0">
+    
+  <description>JSTL 1.1 functions library</description>
+  <display-name>JSTL functions</display-name>
+  <tlib-version>1.1</tlib-version>
+  <short-name>jxf</short-name>
+  <uri>http://java.jackysoft.com/jsp/jstl/jxf</uri>
+  <function>
+    <name>monthly</name>
+    <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
+    <function-signature>java.lang.String monthly(java.lang.Integer)</function-signature>
+  </function>
+  <function>
+    <name>weekly</name>
+    <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
+    <function-signature>java.lang.String weekly(java.lang.Integer)</function-signature>
+  </function>
+  <function>
+    <name>semester</name>
+    <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
+    <function-signature>java.lang.String semester(java.lang.Integer)</function-signature>
+  </function>
+  <function>
+    <name>violateType</name>
+    <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
+    <function-signature>java.lang.String violateType(java.lang.Integer)</function-signature>
+  </function>
+  <function>
+    <name>userType</name>
+    <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
+    <function-signature>java.lang.String userType(java.lang.Integer)</function-signature>
+  </function>
+  <function>
+    <name>sex</name>
+    <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
+    <function-signature>java.lang.String sex(java.lang.Integer)</function-signature>
+  </function>
+  <function>
+    <name>grade</name>
+    <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
+    <function-signature>java.lang.String grade(java.lang.Integer)</function-signature>
+  </function>
+  <function>
+    <name>courseType</name>
+    <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
+    <function-signature>java.lang.String courseType(java.lang.Integer)</function-signature>
+  </function>
+  <function>
+    <name>vpoint</name>
+    <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
+    <function-signature>java.lang.String vpoint(java.lang.String)</function-signature>
+  </function>
+  <function>
+    <name>toJson</name>
+    <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
+    <function-signature>java.lang.String toJson(java.lang.Object)</function-signature>
+  </function>
+  <function>
+    <name>formatFloat</name>
+    <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
+    <function-signature>java.lang.String formatFloat(java.lang.Float,java.lang.Integer)</function-signature>
+  </function>
+  <function>
+    <name>dateFormat</name>
+    <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
+    <function-signature>java.lang.String dateFormat(java.lang.Long)</function-signature>
+  </function> 
+  <function>
+    <name>datetimeFormat</name>
+    <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
+    <function-signature>java.lang.String datetimeFormat(java.lang.Long)</function-signature>
+  </function> 
+ </taglib>

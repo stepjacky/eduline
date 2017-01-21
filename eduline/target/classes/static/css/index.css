@@ -1,0 +1,32 @@
+a:hover{
+	text-decoration:none;
+	color:#003;
+}
+.label-inverse{
+	background-color: #ad1;
+}
+
+.breadcrumb-ext {
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.breadcrumb-ext>li {
+    display: inline-block;
+}
+
+.breadcrumb-ext>li>a:hover{
+	text-decoration:none;
+}
+
+.breadcrumb-ext>li+li:before {
+    padding: 0;
+    color: #ccc;
+    content: " ";
+}
+.numPinner{
+	width:30px;
+}
