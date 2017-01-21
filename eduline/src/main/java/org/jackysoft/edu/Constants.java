@@ -9,5 +9,5 @@ public interface Constants {
     int    MONGODB_SERVER_PORT=27017;
     String MONGODB_DATABASE_NAME="jianqiao";
     String MONGODB_DATABASE_USER="jianqiao";
-    char[] MONGODB_DATABASE_PWD= "fc_Kmu\\)yW`;{3o".toCharArray();
+    char[] MONGODB_DATABASE_PWD= "fc_Kmu~)yW`;{3o".toCharArray();
 }
