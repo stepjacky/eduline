@@ -272,7 +272,7 @@
 						<phase>package</phase>
 						<configuration>
 							<tasks>
-								<copy file="target/ROOT.war" todir="../../deploy" />
+								<copy file="target/ROOT.war" todir="../../../deploy" />
 							</tasks>
 						</configuration>
 						<goals>
