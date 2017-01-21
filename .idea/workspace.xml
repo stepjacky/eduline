@@ -20,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/eduline/src/main/java/org/jackysoft/edu/config/MorphiaAutoConfig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="189">
-              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+              <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -484,15 +484,15 @@
       <workItem from="1482510510346" duration="117000" />
       <workItem from="1482580294684" duration="601000" />
       <workItem from="1484831236664" duration="283000" />
-      <workItem from="1485002806533" duration="267000" />
+      <workItem from="1485002806533" duration="468000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4252000" />
+    <option name="totallyTimeSpent" value="4453000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="226" y="16" width="1553" height="951" extended-state="1" />
+    <frame x="226" y="16" width="1553" height="951" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -670,7 +670,7 @@
     <entry file="file://$PROJECT_DIR$/eduline/src/main/java/org/jackysoft/edu/config/MorphiaAutoConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
           <folding />
         </state>
       </provider>
