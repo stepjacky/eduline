@@ -2,26 +2,23 @@ package org.jackysoft.edu.entity;
 
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
-import org.jackysoft.edu.annotation.Column;
-import org.jackysoft.edu.annotation.IdStrategy;
 import org.jackysoft.edu.annotation.Table;
+import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Property;
 
-
+@Entity
 @Table(label = "用户日志")
-public class UserLogger {
-	
-	@Column(id=true,idStrategy=IdStrategy.UUID)
-	private String id;
-	
-	@Column
+public class UserLogger extends NoEntity{
+
+	@Property
 	private String username;
-	@Column
+	@Property
 	private String nickname;
-	@Column
+	@Property
 	private long firetime;
-	@Column
+	@Property
 	private String action;
-	@Column
+	@Property
 	private String ipaddr;	
 
 	public String getUsername() {
@@ -54,14 +51,6 @@ public class UserLogger {
 
 	public void setIpaddr(String ipaddr) {
 		this.ipaddr = ipaddr;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	public String getAction() {

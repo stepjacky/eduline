@@ -11,6 +11,7 @@ import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.Part;
 
+import com.mongodb.AggregationOptions;
 import org.bson.types.ObjectId;
 import org.jackysoft.edu.entity.NoEntity;
 import org.jackysoft.edu.formbean.ZtreeNode;
@@ -33,7 +34,12 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 	protected Class<E> type;
 	
 	private Map<String,Field> fields = new HashMap<>();
-	
+
+	protected AggregationOptions aggregationOptions  = AggregationOptions.builder()
+			.outputMode(AggregationOptions.OutputMode.CURSOR)
+
+						.build();
+
 	@PostConstruct
 	public void initialize(){
 		Type type = getClass().getGenericSuperclass();

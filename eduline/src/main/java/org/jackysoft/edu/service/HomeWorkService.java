@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.mongodb.AggregationOptions;
 import org.bson.types.ObjectId;
 import org.jackysoft.edu.entity.HomeWork;
 import org.jackysoft.query.Pager;
@@ -74,7 +75,11 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 						Group.grouping("groupId", Group.first("groupId")),
 						Group.grouping("firetime", Group.first("firetime")),
 						Group.grouping("count", new Accumulator("$sum", 1)))
-				.sort(new Sort("firetime", -1)).match(query).aggregate(HomeWork.class);
+				.sort(new Sort("firetime", -1))
+				.match(query)
+				.aggregate(HomeWork.class,
+						aggregationOptions
+						);
 		long count = 0;
 		while (itr.hasNext()) {
 			HomeWork cr = itr.next();
@@ -95,7 +100,7 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 						Group.grouping("firetime", Group.first("firetime")),
 						Group.grouping("count", new Accumulator("$sum", 1)))
 				.sort(new Sort("firetime", -1)).match(query).limit(Pager.DEFAULT_OFFSET)
-				.skip((page < 0 ? 0 : page) * Pager.DEFAULT_OFFSET).aggregate(HomeWork.class);
+				.skip((page < 0 ? 0 : page) * Pager.DEFAULT_OFFSET).aggregate(HomeWork.class,aggregationOptions);
 		List<HomeWork> dataList = new ArrayList<>();
 		while (itr.hasNext()) {
 			HomeWork cr = itr.next();

@@ -3,6 +3,7 @@ package org.jackysoft.edu.config;
 import java.net.UnknownHostException;
 import java.util.Arrays;
 
+import com.mongodb.MongoClientOptions;
 import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 import org.jackysoft.edu.Constants;
@@ -32,7 +33,15 @@ public class MorphiaAutoConfig {
 		ServerAddress serverAddress = new ServerAddress(
 				Constants.MONGODB_SERVER_HOST,
 				Constants.MONGODB_SERVER_PORT);
-		MongoClient mongoClient = new MongoClient(serverAddress, Arrays.asList(credential));
+		MongoClientOptions opts = MongoClientOptions.builder()
+				.cursorFinalizerEnabled(true)
+				.build();
+
+		MongoClient mongoClient = new MongoClient(
+				serverAddress,
+				Arrays.asList(credential),
+				opts);
+
 		Datastore datastore = morphia.createDatastore(mongoClient, Constants.MONGODB_DATABASE_NAME);
 
 		datastore.ensureIndexes();
