@@ -25,7 +25,7 @@ public class MorphiaAutoConfig {
 
 
 		MongoCredential credential =
-				MongoCredential.createCredential(
+				MongoCredential.createMongoCRCredential(
 						Constants.MONGODB_DATABASE_USER,
 						Constants.MONGODB_DATABASE_NAME,
 						Constants.MONGODB_DATABASE_PWD);

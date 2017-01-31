@@ -140,6 +140,7 @@ org\jackysoft\edu\formbean\ChartDataSource.class
 org\jackysoft\edu\jsp\el\function\ELFunctions$2.class
 org\jackysoft\edu\service\UserEventService.class
 org\jackysoft\edu\formbean\StudentScoreCard.class
+org\jackysoft\edu\Constants.class
 org\jackysoft\edu\formbean\Ztreeable.class
 org\jackysoft\edu\service\ServiceProvider.class
 org\jackysoft\edu\formbean\InYearScoreDetail$1.class

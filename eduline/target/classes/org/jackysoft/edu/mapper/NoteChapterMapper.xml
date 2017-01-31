@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	<mapper namespace="org.jackysoft.edu.mapper.NoteChapterMapper">
+   
+        <select id="findAll" resultType="notechapter">
+        select * from jq_notechapter;
+    </select>
+    
+        
+    <select id="findList" parameterType="querybuilder" resultType="notechapter">
+        select * from jq_notechapter where ${qc.where};
+    </select>
+    
+    	
+	<select id="findPageList" resultType="notechapter">
+	    select * from jq_notechapter limit ${start},${offset};
+	</select>
+	
+		
+	<select id="findById" parameterType="string" resultType="notechapter">
+	   select * from jq_notechapter where id=#{id};
+	</select>
+	
+		
+	<select id="counts" resultType="long">
+	   select count(*) from jq_notechapter;
+	</select>	
+	
+		<select id="findByQuery" resultType="notechapter">
+       select * from jq_notechapter where ${qc.where} limit ${start},${offset};
+    </select>
+		
+	<select id="countByQuery" parameterType="querybuilder" resultType="long">
+	   select count(*) from jq_notechapter where ${qc.where};
+	</select>
+	
+	     
+    <insert id="insert" parameterType="notechapter">
+       insert into jq_notechapter 
+       (`parent`,`parentName`,`keysFile`,`anwserFile`,`name`,`exerciseFile`,`noteId`,`mp3File`,`id`,`pptFile`) 
+       values(#{parent},#{parentName},#{keysFile},#{anwserFile},#{name},#{exerciseFile},#{noteId},#{mp3File},#{id},#{pptFile})
+       ON DUPLICATE KEY UPDATE    
+       name=VALUES(`name`);
+       update jq_notechapter set isParent='true' where id=#{parent};
+       
+    </insert> 
+   
+    
+		
+	<delete id="delete" parameterType="string">
+	   delete from jq_notechapter where id=#{id};
+	   
+	</delete>
+	
+	
+    <delete id="deleteByQuery" parameterType="querybuilder">
+       delete from jq_notechapter where ${qc.where};
+    </delete>
+   
+    <update id="updatePartial">
+       update jq_notechapter ${sets} where id=#{id};
+    </update>    
+  
+    
+</mapper>

@@ -1,7 +1,0 @@
-package org.jackysoft.edu.mapper;
-
-import ${entityFullname};
-
-public interface ${javaMapper} extends AbstractMapper<${pktype}, ${entityShortname}> {
-
-}

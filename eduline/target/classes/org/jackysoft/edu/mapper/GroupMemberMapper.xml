@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jackysoft.edu.mapper.GroupMemberMapper">
+
+	<select id="findAll" resultType="groupmember">
+		select * from jq_groupmember;
+	</select>
+
+
+	<select id="findList" parameterType="querybuilder" resultType="groupmember">
+		select * from jq_groupmember where ${qc.where};
+	</select>
+	<select id="findByQuery" resultType="groupmember">
+		select * from jq_groupmember where ${qc.where} limit ${start},${offset};
+	</select>
+
+	<select id="findPageList" resultType="groupmember">
+		select * from jq_groupmember limit ${start},${offset};
+	</select>
+
+
+	<select id="findById" parameterType="string" resultType="groupmember">
+		select * from jq_groupmember where id=#{id};
+	</select>
+
+
+	<select id="counts" resultType="long">
+		select count(*) from jq_groupmember;
+	</select>
+
+
+	<select id="countByQuery" parameterType="querybuilder"
+		resultType="long">
+		select count(*) from (select count(*) from jq_groupmember where ${qc.where})
+		a;
+	</select>
+
+
+	<insert id="insert" parameterType="groupmember">
+		insert into jq_groupmember
+		(
+		`id`,
+		`name`,
+		`gradeName`,
+		`courseName`,
+		`teacher`,
+		`teacherName`,
+		`student`,
+		`studentName`,
+		`grade`,
+		`inyear`,
+		`groupId`,
+		`course`)
+		values(
+		#{id},
+		#{name},
+		#{gradeName},
+		#{courseName},
+		#{teacher},
+		#{teacherName},
+		#{student},
+		#{studentName},
+		#{grade},
+		#{inyear},
+		#{groupId},
+		#{course})
+		ON DUPLICATE KEY UPDATE
+		name=VALUES(`name`);
+
+	</insert>
+
+
+
+	<delete id="delete" parameterType="string">
+		delete from jq_groupmember where id=#{id};
+	</delete>
+
+
+	<delete id="deleteByQuery" parameterType="querybuilder">
+		delete from jq_groupmember where ${qc.where};
+	</delete>
+
+	<select id="findGroupFeature" parameterType="string" resultType="groupmember">
+		select
+		g.name name,
+		g.grade grade,
+		g.gradeName gradeName,
+		g.course course ,
+		g.courseName courseName,
+		c.ctype courseType,
+		g.inyear inyear
+		from jq_groupmember g
+		left join jq_course c on c.id=g.course
+		where groupid=#{groupId}
+		group by grade,course
+		limit 1;
+	</select>
+
+	<select id="findScorePanel" resultType="groupmember">
+
+
+		select
+		g.student,
+		g.gradeName,
+		g.teacher,
+		g.grade,
+		g.name,
+		g.teacherName,
+		g.id,
+		g.courseName,
+		g.inyear,
+		g.course,
+		g.groupId,
+		g.studentName,
+		c.ctype courseType
+		from jq_groupmember g
+		left join jq_course c on c.id=g.course
+		where groupid=#{groupId};
+	</select>
+
+	<select id="findMemberDetails" parameterType="querybuilder"
+		resultType="memberbean">
+     <![CDATA[  
+         select
+ g.id, 
+ g.student,
+ g.studentName,
+ g.name,
+ g.grade,
+ g.gradeName,
+ g.course,
+ g.courseName,
+ g.groupId,
+ s.totalSorted,
+ v.upviolate,
+ d.dwviolate, 
+ uf.username father,
+ uf.firetime firetimef,
+ um.username mother,
+ um.firetime firetimem
+ from jq_groupmember g
+ left join (
+    select ss.student,ss.totalSorted from jq_sortedtotalscore ss
+	group by ss.student 
+    order by ss.grade desc,ss.semester desc,ss.monthly desc
+ ) s on s.student=g.student 
+ left join jq_sysuser su on su.username=g.student
+  
+ left join (
+   SELECT sum(scoreValue) upviolate,student,grade  from jq_violates 
+   where affirmative>0 
+   group by student,grade
+ ) v on v.student=g.student and v.grade= su.grade	
+ 
+ left join (
+   SELECT sum(scoreValue) dwviolate,student,grade  from jq_violates 
+   where affirmative<=0 
+   group by student,grade
+ ) d on d.student=g.student and d.grade= su.grade
+ 
+ left join  jq_userlogger uf on uf.username=concat(g.student,'F') and uf.action='login' 
+            and uf.firetime=(select max(firetime) from jq_userlogger where username=concat(g.student,'F') and `action`='login')
+ left join  jq_userlogger um on um.username=concat(g.student,'M') and um.action='login'
+   	        and um.firetime=(select max(firetime) from jq_userlogger where username=concat(g.student,'M') and `action`='login')
+   	
+ where ${qc.where};
+    ]]>
+	</select>
+
+</mapper>

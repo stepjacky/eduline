@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.jackysoft.edu.mapper.UserEventMapper">
+   
+    <select id="findAll" resultType="userevent">
+        select * from jq_userevent;
+    </select>
+    
+        
+    <select id="findList" parameterType="querybuilder" resultType="userevent">
+        select * from jq_userevent where ${qc.where};
+    </select>
+    
+    	
+	<select id="findPageList" resultType="userevent">
+	    select * from jq_userevent limit ${start},${offset};
+	</select>
+	
+		
+	<select id="findById" parameterType="string" resultType="userevent">
+	   select * from jq_userevent where id=#{id};
+	</select>
+	
+		
+	<select id="counts" resultType="long">
+	   select count(*) from jq_userevent;
+	</select>	
+	
+	<select id="findByQuery" parameterType="querybuilder" resultType="userevent">
+       select * from jq_userevent where ${qc.where} limit ${start},${offset};
+    </select>
+    
+		
+	<select id="countByQuery" parameterType="querybuilder" resultType="long">
+	   select count(*) from (select * from jq_userevent  where ${qc.where}) ua;
+	</select>
+	
+	     
+    <insert id="insert" parameterType="userevent">
+       insert into jq_userevent 
+       (`firetime`,`nickname`,`name`,`endtime`,`id`,`starttime`,`content`,`username`
+       ,`repeated`,`repeatStart`,`repeatEnd`,`dayOfweek`,`className`,`eventType`) 
+       values(#{firetime},#{nickname},#{name},#{endtime},#{id},#{starttime},#{content},#{username}
+       ,#{repeated},#{repeatStart},#{repeatEnd},#{dayOfweek},#{className},#{eventType})
+       ON DUPLICATE KEY UPDATE       
+       name=VALUES(`name`),             
+       content=VALUES(`content`);
+    </insert> 
+   
+    
+		
+	<delete id="delete" parameterType="string">
+	   delete from jq_userevent where id=#{id};
+	</delete>
+	
+	
+    <delete id="deleteByQuery" parameterType="querybuilder">
+       delete from jq_userevent where ${qc.where};
+    </delete>
+    
+    
+</mapper>

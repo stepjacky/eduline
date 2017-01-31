@@ -102,6 +102,7 @@ E:\idea-edu-workspace\eduline\src\main\java\org\jackysoft\edu\controller\Abstrac
 E:\idea-edu-workspace\eduline\src\main\java\org\jackysoft\edu\entity\Grade.java
 E:\idea-edu-workspace\eduline\src\main\java\org\jackysoft\edu\formbean\ScoreInfo.java
 E:\idea-edu-workspace\eduline\src\main\java\org\jackysoft\edu\annotation\OptionValue.java
+E:\idea-edu-workspace\eduline\src\main\java\org\jackysoft\edu\Constants.java
 E:\idea-edu-workspace\eduline\src\main\java\org\jackysoft\edu\controller\SysUserController.java
 E:\idea-edu-workspace\eduline\src\main\java\org\jackysoft\edu\controller\GradeController.java
 E:\idea-edu-workspace\eduline\src\main\java\org\jackysoft\edu\service\AbstractMongoService.java
