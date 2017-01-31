@@ -2,1145 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c44cd291-f769-46cc-a5f7-6bee04f19491" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_3_4_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_3_4_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_core_3_4_2.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/META-INF/eduline.tld" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/application.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/excel/inyearscore.xls" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/fonts/fonts.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/fonts/irfonts.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/fonts/simfang.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/jasperreports/scorepaper.jasper" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/jasperreports/scorepaper.jrxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/jasperreports/scorereport.jasper" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/jasperreports/scorereport.jrxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/jasperreports/userviolate.jasper" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/jasperreports/userviolate.jrxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/jasperreports/xpconfirm.jasper" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/jasperreports/xpconfirm.jrxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/jasperreports_extension.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/logback.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/authority/edit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/authority/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/authority/pager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/authority/query.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/course/edit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/course/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/course/pager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/course/query.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/ebook/edit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/ebook/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/ebook/pager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/ebook/query.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/exampaper/edit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/exampaper/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/exampaper/pager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/exampaper/query.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/examscore/edit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/examscore/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/examscore/pager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/examscore/query.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/grade/edit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/grade/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/grade/pager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/grade/query.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/groupmember/edit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/groupmember/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/groupmember/pager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/groupmember/query.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/homework/edit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/homework/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/homework/pager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/homework/query.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/index.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/lecturenotes/edit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/lecturenotes/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/lecturenotes/pager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/lecturenotes/query.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/login.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/notechapter/edit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/notechapter/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/notechapter/pager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/notechapter/query.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/sysuser/edit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/sysuser/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/sysuser/pager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/sysuser/query.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/urlpattern/edit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/urlpattern/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/urlpattern/pager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/urlpattern/query.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/userevent/edit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/userevent/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/userevent/pager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/userevent/query.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/violates/edit.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/violates/input.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/violates/pager.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/css/violates/query.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/images/flag.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/images/headlogo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/images/hotlogo/hotlogo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/images/login/bt_bg.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/images/login/login_03.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/images/login/login_05.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/images/login/login_09.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/images/login/login_11.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/images/login/login_13.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/images/login/login_16.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/images/login/login_18.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bloodhound.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootbox.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/css/calendar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/css/calendar.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/img/dark_wood.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/img/slide-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/img/tick.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/index-bs3.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/js/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/js/calendar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/js/calendar.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/js/language/no-NO.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/js/language/template.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/js/language/zh-CN.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/js/underscore-min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/js/underscore.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/tmpls/day.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/tmpls/events-list.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/tmpls/modal.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/tmpls/month-day.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/tmpls/month.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/tmpls/week-days.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/tmpls/week.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/tmpls/year-month.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-calendar/tmpls/year.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/.editorconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/.jscsrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/css/bootstrap-datepicker.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/css/bootstrap-datepicker.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/css/bootstrap-datepicker.standalone.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/css/bootstrap-datepicker.standalone.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/css/bootstrap-datepicker3.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/css/bootstrap-datepicker3.standalone.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/css/bootstrap-datepicker3.standalone.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/js/bootstrap-datepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/css/bootstrap-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/css/bootstrap-theme.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/css/bootstrap-theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/css/bootstrap.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/dashboard.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/docs.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/docs.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/js/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap/js/npm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/bootstrap3-typeahead.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/CHANGES.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/adapters/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/build-config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/ckeditor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/contents.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/af.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/ar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/bg.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/bn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/bs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/cs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/cy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/da.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/de-ch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/de.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/el.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/en-au.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/en-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/en-gb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/en.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/eo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/es.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/et.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/eu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/fa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/fi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/fo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/fr-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/fr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/gl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/gu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/he.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/hi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/hr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/hu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/id.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/is.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/it.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/ja.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/ka.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/km.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/ko.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/ku.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/lt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/lv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/mk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/mn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/ms.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/nb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/nl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/no.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/pl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/pt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/ro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/ru.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/si.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/sk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/sl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/sq.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/sr-latn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/sr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/sv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/th.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/tr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/tt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/ug.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/uk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/vi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/lang/zh.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/af.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/da.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/de-ch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/de.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/el.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/en-gb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/en.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/es.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/et.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/eu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/fo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/gl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/he.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/id.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/it.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/km.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/ko.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/no.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/si.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/sq.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/sr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/th.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/tt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/a11yhelp/dialogs/lang/zh.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/about/dialogs/about.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/about/dialogs/hidpi/logo_ckeditor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/about/dialogs/logo_ckeditor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/clipboard/dialogs/paste.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/dialog/dialogDefinition.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/icons_hidpi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/image/dialogs/image.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/image/images/noimage.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/link/dialogs/anchor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/link/dialogs/link.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/link/images/anchor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/link/images/hidpi/anchor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/magicline/images/hidpi/icon-rtl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/magicline/images/hidpi/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/magicline/images/icon-rtl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/magicline/images/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/pastefromword/filter/default.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/scayt/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/scayt/LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/scayt/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/scayt/dialogs/options.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/scayt/dialogs/toolbar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/_translationstatus.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/af.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/ar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/bg.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/cs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/cy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/da.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/de-ch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/de.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/el.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/en-gb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/en.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/eo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/es.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/et.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/eu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/fa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/fi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/fr-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/fr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/gl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/he.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/hr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/hu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/id.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/it.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/ja.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/km.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/ko.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/ku.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/lt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/lv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/nb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/nl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/no.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/pl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/pt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/ru.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/si.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/sk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/sl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/sq.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/sv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/th.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/tr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/tt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/ug.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/uk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/vi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/lang/zh.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/specialchar/dialogs/specialchar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/table/dialogs/table.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/tabletools/dialogs/tableCell.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/wsc/LICENSE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/wsc/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/wsc/dialogs/ciframe.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/wsc/dialogs/tmpFrameset.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/wsc/dialogs/wsc.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/wsc/dialogs/wsc.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/plugins/wsc/dialogs/wsc_ie.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/css/samples.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/img/github-top.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/img/header-bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/img/header-separator.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/img/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/img/navigation-tip.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/js/sample.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/js/sf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/ajax.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/api.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/appendto.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/assets/inlineall/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/assets/outputxhtml/outputxhtml.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/assets/posteddata.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/assets/sample.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/assets/uilanguages/languages.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/datafiltering.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/dialog/assets/my_dialog.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/dialog/dialog.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/divreplace.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/enterkey/enterkey.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/htmlwriter/assets/outputforflash/outputforflash.fla" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/htmlwriter/assets/outputforflash/outputforflash.swf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/htmlwriter/assets/outputforflash/swfobject.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/htmlwriter/outputforflash.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/htmlwriter/outputhtml.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/inlineall.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/inlinebycode.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/inlinetextarea.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/jquery.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/magicline/magicline.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/readonly.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/replacebyclass.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/replacebycode.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/sample.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/sample.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/sample_posteddata.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/tabindex.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/toolbar/toolbar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/uicolor.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/uilanguages.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/wysiwygarea/fullpage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/old/xhtmlstyle.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/css/fontello.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/font/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/font/config.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/font/fontello.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/font/fontello.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/font/fontello.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/font/fontello.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/js/abstracttoolbarmodifier.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/js/fulltoolbareditor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/js/toolbarmodifier.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/js/toolbartextmodifier.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/lib/codemirror/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/lib/codemirror/codemirror.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/lib/codemirror/codemirror.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/lib/codemirror/javascript.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/lib/codemirror/show-hint.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/samples/toolbarconfigurator/lib/codemirror/show-hint.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/dialog.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/dialog_ie.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/dialog_ie7.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/dialog_ie8.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/dialog_iequirks.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/editor.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/editor_gecko.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/editor_ie.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/editor_ie7.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/editor_ie8.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/editor_iequirks.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/icons.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/icons_hidpi.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/images/arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/images/close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/images/hidpi/close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/images/hidpi/lock-open.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/images/hidpi/lock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/images/hidpi/refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/images/lock-open.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/images/lock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/images/refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/images/spinner.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/skins/moono/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ckeditor/styles.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/datacrud.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/css/demo-ie8.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/css/demo.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/css/jquery.fileupload-noscript.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/css/jquery.fileupload-ui-noscript.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/css/jquery.fileupload-ui.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/css/jquery.fileupload.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/img/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/img/progressbar.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/js/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/js/cors/jquery.postmessage-transport.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/js/cors/jquery.xdr-transport.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/js/jquery.fileupload-angular.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/js/jquery.fileupload-audio.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/js/jquery.fileupload-image.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/js/jquery.fileupload-jquery-ui.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/js/jquery.fileupload-process.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/js/jquery.fileupload-ui.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/js/jquery.fileupload-validate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/js/jquery.fileupload-video.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/js/jquery.fileupload.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/js/jquery.iframe-transport.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fileupload/js/vendor/jquery.ui.widget.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/HELP-US-OUT.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/css/font-awesome.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/css/font-awesome.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/css/font-awesome.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/fonts/FontAwesome.otf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/fonts/fontawesome-webfont.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/fonts/fontawesome-webfont.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/fonts/fontawesome-webfont.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/less/animated.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/less/bordered-pulled.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/less/core.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/less/fixed-width.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/less/font-awesome.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/less/icons.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/less/larger.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/less/list.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/less/mixins.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/less/path.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/less/rotated-flipped.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/less/screen-reader.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/less/stacked.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/less/variables.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/scss/_animated.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/scss/_bordered-pulled.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/scss/_core.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/scss/_fixed-width.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/scss/_icons.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/scss/_larger.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/scss/_list.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/scss/_mixins.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/scss/_path.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/scss/_rotated-flipped.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/scss/_screen-reader.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/scss/_stacked.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/scss/_variables.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/font-awesome/scss/font-awesome.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fullcalendar/fullcalendar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fullcalendar/fullcalendar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fullcalendar/fullcalendar.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fullcalendar/fullcalendar.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fullcalendar/fullcalendar.print.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fullcalendar/lang/zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/fullcalendar/lang/zh-tw.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/adapters/standalone-framework.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/adapters/standalone-framework.src.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/highcharts-3d.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/highcharts-3d.src.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/highcharts-more.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/highcharts-more.src.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/highcharts.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/highcharts.src.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/broken-axis.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/broken-axis.src.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/canvas-tools.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/canvas-tools.src.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/data.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/data.src.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/drilldown.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/drilldown.src.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/exporting.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/exporting.src.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/funnel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/funnel.src.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/heatmap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/heatmap.src.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/no-data-to-display.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/no-data-to-display.src.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/solid-gauge.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/solid-gauge.src.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/treemap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/modules/treemap.src.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/themes/dark-blue.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/themes/dark-green.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/themes/dark-unica.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/themes/gray.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/themes/grid-light.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/themes/grid.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/themes/sand-signika.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/highcharts/js/themes/skies.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/html5shiv.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ie-emulation-modes-warning.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ie10-viewport-bug-workaround.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/jquery-1.11.2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/jquery-1.11.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/jquery.blockUI.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/jquery.md5.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/lodash.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/lodash/lodash.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/moment/.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/moment/locale/zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/moment/locale/zh-tw.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/moment/min/locales.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/moment/min/locales.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/moment/min/moment-with-locales.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/moment/min/moment-with-locales.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/moment/min/moment.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/moment/min/tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/moment/moment.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/build/pdf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/build/pdf.worker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/78-EUC-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/78-EUC-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/78-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/78-RKSJ-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/78-RKSJ-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/78-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/78ms-RKSJ-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/78ms-RKSJ-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/83pv-RKSJ-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/90ms-RKSJ-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/90ms-RKSJ-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/90msp-RKSJ-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/90msp-RKSJ-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/90pv-RKSJ-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/90pv-RKSJ-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Add-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Add-RKSJ-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Add-RKSJ-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Add-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-CNS1-0.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-CNS1-1.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-CNS1-2.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-CNS1-3.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-CNS1-4.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-CNS1-5.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-CNS1-6.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-CNS1-UCS2.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-GB1-0.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-GB1-1.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-GB1-2.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-GB1-3.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-GB1-4.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-GB1-5.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-GB1-UCS2.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-Japan1-0.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-Japan1-1.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-Japan1-2.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-Japan1-3.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-Japan1-4.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-Japan1-5.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-Japan1-6.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-Japan1-UCS2.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-Korea1-0.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-Korea1-1.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-Korea1-2.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Adobe-Korea1-UCS2.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/B5-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/B5-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/B5pc-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/B5pc-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/CNS-EUC-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/CNS-EUC-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/CNS1-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/CNS1-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/CNS2-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/CNS2-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/ETHK-B5-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/ETHK-B5-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/ETen-B5-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/ETen-B5-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/ETenms-B5-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/ETenms-B5-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/EUC-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/EUC-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Ext-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Ext-RKSJ-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Ext-RKSJ-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Ext-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GB-EUC-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GB-EUC-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GB-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GB-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GBK-EUC-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GBK-EUC-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GBK2K-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GBK2K-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GBKp-EUC-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GBKp-EUC-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GBT-EUC-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GBT-EUC-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GBT-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GBT-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GBTpc-EUC-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GBTpc-EUC-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GBpc-EUC-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/GBpc-EUC-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/HKdla-B5-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/HKdla-B5-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/HKdlb-B5-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/HKdlb-B5-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/HKgccs-B5-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/HKgccs-B5-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/HKm314-B5-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/HKm314-B5-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/HKm471-B5-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/HKm471-B5-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/HKscs-B5-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/HKscs-B5-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Hankaku.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Hiragana.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/KSC-EUC-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/KSC-EUC-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/KSC-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/KSC-Johab-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/KSC-Johab-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/KSC-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/KSCms-UHC-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/KSCms-UHC-HW-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/KSCms-UHC-HW-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/KSCms-UHC-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/KSCpc-EUC-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/KSCpc-EUC-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Katakana.bcmap" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/NWP-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/NWP-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/RKSJ-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/RKSJ-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/Roman.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniCNS-UCS2-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniCNS-UCS2-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniCNS-UTF16-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniCNS-UTF16-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniCNS-UTF32-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniCNS-UTF32-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniCNS-UTF8-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniCNS-UTF8-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniGB-UCS2-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniGB-UCS2-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniGB-UTF16-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniGB-UTF16-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniGB-UTF32-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniGB-UTF32-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniGB-UTF8-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniGB-UTF8-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS-UCS2-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS-UCS2-HW-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS-UCS2-HW-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS-UCS2-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS-UTF16-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS-UTF16-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS-UTF32-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS-UTF32-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS-UTF8-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS-UTF8-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS2004-UTF16-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS2004-UTF16-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS2004-UTF32-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS2004-UTF32-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS2004-UTF8-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJIS2004-UTF8-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJISPro-UCS2-HW-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJISPro-UCS2-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJISPro-UTF8-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJISX0213-UTF32-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJISX0213-UTF32-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJISX02132004-UTF32-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniJISX02132004-UTF32-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniKS-UCS2-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniKS-UCS2-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniKS-UTF16-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniKS-UTF16-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniKS-UTF32-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniKS-UTF32-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniKS-UTF8-H.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/UniKS-UTF8-V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/V.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/cmaps/WP-Symbol.bcmap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/compatibility.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/compressed.tracemonkey-pldi-09.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/debugger.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/annotation-check.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/annotation-comment.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/annotation-help.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/annotation-insert.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/annotation-key.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/annotation-newparagraph.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/annotation-noicon.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/annotation-note.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/annotation-paragraph.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/findbarButton-next-rtl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/findbarButton-next-rtl@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/findbarButton-next.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/findbarButton-next@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/findbarButton-previous-rtl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/findbarButton-previous-rtl@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/findbarButton-previous.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/findbarButton-previous@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/grab.cur" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/grabbing.cur" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/loading-icon.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/loading-small.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/loading-small@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/secondaryToolbarButton-documentProperties.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/secondaryToolbarButton-documentProperties@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/secondaryToolbarButton-firstPage.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/secondaryToolbarButton-firstPage@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/secondaryToolbarButton-handTool.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/secondaryToolbarButton-handTool@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/secondaryToolbarButton-lastPage.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/secondaryToolbarButton-lastPage@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/secondaryToolbarButton-rotateCcw.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/secondaryToolbarButton-rotateCcw@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/secondaryToolbarButton-rotateCw.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/secondaryToolbarButton-rotateCw@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/shadow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/texture.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-bookmark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-bookmark@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-download.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-download@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-menuArrows.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-menuArrows@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-openFile.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-openFile@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-pageDown-rtl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-pageDown-rtl@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-pageDown.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-pageDown@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-pageUp-rtl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-pageUp-rtl@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-pageUp.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-pageUp@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-presentationMode.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-presentationMode@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-print.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-print@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-search.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-search@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-secondaryToolbarToggle-rtl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-secondaryToolbarToggle-rtl@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-secondaryToolbarToggle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-secondaryToolbarToggle@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-sidebarToggle-rtl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-sidebarToggle-rtl@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-sidebarToggle.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-sidebarToggle@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-viewAttachments.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-viewAttachments@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-viewOutline-rtl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-viewOutline-rtl@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-viewOutline.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-viewOutline@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-viewThumbnail.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-viewThumbnail@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-zoomIn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-zoomIn@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-zoomOut.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/toolbarButton-zoomOut@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/treeitem-collapsed-rtl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/treeitem-collapsed-rtl@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/treeitem-collapsed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/treeitem-collapsed@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/treeitem-expanded.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/images/treeitem-expanded@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/l10n.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ach/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/af/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ak/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/an/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ar/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/as/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ast/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/az/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/be/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/bg/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/bn-BD/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/bn-IN/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/br/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/bs/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ca/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/cs/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/csb/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/cy/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/da/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/de/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/el/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/en-GB/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/en-US/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/en-ZA/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/eo/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/es-AR/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/es-CL/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/es-ES/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/es-MX/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/et/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/eu/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/fa/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ff/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/fi/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/fr/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/fy-NL/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ga-IE/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/gd/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/gl/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/gu-IN/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/he/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/hi-IN/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/hr/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/hu/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/hy-AM/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/id/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/is/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/it/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ja/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ka/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/kk/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/km/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/kn/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ko/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ku/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/lg/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/lij/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/locale.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/lt/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/lv/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/mai/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/mk/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ml/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/mn/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/mr/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ms/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/my/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/nb-NO/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/nl/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/nn-NO/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/nso/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/oc/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/or/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/pa-IN/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/pl/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/pt-BR/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/pt-PT/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/rm/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ro/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ru/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/rw/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/sah/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/si/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/sk/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/sl/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/son/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/sq/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/sr/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/sv-SE/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/sw/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ta-LK/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ta/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/te/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/th/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/tl/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/tn/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/tr/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/uk/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/ur/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/vi/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/wo/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/xh/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/zh-CN/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/zh-TW/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/locale/zu/viewer.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/viewer.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/viewer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdfjs/web/viewer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdftool-v2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/pdftool.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/respond.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/template.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/tools.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/trees.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/awesomeStyle/awesome.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/awesomeStyle/awesome.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/awesomeStyle/fa.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/awesomeStyle/img/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/demo.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/metroStyle/img/line_conn.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/metroStyle/img/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/metroStyle/img/metro.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/metroStyle/img/metro.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/metroStyle/metroStyle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/img/diy/1_close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/img/diy/1_open.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/img/diy/2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/img/diy/3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/img/diy/4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/img/diy/5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/img/diy/6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/img/diy/7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/img/diy/8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/img/diy/9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/img/line_conn.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/img/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/img/zTreeStandard.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/img/zTreeStandard.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/css/zTreeStyle/zTreeStyle.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/js/jquery.ztree.all.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/js/jquery.ztree.all.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/js/jquery.ztree.core.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/js/jquery.ztree.core.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/js/jquery.ztree.excheck.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/js/jquery.ztree.excheck.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/js/jquery.ztree.exedit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/js/jquery.ztree.exedit.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/js/jquery.ztree.exhide.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/lib/ztree/js/jquery.ztree.exhide.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/authority/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/authority/input.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/authority/pager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/authority/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/course/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/course/input.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/course/pager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/course/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/courseingrade/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/courseingrade/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/ebook/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/ebook/input.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/ebook/pager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/ebook/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/exampaper/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/exampaper/input.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/exampaper/pager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/exampaper/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/examscore/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/examscore/input.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/examscore/pager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/examscore/preinput.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/examscore/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/examscore/scoredpanel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/grade/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/grade/input.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/grade/pager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/grade/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/groupmember/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/groupmember/input.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/groupmember/pager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/groupmember/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/homework/chapters.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/homework/dohomework.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/homework/doscorehomework.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/homework/pager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/homework/prehomework.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/lecturenotes/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/lecturenotes/expand.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/lecturenotes/input.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/lecturenotes/pager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/lecturenotes/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/lecturenotes/shared.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/notechapter/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/notechapter/input.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/notechapter/pager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/notechapter/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/sysuser/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/sysuser/input.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/sysuser/pager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/sysuser/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/urlpattern/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/urlpattern/input.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/urlpattern/pager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/urlpattern/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/userevent/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/userevent/input.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/userevent/pager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/userevent/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/violates/edit.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/violates/home.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/violates/input.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/violates/pager.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/scripts/violates/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/tmps/notechapter/chapter-file.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/tmps/notechapter/select-card.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/tmps/userevent/repeats.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/tmps/userevent/timeOccured.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/classes/static/tmps/users/user-checkeds.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/application.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/jetbrick-template.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/org/jackysoft/edu/bean/SourceGenerator$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/org/jackysoft/edu/bean/SourceGenerator$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/org/jackysoft/edu/bean/SourceGenerator.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/org/jackysoft/edu/bean/TempType.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/css/edit.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/css/input.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/css/pager.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/css/query.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/java/JavaMapper.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/java/XmlMapper.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/java/javaController.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/java/javaService.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/javascript/edit.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/javascript/input.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/javascript/pager.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/javascript/query.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/view/edit.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/view/input.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/view/other.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/view/pager.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/view/query.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/templates/jetbrick/view/queryForm.jetx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/test/EdulineApplicationTests.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/test/TestCommons.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/test/TestTests$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/test/TestTests$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/eduline/target/test-classes/test/TestTests.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/src/main/resources/jasperreports/scorepaper.jasper" afterPath="$PROJECT_DIR$/eduline/src/main/resources/jasperreports/scorepaper.jasper" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/src/main/resources/jasperreports/scorereport.jasper" afterPath="$PROJECT_DIR$/eduline/src/main/resources/jasperreports/scorereport.jasper" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/src/main/resources/jasperreports/userviolate.jasper" afterPath="$PROJECT_DIR$/eduline/src/main/resources/jasperreports/userviolate.jasper" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/src/main/resources/jasperreports/xpconfirm.jasper" afterPath="$PROJECT_DIR$/eduline/src/main/resources/jasperreports/xpconfirm.jasper" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/Constants.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/Constants.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/config/ExtendedConfig.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/config/ExtendedConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/config/MorphiaAutoConfig.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/config/MorphiaAutoConfig.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/controller/AbstractController.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/controller/AbstractController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/controller/CourseInGradeController.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/controller/CourseInGradeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/controller/ExamPaperController.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/controller/ExamPaperController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/controller/ExamScoreController.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/controller/ExamScoreController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/controller/LectureNotesController.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/controller/LectureNotesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/controller/UserEventController.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/controller/UserEventController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/controller/ViolatesController.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/controller/ViolatesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/service/AbstractMongoService.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/service/AbstractMongoService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/service/AbstractSQLService.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/service/AbstractSQLService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/service/EbookService.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/service/EbookService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/service/ExamScoreService.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/service/ExamScoreService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/service/HomeWorkService.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/service/HomeWorkService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/service/LectureNotesService.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/service/LectureNotesService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/service/SysUserService.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/edu/service/SysUserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/query/GroupBy.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/query/GroupBy.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/query/Pager.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/query/Pager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/query/QueryBuilder.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/query/QueryBuilder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/query/QueryParser.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/query/QueryParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/utils/ClassMetaUtils.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/utils/ClassMetaUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/utils/IReportUtils.class" afterPath="$PROJECT_DIR$/eduline/target/classes/org/jackysoft/utils/IReportUtils.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/eduline_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/eduline_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/eduline.iml" afterPath="$PROJECT_DIR$/eduline/eduline.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/pom.xml" afterPath="$PROJECT_DIR$/eduline/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/src/main/java/org/jackysoft/edu/config/MorphiaAutoConfig.java" afterPath="$PROJECT_DIR$/eduline/src/main/java/org/jackysoft/edu/config/MorphiaAutoConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/classes/META-INF/spring-configuration-metadata.json" afterPath="$PROJECT_DIR$/eduline/target/classes/META-INF/spring-configuration-metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/eduline/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/eduline/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/eduline/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongo_java_driver_3_2_2.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongo_java_driver_2_12_5.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_morphia_morphia_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_morphia_morphia_1_3_1.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongo_java_driver_2_12_5.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongo_java_driver_3_4_2.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/eduline/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1155,52 +27,12 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="HomeWorkService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eduline/src/main/java/org/jackysoft/edu/service/HomeWorkService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-336">
-              <caret line="76" column="64" lean-forward="false" selection-start-line="76" selection-start-column="64" selection-end-line="76" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eduline/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="115" column="8" lean-forward="false" selection-start-line="115" selection-start-column="8" selection-end-line="119" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MorphiaAutoConfig.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/eduline/src/main/java/org/jackysoft/edu/config/MorphiaAutoConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="28" column="56" lean-forward="true" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MongoCredential.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/2.12.5/mongo-java-driver-2.12.5-sources.jar!/com/mongodb/MongoCredential.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-267">
-              <caret line="75" column="48" lean-forward="true" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>mongodb</find>
+      <find>java</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1221,8 +53,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/eduline/src/main/java/org/jackysoft/edu/Constants.java" />
-        <option value="$PROJECT_DIR$/eduline/pom.xml" />
         <option value="$PROJECT_DIR$/eduline/src/main/java/org/jackysoft/edu/config/MorphiaAutoConfig.java" />
+        <option value="$PROJECT_DIR$/eduline/pom.xml" />
+        <option value="$PROJECT_DIR$/eduline/.gitignore" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -1250,7 +84,8 @@
     <option name="jreName" value="#JAVA_HOME" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
+    <option name="x" value="87" />
+    <option name="y" value="27" />
     <option name="width" value="1726" />
     <option name="height" value="951" />
   </component>
@@ -1272,9 +107,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1283,137 +116,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
               <option name="myItemId" value="idea-edu-workspace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-edu-workspace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-edu-workspace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-edu-workspace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eduline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-edu-workspace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-edu-workspace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eduline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-edu-workspace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-edu-workspace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eduline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-edu-workspace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-edu-workspace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eduline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-edu-workspace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idea-edu-workspace" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="eduline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path" value="D:/appdata/nodejs/node" />
@@ -1426,6 +141,9 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.jackysoft.edu" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\idea-edu-workspace\eduline\target" />
     </key>
   </component>
   <component name="RunManager">
@@ -1775,15 +493,16 @@
       <workItem from="1485002806533" duration="468000" />
       <workItem from="1485005942702" duration="1632000" />
       <workItem from="1485331854987" duration="80000" />
-      <workItem from="1485862234387" duration="3033000" />
+      <workItem from="1485862234387" duration="4101000" />
+      <workItem from="1485866369833" duration="390000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9198000" />
+    <option name="totallyTimeSpent" value="10656000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="0" width="1726" height="951" extended-state="1" />
+    <frame x="87" y="27" width="1726" height="951" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1806,8 +525,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6238651" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34680337" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5162127" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3522316" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Learn" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1838,6 +557,54 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/eduline/src/main/java/org/jackysoft/edu/service/HomeWorkService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1239">
+          <caret line="76" column="64" lean-forward="false" selection-start-line="76" selection-start-column="64" selection-end-line="76" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eduline/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2415">
+          <caret line="115" column="20" lean-forward="true" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eduline/src/main/java/org/jackysoft/edu/config/MorphiaAutoConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-core/3.4.2/mongodb-driver-core-3.4.2-sources.jar!/com/mongodb/MongoCredential.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3990">
+          <caret line="190" column="34" lean-forward="false" selection-start-line="190" selection-start-column="34" selection-end-line="190" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eduline/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/2.12.5/mongo-java-driver-2.12.5-sources.jar!/com/mongodb/MongoCredential.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1176">
+          <caret line="75" column="48" lean-forward="false" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/eduline/src/main/java/org/jackysoft/edu/config/MorphiaAutoConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1954,7 +721,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2010,7 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1006">
           <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2034,7 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1391">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2042,7 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2050,7 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2058,7 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2066,7 +827,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-294">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2074,23 +834,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eduline/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/eduline/src/main/webapp/index.jsp" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/morphia/morphia/1.1.1/morphia-1.1.1-sources.jar!/org/mongodb/morphia/aggregation/AggregationPipeline.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2098,38 +849,61 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-630">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eduline/src/main/java/org/jackysoft/edu/service/HomeWorkService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongodb-driver-core/3.4.2/mongodb-driver-core-3.4.2-sources.jar!/com/mongodb/MongoCredential.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-336">
-          <caret line="76" column="64" lean-forward="false" selection-start-line="76" selection-start-column="64" selection-end-line="76" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eduline/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="115" column="8" lean-forward="false" selection-start-line="115" selection-start-column="8" selection-end-line="119" selection-end-column="21" />
+        <state relative-caret-position="21">
+          <caret line="190" column="34" lean-forward="false" selection-start-line="190" selection-start-column="34" selection-end-line="190" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/2.12.5/mongo-java-driver-2.12.5-sources.jar!/com/mongodb/MongoCredential.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-267">
-          <caret line="75" column="48" lean-forward="true" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="57" />
+        <state relative-caret-position="21">
+          <caret line="75" column="48" lean-forward="false" selection-start-line="75" selection-start-column="34" selection-end-line="75" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eduline/src/main/java/org/jackysoft/edu/config/MorphiaAutoConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="28" column="56" lean-forward="true" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+        <state relative-caret-position="336">
+          <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eduline/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="115" column="20" lean-forward="false" selection-start-line="115" selection-start-column="20" selection-end-line="115" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eduline/src/main/java/org/jackysoft/edu/service/HomeWorkService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="76" column="64" lean-forward="false" selection-start-line="76" selection-start-column="64" selection-end-line="76" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eduline/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" lean-forward="true" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
           <folding />
         </state>
       </provider>
