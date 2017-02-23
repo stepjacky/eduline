@@ -189,7 +189,7 @@ public class CourseScore {
 		if (iscore >= 40 && iscore < 50) {
 			return "E";
 		}
-		if (iscore < 40){
+		if (iscore >0 && iscore <40){
 			return "F";
 		}
 		return null;
