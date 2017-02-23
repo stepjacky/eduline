@@ -100,19 +100,19 @@ public class CourseScore {
 		if (iscore >= 90) {
 			return 4.0f;
 		}
-		if (iscore >= 80 && iscore < 89) {
+		if (iscore >= 80 && iscore < 90) {
 			return 3.5f;
 		}
-		if (iscore >= 70 && iscore < 79) {
+		if (iscore >= 70 && iscore < 80) {
 			return  3.0f;
 		}
-		if (iscore >= 60 && iscore < 69) {
+		if (iscore >= 60 && iscore < 70) {
 			return  2.5f;
 		}
-		if (iscore >= 50 && iscore < 59) {
+		if (iscore >= 50 && iscore < 60) {
 			return  2.0f;
 		}
-		if (iscore >= 40 && iscore < 49) {
+		if (iscore >= 40 && iscore < 50) {
 			return  1.5f;
 		}
 			
@@ -174,20 +174,23 @@ public class CourseScore {
 		if (iscore >= 90) {
 			return "A+";
 		}
-		if (iscore >= 80 && iscore < 89) {
+		if (iscore >= 80 && iscore < 90) {
 			return "A";
 		}
-		if (iscore >= 70 && iscore < 79) {
+		if (iscore >= 70 && iscore < 80) {
 			return "B";
 		}
-		if (iscore >= 60 && iscore < 69) {
+		if (iscore >= 60 && iscore < 70) {
 			return "C";
 		}
-		if (iscore >= 50 && iscore < 59) {
+		if (iscore >= 50 && iscore < 60) {
 			return "D";
 		}
-		if (iscore >= 40 && iscore < 49) {
+		if (iscore >= 40 && iscore < 50) {
 			return "E";
+		}
+		if (iscore < 40){
+			return "F";
 		}
 		return null;
 	}
