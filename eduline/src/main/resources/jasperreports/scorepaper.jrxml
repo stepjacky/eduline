@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2017-02-27T23:44:56 -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invoice_Table_Based" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="85" bottomMargin="85" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+<!-- 2017-02-28T00:14:07 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invoice_Table_Based" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="85" bottomMargin="56" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
 	<property name="template.engine" value="tabular_template"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
 	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
@@ -251,7 +251,7 @@
 	<field name="grandSystem" class="java.lang.String"/>
 	<field name="gpaInfo" class="java.lang.String"/>
 	<title>
-		<band height="194" splitType="Stretch">
+		<band height="129" splitType="Stretch">
 			<staticText>
 				<reportElement mode="Transparent" x="6" y="44" width="86" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="cd4dd7ba-a2a1-41c4-8282-f2ae038db85e"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
@@ -360,9 +360,9 @@
 		</band>
 	</title>
 	<detail>
-		<band height="51">
+		<band height="106">
 			<componentElement>
-				<reportElement x="0" y="-61" width="555" height="101" uuid="e12467a6-1331-4cd8-8555-d24075261ad2"/>
+				<reportElement x="0" y="0" width="555" height="101" uuid="e12467a6-1331-4cd8-8555-d24075261ad2"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 					<datasetRun subDataset="tableDataset" uuid="0fc8ee6f-9af6-416d-941b-db6cd6813375">
 						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{scores})]]></dataSourceExpression>
@@ -628,11 +628,32 @@
 	<columnFooter>
 		<band height="7"/>
 	</columnFooter>
-	<summary>
-		<band height="134" splitType="Stretch">
-			<property name="local_mesure_unitheight" value="pixel"/>
+	<pageFooter>
+		<band height="123">
+			<textField>
+				<reportElement x="38" y="0" width="479" height="18" uuid="2fe98888-1b24-43fc-8f43-faf2af02b87d"/>
+				<textElement textAlignment="Center">
+					<font fontName="仿宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gpaInfo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="21" width="425" height="24" uuid="9611d2db-eb82-4103-89bc-ee07b206f30a"/>
+				<textElement>
+					<font fontName="仿宋"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grandSystem}]]></textFieldExpression>
+			</textField>
 			<staticText>
-				<reportElement mode="Transparent" x="0" y="43" width="382" height="75" forecolor="#000000" backcolor="#FFFFFF" uuid="d4dfc229-c5fb-4d41-a5f1-54d4c6588690"/>
+				<reportElement mode="Transparent" x="-11" y="21" width="130" height="24" forecolor="#000000" backcolor="#FFFFFF" uuid="c371636f-45b1-4d2c-862f-e56cf35bd887"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="仿宋" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="仿宋" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Grading system (评分标准): 
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="-10" y="47" width="382" height="75" forecolor="#000000" backcolor="#FFFFFF" uuid="d4dfc229-c5fb-4d41-a5f1-54d4c6588690"/>
 				<box padding="1">
 					<topPen lineWidth="0.5"/>
 					<leftPen lineWidth="0.5"/>
@@ -647,7 +668,7 @@
 Signed:                      Date （日期）:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="381" y="43" width="173" height="75" forecolor="#000000" backcolor="#FFFFFF" uuid="febd740d-366c-4971-8707-e92b428b79c4"/>
+				<reportElement mode="Transparent" x="380" y="48" width="173" height="75" forecolor="#000000" backcolor="#FFFFFF" uuid="febd740d-366c-4971-8707-e92b428b79c4"/>
 				<box topPadding="1" bottomPadding="1" rightPadding="1">
 					<topPen lineWidth="0.5"/>
 					<leftPen lineWidth="0.5"/>
@@ -661,28 +682,12 @@ Signed:                      Date （日期）:]]></text>
 
 Official Seal （公章）]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="130" y="17" width="425" height="24" uuid="9611d2db-eb82-4103-89bc-ee07b206f30a"/>
-				<textElement>
-					<font fontName="仿宋"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{grandSystem}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement mode="Transparent" x="0" y="18" width="130" height="24" forecolor="#000000" backcolor="#FFFFFF" uuid="c371636f-45b1-4d2c-862f-e56cf35bd887"/>
-				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
-					<font fontName="仿宋" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="仿宋" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
-				</textElement>
-				<text><![CDATA[Grading system (评分标准): 
-]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="33" y="-1" width="479" height="18" uuid="2fe98888-1b24-43fc-8f43-faf2af02b87d"/>
-				<textElement textAlignment="Center">
-					<font fontName="仿宋"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{gpaInfo}]]></textFieldExpression>
-			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 		</band>
 	</summary>
 </jasperReport>
