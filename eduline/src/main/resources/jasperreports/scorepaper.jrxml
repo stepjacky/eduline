@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
-<!-- 2017-02-28T00:19:06 -->
+<!-- 2017-02-28T00:26:30 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invoice_Table_Based" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="85" bottomMargin="56" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
 	<property name="template.engine" value="tabular_template"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
@@ -668,14 +668,15 @@
 Signed:                      Date （日期）:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Transparent" x="384" y="48" width="170" height="75" forecolor="#000000" backcolor="#FFFFFF" uuid="febd740d-366c-4971-8707-e92b428b79c4">
+				<reportElement mode="Transparent" x="385" y="48" width="170" height="75" forecolor="#000000" backcolor="#FFFFFF" uuid="febd740d-366c-4971-8707-e92b428b79c4">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 				</reportElement>
 				<box topPadding="1" bottomPadding="1" rightPadding="1">
-					<topPen lineWidth="0.5"/>
-					<leftPen lineWidth="0.5"/>
-					<bottomPen lineWidth="0.5"/>
-					<rightPen lineWidth="0.5"/>
+					<pen lineColor="#000000"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Bottom" rotation="None" markup="none">
 					<font fontName="仿宋" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="仿宋" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
