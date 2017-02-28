@@ -353,6 +353,7 @@ public class ExamScoreController extends AbstractController<String, ExamScore> {
 		int grade = user.getGrade();
 		int jors = Strings.isNullOrEmpty(sjors) ? (grade <= 9 ? 0 : 1) : Integer.valueOf(sjors);
 		int style = Strings.isNullOrEmpty(sstyle) ? 0 : Integer.parseInt(sstyle);
+		logger.info(style+" is coutry style ");
 		List<ExamScore> items = service.reportCard(user.getUsername());
 		List<Course> courses = service.reportCourse(jors, user.getUsername());
 		ScoreCard sc = new ScoreCard();
@@ -524,7 +525,7 @@ public class ExamScoreController extends AbstractController<String, ExamScore> {
 			gpaInfo.append(String.format("Year %d GPA %.1f", k, size!=0 ?fv/size:0)).append("    ");
 			
 		});
-		sc.setGpaInfo(gpaInfo.toString());
+		sc.setGpaInfo(style==0?"":gpaInfo.toString());
 		JRDataSource ds = new JRRawDataSource<ScoreCard>(sc);
 
 		return ds;

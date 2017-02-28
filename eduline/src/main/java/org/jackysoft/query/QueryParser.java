@@ -44,9 +44,11 @@ public class QueryParser {
 	Collection<QueryField> parseQueryFields(String expr) {
 		List<QueryField> fields = Lists.newArrayList();
 		if (!Strings.isNullOrEmpty(expr)) {
+			logger.info(expr);
 			parseExpress(fields,expr);		
 		}
 		if(!Strings.isNullOrEmpty(this.express)){
+			logger.info(express);
 			parseExpress(fields,this.express);		
 		}
 		qfields.clear();	
@@ -62,6 +64,7 @@ public class QueryParser {
 	}
 	
 	private void parseExpress(final List<QueryField> fields,final String express){
+		logger.info(express);
 		List<String> fieldstr = Splitter.on(outspt).splitToList(express);
 		for (String fs : fieldstr) {
 			List<String> ps = Splitter.on(inspt).splitToList(fs);
@@ -118,9 +121,10 @@ public class QueryParser {
 	}
 	
 	/**
-	 *@see void org.jackysoft.edu.service.ServiceProvider.updatePartial(S id, String props)
+	 *
 	 **/
 	public Map<String,Object> parsePartial(String partial ){
+		logger.info(partial);
 		Map<String,Object> maps = new HashMap<>();
 		Splitter.on(';').split(partial).forEach(f->{
 			List<String> ita = Splitter.on(':').splitToList(f);
