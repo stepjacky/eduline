@@ -124,10 +124,11 @@ public class NoteChapterController extends AbstractController<String, NoteChapte
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.parseMediaType("application/pdf"));
 		headers.setContentLength(ins.available());
+		headers.setPragma("public");
 		headers.setCacheControl("must-revalidate, post-check=0, pre-check=0");
-		headers.setContentDispositionFormData("attachment", "filename.pdf");
+		//headers.setContentDispositionFormData("attachment", "filename.pdf");
 		InputStreamResource isr = new InputStreamResource(ins);
-		return new ResponseEntity<InputStreamResource>(isr, headers, HttpStatus.OK);
+		return new ResponseEntity<>(isr, headers, HttpStatus.OK);
 	}
 	
 	@RequestMapping(value = "/upload/params", method = RequestMethod.POST)

@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <c:set var="base" value="http://${domain}/" />
-<c:set var="sbase" value="${base}" />
+<c:set var="sbase" value="${base}" scope="session" />
 <c:set var="tableClass" value="table table-striped table-bordered table-hover table-condensed" scope="session" />
 <fmt:setBundle basename="application" var="appctx"/>
 <!DOCTYPE html>
@@ -64,6 +64,7 @@
 <script src="${sbase}static/lib/fileupload/js/jquery.fileupload.js"></script>
 <script src="${sbase}static/lib/lodash.js"></script>
 <script src="${sbase}static/lib/pdfjs/build/pdf.js"></script>
+<script src="${sbase}static/lib/pdfobject/pdfobject.js" ></script>
 <script src="${sbase}static/lib/bootbox.js"></script>
 <script src="${sbase}static/lib/pdftool.js"></script>
 
