@@ -1,68 +1,15 @@
 $(function(){
-	var pdfDoc = null, pageNum = 1,pageNums=1, pageRendering = false, pageNumPending = null, scale = 2.0, canvas = document
-			.getElementById('pdfcanvas'), ctx = canvas.getContext('2d');
-	function renderPage(num) {
-		pageRendering = true;
-		// Using promise to fetch the page
-		pdfDoc.getPage(num).then(function(page) {
-			var viewport = page.getViewport(scale);
-			canvas.height = viewport.height;
-			canvas.width = viewport.width;
 
-			// Render PDF page into canvas context
-			var renderContext = {
-				canvasContext : ctx,
-				viewport : viewport
-			};
-			var renderTask = page.render(renderContext);
-
-			// Wait for rendering to finish
-			renderTask.promise.then(function() {
-				pageRendering = false;
-				if (pageNumPending !== null) {
-					// New page rendering is pending
-					renderPage(pageNumPending);
-					pageNumPending = null;
-				}
-			});
-		});
-
-		$('.pageNum').html(pageNum);
-	}
-	function queueRenderPage(num) {
-		if (pageRendering) {
-			pageNumPending = num;
-		} else {
-			renderPage(num);
-		}
-	}
-	function onPrevPage() {
-		if (pageNum <= 1) {
-			return;
-		}
-		pageNum--;
-		queueRenderPage(pageNum);
-	}
-	function onNextPage() {
-		if (pageNum >= pageNums) {
-			return;
-		}
-		pageNum++;
-		$('.pageNum').html(pageNum);
-		queueRenderPage(pageNum);
-	}
-
-	
-	$('.prevPage').on('click', onPrevPage);
-	$('.nextPage').on('click', onNextPage);
-	PDFJS.getDocument(url).then(function(doc) {		
-		pdfDoc = doc;		
-		pageNums = doc.numPages;
-		$('.pageNum').html(pageNum);
-        $('.pageCount').html(pdfDoc.numPages);
-		// Initial/first page rendering
-		renderPage(pageNum);
-	});
+    PDFObject.embed(url, "#pdfcontent",{
+        height: "550px",
+        page: '1',
+        pdfOpenParams: {
+            view: 'Fit',
+            pagemode: 'thumbs',
+            navpanes:1,
+            toobar:0
+        }
+    });
 	
 	var fileId = null;
 	var answer  = [];

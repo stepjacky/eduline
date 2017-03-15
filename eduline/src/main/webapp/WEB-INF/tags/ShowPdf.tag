@@ -3,18 +3,8 @@
 <%@ attribute name="namespace" %>
 <div class="container-fluid" id="${namespace}">
 	<div class="row">
-		<div class="col-md-12">
-			<div class="center-block" style="text-align: center">
-				<button type="button" class="btn btn-xs btn-info prevPage">
-					<i class="fa fa-chevron-left" aria-hidden="true"></i>
-				</button>
-				<button type="button" class="btn btn-xs btn-info nextPage">
-					<i class="fa fa-chevron-right" aria-hidden="true"></i>
-				</button>
-				<span class="badge pageNum"></span>/<span class="badge pageCount"></span>
-			</div>
-			<canvas id="${namespace}-pdfcanvas" style="width: 100%; height: 100%;"></canvas>
-			<div id="pdfcnt"></div>
+		<div class="col-md-12" id="pdfcontent">
+
 		</div>
 	</div>
 </div>
@@ -23,9 +13,19 @@
 	$(function() {
 		var pdfjs = JackyJs.createPDFTool();
 		pdfjs.init({
-			namespace:'${namespace}',
-			pdfcanvas:'pdfcanvas',
-			url:'${url}'
+			selector:'#pdfcontent',
+			url:'${url}',
+			options:{
+                height: "550px",
+                width:'100%',
+                pdfOpenParams: {
+                    view: 'Fit',
+                    pagemode: 'thumbs',
+                    navpanes: 1,
+                    toobar: 1
+                }
+			}
 		});
+		pdfjs.render(1);
 	});
 </script>

@@ -35,19 +35,7 @@
 <div class="container-fluid">
  <div class="row">
     <div class="col-md-12" id="pdfcontent">
-    <div class="center-block" style="text-align:center">
-      <button type="button" class="btn btn-xs btn-info prevPage"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-      <button type="button" class="btn btn-xs btn-info nextPage"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-      <span class="badge pageNum" ></span>
-      <span class="badge pageCount"></span>
-    </div>
-       <canvas id="pdfcanvas" style="width:100%;height:100%;"></canvas> 
-    <div class="center-block" style="text-align:center">
-      <button type="button" class="btn btn-xs btn-info prevPage"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-      <button type="button" class="btn btn-xs btn-info nextPage"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-     <span class="badge pageNum" ></span>
-      <span class="badge pageCount"></span>
-    </div>    
+
     </div>
   </div>
 </div> 
