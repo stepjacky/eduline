@@ -129,11 +129,8 @@ public class XpConfirm {
 				+ "of Year 7 and Year 8 includes completion of Junior High School curriculum prescribed by Beijing "
 				+ "Education Commission and part of the syllabus of Checkpoint by Cambridge International Examinations. "
 				+ "In Year 9 students begin to work on IGCSE (International General Certificate of Secondary Education) "
-				+ "by Cambridge International Examinations." 
-				+ "\n\nThe above-mentioned student will completed all subjects as required, obtained Leaving Certificate of Junior "
-				+ "High School from Beijing Education Commission and sat for IGCSE exams in (5) subjects."
+				+ "by Cambridge International Examinations."
 				+ "\n\nThe course started in September %d and will finish at the end of June %d .";
-
         return String.format(s, this.getName(),this.getDobYear(),this.getDobMonth(),this.getDobDayOfMonth()
         		,this.getInputYear(),this.getOutputYear()
         		);      
@@ -148,7 +145,6 @@ public class XpConfirm {
 				+ "Music, Art and Physical Education. The AS and A-Level Courses include: Mathematics, Further Mathematics, "
 				+ "Chemistry, Physics, Chinese, Music, Art, Physical Education and English for Academic Purposes. "
 				+ "\n\nThe course started in September %d and will finish at the end of June %d .";
-		
 		 return String.format(s, this.getName(),this.getDobYear(),this.getDobMonth(),this.getDobDayOfMonth()
 	        		,this.getInputYear(),this.getOutputYear()
 	        		);  
@@ -162,10 +158,7 @@ public class XpConfirm {
 	public String getUsContent() {
 		return grade<=9?this.getJuniorUs():this.getSeniorUs();
 	}
-	
-	
-	
-	
+
 	
 	
 }
