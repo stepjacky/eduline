@@ -8,7 +8,7 @@ import org.jackysoft.edu.entity.SysUser;
 import org.jackysoft.edu.entity.UserEvent;
 import org.jackysoft.edu.formbean.UserEventBean;
 import org.jackysoft.edu.formbean.UserEventBody;
-import org.jackysoft.edu.service.AbstractService;
+import org.jackysoft.edu.service.base.AbstractService;
 import org.jackysoft.edu.service.UserEventService;
 import org.jackysoft.query.Pager;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -11,7 +11,7 @@ import org.apache.commons.lang.StringUtils;
 import org.jackysoft.edu.entity.SysUser;
 import org.jackysoft.edu.extend.jasperreport.JRRawDataSource;
 import org.jackysoft.edu.formbean.XpConfirm;
-import org.jackysoft.edu.service.AbstractService;
+import org.jackysoft.edu.service.base.AbstractService;
 import org.jackysoft.edu.service.SysUserService;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;

@@ -5,7 +5,7 @@ import java.util.List;
 import org.jackysoft.edu.entity.Course;
 import org.jackysoft.edu.entity.CourseInGrade;
 import org.jackysoft.edu.entity.Grade;
-import org.jackysoft.edu.service.AbstractService;
+import org.jackysoft.edu.service.base.AbstractService;
 import org.jackysoft.edu.service.CourseInGradeService;
 import org.jackysoft.edu.service.CourseService;
 import org.jackysoft.edu.service.GradeService;

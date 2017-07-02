@@ -9,6 +9,8 @@ import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.CourseInGradeMapper;
 import org.jackysoft.edu.mapper.CourseMapper;
 import org.jackysoft.edu.mapper.GradeMapper;
+import org.jackysoft.edu.service.base.AbstractSQLService;
+import org.jackysoft.edu.service.base.PreResult;
 import org.jackysoft.query.QueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +20,7 @@ import com.google.common.collect.Maps;
 
 @Service
 @Transactional("transactionManager")
-public class CourseInGradeService extends AbstractSQLService<String, CourseInGrade>{
+public class CourseInGradeService extends AbstractSQLService<String, CourseInGrade> {
 
 	@Autowired
 	private CourseInGradeMapper mapper;

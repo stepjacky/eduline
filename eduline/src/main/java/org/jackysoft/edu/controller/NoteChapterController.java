@@ -20,7 +20,7 @@ import org.apache.commons.beanutils.PropertyUtils;
 import org.imgscalr.Scalr;
 import org.jackysoft.edu.entity.NoteChapter;
 import org.jackysoft.edu.formbean.ZtreeNode;
-import org.jackysoft.edu.service.AbstractService;
+import org.jackysoft.edu.service.base.AbstractService;
 import org.jackysoft.edu.service.NoteChapterService;
 import org.jackysoft.file.CMD;
 import org.jackysoft.file.ChannelManager;
@@ -157,13 +157,7 @@ public class NoteChapterController extends AbstractController<String, NoteChapte
 		service.updateSimple(id, "anwserHead", heads);
 		return mav;
 	}
-	
-	@GetMapping("/chapter/refresh/homework/{id}")
-	public ModelAndView refreshed(@PathVariable("id")String id){
-		
-		service.refreshHomeWork(id);
-		return new ModelAndView("upload");
-	}
+
 	
 	protected void proceedUpload(NoteChapter bean, Part part) throws Exception {
 

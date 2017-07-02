@@ -14,7 +14,7 @@ import javax.servlet.http.Part;
 
 import org.jackysoft.edu.entity.Course;
 import org.jackysoft.edu.entity.ExamPaper;
-import org.jackysoft.edu.service.AbstractService;
+import org.jackysoft.edu.service.base.AbstractService;
 import org.jackysoft.edu.service.CourseService;
 import org.jackysoft.edu.service.ExamPaperService;
 import org.jackysoft.query.Pager;

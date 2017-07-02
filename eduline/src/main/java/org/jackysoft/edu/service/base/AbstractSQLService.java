@@ -1,4 +1,4 @@
-package org.jackysoft.edu.service;
+package org.jackysoft.edu.service.base;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -296,7 +296,7 @@ public abstract class AbstractSQLService<S, T> extends AbstractService<S, T> {
 		return nodes;
 	}
 
-	@Override
+
 	public abstract AbstractMapper<S, T> getMapper();
 
 }

@@ -16,14 +16,12 @@ import java.util.UUID;
 
 import javax.servlet.http.Part;
 
-import org.apache.commons.beanutils.PropertyUtils;
 import org.jackysoft.edu.entity.Course;
 import org.jackysoft.edu.entity.Grade;
 import org.jackysoft.edu.entity.HomeWork;
 import org.jackysoft.edu.entity.LectureNotes;
-import org.jackysoft.edu.entity.NoteChapter;
 import org.jackysoft.edu.entity.SysUser;
-import org.jackysoft.edu.service.AbstractService;
+import org.jackysoft.edu.service.base.AbstractService;
 import org.jackysoft.edu.service.CourseService;
 import org.jackysoft.edu.service.GradeService;
 import org.jackysoft.edu.service.HomeWorkService;
@@ -47,7 +45,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 

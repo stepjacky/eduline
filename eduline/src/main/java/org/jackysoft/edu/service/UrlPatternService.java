@@ -3,6 +3,7 @@ package org.jackysoft.edu.service;
 import org.jackysoft.edu.entity.UrlPattern;
 import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.UrlPatternMapper;
+import org.jackysoft.edu.service.base.AbstractSQLService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

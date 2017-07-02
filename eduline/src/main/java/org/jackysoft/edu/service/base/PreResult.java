@@ -1,4 +1,4 @@
-package org.jackysoft.edu.service;
+package org.jackysoft.edu.service.base;
 
 import java.util.HashMap;
 

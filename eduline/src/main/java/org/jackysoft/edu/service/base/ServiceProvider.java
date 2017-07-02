@@ -1,4 +1,4 @@
-package org.jackysoft.edu.service;
+package org.jackysoft.edu.service.base;
 
 import java.util.List;
 
@@ -21,10 +21,13 @@ public interface ServiceProvider<S,T> {
     PreResult  save(T t);
     List<PreResult> saveAll(List<T> list);
     void update(T t);
+    void sort(S s,int sort);
     /**
-	 * @param s 主键,符合主键格式
+     *
+     *  更新由props属性特征所代表的属性,并根据条件s 定位
+	 * @param id 主键,符合主键格式
 	 * @param props 属性字符串 name:value[;name:value]
-	 * @see 更新由props属性特征所代表的属性,并根据条件s 定位
+
 	 * */
     void updatePartial(S id,String props);
     void updateSimple(S id,String key,String value);
@@ -34,6 +37,6 @@ public interface ServiceProvider<S,T> {
     void upload(T bean , Part part);
     List<ZtreeNode> ztree(String parent);
     
-    AbstractMapper<S,T> getMapper();   
+
     
 }

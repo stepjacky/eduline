@@ -10,6 +10,8 @@ import org.jackysoft.edu.entity.SysUser;
 import org.jackysoft.edu.entity.UserEvent;
 import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.UserEventMapper;
+import org.jackysoft.edu.service.base.AbstractSQLService;
+import org.jackysoft.edu.service.base.PreResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 import org.jackysoft.query.QueryParser;

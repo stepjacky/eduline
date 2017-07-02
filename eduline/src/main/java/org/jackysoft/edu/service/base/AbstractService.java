@@ -1,4 +1,4 @@
-package org.jackysoft.edu.service;
+package org.jackysoft.edu.service.base;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 
 	@Override
 	public List<T> findAll() {
-		// TODO Auto-generated method stub
+
 		return null;
 	}
 
@@ -109,7 +109,7 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 
 	@Override
 	public void upload(T bean, Part part) {
-		// TODO Auto-generated method stub
+
 
 	}
 
@@ -120,9 +120,7 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 	}
 
 	@Override
-	public AbstractMapper<S, T> getMapper() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public void sort(S s, int sort) {
 
+	}
 }

@@ -19,7 +19,7 @@ import org.jackysoft.edu.formbean.ChartDataSource;
 import org.jackysoft.edu.formbean.ViolateBean;
 import org.jackysoft.edu.formbean.ViolateResult;
 import org.jackysoft.edu.formbean.ViolatesCard;
-import org.jackysoft.edu.service.AbstractService;
+import org.jackysoft.edu.service.base.AbstractService;
 import org.jackysoft.edu.service.GroupMemberService;
 import org.jackysoft.edu.service.SysUserService;
 import org.jackysoft.edu.service.ViolatesService;

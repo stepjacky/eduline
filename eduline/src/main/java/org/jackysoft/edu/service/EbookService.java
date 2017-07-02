@@ -6,6 +6,7 @@ import java.util.Set;
 import org.jackysoft.edu.entity.Ebook;
 import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.EbookMapper;
+import org.jackysoft.edu.service.base.AbstractSQLService;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 import org.slf4j.Logger;

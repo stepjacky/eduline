@@ -1,4 +1,4 @@
-package org.jackysoft.edu.service;
+package org.jackysoft.edu.service.base;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -7,11 +7,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.Part;
 
+import com.google.common.base.Strings;
 import com.mongodb.AggregationOptions;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.bson.types.ObjectId;
 import org.jackysoft.edu.entity.NoEntity;
 import org.jackysoft.edu.formbean.ZtreeNode;
@@ -30,7 +34,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.mongodb.WriteResult;
 
 public abstract class AbstractMongoService<E extends NoEntity> extends AbstractService<String, E> {
-  
+
+	static final Log logger = LogFactory.getLog(AbstractMongoService.class);
+
 	protected Class<E> type;
 	
 	private Map<String,Field> fields = new HashMap<>();
@@ -39,6 +45,7 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 			.outputMode(AggregationOptions.OutputMode.CURSOR)
 
 						.build();
+
 
 	@PostConstruct
 	public void initialize(){
@@ -226,24 +233,28 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 	}
 
 	@Override
-	public List<ZtreeNode> ztree(String parent) {
-		List<E> list = dataStore.createQuery(type).field("parent").equal(parent).asList();
-		List<ZtreeNode> nodes = new ArrayList<>();
-		list.forEach(e-> nodes.add(e.toZtreeNode()));
-		return nodes;
+	public void sort(String s, int sort) {
+		Query<E> query = this.dataStore.createQuery(type)
+		                 .field(Mapper.ID_KEY).equal(s);
+		UpdateOperations<E> updates  =this.dataStore.createUpdateOperations(type).set("sort",sort);
+		this.dataStore.update(query,updates);
 	}
 
 	@Override
-	public AbstractMapper<String, E> getMapper() {
-		
-		throw new UnsupportedOperationException();
-		
+	public List<ZtreeNode> ztree(String parent) {
+		List<ZtreeNode> nodes = new ArrayList<>();
+
+		if(Strings.isNullOrEmpty(parent)) {
+			logger.warn("parent is empty string");
+			return nodes;
+		}
+		List<E> list = dataStore.createQuery(type)
+				.field("parent").equal(parent)
+				.order("sort")
+				.asList();
+
+		nodes.addAll(list.stream().map(E::toZtreeNode).collect(Collectors.toList()));
+		return nodes;
 	}
-	
-	
-	
-	
-	
-	
 	
 }

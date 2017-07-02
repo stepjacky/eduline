@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.jackysoft.edu.entity.GroupMember;
 import org.jackysoft.edu.formbean.MemberBean;
-import org.jackysoft.edu.service.AbstractService;
+import org.jackysoft.edu.service.base.AbstractService;
 import org.jackysoft.edu.service.GroupMemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

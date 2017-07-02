@@ -13,6 +13,8 @@ import org.jackysoft.edu.formbean.ChartDataSource;
 import org.jackysoft.edu.formbean.ViolateResult;
 import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.ViolatesMapper;
+import org.jackysoft.edu.service.base.AbstractSQLService;
+import org.jackysoft.edu.service.base.PreResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 import org.jackysoft.utils.DateUtils;

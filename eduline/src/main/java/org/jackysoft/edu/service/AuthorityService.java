@@ -3,6 +3,8 @@ package org.jackysoft.edu.service;
 import org.jackysoft.edu.entity.Authority;
 import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.AuthorityMapper;
+import org.jackysoft.edu.service.base.AbstractSQLService;
+import org.jackysoft.edu.service.base.PreResult;
 import org.jackysoft.query.QueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

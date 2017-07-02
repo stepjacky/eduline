@@ -2,7 +2,6 @@ package org.jackysoft.edu.controller;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -11,7 +10,7 @@ import java.util.UUID;
 import javax.servlet.http.Part;
 
 import org.jackysoft.edu.entity.Ebook;
-import org.jackysoft.edu.service.AbstractService;
+import org.jackysoft.edu.service.base.AbstractService;
 import org.jackysoft.edu.service.EbookService;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
