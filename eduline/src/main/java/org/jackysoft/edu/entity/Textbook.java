@@ -1,17 +1,26 @@
 package org.jackysoft.edu.entity;
 
 import org.jackysoft.edu.annotation.Table;
+import org.mongodb.morphia.annotations.Embedded;
 
 @Table(label = "课本")
 public class Textbook  extends NoEntity{
+
+
     String name;
-    int grade = 7;
-    int course;
+
+    //年级
+    @Embedded
+    NameValue grade = new NameValue("7");
+
+    //课程
+    @Embedded
+    NameValue course;
 
     /**
      * 章节根ID
      * */
-    String chapter;
+    String chapterRoot;
 
     public String getName() {
         return name;
@@ -21,27 +30,29 @@ public class Textbook  extends NoEntity{
         this.name = name;
     }
 
-    public int getGrade() {
+
+    public NameValue getGrade() {
         return grade;
     }
 
-    public void setGrade(int grade) {
+    public void setGrade(NameValue grade) {
         this.grade = grade;
     }
 
-    public int getCourse() {
+    public NameValue getCourse() {
         return course;
     }
 
-    public void setCourse(int course) {
+    public void setCourse(NameValue course) {
         this.course = course;
     }
 
-    public String getChapter() {
-        return chapter;
+
+    public String getChapterRoot() {
+        return chapterRoot;
     }
 
-    public void setChapter(String chapter) {
-        this.chapter = chapter;
+    public void setChapterRoot(String chapterRoot) {
+        this.chapterRoot = chapterRoot;
     }
 }

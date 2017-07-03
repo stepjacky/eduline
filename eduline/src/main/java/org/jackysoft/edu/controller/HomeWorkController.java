@@ -21,13 +21,11 @@ import javax.servlet.http.Part;
 import org.imgscalr.Scalr;
 import org.jackysoft.edu.entity.GroupMember;
 import org.jackysoft.edu.entity.HomeWork;
-import org.jackysoft.edu.entity.LectureNotes;
 import org.jackysoft.edu.entity.NoteChapter;
 import org.jackysoft.edu.entity.SysUser;
 import org.jackysoft.edu.service.base.AbstractService;
 import org.jackysoft.edu.service.GroupMemberService;
 import org.jackysoft.edu.service.HomeWorkService;
-import org.jackysoft.edu.service.LectureNotesService;
 import org.jackysoft.edu.service.NoteChapterService;
 import org.jackysoft.edu.service.base.PreResult;
 import org.jackysoft.file.CMD;
@@ -66,10 +64,7 @@ public class HomeWorkController extends AbstractController<String,HomeWork>{
 	
 	@Autowired
 	protected NoteChapterService chapterService;
-	
-	
-	@Autowired
-	protected LectureNotesService lectureService;
+
 	
 	@Value("${noteDir}")
 	protected String noteDir;
