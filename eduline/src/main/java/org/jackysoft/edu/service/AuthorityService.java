@@ -4,7 +4,7 @@ import org.jackysoft.edu.entity.Authority;
 import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.AuthorityMapper;
 import org.jackysoft.edu.service.base.AbstractSQLService;
-import org.jackysoft.edu.service.base.PreResult;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.QueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -24,7 +24,7 @@ public class AuthorityService extends AbstractSQLService<String, Authority> {
 	
 	
 	@Override@PreAuthorize("hasRole('ROLE_ADMIN')")
-	public PreResult save(Authority t) {
+	public ActionResult save(Authority t) {
 		// TODO Auto-generated method stub
 		return super.save(t);
 	}

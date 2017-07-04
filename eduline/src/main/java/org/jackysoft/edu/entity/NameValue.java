@@ -12,6 +12,15 @@ public class NameValue {
     public NameValue() {
     }
 
+    /**
+     * @param  name 名称
+     * @param  value 内部值
+     * */
+    public NameValue(String name, String value) {
+        this.name = name;
+        this.value = value;
+    }
+
     public NameValue(String value) {
         this.value = value;
     }

@@ -2,21 +2,20 @@ package org.jackysoft.edu.service;
 
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.bson.types.ObjectId;
-import org.jackysoft.edu.entity.HomeWork;
+import org.jackysoft.edu.entity.*;
 import org.jackysoft.edu.service.base.AbstractMongoService;
-import org.jackysoft.edu.service.base.PreResult;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
-import org.mongodb.morphia.aggregation.Accumulator;
-import org.mongodb.morphia.aggregation.Group;
-import org.mongodb.morphia.aggregation.Sort;
+import org.jackysoft.utils.HomeworkConstant;
 import org.mongodb.morphia.mapping.Mapper;
 import org.mongodb.morphia.query.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.google.common.base.Strings;
@@ -25,175 +24,116 @@ import com.google.common.base.Strings;
 public class HomeWorkService extends AbstractMongoService<HomeWork> {
 
 	static final Logger logger = LoggerFactory.getLogger(HomeWorkService.class);
-	// 某学生的未交作业
-	public Pager<HomeWork> studentUnsubmits(int page, String username) {
-		return userHomeWorks(page, "student", username, null, HomeWork.UNSUBMITED, HomeWork.UNSCORED);
+
+	@Autowired
+	private GroupMemberService groupService;
+	//某学生的作业
+	public Pager<HomeWorkTaken> studentHomeworks(int page, String username,String status) {
+		return homeworkByStatus(page, "student", username,"status", HomeworkConstant.HoweworkStatus.valueOf(status));
 	}
 
-	// 某学生的已交并且打过分的作业
-	public Pager<HomeWork> studentScored(int page, String username) {
-		return userHomeWorks(page, "student", username, null, HomeWork.SUBMITED, HomeWork.SCORED);
+
+	//某老师的作业
+	public Pager<HomeWorkTaken> teacherHomeworks(int page, String username,String status) {
+		return homeworkByStatus(page, "teacher", username, "status", HomeworkConstant.HoweworkStatus.valueOf(status));
 	}
 
-	// 某学生的已交并且未打过分的作业
-	public Pager<HomeWork> studentUnScored(int page, String username) {
-		return userHomeWorks(page, "student", username, null, HomeWork.SUBMITED, HomeWork.UNSCORED);
-	}
+	private Pager<HomeWorkTaken> homeworkByStatus(
+			int page,
+			String participantKey,
+			String participantValue,
+			String statusKey,
+			HomeworkConstant.HoweworkStatus status) {
 
-	// 某老师的所有未交作业
-	public Pager<HomeWork> teacherUnsubmits(int page, String workId, String username) {
-
-		return userHomeWorks(page, "teacher", username, workId, HomeWork.UNSUBMITED, HomeWork.UNSCORED);
-	}
-
-	// 某老师的已交作业,已打分
-	public Pager<HomeWork> teacherScored(int page, String workId, String username) {
-
-		return userHomeWorks(page, "teacher", username, workId, HomeWork.SUBMITED, HomeWork.SCORED);
-	}
-
-	// 某老师的已交作业,未打分
-	public Pager<HomeWork> teacherUnscored(int page, String workId, String username) {
-
-		return userHomeWorks(page, "teacher", username, workId, HomeWork.SUBMITED, HomeWork.UNSCORED);
-	}
-
-	/**
-	 * 某老师历次作业
-	 * 
-	 */
-	public Pager<HomeWork> teacherHomeworks(int page, String username) {
-
-		Query<HomeWork> query = dataStore.createQuery(type).field("teacher").equal(username);
-
-		Iterator<HomeWork> itr = dataStore.createAggregation(type)
-
-				.group(Group.id(Group.grouping("teacher"), Group.grouping("workId")),
-						Group.grouping("workId", Group.first("workId")),
-						Group.grouping("course", Group.first("course")),
-						Group.grouping("courseName", Group.first("courseName")),
-						Group.grouping("teacher", Group.first("teacher")),
-						Group.grouping("groupId", Group.first("groupId")),
-						Group.grouping("firetime", Group.first("firetime")),
-						Group.grouping("count", new Accumulator("$sum", 1)))
-				.sort(new Sort("firetime", -1))
-				.match(query)
-				.aggregate(HomeWork.class,
-						aggregationOptions
-						);
-		long count = 0;
-		while (itr.hasNext()) {
-			HomeWork cr = itr.next();
-			if (cr == null)
-				continue;
-			count ++;
-		}
-
-		itr = dataStore.createAggregation(type)
-
-				.group(Group.id(Group.grouping("teacher"), Group.grouping("workId")),
-						Group.grouping("workId", Group.first("workId")),
-						Group.grouping("course", Group.first("course")),
-						Group.grouping("courseName", Group.first("courseName")),
-						Group.grouping("teacher", Group.first("teacher")),
-						Group.grouping("groupId", Group.first("groupId")),
-						Group.grouping("groupName",Group.first("groupName")),
-						Group.grouping("firetime", Group.first("firetime")),
-						Group.grouping("count", new Accumulator("$sum", 1)))
-				.sort(new Sort("firetime", -1)).match(query).limit(Pager.DEFAULT_OFFSET)
-				.skip((page < 0 ? 0 : page) * Pager.DEFAULT_OFFSET).aggregate(HomeWork.class,aggregationOptions);
-		List<HomeWork> dataList = new ArrayList<>();
-		while (itr.hasNext()) {
-			HomeWork cr = itr.next();
-			if (cr == null)
-				continue;
-			dataList.add(cr);
-		}
-		Pager<HomeWork> pager = Pager.build(page, count, dataList);
-		return pager;
-
-	}
-
-	private Pager<HomeWork> userHomeWorks(int page, String userKey, String userValue, String workId, int submitStatus,
-			int scoreStatus) {
-		if (Strings.isNullOrEmpty(userKey))
+		if (Strings.isNullOrEmpty(participantKey))
 			return Pager.EMPTY_PAGER();
-		Query<HomeWork> query = dataStore.createQuery(type).field(userKey).equal(userValue).field("submitStatus")
-				.equal(submitStatus).field("scoreStatus").equal(scoreStatus).order("-firetime");
-		if (!Strings.isNullOrEmpty(workId)) {
-			query.field("workId").equal(workId);
-		}
+		Query<HomeWorkTaken> query = query(HomeWorkTaken.class)
+				.field(participantKey+".value").equal(participantValue)
+				.field(statusKey)
+				.equal(status.getKey())
+				.order("-submitDate");
+
 		long count = dataStore.getCount(query);
-		List<HomeWork> dataList = query.limit(Pager.DEFAULT_OFFSET).offset((page < 0 ? 0 : page) * Pager.DEFAULT_OFFSET)
+		List<HomeWorkTaken> dataList = query.limit(Pager.DEFAULT_OFFSET).offset((page < 0 ? 0 : page) * Pager.DEFAULT_OFFSET)
 				.asList();
-		Pager<HomeWork> pager = Pager.build(page, count, dataList);
+		Pager<HomeWorkTaken> pager = Pager.build(page, count, dataList);
 		return pager;
 	}
 
-	// 提交作业
-	public void submitHomeWork(String id, String answer, String answerDoc) {
-		Query<HomeWork> query = dataStore.createQuery(type).field(Mapper.ID_KEY).equal(new ObjectId(id));
-		dataStore.update(query, dataStore.createUpdateOperations(type).set("submitStatus", HomeWork.SUBMITED)
-				.set("finishtime", Instant.now().toEpochMilli()).set("answer", answer).set("answerDoc", answerDoc));
+	//交作业
+	public void submitHomework(String id, List<String> choice, List<String> explain) {
+		Query<HomeWorkTaken> query = query(HomeWorkTaken.class)
+				.field(Mapper.ID_KEY)
+				.equal(new ObjectId(id));
+		dataStore.update(query,
+				updates(HomeWorkTaken.class)
+						.set("status", HomeworkConstant.HoweworkStatus.submited.getKey())
+						.set("submitDate", Instant.now().toEpochMilli())
+						.set("choice", choice)
+						.set("explain", explain));
 
 	}
-	
-	public void updateAnswerDoc(String id, String answerDoc){
-		Query<HomeWork> query = dataStore.createQuery(type).field(Mapper.ID_KEY).equal(new ObjectId(id));
-		dataStore.update(query, dataStore.createUpdateOperations(type)
-				.set("submitStatus", HomeWork.SUBMITED)
-				.set("answerDoc", answerDoc));
+
+
+	//更新解答题作业答案
+	public void updateExplain(String id, List<String> values){
+		updateAnwser(id,"explain",values);
 	}
 
-	// 给作业打分
-	public void scoredHomeWork(String id, HomeWork work) {
-		Query<HomeWork> query = dataStore.createQuery(type).field(Mapper.ID_KEY).equal(new ObjectId(id));
-		dataStore.update(query, dataStore.createUpdateOperations(type)
-				.set("finishtime", Instant.now().toEpochMilli())
+	//更新选择题答案
+	public void updateChoice(String id,List<String> values){
+		updateAnwser(id,"choice",values);
+	}
+
+
+	private final void updateAnwser(String id,String keyName,List<String> values){
+		Query<HomeWorkTaken> query = query(HomeWorkTaken.class)
+				.field(Mapper.ID_KEY).equal(new ObjectId(id));
+		dataStore.update(query,
+				updates(HomeWorkTaken.class)
+						.set(keyName, values));
+	}
+
+
+	//作业打分
+	public void readedHomeWork(String id, HomeWorkTaken work) {
+		Query<HomeWorkTaken> query = query(HomeWorkTaken.class)
+				.field(Mapper.ID_KEY).equal(new ObjectId(id));
+		dataStore.update(query, updates(HomeWorkTaken.class)
+				.set("readDate", Instant.now().toEpochMilli())
 				.set("score", work.getScore())
-				.set("scoreStatus", HomeWork.SCORED)
-				.set("note", work.getNote())
-				.set("answerResult", work.getAnswerResult())
-				);
-	}
-	
-	public List<HomeWork> studentLectures(String student){
-		List<HomeWork> lists = dataStore.createQuery(type).field("student").equal(student)
-		.order("-firetime")
-		.asList();
-		logger.info("{}", lists);
-		return lists;
+				.set("status", HomeworkConstant.HoweworkStatus.readed.getKey())
+				.set("yelp", work.getYelp()));
 	}
 
 	@Override
-	public List<PreResult> saveAll(List<HomeWork> list) {
-		List<PreResult> rs = new ArrayList<>();
+	public List<ActionResult> saveAll(List<HomeWork> list) {
+		List<ActionResult> rs = new ArrayList<>();
 		list.forEach(w->  rs.add(save(w)));
 		return rs;
 	}
 
 	@Override
-	public PreResult save(HomeWork e) {
-		Iterator<HomeWork> itr =	this.dataStore.createQuery(type)
-		.field("teacher").equal(e.getTeacher())
-		.field("student").equal(e.getStudent())
-		.field("chapter").equal(e.getChapter()).iterator();
-		if(itr.hasNext()) return PreResult.FAILURE;
-		return super.save(e);
+	public ActionResult save(HomeWork homeWork) {
+
+		if(homeWork==null
+				|| homeWork.getGroups()==null
+				|| homeWork.getGroups().isEmpty()
+				) return ActionResult.FAILURE;
+		ActionResult rst = super.save(homeWork);
+		SysUser owner = (SysUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		for(String gid:homeWork.getGroups()){
+			List<GroupMember> tmp = groupService.findMembersOfGroup(gid);
+			if(tmp==null || tmp.isEmpty()) continue;
+			tmp.forEach(gm->{
+				HomeWorkTaken taken = new HomeWorkTaken();
+				taken.setStudent(new NameValue(gm.getStudentName(),gm.getStudent()));
+				taken.setHomework(homeWork);
+				taken.setTeacher(new NameValue(owner.getNickname(),owner.getUsername()));
+				dataStore.save(taken);
+			});
+		}
+		return rst;
 	}
-	
-	public void updateHeads(String chpId,String heads){
-		Query<HomeWork> query = dataStore.createQuery(type)
-				.field("chapter").equal(chpId);
-		
-		dataStore.update(query, dataStore.createUpdateOperations(type)
-				.set("modelAnswer", heads)
-				);
-		
-				
-	}
-	
-	
-	
 
 }

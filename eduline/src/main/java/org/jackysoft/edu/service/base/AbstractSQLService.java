@@ -20,6 +20,7 @@ import org.jackysoft.edu.entity.SysUser;
 import org.jackysoft.edu.formbean.ZtreeNode;
 import org.jackysoft.edu.formbean.Ztreeable;
 import org.jackysoft.edu.mapper.AbstractMapper;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 import org.jackysoft.utils.DateUtils;
@@ -111,10 +112,10 @@ public abstract class AbstractSQLService<S, T> extends AbstractService<S, T> {
 
 	@Override
 	// @Cacheable(value="#root.targetClass+#root.methodName+#t.toString()")
-	public PreResult save(T t) {
+	public ActionResult save(T t) {
 
 		if (t == null)
-			return PreResult.FAILURE;
+			return ActionResult.FAILURE;
 
 		BeanWrapper bw = new BeanWrapperImpl(t);
 		Set<Entry<String, String>> idSet = Sets.newHashSet();
@@ -186,12 +187,12 @@ public abstract class AbstractSQLService<S, T> extends AbstractService<S, T> {
 		});
 
 		this.getMapper().insert(t);
-		return PreResult.SUCCESS;
+		return ActionResult.SUCCESS;
 	}
 
 	@Override
-	public List<PreResult> saveAll(List<T> list) {
-		List<PreResult> rs = new ArrayList<>();
+	public List<ActionResult> saveAll(List<T> list) {
+		List<ActionResult> rs = new ArrayList<>();
 		if (list == null || list.isEmpty())
 			return rs;
 		

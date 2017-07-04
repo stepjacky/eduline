@@ -1,7 +1,7 @@
 package org.jackysoft.edu.entity;
 
 import org.jackysoft.edu.annotation.Table;
-import org.jackysoft.utils.ResourceConstant;
+import org.jackysoft.utils.HomeworkConstant;
 import org.mongodb.morphia.annotations.Embedded;
 
 @Table(label = "教学资源")
@@ -10,17 +10,17 @@ public class Resourceware extends NoEntity{
     /**
      * 公共或者个人
      * */
-    String commonType  = ResourceConstant.CommonType.personal.name();
+    String commonType  = HomeworkConstant.CommonType.personal.name();
 
     /**
      * 类别
      * */
-    String styleType  = ResourceConstant.ContentStyle.course.name();
+    String styleType  = HomeworkConstant.ContentStyle.course.name();
 
     /**
      * 内容类别
      * */
-    String detailType  = ResourceConstant.DetailType.word.name();
+    String detailType  = HomeworkConstant.DetailType.word.name();
 
     String name;
     String realpath;

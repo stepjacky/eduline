@@ -23,7 +23,7 @@ import org.jackysoft.edu.entity.UserLogger;
 import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.SysUserMapper;
 import org.jackysoft.edu.service.base.AbstractSQLService;
-import org.jackysoft.edu.service.base.PreResult;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 import org.jackysoft.utils.DateUtils;
@@ -89,7 +89,7 @@ public class SysUserService extends AbstractSQLService<String, SysUser> implemen
 		updatePartial(username, "password:123456");		
 	}
 	
-	public PreResult importsUsers(InputStream inputs) throws IOException, EncryptedDocumentException, InvalidFormatException{
+	public ActionResult importsUsers(InputStream inputs) throws IOException, EncryptedDocumentException, InvalidFormatException{
 		
 			Workbook wb = WorkbookFactory.create(inputs);				
 				for (int s = 0; s < wb.getNumberOfSheets(); s++) {
@@ -137,7 +137,7 @@ public class SysUserService extends AbstractSQLService<String, SysUser> implemen
 
 	@Override
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	public PreResult save(SysUser user) {
+	public ActionResult save(SysUser user) {
 		if (user == null)
 			return null;
 		user.setPassword(passwordEncoder.encode("123456"));

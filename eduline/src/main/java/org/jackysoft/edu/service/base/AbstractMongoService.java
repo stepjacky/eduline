@@ -19,7 +19,7 @@ import org.apache.commons.logging.LogFactory;
 import org.bson.types.ObjectId;
 import org.jackysoft.edu.entity.NoEntity;
 import org.jackysoft.edu.formbean.ZtreeNode;
-import org.jackysoft.edu.mapper.AbstractMapper;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 import org.jackysoft.query.QueryField;
@@ -75,7 +75,7 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 	@Autowired
 	protected Datastore dataStore;
 	
-	public PreResult save(E e){
+	public ActionResult save(E e){
 		Query<E> query = dataStore.createQuery(type).field(Mapper.ID_KEY).equal(e.getId());
 		
 		E t = query.get();		
@@ -181,7 +181,7 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 	}
 
 	@Override
-	public List<PreResult> saveAll(List<E> list) {
+	public List<ActionResult> saveAll(List<E> list) {
 		if(list==null) return null;
 		dataStore.save(list);
 		return null;
@@ -230,6 +230,22 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 	public void upload(E bean, Part part) {
 
 		
+	}
+
+	protected Query<E> query(){
+		return this.dataStore.createQuery(type);
+	}
+	protected <T> Query<T> query(Class<T> cls){
+		return this.dataStore.createQuery(cls);
+	}
+
+
+	protected UpdateOperations<E> updates(){
+		return this.dataStore.createUpdateOperations(type);
+	}
+
+	protected <T> UpdateOperations<T> updates(Class<T> cls){
+		return this.dataStore.createUpdateOperations(cls);
 	}
 
 	@Override

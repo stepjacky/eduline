@@ -14,7 +14,7 @@ import org.jackysoft.edu.formbean.ViolateResult;
 import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.ViolatesMapper;
 import org.jackysoft.edu.service.base.AbstractSQLService;
-import org.jackysoft.edu.service.base.PreResult;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 import org.jackysoft.utils.DateUtils;
@@ -69,7 +69,7 @@ public class ViolatesService extends AbstractSQLService<String, Violates> {
 	
 	
 	@Override
-	public PreResult save(Violates t) {
+	public ActionResult save(Violates t) {
 		if(t==null)return null;
 		Authentication author = SecurityContextHolder.getContext().getAuthentication();
 		SysUser teacher = (SysUser) author;

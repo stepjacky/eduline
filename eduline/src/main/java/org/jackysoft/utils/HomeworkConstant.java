@@ -1,6 +1,6 @@
 package org.jackysoft.utils;
 
-public interface ResourceConstant {
+public interface HomeworkConstant {
 
     enum CommonType {
         common("大家的分享")
@@ -12,6 +12,7 @@ public interface ResourceConstant {
         public String getName(){
             return name;
         }
+        public String getKey(){return name();}
         public int getValue(){
             return ordinal();
         }
@@ -31,6 +32,7 @@ public interface ResourceConstant {
         public String getName(){
             return name;
         }
+        public String getKey(){return name();}
         public int getValue(){
             return ordinal();
         }
@@ -49,6 +51,7 @@ public interface ResourceConstant {
         public String getName(){
             return name;
         }
+        public String getKey(){return name();}
         public int getValue(){
             return ordinal();
         }
@@ -57,7 +60,10 @@ public interface ResourceConstant {
 
     enum HoweworkStatus{
         submited("已交"),
-        unsubmit("未交");
+        unsubmit("未交"),
+        readed("已阅"),
+        notreaded("未阅");
+
         private String name;
         HoweworkStatus(String name){
             this.name = name;
@@ -65,6 +71,7 @@ public interface ResourceConstant {
         public String getName(){
             return name;
         }
+        public String getKey(){return name();}
         public int getValue(){
             return ordinal();
         }

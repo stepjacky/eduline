@@ -5,7 +5,7 @@ import java.util.List;
 import javax.servlet.http.Part;
 
 import org.jackysoft.edu.formbean.ZtreeNode;
-import org.jackysoft.edu.mapper.AbstractMapper;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 
@@ -60,13 +60,13 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 	}
 
 	@Override
-	public PreResult save(T t) {
+	public ActionResult save(T t) {
 		return null;
 
 	}
 
 	@Override
-	public List<PreResult> saveAll(List<T> list) {
+	public List<ActionResult> saveAll(List<T> list) {
 	    return null;
 
 	}

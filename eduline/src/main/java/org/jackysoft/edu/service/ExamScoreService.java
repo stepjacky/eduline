@@ -39,7 +39,7 @@ import org.jackysoft.edu.formbean.StudentScoreCard;
 import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.ExamScoreMapper;
 import org.jackysoft.edu.service.base.AbstractSQLService;
-import org.jackysoft.edu.service.base.PreResult;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.QueryBuilder;
 import org.jackysoft.utils.StringUtils;
 import org.slf4j.Logger;
@@ -245,7 +245,7 @@ public class ExamScoreService extends AbstractSQLService<String, ExamScore> impl
 
 	@Override
 	@PreAuthorize("hasAnyRole('ROLE_TEACHER','ROLE_ADMIN')")
-	public PreResult save(ExamScore t) {
+	public ActionResult save(ExamScore t) {
 		if (t.getGrade() >= 10)
 			t.setJors(1);
 		return super.save(t);

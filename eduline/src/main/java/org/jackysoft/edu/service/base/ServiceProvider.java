@@ -5,7 +5,7 @@ import java.util.List;
 import javax.servlet.http.Part;
 
 import org.jackysoft.edu.formbean.ZtreeNode;
-import org.jackysoft.edu.mapper.AbstractMapper;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 
@@ -18,8 +18,8 @@ public interface ServiceProvider<S,T> {
     Pager<T> findByPager(int page,int offset,boolean ajax);
     Pager<T>    findPager(QueryBuilder qc ,int page,int offset);
     T  findById(S s);
-    PreResult  save(T t);
-    List<PreResult> saveAll(List<T> list);
+    ActionResult save(T t);
+    List<ActionResult> saveAll(List<T> list);
     void update(T t);
     void sort(S s,int sort);
     /**

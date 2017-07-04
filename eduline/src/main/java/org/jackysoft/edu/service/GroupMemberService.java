@@ -7,7 +7,7 @@ import org.jackysoft.edu.formbean.MemberBean;
 import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.GroupMemberMapper;
 import org.jackysoft.edu.service.base.AbstractSQLService;
-import org.jackysoft.edu.service.base.PreResult;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.QueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -57,13 +57,13 @@ public class GroupMemberService extends AbstractSQLService<String, GroupMember> 
 	
 	
 	@Override@PreAuthorize("hasRole('ROLE_TEACHER')")
-	public PreResult save(GroupMember t) {
+	public ActionResult save(GroupMember t) {
 		
 		return super.save(t);
 	}
 
 	@Override@PreAuthorize("hasRole('ROLE_TEACHER')")
-	public List<PreResult> saveAll(List<GroupMember> list) {
+	public List<ActionResult> saveAll(List<GroupMember> list) {
 		
 		return super.saveAll(list);
 	}

@@ -11,7 +11,7 @@ import org.jackysoft.edu.entity.UserEvent;
 import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.UserEventMapper;
 import org.jackysoft.edu.service.base.AbstractSQLService;
-import org.jackysoft.edu.service.base.PreResult;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 import org.jackysoft.query.QueryParser;
@@ -80,7 +80,7 @@ public class UserEventService extends AbstractSQLService<String, UserEvent> {
 	}
 
 	@Override
-	public PreResult save(UserEvent t) {
+	public ActionResult save(UserEvent t) {
 		if (t.getRepeated() != 1) {
 			return super.save(t);
 			

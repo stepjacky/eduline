@@ -1,24 +1,24 @@
-package org.jackysoft.edu.service.base;
+package org.jackysoft.edu.view;
 
 import java.util.HashMap;
 
-public class PreResult extends HashMap<String, Object> {
+public class ActionResult extends HashMap<String, Object> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -1420342153940092744L;
-    public static final PreResult SUCCESS = new PreResult(true);
-    public static final PreResult FAILURE = new PreResult(false);
+    public static final ActionResult SUCCESS = new ActionResult(true);
+    public static final ActionResult FAILURE = new ActionResult(false);
 	private boolean flag = false;
     
 	
     
-	public PreResult(boolean flag) {
+	public ActionResult(boolean flag) {
 		super();
 		this.flag = flag;
 	}
-	public PreResult() {
+	public ActionResult() {
 		
 	}
 	public boolean isFlag() {

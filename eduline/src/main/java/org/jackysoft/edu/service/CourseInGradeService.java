@@ -10,7 +10,7 @@ import org.jackysoft.edu.mapper.CourseInGradeMapper;
 import org.jackysoft.edu.mapper.CourseMapper;
 import org.jackysoft.edu.mapper.GradeMapper;
 import org.jackysoft.edu.service.base.AbstractSQLService;
-import org.jackysoft.edu.service.base.PreResult;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.QueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,7 +35,7 @@ public class CourseInGradeService extends AbstractSQLService<String, CourseInGra
 	
 	
 	@Override
-	public PreResult save(CourseInGrade t) {
+	public ActionResult save(CourseInGrade t) {
 		if(t==null) return null;
 		t.setCourseName(courseMapper.findById(t.getCourse()).getName());
 		t.setGradeName(gradeMapper.findById(t.getGrade()).getName());			
@@ -46,7 +46,7 @@ public class CourseInGradeService extends AbstractSQLService<String, CourseInGra
 	
 
     @Override
-	public List<PreResult> saveAll(List<CourseInGrade> list) {
+	public List<ActionResult> saveAll(List<CourseInGrade> list) {
     	if(list==null || list.size()==0) return null;
     	Iterator<CourseInGrade> itr = list.iterator();
     	CourseInGrade b = null;
