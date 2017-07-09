@@ -23,10 +23,10 @@ public class HomeWorkTaken {
     HomeWork homework;
 
     //学生选择题答案
-    List<String> choice;
+    String choice;
 
     //学生解答题答案
-    List<String> explain;
+    String explain;
 
     //作业状态
     String status = HomeworkConstant.HoweworkStatus.unsubmit.name();
@@ -41,7 +41,7 @@ public class HomeWorkTaken {
     long submitDate;
 
     //逾期天数
-    int exceedDays;
+    int exceeds;
 
     //老师点评
     String yelp;
@@ -71,19 +71,19 @@ public class HomeWorkTaken {
         this.homework = homework;
     }
 
-    public List<String> getChoice() {
-        return choice;
+    public String getChoice() {
+        return choice==null?"":choice;
     }
 
-    public void setChoice(List<String> choice) {
+    public void setChoice(String choice) {
         this.choice = choice;
     }
 
-    public List<String> getExplain() {
+    public String getExplain() {
         return explain;
     }
 
-    public void setExplain(List<String> explain) {
+    public void setExplain(String explain) {
         this.explain = explain;
     }
 
@@ -119,19 +119,19 @@ public class HomeWorkTaken {
         this.submitDate = submitDate;
     }
 
-    public int getExceedDays() {
-        return exceedDays;
-    }
-
-    public void setExceedDays(int exceedDays) {
-        this.exceedDays = exceedDays;
-    }
-
     public String getYelp() {
         return yelp;
     }
 
     public void setYelp(String yelp) {
         this.yelp = yelp;
+    }
+
+    public int getExceeds() {
+        return exceeds;
+    }
+
+    public void setExceeds(int exceeds) {
+        this.exceeds = exceeds;
     }
 }

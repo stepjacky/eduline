@@ -1,126 +1,164 @@
 package org.jackysoft.edu.service.base;
 
-import java.util.List;
-
-import javax.servlet.http.Part;
-
+import org.apache.poi.hwpf.extractor.WordExtractor;
+import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.jackysoft.edu.formbean.ZtreeNode;
 import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 
+import javax.servlet.http.Part;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.List;
+
 public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 
 	@Override
 	public List<T> findAll() {
-
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public List<T> findAll(int page, int offset) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public List<T> findAll(QueryBuilder qc) {
-		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public List<T> search(String query) {
-		// TODO Auto-generated method stub
-		return null;
+
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public List<T> findAll(QueryBuilder qc, int page, int offset) {
-		// TODO Auto-generated method stub
-		return null;
+
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public Pager<T> findByPager(int page, int offset, boolean ajax) {
-		// TODO Auto-generated method stub
-		return null;
+
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public Pager<T> findPager(QueryBuilder qc, int page, int offset) {
-		// TODO Auto-generated method stub
-		return null;
+
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public T findById(S s) {
-		// TODO Auto-generated method stub
-		return null;
+
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public ActionResult save(T t) {
-		return null;
-
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public List<ActionResult> saveAll(List<T> list) {
-	    return null;
+		throw new UnsupportedOperationException();
 
 	}
 
 	@Override
 	public void update(T t) {
-		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException();
 
 	}
 
 	@Override
 	public void updatePartial(S id, String props) {
-		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException();
 
 	}
 
 	@Override
 	public void updateSimple(S id, String key, String value) {
-		// TODO Auto-generated method stub
 
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public void update(QueryBuilder qc) {
-		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException();
 
 	}
 
 	@Override
 	public void remove(QueryBuilder qc) {
-		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException();
 
 	}
 
 	@Override
 	public void removeById(S s) {
-		// TODO Auto-generated method stub
 
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public void upload(T bean, Part part) {
 
-
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public List<ZtreeNode> ztree(String parent) {
-		// TODO Auto-generated method stub
-		return null;
+
+		throw new UnsupportedOperationException();
 	}
 
 	@Override
 	public void sort(S s, int sort) {
+		throw new UnsupportedOperationException();
+	}
 
+
+	protected StringBuffer parseDoc(Path file) throws IOException{
+		StringBuffer sb = new StringBuffer();
+		try(WordExtractor extractor =
+					new WordExtractor(new FileInputStream(file.toFile()))){
+
+			String[] texts = extractor.getParagraphText();
+			if(texts==null||texts.length==0){
+
+				return sb;
+			}
+			for(String t:texts)sb.append(t);
+
+		} catch (IOException e) {
+			throw e;
+		}
+
+		return sb;
+
+	}
+
+	protected StringBuffer parseDocx(Path file)throws IOException{
+
+		StringBuffer sb = new StringBuffer();
+		try(XWPFWordExtractor extractor =
+					new XWPFWordExtractor(new XWPFDocument(new FileInputStream(file.toFile())))){
+
+			String text = extractor.getText();
+			sb.append(text);
+
+		} catch (IOException e) {
+			throw e;
+		}
+
+		return sb;
 	}
 }

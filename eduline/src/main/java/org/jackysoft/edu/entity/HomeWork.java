@@ -24,10 +24,10 @@ public class HomeWork extends NoEntity {
 
 
     //选择题答案
-    List<String> choice;
+    String choice;
 
     //解答题答案
-    List<String> explain;
+    String explain;
 
 
     //发布人
@@ -74,19 +74,19 @@ public class HomeWork extends NoEntity {
         this.exercises = exercises;
     }
 
-    public List<String> getChoice() {
-        return choice;
+    public String getChoice() {
+        return choice==null?"":choice;
     }
 
-    public void setChoice(List<String> choice) {
+    public void setChoice(String choice) {
         this.choice = choice;
     }
 
-    public List<String> getExplain() {
+    public String getExplain() {
         return explain;
     }
 
-    public void setExplain(List<String> explain) {
+    public void setExplain(String explain) {
         this.explain = explain;
     }
 

@@ -261,7 +261,6 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 		List<ZtreeNode> nodes = new ArrayList<>();
 
 		if(Strings.isNullOrEmpty(parent)) {
-			logger.warn("parent is empty string");
 			return nodes;
 		}
 		List<E> list = dataStore.createQuery(type)

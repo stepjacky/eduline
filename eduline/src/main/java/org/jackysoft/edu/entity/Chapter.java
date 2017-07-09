@@ -6,7 +6,7 @@ import org.mongodb.morphia.annotations.Embedded;
 
 
 @Table(label = "课程章节")
-public class NoteChapter extends NoEntity {
+public class Chapter extends NoEntity {
 	
 	private String name;
 
