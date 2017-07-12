@@ -14,8 +14,13 @@ public class Chapter extends NoEntity {
 
 	private String isParent = "false";
 
-	@Embedded
-	private NameValue textBook;
+	private String textBook;
+
+	//课程
+	int course;
+
+	//年级
+	int grade;
 
 	public String getName() {
 		return name;
@@ -41,12 +46,28 @@ public class Chapter extends NoEntity {
 		this.parent = parent;
 	}
 
-	public NameValue getTextBook() {
+
+	public String getTextBook() {
 		return textBook;
 	}
 
-	public void setTextBook(NameValue textBook) {
+	public void setTextBook(String textBook) {
 		this.textBook = textBook;
+	}
+	public int getCourse() {
+		return course;
+	}
+
+	public void setCourse(int course) {
+		this.course = course;
+	}
+
+	public int getGrade() {
+		return grade;
+	}
+
+	public void setGrade(int grade) {
+		this.grade = grade;
 	}
 
 	@Override

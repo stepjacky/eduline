@@ -5,7 +5,7 @@ import org.jackysoft.utils.HomeworkConstant;
 import org.mongodb.morphia.annotations.Embedded;
 
 @Table(label = "教学资源")
-public class Resourceware extends NoEntity{
+public class Resource extends NoEntity{
 
     /**
      * 公共或者个人
@@ -23,10 +23,21 @@ public class Resourceware extends NoEntity{
     String detailType  = HomeworkConstant.DetailType.word.name();
 
     String name;
+
     String realpath;
 
-    @Embedded
-    SysUser owner;
+
+    //所属章节
+    String chapter;
+
+    //课程
+    int course;
+
+    //年级
+    int grade;
+
+    //拥有者
+    String owner;
 
     long modifyDate;
 
@@ -74,12 +85,37 @@ public class Resourceware extends NoEntity{
         this.realpath = realpath;
     }
 
-    public SysUser getOwner() {
+
+    public String getOwner() {
         return owner;
     }
 
-    public void setOwner(SysUser owner) {
+    public void setOwner(String owner) {
         this.owner = owner;
+    }
+
+    public String getChapter() {
+        return chapter;
+    }
+
+    public void setChapter(String chapter) {
+        this.chapter = chapter;
+    }
+
+    public int getCourse() {
+        return course;
+    }
+
+    public void setCourse(int course) {
+        this.course = course;
+    }
+
+    public int getGrade() {
+        return grade;
+    }
+
+    public void setGrade(int grade) {
+        this.grade = grade;
     }
 
     public long getModifyDate() {

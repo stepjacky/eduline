@@ -23,12 +23,6 @@ public class ChapterService extends AbstractMongoService<Chapter> {
 	static final Log logger = LogFactory.getLog(ChapterService.class);
 
 
-	@Override
-	public void update(Chapter t) {
-		if(t==null) return;
-
-	}
-
 
 
 

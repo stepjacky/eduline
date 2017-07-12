@@ -1,53 +1,67 @@
 package org.jackysoft.file;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 import com.google.common.base.Strings;
 
 public abstract class CMD {
-	protected String base;
+	public static final String PDF_EXTISION=".pdf";
+	protected static String base;
 	
 	protected  volatile String inner = new String();
-	protected volatile String ext = "";
-	private static final Map<String,CMD> map = new HashMap<>();
+	protected  volatile String ext = "doc";
+	protected  volatile String command = "DOC";
+	private    static final Map<String,CMD> map = new HashMap<>();
+	private static final Set<String> officPostfix = new HashSet<>();
 	static{
-		map.put("doc", new DOCCMD());
-		map.put(".doc", new DOCCMD());
-		map.put("docx", new DOCCMD());
-		map.put(".docx", new DOCCMD());
-		map.put("ppt", new PPTCMD());
-		map.put(".ppt", new PPTCMD());
-		map.put("pptx", new PPTCMD());		
-		map.put(".pptx", new PPTCMD());	
-		map.put("jpg", new JPGCMD());
-		map.put(".jpg", new JPGCMD());
-		map.put("jpeg", new JPGCMD());
-		map.put(".jpeg", new JPGCMD());
-		map.put("png", new JPGCMD());
-		map.put(".png", new JPGCMD());
+		map.put("doc", new WORD());
+		map.put(".doc", new WORD());
+		map.put("docx", new WORD());
+		map.put(".docx", new WORD());
+		map.put("ppt", new POWERPOINT());
+		map.put(".ppt", new POWERPOINT());
+		map.put("pptx", new POWERPOINT());
+		map.put(".pptx", new POWERPOINT());
+		map.put("jpg", new JPEG());
+		map.put(".jpg", new JPEG());
+		map.put("jpeg", new JPEG());
+		map.put(".jpeg", new JPEG());
+		map.put("png", new JPEG());
+		map.put(".png", new JPEG());
+		officPostfix.add("doc");
+		officPostfix.add("docx");
+		officPostfix.add("ppt");
+		officPostfix.add("pptx");
+
 	}
-	protected CMD() {		
-		this.base = System.getProperty("resbase");
+	protected CMD(String command){
+		CMD.base = System.getProperty("resbase");
+		this.command = command;
 	}
-	public static CMD withType(String type){
+	public static CMD getCMD(String type,String fileName){
 		if(Strings.isNullOrEmpty(type)){
 			throw new IllegalArgumentException("type is not allowed for null value");
 		}
 		CMD cmd = map.get(type.toLowerCase());
 		if(cmd==null){
-			throw new java.lang.UnsupportedOperationException("type "+type+" is not supported yet");
+			return null;
 		}	
 		cmd.ext = type.startsWith(".")?type.substring(1):type;
+		cmd.inner = String.format("%s %s %s %s", cmd.command.toUpperCase(), CMD.base, fileName, cmd.ext);
 		return cmd;
 	}
-	
-	
-	
-	public abstract CMD get(String fileName);
-	
+
+	public static boolean isOffice(String extision){
+		if(Strings.isNullOrEmpty(extision)) return false;
+		extision = extision.startsWith(".")?extision.substring(1):extision;
+		return officPostfix.contains(extision.toLowerCase());
+	}
+
 	public String toCommand() {
 		Lock lock = new ReentrantLock();
 		lock.lock();
@@ -65,44 +79,28 @@ public abstract class CMD {
 	public String toString() {
 		return this.inner;
 	}
-	
-	
 
-}
 
-class DOCCMD extends CMD{
-	
-	public DOCCMD() {
-		super();			
+	private static class WORD extends CMD{
+
+		public WORD() {
+			super("DOC");
+		}
+
 	}
 
-	@Override
-	public CMD get(String fileName){
-		inner = String.format("%s %s %s %s", "DOC", base, fileName, ext);
-		return this;
-	}
-}
+	private static class POWERPOINT extends CMD{
+		public POWERPOINT() {
+			super("PPT");
 
-class PPTCMD extends CMD{		
-	public PPTCMD() {
-		super();
-		
-	}
-	@Override
-	public CMD get(String fileName){
-		inner = String.format("%s %s %s %s", "PPT", base, fileName, ext);
-		return this;
-	}
-}
+		}
 
-class JPGCMD extends CMD{		
-	public JPGCMD() {
-		super();
-		
 	}
-	@Override
-	public CMD get(String fileName){
-		inner = String.format("%s %s %s %s", "JPG", base, fileName, ext);
-		return this;
+
+	private static class JPEG extends CMD{
+		public JPEG() {
+			super("JPG");
+		}
 	}
+
 }

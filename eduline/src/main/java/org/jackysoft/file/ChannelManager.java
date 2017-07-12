@@ -10,31 +10,27 @@ import io.netty.channel.ChannelHandlerContext;
 
 public class ChannelManager {
     static final Logger logger = LoggerFactory.getLogger(ChannelManager.class);
-   
+
     static final BlockingQueue<CMD> queue=new ArrayBlockingQueue<>(1000);
     private  ChannelHandlerContext ctx;
     static final String END_LINE = "\r\n";
 	private static ChannelManager INST=null;
 	
 	private ChannelManager(){
-		new Thread(new Runnable(){
+		new Thread(()->{
 
-			@Override
-			public void run() {
-				logger.info("文档转换队列开始等待.. ");
-				while(true){
-					CMD cmd = queue.poll();
-					if(cmd!=null){
-						logger.info("消费一个命令.. "+cmd);
-						ChannelManager.getManager().doCommand(cmd);
-					}
-					try {
-						Thread.sleep(2000);
-					} catch (InterruptedException e) {
-						logger.error(e.getMessage());
-					}
+			logger.info("文档转换队列开始等待.. ");
+			while(true){
+				CMD cmd = queue.poll();
+				if(cmd!=null){
+					logger.info("消费一个命令.. "+cmd);
+					ChannelManager.getManager().doCommand(cmd);
 				}
-				
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					logger.error(e.getMessage());
+				}
 			}
 			
 		}).start();
@@ -56,10 +52,13 @@ public class ChannelManager {
     	}
     }
     
-    public ChannelManager addCMD(CMD cmd){
-    	if(!queue.offer(cmd)){
-    	   logger.info("insert cmd unsuccessfully! ");	
-    	}
+    public ChannelManager addCMD(CMD cmd,String extsition){
+    	if(cmd==null || !CMD.isOffice(extsition)) return this;
+		if(!CMD.PDF_EXTISION.equalsIgnoreCase(extsition)){
+			if(!queue.offer(cmd)){
+    	   		logger.info("insert cmd unsuccessfully! ");
+    		}
+		}
     	return this;
     }
     

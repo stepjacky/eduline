@@ -11,7 +11,7 @@ public class ActionResult extends HashMap<String, Object> {
     public static final ActionResult SUCCESS = new ActionResult(true);
     public static final ActionResult FAILURE = new ActionResult(false);
 	private boolean flag = false;
-    
+    private String message;
 	
     
 	public ActionResult(boolean flag) {
@@ -26,5 +26,13 @@ public class ActionResult extends HashMap<String, Object> {
 	}
 	public void setFlag(boolean flag) {
 		this.flag = flag;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 }

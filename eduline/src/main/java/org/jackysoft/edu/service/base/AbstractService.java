@@ -11,6 +11,7 @@ import org.jackysoft.query.QueryBuilder;
 import javax.servlet.http.Part;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Path;
 import java.util.List;
 
@@ -126,18 +127,16 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 	}
 
 
-	protected StringBuffer parseDoc(Path file) throws IOException{
+	protected StringBuffer parseDoc(InputStream file) throws IOException{
 		StringBuffer sb = new StringBuffer();
-		try(WordExtractor extractor =
-					new WordExtractor(new FileInputStream(file.toFile()))){
+		try(WordExtractor extractor = new WordExtractor(file)){
 
 			String[] texts = extractor.getParagraphText();
-			if(texts==null||texts.length==0){
 
+			if(texts==null||texts.length==0){
 				return sb;
 			}
 			for(String t:texts)sb.append(t);
-
 		} catch (IOException e) {
 			throw e;
 		}

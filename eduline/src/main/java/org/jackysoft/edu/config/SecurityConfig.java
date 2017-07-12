@@ -22,8 +22,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @Order(SecurityProperties.ACCESS_OVERRIDE_ORDER)
 @EnableGlobalMethodSecurity(jsr250Enabled=true,securedEnabled=true,prePostEnabled=true)
-public class SecurityConfig extends WebSecurityConfigurerAdapter 
-implements ApplicationListener<AbstractAuthenticationEvent> {
+public class SecurityConfig extends WebSecurityConfigurerAdapter implements ApplicationListener<AbstractAuthenticationEvent> {
 	    
 	@Autowired
 	protected SysUserService userService;
@@ -39,6 +38,7 @@ implements ApplicationListener<AbstractAuthenticationEvent> {
             		"/static/scripts/**",
             		"/static/images/**",
             		"/static/lib/**",
+            		"/rest/**",
             		"/favorate.ico")
             .permitAll()
             .antMatchers("/home").hasAnyRole("USER")          
