@@ -56,7 +56,7 @@ public class ChannelManager {
     	if(cmd==null || !CMD.isOffice(extsition)) return this;
 		if(!CMD.PDF_EXTISION.equalsIgnoreCase(extsition)){
 			if(!queue.offer(cmd)){
-    	   		logger.info("insert cmd unsuccessfully! ");
+    	   		logger.error("add a  cmd unsuccessfully! ");
     		}
 		}
     	return this;
@@ -69,7 +69,7 @@ public class ChannelManager {
     	    ctx.write(END_LINE);
     	    ctx.flush();
     	}else{
-    		logger.info("please set channel handler context first");
+    		logger.error("please set channel handler context first");
     	}
     }
     

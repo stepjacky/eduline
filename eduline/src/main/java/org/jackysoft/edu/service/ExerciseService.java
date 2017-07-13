@@ -28,37 +28,103 @@ public class ExerciseService extends AbstractMongoService<Exercise> {
 
     static  final Log logger = LogFactory.getLog(ExerciseService.class);
 
-    static final List<String> FIXED_CHOICE = Arrays.asList("A","B","C","D");
+    static final List<Character> FIXED_CHOICE = Arrays.asList('A','B','C','D');
 
     static final String CHOICE_TAIL = "#";
 
-
+    @Value("${uploaded.location}")
+    protected String baseDir;
     @Autowired
     ChapterService chapterService;
 
-    //上传答案
+   /**
+    * 上传并分析答案
+    * @param part 答案文件
+    *
+    *
+    * */
 
     public ActionResult uploadAnswer(Part part){
         ActionResult result = new ActionResult();
+        StringBuffer answer = new StringBuffer();
         String fileName = part.getSubmittedFileName();
+        //like  .doc
         String extision = fileName.substring(fileName.lastIndexOf('.'));
-        if(CMD.isOffice(extision){
-            if (".doc".equalsIgnoreCase(extision)){
-                try(InputStream ins = part.getInputStream()){
-                    StringBuffer sb = parseDoc(ins);
-                    if(sb!=null) {
-                        String str = sb.toString();
-
-                    }
-                } catch (IOException e) {
-
-                    result.setMessage(e.getMessage());
-                    return result;
-                }
+        if(CMD.isOffice(extision)){
+            if(!extision.toLowerCase().startsWith(".doc")){
+                result.setFlag(false);
+                result.setMessage("答案必须为Word文档形式");
+                return  result;
             }
+
+            String newName = UUID.randomUUID().toString();
+            String newfileName = newName+CMD.PDF_EXTISION;
+            try(InputStream ins = part.getInputStream()){
+
+                long size =  Files.copy(ins,new File(baseDir,newName+extision).toPath());
+                result.put("size",size);
+                ChannelManager.getManager().addCMD(CMD.getCMD(extision,newName+extision),extision);
+
+                result.put("explain",newfileName);
+                StringBuffer sb =  extision.toLowerCase().contains("x")?parseDocx(ins):parseDoc(ins);
+                if(sb!=null) {
+                    String str = sb.toString();
+                    if(str.indexOf(CHOICE_TAIL)<0){
+                        result.setMessage("未发现选择题分隔符:"+CHOICE_TAIL);
+                        result.setFlag(false);
+                        return result;
+                    }
+                    String choiceOri = str.substring(0,str.indexOf(CHOICE_TAIL));
+                    char[] chars = choiceOri.toCharArray();
+                    for(char c:chars){
+                        if(FIXED_CHOICE.contains(Character.valueOf(c))){
+                            answer.append(c);
+                        }
+                    }
+                    result.setFlag(true);
+                    result.put("choice",answer.toString());
+                    result.put("choicesize",answer.toString().length());
+                    //end collect choice
+
+                }
+            } catch (IOException e) {
+                result.setFlag(false);
+                result.setMessage(e.getMessage());
+                return result;
+            }
+
+
         }
 
 
+        return result;
+    }
+
+    /**
+     * 上传答案
+     * */
+    public ActionResult uploadExercise(Part part){
+        ActionResult result = new ActionResult();
+        if(part==null){
+            result.setFlag(false);
+            result.setMessage("习题不能为空");
+            return result;
+        }
+        String fileName = part.getSubmittedFileName();
+        String extision = fileName.substring(fileName.lastIndexOf('.'));
+        String newName = UUID.randomUUID().toString();
+        try(InputStream ins = part.getInputStream()){
+
+            Files.copy(ins,new File(baseDir,newName+extision).toPath());
+            ChannelManager.getManager().addCMD(CMD.getCMD(extision,newName+extision),extision);
+            result.put("filename",newName+CMD.PDF_EXTISION);
+            result.put("name",fileName);
+            result.setFlag(true);
+        } catch (IOException e) {
+            result.setFlag(false);
+            result.setMessage(e.getMessage());
+            return result;
+        }
         return result;
     }
 
@@ -68,8 +134,8 @@ public class ExerciseService extends AbstractMongoService<Exercise> {
             String name,
             String realpath,
             String choice,
-            int choiceNumber,
-            int explainNumber,
+            int choicesize,
+            int explainsize,
             String explain,
             String owner
             ){
@@ -91,8 +157,8 @@ public class ExerciseService extends AbstractMongoService<Exercise> {
         bean.setName(name);
         bean.setChoice(choice);
         bean.setExplain(explain);
-        bean.setChoiceNumber(choiceNumber);
-        bean.setExplainNumber(explainNumber);
+        bean.setChoicesize(choicesize);
+        bean.setExplainsize(explainsize);
         bean.setOwner(owner);
         dataStore.save(bean);
         return result;

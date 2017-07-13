@@ -20,18 +20,19 @@ public class Exercise extends NoEntity{
     //年级
     int grade;
 
+    //习题路径
     String realpath;
 
     //选择题答案
     String choice;
 
-    //解答题答案
+    //解答题路径
     String explain;
 
     //选择题数目
-    int choiceNumber;
+    int choicesize;
     //解答题数目
-    int explainNumber;
+    int explainsize;
 
     public String getName() {
         return name;
@@ -81,22 +82,21 @@ public class Exercise extends NoEntity{
         this.explain = explain;
     }
 
-    public int getChoiceNumber() {
-        return choiceNumber;
+    public int getChoicesize() {
+        return choicesize;
     }
 
-    public void setChoiceNumber(int choiceNumber) {
-        this.choiceNumber = choiceNumber;
+    public void setChoicesize(int choicesize) {
+        this.choicesize = choicesize;
     }
 
-    public int getExplainNumber() {
-        return explainNumber;
+    public int getExplainsize() {
+        return explainsize;
     }
 
-    public void setExplainNumber(int explainNumber) {
-        this.explainNumber = explainNumber;
+    public void setExplainsize(int explainsize) {
+        this.explainsize = explainsize;
     }
-
 
     public int getCourse() {
         return course;

@@ -9,6 +9,7 @@ import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 
 import javax.servlet.http.Part;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -126,11 +127,21 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 		throw new UnsupportedOperationException();
 	}
 
+	protected StringBuffer parseDoc(File file){
+		StringBuffer sb  = null;
+		try {
+			sb = parseDoc(new FileInputStream(file));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return sb;
+	}
 
-	protected StringBuffer parseDoc(InputStream file) throws IOException{
+	protected StringBuffer parseDoc(InputStream file){
 		StringBuffer sb = new StringBuffer();
 		try(WordExtractor extractor = new WordExtractor(file)){
 
+			extractor.close();
 			String[] texts = extractor.getParagraphText();
 
 			if(texts==null||texts.length==0){
@@ -138,7 +149,8 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 			}
 			for(String t:texts)sb.append(t);
 		} catch (IOException e) {
-			throw e;
+			sb.append(e.getMessage());
+			return sb;
 		}
 
 		return sb;
@@ -150,6 +162,20 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 		StringBuffer sb = new StringBuffer();
 		try(XWPFWordExtractor extractor =
 					new XWPFWordExtractor(new XWPFDocument(new FileInputStream(file.toFile())))){
+
+			String text = extractor.getText();
+			sb.append(text);
+
+		} catch (IOException e) {
+			throw e;
+		}
+
+		return sb;
+	}
+	protected StringBuffer parseDocx(InputStream file)throws IOException{
+
+		StringBuffer sb = new StringBuffer();
+		try(XWPFWordExtractor extractor = new XWPFWordExtractor(new XWPFDocument(file))){
 
 			String text = extractor.getText();
 			sb.append(text);

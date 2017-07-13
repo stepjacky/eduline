@@ -19,7 +19,7 @@ public class ActionResult extends HashMap<String, Object> {
 		this.flag = flag;
 	}
 	public ActionResult() {
-		
+		this(true);
 	}
 	public boolean isFlag() {
 		return flag;
