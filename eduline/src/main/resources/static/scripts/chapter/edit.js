@@ -3,7 +3,7 @@ $(function(){
     dataAdmin.init(
     {
             context:'/',       		
-			namespace : 'notechapter',			
+			namespace : 'chapter',
 			dataFormId:  'notechapter_form'
     }); 
     dataAdmin.addRemoveListener();

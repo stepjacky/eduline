@@ -2,7 +2,7 @@ var head=[];
 $(function() {
 		
 	$('.fileupload').fileupload({
-		url : '/notechapter/upload/params',
+		url : '/chapter/upload/params',
 		dataType : 'text',
 		paramName : 'file',
 		multipart : true,
@@ -38,9 +38,9 @@ $(function() {
 				function(){ 
 				
 				var d = new Date();
-			    $.get('/static/tmps/notechapter/chapter-file.html?_='+d.getTime())
+			    $.get('/static/tmps/chapter/chapter-file.html?_='+d.getTime())
 			    .done(function(tmp){
-			    	$.get('/notechapter/getinfo/'+vid)
+			    	$.get('/chapter/getinfo/'+vid)
 			    	.done(function(tmpdata){
 			    		
 			    		$('#letcpt').html(tmpstr(tmp,tmpdata));
@@ -58,7 +58,7 @@ $(function() {
 
 	$('button.pdfView').on('click', function() {
 		var frag = $(this).data('key');
-		var url = "/notechapter/viewpdf/" + frag;
+		var url = "/chapter/viewpdf/" + frag;
         var options = {
             height: "550px",
             page: '1',
@@ -98,13 +98,13 @@ $(function() {
 	
 	function saveHeads(){
 		var asw = head.join('');
-		$.get('/notechapter/update/heads/'+vid+'/'+(asw?asw:'X'))
+		$.get('/chapter/update/heads/'+vid+'/'+(asw?asw:'X'))
 		.done(function(){
 			if(parentNode) refreshNode('cpt',parentNode);
 		});
 	}
 	$('#refreshHead').on('click',function(){
-		var url ='/notechapter/chapter/refresh/homework/'+vid;
+		var url ='/chapter/chapter/refresh/homework/'+vid;
 		$.get(url).done(function(){
 			bootbox.alert({
 			    message: "相关作业标准答案已刷新,请注意",

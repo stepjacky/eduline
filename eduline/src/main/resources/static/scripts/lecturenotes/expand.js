@@ -6,15 +6,15 @@ $(function(){
 	var c=  new Date();
 	var lt = c.getTime();
 	
-	$.get('/static/tmps/notechapter/select-card.html?_='+lt).done(function(data){
+	$.get('/static/tmps/chapter/select-card.html?_='+lt).done(function(data){
 		selects = data;
 	});
-	$.get('/static/tmps/notechapter/chapter-file.html?_='+lt).done(function(data){
+	$.get('/static/tmps/chapter/chapter-file.html?_='+lt).done(function(data){
 		details = data;
 	});
 	var async = {
 			enable: true,
-			url: "/notechapter/ztree",
+			url: "/chapter/ztree",
 			type:'get',
 			autoParam: ["id=parent"]
 	};
@@ -25,7 +25,7 @@ $(function(){
 				if(treeNode.id){
 					data['id']=treeNode.id;
 				}
-				$.post('/notechapter/persiste','data='+JSON.stringify(data))
+				$.post('/chapter/persiste','data='+JSON.stringify(data))
 				.done(function(rst){
 					
 					refreshNode(treeId,pnode);	
@@ -34,7 +34,7 @@ $(function(){
 			},
 			onRemove:function(event,treeId,treeNode){
 				var pnode = treeNode.getParentNode();
-				$.get('/notechapter/remove/'+treeNode.id)
+				$.get('/chapter/remove/'+treeNode.id)
 				.done(function(){
 					refreshNode(treeId,pnode);	
 				});
@@ -56,7 +56,7 @@ $(function(){
 			    	var nodes = pnode.children;
 			    	for(var i=0;i<nodes.length;i++){
 			    		var n = nodes[i];
-			    	   $.post('/notechapter/update/partial',{id:n.id,props:'sort:'+i});			    	   
+			    	   $.post('/chapter/update/partial',{id:n.id,props:'sort:'+i});
 			    	}
 			    	refreshNode(treeId,pnode);	
 			    }

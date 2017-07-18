@@ -20,6 +20,7 @@ public class ChapterController extends AbstractController<String, Chapter> {
 	protected ChapterService service;
 
 	private static final int IMAGE_WIDTH=800;
+
 	@ResponseBody
 	@RequestMapping("/ztree")
 	public List<ZtreeNode> ztree(@RequestParam("parent") String parent) {

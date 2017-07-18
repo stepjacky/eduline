@@ -5,7 +5,7 @@ $(function(){
 	var chpId = false;
 	var async = {
 			enable: true,
-			url: "/notechapter/ztree",
+			url: "/chapter/ztree",
 			type:'get',
 			autoParam: ["id=parent"]
 	};

@@ -48,7 +48,7 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 
 
 	@PostConstruct
-	public void initialize(){
+	private void initialize(){
 		Type type = getClass().getGenericSuperclass();
 
         while (!(type instanceof ParameterizedType) || ((ParameterizedType) type).getRawType() != AbstractMongoService.class) {
@@ -76,16 +76,19 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 	protected Datastore dataStore;
 	
 	public ActionResult save(E e){
+		ActionResult result = new ActionResult();
 		Query<E> query = dataStore.createQuery(type).field(Mapper.ID_KEY).equal(e.getId());
 		
 		E t = query.get();		
-		if(t==null)
-		    dataStore.save(e);
-		else{
+		if(t==null) {
+			dataStore.save(e);
+
+		}else{
 			e.setId(null);
 			dataStore.updateFirst(query, e, true);
 		}
-		return null;
+		result.put("bean",e);
+		return result;
 	}
 	
 	
@@ -175,6 +178,7 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 
 	@Override
 	public E findById(String s) {
+		if(Strings.isNullOrEmpty(s)) return null;
 		Query<E> query = dataStore.createQuery(type);
 		E bean= query.field(Mapper.ID_KEY).equal(new ObjectId(s)).get();
 		return bean;
