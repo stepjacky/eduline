@@ -141,6 +141,27 @@ function doForm(action, data) {
 	oform.submit();
 }
 
+function postJson(url,data,cak){
+	if(!url || !data) {
+		console.error("param for ajax is not enough");
+		return;
+	}
+    $.ajax({
+            'url':url,
+            'contentType': 'application/json',
+            'data': data,
+            'type':'POST',
+            'dataType':'json',
+            'success':function(rst){
+               if($.isFunction(cak)){
+               	cak(rst);
+			   }
+            }
+
+        }
+    )
+}
+
 function isIE() {
 	if (-[ 1, ]) {
 		return false;
@@ -266,7 +287,8 @@ $.ajaxSetup({
 
 $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
 
-	if (typeof csrfinfo != 'undefined' && csrfinfo && options.type == 'post') {
+
+	if (typeof csrfinfo != 'undefined' && csrfinfo && (options.type == 'post' || options.type=='POST' )) {
 		// log(options.url);
 
 		if (options.url.indexOf('?') == -1)

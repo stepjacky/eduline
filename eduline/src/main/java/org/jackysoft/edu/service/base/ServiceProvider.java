@@ -8,6 +8,7 @@ import org.jackysoft.edu.formbean.ZtreeNode;
 import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
+import org.springframework.web.servlet.ModelAndView;
 
 public interface ServiceProvider<S,T> {
     List<T>  findAll();
@@ -20,6 +21,7 @@ public interface ServiceProvider<S,T> {
     T  findById(S s);
     ActionResult save(T t);
     List<ActionResult> saveAll(List<T> list);
+    void beforeInput(ModelAndView mav);
     void update(T t);
     void sort(S s,int sort);
     /**

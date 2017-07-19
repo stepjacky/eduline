@@ -19,20 +19,7 @@ public class TextbookController extends AbstractController<String, Textbook> {
     @Autowired
     protected TextbookService service;
 
-    @Autowired
-    protected GradeService gradeService;
 
-    @Autowired
-    protected CourseService courseService;
-
-    @Override
-    @RequestMapping("/input")
-    public ModelAndView input() {
-        ModelAndView mav = super.input();
-        mav.addObject("grades", gradeService.findAll());
-        mav.addObject("courses", courseService.findAll());
-        return mav;
-    }
 
     @Override
     public AbstractService<String, Textbook> getService() {

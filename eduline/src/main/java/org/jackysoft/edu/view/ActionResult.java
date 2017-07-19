@@ -17,6 +17,11 @@ public class ActionResult extends HashMap<String, Object> {
 	public ActionResult(boolean flag) {
 		super();
 		this.flag = flag;
+		if(this.flag){
+			message="操作成功";
+		}else{
+			message="操作失败";
+		}
 	}
 	public ActionResult() {
 		this(true);

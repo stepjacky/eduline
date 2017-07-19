@@ -194,7 +194,10 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 
 	@Override
 	public void update(E t) {
-		// TODO Auto-generated method stub
+		Query<E> query = query().field(Mapper.ID_KEY).equal(
+				new ObjectId(t.getId()));
+		t.setId(null);
+		dataStore.updateFirst(query,t,false);
 		
 	}
 

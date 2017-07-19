@@ -65,6 +65,7 @@
 <script src="${sbase}static/lib/lodash.js"></script>
 <script src="${sbase}static/lib/pdfjs/build/pdf.js"></script>
 <script src="${sbase}static/lib/pdfobject/pdfobject.js" ></script>
+<script src="${sbase}static/lib/vue/vue.js"></script>
 <script src="${sbase}static/lib/bootbox.js"></script>
 <script src="${sbase}static/lib/pdftool.js"></script>
 

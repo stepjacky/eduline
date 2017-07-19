@@ -15,6 +15,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jackysoft.edu.formbean.MediaFile;
 import org.jackysoft.edu.service.base.AbstractService;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 import org.jackysoft.utils.FormOption;
@@ -27,11 +28,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.common.base.Splitter;
@@ -55,7 +52,57 @@ public abstract class AbstractController<S, T> {
 	boolean isJson(String json) {
 		return !(Strings.isNullOrEmpty(json) || json.length()<4 || !jsonValidator.validate(json));
 	}
-	
+
+
+	@PostMapping("/save")
+	@ResponseBody
+	public ActionResult save(@RequestBody T bean){
+		if(bean!=null){
+			getService().save(bean);
+			return ActionResult.SUCCESS;
+		}
+		return ActionResult.FAILURE;
+	}
+
+	@ResponseBody
+	@PostMapping("/saves")
+	public ActionResult saves(@RequestBody List<T> beans){
+		if(beans!=null && !beans.isEmpty()) {
+			this.getService().saveAll(beans);
+			return ActionResult.SUCCESS;
+		}
+		return ActionResult.FAILURE;
+	}
+
+	@ResponseBody
+	@PostMapping("/update")
+	public ActionResult update(@RequestBody T bean){
+		this.getService().update(bean);
+		return ActionResult.SUCCESS;
+	}
+
+	@RequestMapping("/edit/{id}")
+	public ModelAndView edit(@PathVariable("id") S id) {
+		ModelAndView mav = new ModelAndView("edit");
+		T item = this.getService().findById(id);
+		mav.addObject("bean", item);
+		this.getService().beforeInput(mav);
+		return mav;
+	}
+
+	@RequestMapping("/remove/{id}")
+	public ModelAndView remove(@PathVariable("id") S id) {
+		ModelAndView mav = new ModelAndView("remove");
+		this.getService().removeById(id);
+		return mav;
+
+	}
+
+
+
+
+
+
 	
 	@RequestMapping(value = "/persiste", method = RequestMethod.POST)
 	public ModelAndView persiste(@RequestParam("data") String data) {
@@ -74,6 +121,8 @@ public abstract class AbstractController<S, T> {
 		if(bean!=null) this.getService().save(bean);
 		return mav;
 	}
+
+
 
 	@RequestMapping(value = "/persisties", method = RequestMethod.POST)
 	public ModelAndView persisties(@RequestParam("data") String data) {
@@ -101,12 +150,7 @@ public abstract class AbstractController<S, T> {
 		return mav;
 	}
 
-	@RequestMapping(value = "/remove/{id}")
-	public ModelAndView remove(@PathVariable("id") S id) {
-		ModelAndView mav = new ModelAndView("remove");
-		this.getService().removeById(id);
-		return mav;
-	}
+
 
 	@RequestMapping(value = "/remove/qc")
 	public ModelAndView removeByqc(@RequestParam("query") String query) {
@@ -168,13 +212,7 @@ public abstract class AbstractController<S, T> {
 
 	}
 	
-	@RequestMapping(value = "/edit/{id}")
-	public ModelAndView edit(@PathVariable("id") S id) {
-		ModelAndView mav = new ModelAndView("edit");
-		T item = this.getService().findById(id);
-		mav.addObject("bean", item);
-		return mav;
-	}
+
 
 	@RequestMapping(value = "/pager/{page}")
 	public ModelAndView pager(
@@ -298,6 +336,7 @@ public abstract class AbstractController<S, T> {
 		return mav;
 	}
 
+
 	
 	@RequestMapping(value = "/download/{id}", method = RequestMethod.GET)
 	public ResponseEntity<InputStreamResource> download(@PathVariable("id") S id)throws IOException {
@@ -332,6 +371,7 @@ public abstract class AbstractController<S, T> {
 	@RequestMapping(value = "/input")
 	public ModelAndView input() {
 		ModelAndView mav = new ModelAndView("input");
+		this.getService().beforeInput(mav);
 		return mav;
 	}
 	@RequestMapping(value = "/anyway/{view}")

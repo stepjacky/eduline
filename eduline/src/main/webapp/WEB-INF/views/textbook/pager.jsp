@@ -9,9 +9,9 @@
     课本管理
 </div>
 <div class="btn-group">
-    <button class="btn btn-success btn-sm input-item">
+    <a href="/textbook/input" class="btn btn-success btn-sm action-input">
         <i class="fa fa-plus-square-o" aria-hidden="true"></i>添加
-    </button>
+    </a>
 
 </div>
 
@@ -33,12 +33,12 @@
             <td>${item.course.name}</td>
             <td>
 
-                <button type="button" class="btn btn-xs btn-info editItem"
-                        key="${item.id}">
+                <a href="/textbook/edit/${item.id}" class="btn btn-xs btn-info editItem"
+                        data-id="${item.id}">
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                </button>
-                <button type="button" class="btn btn-xs  btn-danger removeItem"
-                        key="${item.username}">
+                </a>
+                <button type="button" class="btn btn-xs  btn-danger action-remove"
+                        data-id="${item.id}">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </button>
 
@@ -52,6 +52,6 @@
     </tr>
     </tfoot>
 </table>
-
+<script src="static/scripts/textbook/pager.js"></script>
 
 <%@ include file="../pageFoot.jsp" %>

@@ -7,6 +7,7 @@ import org.jackysoft.edu.formbean.ZtreeNode;
 import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.Part;
 import java.io.File;
@@ -43,6 +44,11 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 	public List<T> findAll(QueryBuilder qc, int page, int offset) {
 
 		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void beforeInput(ModelAndView mav) {
+
 	}
 
 	@Override
@@ -115,6 +121,8 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 
 		throw new UnsupportedOperationException();
 	}
+
+
 
 	@Override
 	public List<ZtreeNode> ztree(String parent) {
