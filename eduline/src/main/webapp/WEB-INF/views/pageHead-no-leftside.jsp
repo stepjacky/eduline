@@ -51,9 +51,7 @@
 <script src="${sbase}static/lib/bootstrap-calendar/js/language/zh-CN.js"></script>
 <script	src="${sbase}static/lib/bootstrap-datetimepicker/js/bootstrap-datetimepicker.js"></script>
 <script	src="${sbase}static/lib/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>   
-<script src="${sbase}static/lib/jquery.blockUI.min.js"></script>
-<script src="${sbase}static/lib/lodash/lodash.js"></script>
-<script src="${sbase}static/lib/layer/layer.js"></script>   
+
 
 <!-- <script src="static/lib/ztree/js/jquery.ztree.core-3.5.min.js"></script>   
 <script src="static/lib/ztree/js/jquery.ztree.excheck-3.5.min.js"></script>    -->

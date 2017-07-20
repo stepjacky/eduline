@@ -58,8 +58,8 @@ public abstract class AbstractController<S, T> {
 	@ResponseBody
 	public ActionResult save(@RequestBody T bean){
 		if(bean!=null){
-			getService().save(bean);
-			return ActionResult.SUCCESS;
+			return getService().save(bean);
+
 		}
 		return ActionResult.FAILURE;
 	}
@@ -67,18 +67,25 @@ public abstract class AbstractController<S, T> {
 	@ResponseBody
 	@PostMapping("/saves")
 	public ActionResult saves(@RequestBody List<T> beans){
+		ActionResult result = new ActionResult();
 		if(beans!=null && !beans.isEmpty()) {
-			this.getService().saveAll(beans);
-			return ActionResult.SUCCESS;
+			List<ActionResult> rsts = this.getService().saveAll(beans);
+			rsts.forEach(r->{
+				result.setFlag(result.isFlag()&&r.isFlag());
+				result.setMessage(result.getMessage()+','+r.getMessage());
+			});
+			return result;
 		}
-		return ActionResult.FAILURE;
+		result.setFlag(false);
+		result.setMessage("Empty collection of object to save");
+		return result;
 	}
 
 	@ResponseBody
 	@PostMapping("/update")
 	public ActionResult update(@RequestBody T bean){
-		this.getService().update(bean);
-		return ActionResult.SUCCESS;
+		return this.getService().update(bean);
+
 	}
 
 	@RequestMapping("/edit/{id}")
@@ -90,17 +97,14 @@ public abstract class AbstractController<S, T> {
 		return mav;
 	}
 
+	@ResponseBody
 	@RequestMapping("/remove/{id}")
-	public ModelAndView remove(@PathVariable("id") S id) {
-		ModelAndView mav = new ModelAndView("remove");
-		this.getService().removeById(id);
-		return mav;
+	public ActionResult remove(@PathVariable("id") S id) {
+
+		return this.getService().removeById(id);
+
 
 	}
-
-
-
-
 
 
 	
@@ -369,8 +373,9 @@ public abstract class AbstractController<S, T> {
 	}
 
 	@RequestMapping(value = "/input")
-	public ModelAndView input() {
+	public ModelAndView input(@RequestParam(value="param",required = false)String param) {
 		ModelAndView mav = new ModelAndView("input");
+		mav.addObject("param",param);
 		this.getService().beforeInput(mav);
 		return mav;
 	}

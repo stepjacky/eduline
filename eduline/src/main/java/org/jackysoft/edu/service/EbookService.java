@@ -7,6 +7,7 @@ import org.jackysoft.edu.entity.Ebook;
 import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.EbookMapper;
 import org.jackysoft.edu.service.base.AbstractSQLService;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 import org.slf4j.Logger;
@@ -18,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.google.common.base.Splitter;
 import com.google.common.collect.Sets;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @Service
@@ -33,8 +35,8 @@ public class EbookService extends AbstractSQLService<String, Ebook> {
 		
 	@Override
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_TEACHER')")
-	public void update(Ebook t) {
-		super.update(t);
+	public ActionResult update(Ebook t) {
+		return super.update(t);
 	}
 
 
@@ -57,9 +59,10 @@ public class EbookService extends AbstractSQLService<String, Ebook> {
 
 	@Override
 	@PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_TEACHER')")
-	public void removeById(String s) {
-		logger.info("ebook of id "+s+" will be removed");
-		super.removeById(s);
+	public ActionResult removeById(String s) {
+
+		return super.removeById(s);
+
 	}
 
 
@@ -101,6 +104,11 @@ public class EbookService extends AbstractSQLService<String, Ebook> {
 			
 		});
 		return tags;
+	}
+
+	@Override
+	public void beforeInput(ModelAndView mav) {
+		mav.addObject("tags", findTags());
 	}
 
 	@Override

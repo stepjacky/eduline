@@ -33,9 +33,9 @@ public class AuthorityService extends AbstractSQLService<String, Authority> {
 
 
 	@Override@PreAuthorize("hasRole('ROLE_ADMIN')")
-	public void update(Authority t) {
+	public ActionResult update(Authority t) {
 		// TODO Auto-generated method stub
-		super.update(t);
+		return super.update(t);
 	}
 
 
@@ -60,9 +60,9 @@ public class AuthorityService extends AbstractSQLService<String, Authority> {
 
 
 	@Override@PreAuthorize("hasRole('ROLE_ADMIN')")
-	public void removeById(String s) {
+	public ActionResult removeById(String s) {
 		// TODO Auto-generated method stub
-		super.removeById(s);
+		return super.removeById(s);
 	}
 
 

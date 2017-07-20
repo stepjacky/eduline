@@ -37,6 +37,11 @@
                         data-id="${item.id}">
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </a>
+
+                <a href="/chapter/input?param=${item.id}" class="btn btn-xs btn-info">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                </a>
+
                 <button type="button" class="btn btn-xs  btn-danger action-remove"
                         data-id="${item.id}">
                     <i class="fa fa-times" aria-hidden="true"></i>

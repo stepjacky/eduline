@@ -300,9 +300,10 @@ public class SysUserService extends AbstractSQLService<String, SysUser> implemen
 
 	@Override
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	public void removeById(String s) {
+	public ActionResult removeById(String s) {
 		
 		super.removeById(s);
+		return ActionResult.SUCCESS;
 	}
 
 	private final LoadingCache<String, String> nickCache = CacheBuilder.newBuilder()

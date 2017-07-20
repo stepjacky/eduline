@@ -81,7 +81,7 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 	}
 
 	@Override
-	public void update(T t) {
+	public ActionResult update(T t) {
 		throw new UnsupportedOperationException();
 
 	}
@@ -111,7 +111,7 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 	}
 
 	@Override
-	public void removeById(S s) {
+	public ActionResult removeById(S s) {
 
 		throw new UnsupportedOperationException();
 	}

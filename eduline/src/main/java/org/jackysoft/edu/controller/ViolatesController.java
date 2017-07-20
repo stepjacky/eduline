@@ -23,6 +23,7 @@ import org.jackysoft.edu.service.base.AbstractService;
 import org.jackysoft.edu.service.GroupMemberService;
 import org.jackysoft.edu.service.SysUserService;
 import org.jackysoft.edu.service.ViolatesService;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
 import org.jackysoft.query.QueryBuilder;
 import org.jackysoft.query.QueryParser;
@@ -211,14 +212,14 @@ public class ViolatesController extends AbstractController<String,Violates>{
 	
 	@Override
 	@RequestMapping(value = "/remove/{id}")
-	public ModelAndView remove(@PathVariable("id")String id) {
+	public ActionResult remove(@PathVariable("id")String id) {
 		
 		SysUser user = (SysUser) SecurityContextHolder.getContext().getAuthentication();
 		ModelAndView mav = new ModelAndView("remove");
 		QueryBuilder qc = new QueryBuilder();
 		qc.setQueries(String.format("id`%s;teacher`%s", id,user.getUsername()));
 		getService().remove(qc);
-		return mav;
+		return ActionResult.SUCCESS;
 		
 	}
 

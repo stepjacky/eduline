@@ -4,6 +4,7 @@ import org.jackysoft.edu.entity.Course;
 import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.CourseMapper;
 import org.jackysoft.edu.service.base.AbstractSQLService;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.QueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -23,9 +24,9 @@ public class CourseService extends AbstractSQLService<Integer, Course> {
 		
 	@Override
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	public void update(Course t) {
+	public ActionResult update(Course t) {
 		// TODO Auto-generated method stub
-		super.update(t);
+	return 	super.update(t);
 	}
 
 
@@ -47,9 +48,9 @@ public class CourseService extends AbstractSQLService<Integer, Course> {
 
 
 	@Override@PreAuthorize("hasRole('ROLE_ADMIN')")
-	public void removeById(Integer s) {
+	public ActionResult removeById(Integer s) {
 		// TODO Auto-generated method stub
-		super.removeById(s);
+		return super.removeById(s);
 	}
 
 

@@ -15,7 +15,8 @@ $(function () {
         var param = JSON.stringify(data);
 
         postJson('/textbook/save',param,function(rst){
-            console.log(rst);
+           // console.log(rst);
+            window.location.href = window.location.href;
         });
 
 

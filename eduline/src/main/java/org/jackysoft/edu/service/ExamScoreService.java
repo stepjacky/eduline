@@ -253,8 +253,8 @@ public class ExamScoreService extends AbstractSQLService<String, ExamScore> impl
 
 	@Override
 	@PreAuthorize("hasRole('ROLE_TEACHER')")
-	public void update(ExamScore t) {
-		super.update(t);
+	public ActionResult update(ExamScore t) {
+		return super.update(t);
 	}
 
 	@Override
@@ -271,8 +271,8 @@ public class ExamScoreService extends AbstractSQLService<String, ExamScore> impl
 
 	@Override
 	@PreAuthorize("hasRole('ROLE_TEACHER')")
-	public void removeById(String s) {
-		super.removeById(s);
+	public ActionResult removeById(String s) {
+		return super.removeById(s);
 	}
 
 	@Override

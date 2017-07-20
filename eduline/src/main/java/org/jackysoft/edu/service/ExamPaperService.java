@@ -4,6 +4,7 @@ import org.jackysoft.edu.entity.ExamPaper;
 import org.jackysoft.edu.mapper.AbstractMapper;
 import org.jackysoft.edu.mapper.ExamPaperMapper;
 import org.jackysoft.edu.service.base.AbstractSQLService;
+import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.QueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -25,9 +26,9 @@ public class ExamPaperService extends AbstractSQLService<String, ExamPaper> {
 		
 	@Override
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	public void update(ExamPaper t) {
+	public ActionResult update(ExamPaper t) {
 		// TODO Auto-generated method stub
-		super.update(t);
+		return super.update(t);
 	}
 
 
@@ -58,9 +59,9 @@ public class ExamPaperService extends AbstractSQLService<String, ExamPaper> {
 
 	@Override
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	public void removeById(String s) {
+	public ActionResult removeById(String s) {
 		// TODO Auto-generated method stub
-		super.removeById(s);
+	    return 	super.removeById(s);
 	}
 
 

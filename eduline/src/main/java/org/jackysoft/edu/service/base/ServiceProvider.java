@@ -22,7 +22,7 @@ public interface ServiceProvider<S,T> {
     ActionResult save(T t);
     List<ActionResult> saveAll(List<T> list);
     void beforeInput(ModelAndView mav);
-    void update(T t);
+    ActionResult update(T t);
     void sort(S s,int sort);
     /**
      *
@@ -35,7 +35,7 @@ public interface ServiceProvider<S,T> {
     void updateSimple(S id,String key,String value);
     void update(QueryBuilder qc);
     void remove(QueryBuilder qc);
-    void removeById(S s);
+    ActionResult removeById(S s);
     void upload(T bean , Part part);
     List<ZtreeNode> ztree(String parent);
     

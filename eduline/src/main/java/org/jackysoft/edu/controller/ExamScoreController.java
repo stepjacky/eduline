@@ -147,10 +147,6 @@ public class ExamScoreController extends AbstractController<String, ExamScore> {
 		return mav;
 	}
 
-	@Override
-	public ModelAndView input() {
-		return new ModelAndView("input");
-	}
 
 	@RequestMapping(value = "/score/{page}")
 	public ModelAndView scoreindex(@PathVariable("page") int page) {

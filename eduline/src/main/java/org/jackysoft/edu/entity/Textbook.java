@@ -20,7 +20,7 @@ public class Textbook  extends NoEntity{
     /**
      * 章节根ID
      * */
-    String chapterRoot;
+    String chapter;
 
     public String getName() {
         return name;
@@ -47,12 +47,11 @@ public class Textbook  extends NoEntity{
         this.course = course;
     }
 
-
-    public String getChapterRoot() {
-        return chapterRoot;
+    public String getChapter() {
+        return chapter;
     }
 
-    public void setChapterRoot(String chapterRoot) {
-        this.chapterRoot = chapterRoot;
+    public void setChapter(String chapter) {
+        this.chapter = chapter;
     }
 }

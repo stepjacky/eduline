@@ -202,8 +202,9 @@ public abstract class AbstractSQLService<S, T> extends AbstractService<S, T> {
 
 	@Override
 	// @CacheEvict(value="#root.targetClass+#root.methodName+#t.toString()")
-	public void update(T t) {
+	public ActionResult update(T t) {
 		this.getMapper().update(t);
+		return ActionResult.SUCCESS;
 
 	}
 
@@ -223,9 +224,10 @@ public abstract class AbstractSQLService<S, T> extends AbstractService<S, T> {
 
 	@Override
 	// @CacheEvict(value="#root.targetClass+#root.methodName+#s")
-	public void removeById(S s) {
+	public ActionResult removeById(S s) {
 
 		this.getMapper().delete(s);
+		return ActionResult.SUCCESS;
 	}
 
 	@Override

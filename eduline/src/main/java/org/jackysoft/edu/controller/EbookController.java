@@ -35,17 +35,8 @@ public class EbookController extends AbstractController<String, Ebook> {
 	@Autowired
 	protected EbookService service;
 
-	
-	
-	
-	
-	@Override
-	@RequestMapping(value = "/input")
-	public ModelAndView input() {
-		ModelAndView mav = super.input();
-		mav.addObject("tags", service.findTags());
-		return mav;
-	}
+
+
 
 	@RequestMapping(value = "/cover/path", method = RequestMethod.GET)
 	public ResponseEntity<InputStreamResource> coverPath(@RequestParam("path") String path) {

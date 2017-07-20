@@ -69,9 +69,9 @@ public class GroupMemberService extends AbstractSQLService<String, GroupMember> 
 	}
 
 	@Override@PreAuthorize("hasRole('ROLE_TEACHER')")
-	public void update(GroupMember t) {
+	public ActionResult update(GroupMember t) {
 		
-		super.update(t);
+		return super.update(t);
 	}
 
 	@Override@PreAuthorize("hasRole('ROLE_TEACHER')")
@@ -87,9 +87,9 @@ public class GroupMemberService extends AbstractSQLService<String, GroupMember> 
 	}
 
 	@Override@PreAuthorize("hasRole('ROLE_TEACHER')")
-	public void removeById(String s) {
+	public ActionResult removeById(String s) {
 		
-		super.removeById(s);
+		return super.removeById(s);
 	}
 
 	@Override@PreAuthorize("hasRole('ROLE_TEACHER')")

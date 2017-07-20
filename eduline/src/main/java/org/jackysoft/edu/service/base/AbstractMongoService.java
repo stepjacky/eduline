@@ -77,17 +77,9 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 	
 	public ActionResult save(E e){
 		ActionResult result = new ActionResult();
-		Query<E> query = dataStore.createQuery(type).field(Mapper.ID_KEY).equal(e.getId());
-		
-		E t = query.get();		
-		if(t==null) {
-			dataStore.save(e);
-
-		}else{
-			e.setId(null);
-			dataStore.updateFirst(query, e, true);
-		}
+		dataStore.save(e);
 		result.put("bean",e);
+		result.setFlag(true);
 		return result;
 	}
 	
@@ -128,7 +120,7 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 	public void updateOnly(String id,String key,String value){
 		UpdateOperations<E> update = dataStore.createUpdateOperations(type).add(key, value);
 		
-		dataStore.update(dataStore.createQuery(type).field(Mapper.ID_KEY).equal(id), update);
+		dataStore.update(queryById(id), update);
 	}
 
 	@Override
@@ -180,7 +172,7 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 	public E findById(String s) {
 		if(Strings.isNullOrEmpty(s)) return null;
 		Query<E> query = dataStore.createQuery(type);
-		E bean= query.field(Mapper.ID_KEY).equal(new ObjectId(s)).get();
+		E bean= queryById(s).get();
 		return bean;
 	}
 
@@ -193,12 +185,11 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 	}
 
 	@Override
-	public void update(E t) {
-		Query<E> query = query().field(Mapper.ID_KEY).equal(
-				new ObjectId(t.getId()));
+	public ActionResult update(E t) {
+		Query<E> query = queryById(t.getId());
 		t.setId(null);
 		dataStore.updateFirst(query,t,false);
-		
+		return ActionResult.SUCCESS;
 	}
 
 	@Override
@@ -206,13 +197,12 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 		Map<String,Object> fields = new QueryParser().parsePartial(props);
 		UpdateOperations<E> operations =  dataStore.createUpdateOperations(type);
 		fields.forEach((k,v)->operations.set(k, v));
-		dataStore.update(dataStore.createQuery(type).field(Mapper.ID_KEY).equal(id),
-	    		  operations,true);
+		dataStore.update(queryById(id),  operations,true);
 	}
 
 	@Override
 	public void updateSimple(String id, String key, String value) {
-		dataStore.update(dataStore.createQuery(type).field(Mapper.ID_KEY).equal(id),
+		dataStore.update(queryById(id),
 				 dataStore.createUpdateOperations(type).set(key, value),true);
 		
 	}
@@ -228,8 +218,9 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 	}
 
 	@Override
-	public void removeById(String s) {
-		dataStore.delete(dataStore.createQuery(type).field(Mapper.ID_KEY).equal(s));
+	public ActionResult removeById(String s) {
+		dataStore.delete(queryById(s));
+		return ActionResult.SUCCESS;
 		
 	}
 
@@ -241,6 +232,10 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 
 	protected Query<E> query(){
 		return this.dataStore.createQuery(type);
+	}
+	protected Query<E> queryById(String s){
+		if(Strings.isNullOrEmpty(s) || !ObjectId.isValid(s)) return query();
+		return query().field(Mapper.ID_KEY).equal(new ObjectId(s));
 	}
 	protected <T> Query<T> query(Class<T> cls){
 		return this.dataStore.createQuery(cls);
@@ -257,8 +252,7 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 
 	@Override
 	public void sort(String s, int sort) {
-		Query<E> query = this.dataStore.createQuery(type)
-		                 .field(Mapper.ID_KEY).equal(s);
+		Query<E> query = queryById(s);
 		UpdateOperations<E> updates  =this.dataStore.createUpdateOperations(type).set("sort",sort);
 		this.dataStore.update(query,updates);
 	}

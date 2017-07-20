@@ -153,6 +153,7 @@ function postJson(url,data,cak){
             'type':'POST',
             'dataType':'json',
             'success':function(rst){
+
                if($.isFunction(cak)){
                	cak(rst);
 			   }

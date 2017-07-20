@@ -7,14 +7,15 @@ import org.mongodb.morphia.annotations.Embedded;
 
 @Table(label = "课程章节")
 public class Chapter extends NoEntity {
-	
+
+	//名称
 	private String name;
 
+	//父章节
 	private String parent;
 
-	private String isParent = "false";
-
-	private String textBook;
+	//课本
+	private String textbook;
 
 	//课程
 	int course;
@@ -22,20 +23,13 @@ public class Chapter extends NoEntity {
 	//年级
 	int grade;
 
+
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getIsParent() {
-		return isParent;
-	}
-
-	public void setIsParent(String isParent) {
-		this.isParent = isParent;
 	}
 
 	public String getParent() {
@@ -47,13 +41,6 @@ public class Chapter extends NoEntity {
 	}
 
 
-	public String getTextBook() {
-		return textBook;
-	}
-
-	public void setTextBook(String textBook) {
-		this.textBook = textBook;
-	}
 	public int getCourse() {
 		return course;
 	}
@@ -70,20 +57,11 @@ public class Chapter extends NoEntity {
 		this.grade = grade;
 	}
 
-	@Override
-	public ZtreeNode toZtreeNode() {
-		ZtreeNode node = new ZtreeNode();
-		node.setId(getId());
-		node.setName(getName());
-		node.setParent(getParent());
-		node.setSort(getSort());
-		node.setIsParent(getIsParent());
-		return node;
+	public String getTextbook() {
+		return textbook;
 	}
 
-
-	
-	
-	
-	
+	public void setTextbook(String textbook) {
+		this.textbook = textbook;
+	}
 }
