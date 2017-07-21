@@ -70,6 +70,7 @@
 <script src="${sbase}static/lib/pdftool.js"></script>
 
 <script src="${sbase}static/lib/template.js"></script>
+<script src="${sbase}static/lib/tools-simple.js"></script>
 <script src="${sbase}static/lib/tools.js"></script>
 <script src="${sbase}static/lib/datacrud.js"></script>
 

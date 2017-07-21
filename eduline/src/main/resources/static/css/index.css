@@ -30,3 +30,6 @@ a:hover{
 .numPinner{
 	width:30px;
 }
+.panel-item{
+    margin-bottom: 0px;
+}

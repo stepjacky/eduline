@@ -141,28 +141,6 @@ function doForm(action, data) {
 	oform.submit();
 }
 
-function postJson(url,data,cak){
-	if(!url || !data) {
-		console.error("param for ajax is not enough");
-		return;
-	}
-    $.ajax({
-            'url':url,
-            'contentType': 'application/json',
-            'data': data,
-            'type':'POST',
-            'dataType':'json',
-            'success':function(rst){
-
-               if($.isFunction(cak)){
-               	cak(rst);
-			   }
-            }
-
-        }
-    )
-}
-
 function isIE() {
 	if (-[ 1, ]) {
 		return false;
@@ -172,17 +150,6 @@ function isIE() {
 
 }
 
-function reloadPage() {
-	window.location.href = window.location.href;
-}
-function guid() {
-	function s4() {
-		return Math.floor((1 + Math.random()) * 0x10000).toString(16)
-				.substring(1);
-	}
-	return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4()
-			+ s4() + s4();
-}
 var confirmDlg, redirectDlg;
 $(function() {
 	$('[data-toggle="tooltip"]').tooltip();
@@ -191,26 +158,6 @@ $(function() {
 	$(document.body).on('click', '.closeBlock', $.unblockUI);
 });
 
-function notify(text) {
-	$.blockUI({
-		message :"<span class='label label-primary'>系统消息</span><p>"+text+"</p>",
-		css : {
-			border : '1px solid #ccc',
-			padding : '8px',
-			backgroundColor : '#333',
-			'-webkit-border-radius' : '10px',
-			'-moz-border-radius' : '10px',
-			opacity : 1,
-			color : '#fff'
-		},
-		onOverlayClick:$.unblockUI
-		
-	});
-}
-
-function redirectTo(url) {
-	window.location.href = url;
-}
 
 function tellUser(text, jump) {
 	
@@ -255,50 +202,3 @@ function newHiddenElement(name, value) {
 	ele.val(value);
 	return ele;
 }
-
-
-$.ajaxSetup({
-	beforeSend : function(xhr) {
-		$.blockUI({
-			message : '<i class="fa fa-cog fa-spin fa-2x"></i>',
-			css : {
-				border : 'none',
-				padding : '15px',
-				backgroundColor : '#000',
-				'-webkit-border-radius' : '10px',
-				'-moz-border-radius' : '10px',
-				opacity : .5,
-				color : '#fff'
-			}
-		});
-
-	},
-	start:function(){
-		console.dir(arguments);
-	},
-	complete : function(xhr, ts) {
-		
-		if(!$.unblockUI){
-			window.location.replace("/");
-		}else{
-			$.unblockUI();
-		}
-	}
-});
-
-$.ajaxPrefilter(function(options, originalOptions, jqXHR) {
-
-
-	if (typeof csrfinfo != 'undefined' && csrfinfo && (options.type == 'post' || options.type=='POST' )) {
-		// log(options.url);
-
-		if (options.url.indexOf('?') == -1)
-			options.url += '?' + csrfinfo.param();
-		else
-			options.url += '&' + csrfinfo.param();
-
-		console.log(options.url);
-	}
-
-	// log(options);
-});

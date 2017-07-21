@@ -106,6 +106,12 @@ public abstract class AbstractController<S, T> {
 
 	}
 
+	@ResponseBody
+	@RequestMapping("/get/{id}")
+	public T getOne(@PathVariable("id")S id){
+		return getService().findById(id);
+	}
+
 
 	
 	@RequestMapping(value = "/persiste", method = RequestMethod.POST)

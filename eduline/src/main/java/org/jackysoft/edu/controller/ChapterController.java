@@ -33,7 +33,14 @@ public class ChapterController extends AbstractController<String, Chapter> {
 	public ModelAndView input(@RequestParam(value="param",required = false) String param) {
 		ModelAndView mav =  super.input(param);
 		Textbook book = textbookService.findById(param);
+		List<Chapter> roots = service.findByParent("root");
+		if(roots!=null && !roots.isEmpty()){
+			for(Chapter c : roots){
+				c.getChildren().addAll(service.findByParent(c.getId()));
+			}
+		}
 		mav.addObject("book",book);
+		mav.addObject("roots",roots);
 		return mav;
 	}
 

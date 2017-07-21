@@ -35,12 +35,37 @@
 			 
 			   <form action="/login" id="loginForm" method="post">
 			     <input type="hidden" name="${_csrf.parameterName}"	value="${_csrf.token}" /> 
-			       <div id="user">用 户
-			         <input type="text" name="username" value="${testable?'cuizheng':'' }"/>
-			       </div>
-				   <div id="password">密   码
-				     <input type="password" name="password" value="${testable?'123456':'' }" />				    
-				   </div>
+
+				  <c:choose>
+					  <c:when test="${testable}">
+						  <div id="user">用户
+							 <select name="username">
+								 <option value="cuizheng">cuizheng</option>
+								 <option value="superuser">superuser</option>
+							 </select>
+						  </div>
+						  <div id="password">密码
+							  <select name="password">
+								  <option value="123456">123456</option>
+								  <option value="admin1234">admin1234</option>
+							  </select>
+						  </div>
+
+					  </c:when>
+					  <c:otherwise>
+						  <div id="user">用 户
+							  <input type="text" name="username" value=""/>
+						  </div>
+						  <div id="password">密   码
+							  <input type="password" name="password" value="" />
+						  </div>
+
+					  </c:otherwise>
+
+				  </c:choose>
+
+
+
 				   <div id="btn">
 				   <a href="javascript:;" onclick="login();">登录</a>
 				   <a href="javascript:;" onclick="reset();">清空</a></div>

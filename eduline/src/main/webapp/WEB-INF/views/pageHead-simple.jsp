@@ -25,22 +25,20 @@
     <link href="${sbase}static/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
 
     <link href="${sbase}static/lib/bootstrap/docs.min.css" rel="stylesheet">
-    <link rel="stylesheet"
-          href="${sbase}static/lib/bootstrap-calendar/css/calendar.css">
-    <link rel="stylesheet"
-          href="${sbase}static/lib/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
+
     <link rel="stylesheet"
           href="${sbase}static/lib/font-awesome/css/font-awesome.css">
     <link href="${sbase}static/css/index.css" rel="stylesheet">
 
     <script src="${sbase}static/lib/jquery-1.11.2.min.js"></script>
     <script src="${sbase}static/lib/lodash.js"></script>
-
+    <script src="${sbase}static/lib/bootstrap/js/bootstrap.min.js"></script>
 
     <script src="${sbase}static/lib/moment/moment.js"></script>
     <script src="${sbase}static/lib/moment/locale/zh-cn.js"></script>
-
-
+    <script src="${sbase}static/lib/vue/vue.js"></script>
+    <script src="${sbase}static/lib/bootbox.js"></script>
+    <script src="${sbase}static/lib/tools-simple.js"></script>
 
 </head>
 

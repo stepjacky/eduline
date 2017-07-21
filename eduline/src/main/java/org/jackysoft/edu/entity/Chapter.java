@@ -3,6 +3,10 @@ package org.jackysoft.edu.entity;
 import org.jackysoft.edu.annotation.Table;
 import org.jackysoft.edu.formbean.ZtreeNode;
 import org.mongodb.morphia.annotations.Embedded;
+import org.mongodb.morphia.annotations.Transient;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Table(label = "课程章节")
@@ -22,6 +26,9 @@ public class Chapter extends NoEntity {
 
 	//年级
 	int grade;
+
+	@Transient
+	List<Chapter> children = new ArrayList<>();
 
 
 	public String getName() {
@@ -63,5 +70,13 @@ public class Chapter extends NoEntity {
 
 	public void setTextbook(String textbook) {
 		this.textbook = textbook;
+	}
+
+	public List<Chapter> getChildren() {
+		return children;
+	}
+
+	public void setChildren(List<Chapter> children) {
+		this.children = children;
 	}
 }
