@@ -1,10 +1,8 @@
 package org.jackysoft.edu.entity;
 
 import org.jackysoft.edu.annotation.Table;
-import org.jackysoft.utils.HomeworkConstant;
 import org.mongodb.morphia.annotations.Embedded;
 
-import java.util.List;
 import java.util.Set;
 
 @Table(label = "作业")

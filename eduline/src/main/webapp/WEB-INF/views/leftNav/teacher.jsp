@@ -34,8 +34,8 @@
 			aria-expanded="true">
 			<ul class="list-group">
 				<li class="list-group-item"><a
-					href="/lecturenotes/lectures/0?ajax=false">我的讲义</a></li>
-<li class="list-group-item"><a href="/lecturenotes/public/-1/0">协作教研</a></li>
+					href="/resource/listresource">我的资源</a></li>
+
 <li class="list-group-item"><a href="/homework/homework/prehomework">布置作业</a></li>
 <li class="list-group-item"><a href="/homework/teacher/homeworks/0">我的作业</a></li>
 
@@ -92,27 +92,6 @@
 	</div>
 
 
-
-	<div class="panel panel-primary">
-		<div class="panel-heading" role="tab" id="collapseListGroupHeading6">
-			<h4 class="panel-title">
-				<a class="" data-toggle="collapse" href="#collapseListGroup6"
-					aria-expanded="true" aria-controls="collapseListGroup6">电子校历
-				</a>
-			</h4>
-		</div>
-		<div id="collapseListGroup6" class="panel-collapse collapse out"
-			role="tabpanel" aria-labelledby="collapseListGroupHeading6"
-			aria-expanded="true">
-			<ul class="list-group">
-				<li class="list-group-item"><a href="/userevent/input">电子校历</a>
-				</li>
-				
-
-			</ul>
-
-		</div>
-	</div>
     <div class="panel panel-primary">
 		<div class="panel-heading" role="tab" id="collapseListGroupHeading3">
 			<h4 class="panel-title">

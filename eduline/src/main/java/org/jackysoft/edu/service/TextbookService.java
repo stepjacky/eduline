@@ -17,9 +17,6 @@ public class TextbookService extends AbstractMongoService<Textbook> {
     @Autowired
     protected CourseService courseService;
 
-    public void setChapter(String id,String chapter){
-        dataStore.update(queryById(id),updates().set("chapter",chapter));
-    }
 
     @Override
     public void beforeInput(ModelAndView mav) {

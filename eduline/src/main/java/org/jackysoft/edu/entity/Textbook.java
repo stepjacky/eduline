@@ -17,10 +17,6 @@ public class Textbook  extends NoEntity{
     @Embedded
     NameValue course;
 
-    /**
-     * 章节根ID
-     * */
-    String chapter;
 
     public String getName() {
         return name;
@@ -47,11 +43,4 @@ public class Textbook  extends NoEntity{
         this.course = course;
     }
 
-    public String getChapter() {
-        return chapter;
-    }
-
-    public void setChapter(String chapter) {
-        this.chapter = chapter;
-    }
 }

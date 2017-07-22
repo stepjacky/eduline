@@ -1,6 +1,6 @@
 package org.jackysoft.utils;
 
-public interface HomeworkConstant {
+public interface EdulineConstant {
 
     enum CommonType {
         common("大家的分享")
@@ -18,7 +18,7 @@ public interface HomeworkConstant {
         }
     }
 
-    enum ContentStyle{
+    enum StyleType {
         course("课件"),
         exercise("习题"),
         material("素材"),
@@ -26,7 +26,7 @@ public interface HomeworkConstant {
         Studycase("学案"),
         other("其他");
         private String name;
-        ContentStyle(String name){
+        StyleType(String name){
             this.name = name;
         }
         public String getName(){
@@ -37,14 +37,14 @@ public interface HomeworkConstant {
             return ordinal();
         }
     }
-    enum DetailType{
+    enum FileType {
         ppt("幻灯片"),
         word("WORD文档"),
         video("视频"),
         img("图片"),
         other("其他");
         private String name;
-        DetailType(String name){
+        FileType(String name){
 
             this.name = name;
         }

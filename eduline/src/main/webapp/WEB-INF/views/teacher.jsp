@@ -1,3 +1,3 @@
 <script>
-   window.location.href='/userevent/input';
+   //window.location.href='/resource/listresource';
 </script>

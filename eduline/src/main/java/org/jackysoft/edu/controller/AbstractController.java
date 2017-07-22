@@ -380,7 +380,7 @@ public abstract class AbstractController<S, T> {
 
 	@RequestMapping(value = "/input")
 	public ModelAndView input(@RequestParam(value="param",required = false)String param) {
-		ModelAndView mav = new ModelAndView("input");
+		ModelAndView mav = new ModelAndView("/input");
 		mav.addObject("param",param);
 		this.getService().beforeInput(mav);
 		return mav;

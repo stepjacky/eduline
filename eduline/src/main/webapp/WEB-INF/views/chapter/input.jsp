@@ -5,16 +5,31 @@
 <%@ include file="../pageHead-simple.jsp" %>
 
 <div class="alert alert-info">
-    ${book.name}章节添加,年级,${book.grade.name},课程,${book.course.name}
+   <a href="/textbook/pager/0?ajax=false">
+       <i class="fa fa-list"></i>返回课本
+
+   </a> ${book.name}
+
+        章节添加,年级,${book.grade.name},课程,${book.course.name}
+</div>
+<div class="alert alert-warning">
+
+    <ul class="breadcrumb">
+        <li>点击</li>
+        <li>标题编辑章节</li>
+        <li><i class="fa fa-plus"></i>添加新章节</li>
+        <li><i class="fa fa-address-book"></i>添加二级章节</li>
+        <li><i class="fa fa-times-circle"></i>删除章节</li>
+
+    </ul>
 </div>
 <div class="row">
      <div class="col-md-4">
+
         <c:forEach items="${roots}" var="item">
             <div class="panel panel-info panel-item">
 
                 <div class="panel-heading">
-
-
 
                         <a href="javascript:;" class="action-edit" data-id="${item.id}">
                                 ${item.name}

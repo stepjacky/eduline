@@ -20,9 +20,9 @@ public class SpringMvcConfig extends WebMvcConfigurerAdapter {
 		registry.addResourceHandler("/static/**")
 		.addResourceLocations("classpath:/static/");
 		registry.addResourceHandler("/errorHtml")
-		.addResourceLocations("classpath:/jetx/errorHtml.jsp");
+		.addResourceLocations("/WEB-INF/views/errorHtml.jsp");
 		registry.addResourceHandler("/error")
-		.addResourceLocations("classpath:/jetx/error.jsp");
+		.addResourceLocations("/WEB-INF/views/error.jsp");
 		super.addResourceHandlers(registry);
 	}
 

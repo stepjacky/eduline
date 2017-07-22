@@ -2,11 +2,13 @@ package org.jackysoft.edu.bean;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.common.base.Splitter;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jackysoft.query.Pager;
@@ -38,60 +40,67 @@ public class PrePostHandlerInceptor extends HandlerInterceptorAdapter {
 			Object handler, 
 			ModelAndView mav)
 			throws Exception {
-	
-	
-		if(mav==null) mav = new ModelAndView();
+
+
+		logger.info(request.getRequestURI()+" >> "+(mav!=null?mav.getViewName():""));
+		if(mav==null){
+			logger.info(request.getRequestURI()+", got null mav");
+			return;
+		}
 		if (".jasper".equals(request.getRequestURI())) {
 		    mav.setViewName(mav.getViewName().substring(1));
 			return;
 		}
-		HandlerMethod hd = (HandlerMethod) handler;
 
-		if (hd.getMethod().isAnnotationPresent(ResponseBody.class))
-			return;
+
+		HandlerMethod hd = (HandlerMethod) handler;
+		if (hd.getMethod().isAnnotationPresent(ResponseBody.class))return;
 		String mname = hd.getMethod().getName();
 		RequestMapping rm = hd.getBeanType().getAnnotation(RequestMapping.class);
 		String prefix = (rm == null) ? "/" : rm.value()[0];
 
-		if (mav != null) {
-			LocalDateTime now = LocalDateTime.now();
-			mav.addObject("atNow", now);
-			mav.addObject("simpleNow", LocalDate.now().toString());
-			mav.addObject("sysUser", SecurityContextHolder.getContext().getAuthentication());
-			mav.addObject("base", request.getContextPath());
-			if (!Strings.isNullOrEmpty(mav.getViewName()))
-				mname = mav.getViewName();
-			if (!Strings.isNullOrEmpty(mname) && !mname.contains("redirect:")) {
-				if (!(mav.getView() instanceof JasperReportsPdfView)) {
-					mav.setViewName(prefix + (prefix.endsWith("/") ? "" : "/") + mname);
-				}
+		LocalDateTime now = LocalDateTime.now();
+		mav.addObject("atNow", now);
+		mav.addObject("simpleNow", LocalDate.now().toString());
+		mav.addObject("sysUser", SecurityContextHolder.getContext().getAuthentication());
+		mav.addObject("base", request.getContextPath());
 
-			}
-
-			Optional<String> qs = Optional.ofNullable(request.getQueryString());
-
-			String fullUrl = request.getRequestURI() + "?" + qs.orElse("");
-			if (mav.getModelMap().containsAttribute("qstring")
-					&& "POST".equals(request.getMethod().toUpperCase())) {
-				String s = mav.getModelMap().get("qstring").toString();
-				fullUrl += "&" + s;
-
-			}			
-			for(Object v : mav.getModel().values()){
-				if(v==null) continue;
-				if (v.getClass() == Pager.class) {
-					Pager po = Pager.class.cast(v);
-					if (po != null) {
-						po.setUri(fullUrl);
-						logger.info(fullUrl);
-					}
-				}
+		if (!Strings.isNullOrEmpty(mav.getViewName()))
+			mname = mav.getViewName();
+		if (!Strings.isNullOrEmpty(mname) && !mname.contains("redirect:")) {
+			if (!(mav.getView() instanceof JasperReportsPdfView)) {
+				if(mname.indexOf('/')<0)
+				mav.setViewName(prefix + (prefix.endsWith("/") ? "" : "/") + mname);
 			}
 
 		}
 
-		// logger.info("md : " + mav);
+		Optional<String> qs = Optional.ofNullable(request.getQueryString());
 
+		String fullUrl = request.getRequestURI() + "?" + qs.orElse("");
+		if (mav.getModelMap().containsAttribute("qstring")
+				&& "POST".equals(request.getMethod().toUpperCase())) {
+			String s = mav.getModelMap().get("qstring").toString();
+			fullUrl += "&" + s;
+
+		}
+		for(Object v : mav.getModel().values()){
+			if(v==null) continue;
+			if (v.getClass() == Pager.class) {
+				Pager po = Pager.class.cast(v);
+				if (po != null) {
+					po.setUri(fullUrl);
+				}
+			}
+		}
+		String finalQuery = qs.orElse("");
+		Iterable<String> first = Splitter.on('&').split(finalQuery);
+		for(String q:first){
+			List<String> paire = Splitter.on('=').splitToList(q);
+			if(paire!=null && !paire.isEmpty() && paire.size()>=2){
+				mav.addObject(paire.get(0),paire.get(1));
+			}
+		}
 	}
 
 }

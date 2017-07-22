@@ -33,10 +33,10 @@ public class ChapterController extends AbstractController<String, Chapter> {
 	public ModelAndView input(@RequestParam(value="param",required = false) String param) {
 		ModelAndView mav =  super.input(param);
 		Textbook book = textbookService.findById(param);
-		List<Chapter> roots = service.findByParent("root");
+		List<Chapter> roots = service.findByParent("root",param);
 		if(roots!=null && !roots.isEmpty()){
 			for(Chapter c : roots){
-				c.getChildren().addAll(service.findByParent(c.getId()));
+				c.getChildren().addAll(service.findByParent(c.getId(),param));
 			}
 		}
 		mav.addObject("book",book);
@@ -44,12 +44,6 @@ public class ChapterController extends AbstractController<String, Chapter> {
 		return mav;
 	}
 
-	@ResponseBody
-	@RequestMapping("/parent/{parent}")
-	public List<Chapter> parent(@PathVariable("parent") String parent) {
-		List<Chapter> beans = service.findByParent(parent);
-		return beans;
-	}
 
 	@Override
 	public AbstractService<String, Chapter> getService() {

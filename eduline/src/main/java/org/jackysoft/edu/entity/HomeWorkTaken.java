@@ -1,11 +1,9 @@
 package org.jackysoft.edu.entity;
 
 import org.jackysoft.edu.annotation.Table;
-import org.jackysoft.utils.HomeworkConstant;
+import org.jackysoft.utils.EdulineConstant;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Reference;
-
-import java.util.List;
 
 @Table(label = "做作业")
 public class HomeWorkTaken {
@@ -29,7 +27,7 @@ public class HomeWorkTaken {
     String explain;
 
     //作业状态
-    String status = HomeworkConstant.HoweworkStatus.unsubmit.name();
+    String status = EdulineConstant.HoweworkStatus.unsubmit.name();
     //得分
     float score = 0f;
 

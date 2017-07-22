@@ -12,7 +12,7 @@ import org.jackysoft.edu.entity.*;
 import org.jackysoft.edu.service.base.AbstractMongoService;
 import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
-import org.jackysoft.utils.HomeworkConstant;
+import org.jackysoft.utils.EdulineConstant;
 import org.mongodb.morphia.mapping.Mapper;
 import org.mongodb.morphia.query.Query;
 import org.slf4j.Logger;
@@ -23,7 +23,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.google.common.base.Strings;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Part;
 
@@ -38,20 +37,20 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 	private GroupMemberService groupService;
 	//学生的作业
 	public Pager<HomeWorkTaken> studentHomeworks(int page, String username,String status) {
-		return homeworkByStatus(page, "student", username,"status", HomeworkConstant.HoweworkStatus.valueOf(status));
+		return homeworkByStatus(page, "student", username,"status", EdulineConstant.HoweworkStatus.valueOf(status));
 	}
 
 
 	//老师的作业
 	public Pager<HomeWorkTaken> teacherHomeworks(int page, String username,String status) {
-		return homeworkByStatus(page, "teacher", username, "status", HomeworkConstant.HoweworkStatus.valueOf(status));
+		return homeworkByStatus(page, "teacher", username, "status", EdulineConstant.HoweworkStatus.valueOf(status));
 	}
 
 	//老师作业时间线
 	public List<HomeWork> teacherHomeworkTimeline(String username) {
 		Query<HomeWork> query = query(HomeWork.class)
-				.field("teacher.value").equal(HomeworkConstant.HoweworkStatus.notreaded)
-				.field("status").equal(HomeworkConstant.HoweworkStatus.notreaded.getKey())
+				.field("teacher.value").equal(EdulineConstant.HoweworkStatus.notreaded)
+				.field("status").equal(EdulineConstant.HoweworkStatus.notreaded.getKey())
 				.order("-publishDate");
 		List<HomeWork> list =query.asList();
 		return 	list;
@@ -63,7 +62,7 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 			String participantKey,
 			String participantValue,
 			String statusKey,
-			HomeworkConstant.HoweworkStatus status) {
+			EdulineConstant.HoweworkStatus status) {
 
 		if (Strings.isNullOrEmpty(participantKey))
 			return Pager.EMPTY_PAGER();
@@ -98,7 +97,7 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 				.equal(new ObjectId(id));
 		dataStore.update(query,
 				updates(HomeWorkTaken.class)
-						.set("status", HomeworkConstant.HoweworkStatus.submited.getKey())
+						.set("status", EdulineConstant.HoweworkStatus.submited.getKey())
 						.set("submitDate", Instant.now().toEpochMilli())
 						.set("choice", choice)
 						.set("explain", fileId));
@@ -122,7 +121,7 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 		dataStore.update(query, updates(HomeWorkTaken.class)
 				.set("readDate", Instant.now().toEpochMilli())
 				.set("score", score+choiceScore)
-				.set("status", HomeworkConstant.HoweworkStatus.readed.getKey())
+				.set("status", EdulineConstant.HoweworkStatus.readed.getKey())
 				.set("yelp", yelp));
 	}
 

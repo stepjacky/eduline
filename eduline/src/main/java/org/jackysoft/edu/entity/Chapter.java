@@ -27,6 +27,8 @@ public class Chapter extends NoEntity {
 	//年级
 	int grade;
 
+	long timemillis;
+
 	@Transient
 	List<Chapter> children = new ArrayList<>();
 
@@ -72,6 +74,14 @@ public class Chapter extends NoEntity {
 		this.textbook = textbook;
 	}
 
+	public long getTimemillis() {
+		return timemillis;
+	}
+
+	public void setTimemillis(long timemillis) {
+		this.timemillis = timemillis;
+	}
+
 	public List<Chapter> getChildren() {
 		return children;
 	}
@@ -79,4 +89,6 @@ public class Chapter extends NoEntity {
 	public void setChildren(List<Chapter> children) {
 		this.children = children;
 	}
+
+
 }

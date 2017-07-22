@@ -1,8 +1,7 @@
 package org.jackysoft.edu.entity;
 
 import org.jackysoft.edu.annotation.Table;
-import org.jackysoft.utils.HomeworkConstant;
-import org.mongodb.morphia.annotations.Embedded;
+import org.jackysoft.utils.EdulineConstant;
 
 @Table(label = "教学资源")
 public class Resource extends NoEntity{
@@ -10,17 +9,17 @@ public class Resource extends NoEntity{
     /**
      * 公共或者个人
      * */
-    String commonType  = HomeworkConstant.CommonType.personal.name();
+    String commonType  = EdulineConstant.CommonType.personal.name();
 
     /**
      * 类别
      * */
-    String styleType  = HomeworkConstant.ContentStyle.course.name();
+    String styleType  = EdulineConstant.StyleType.course.name();
 
     /**
      * 内容类别
      * */
-    String detailType  = HomeworkConstant.DetailType.word.name();
+    String fileType  = EdulineConstant.FileType.word.name();
 
     String name;
 
@@ -61,12 +60,12 @@ public class Resource extends NoEntity{
         this.styleType = styleType;
     }
 
-    public String getDetailType() {
-        return detailType;
+    public String getFileType() {
+        return fileType;
     }
 
-    public void setDetailType(String detailType) {
-        this.detailType = detailType;
+    public void setFileType(String fileType) {
+        this.fileType = fileType;
     }
 
     public String getName() {
