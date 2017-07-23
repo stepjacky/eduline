@@ -106,6 +106,11 @@ public class Ebook  implements MediaFile{
 		return this.getName();
 	}
 
+	@Override
+	public String getRealpath() {
+		return realPath;
+	}
+
 	public String getCoverPath() {
 		return coverPath;
 	}

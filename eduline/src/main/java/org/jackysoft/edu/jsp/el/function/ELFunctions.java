@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.jackysoft.utils.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -189,5 +190,9 @@ public class ELFunctions {
 		
 		String s = courseTypes.get(type);
 		return s!=null?s:"未知";
+	}
+
+	public static String datasize(Long size){
+		return StringUtils.getDataSize(size);
 	}
 }

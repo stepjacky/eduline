@@ -134,6 +134,11 @@ public class ExamPaper implements MediaFile {
 		return this.getName();
 	}
 
+	@Override
+	public String getRealpath() {
+		return realPath;
+	}
+
 	public long getFireTime() {
 		return fireTime;
 	}

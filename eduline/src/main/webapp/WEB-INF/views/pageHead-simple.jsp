@@ -4,6 +4,8 @@
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <c:set var="base" value="http://${domain}/" />
 <c:set var="sbase" value="${base}" />
+<c:set var="tableClass" value="table  table-hover table-condensed"/>
+
 <fmt:setBundle basename="application" var="appctx"/>
 <!DOCTYPE html>
 <html lang="en">

@@ -7,7 +7,7 @@ import org.jackysoft.utils.EdulineConstant;
 @Table(label = "习题")
 public class Exercise extends NoEntity{
 
-    String commonType = EdulineConstant.CommonType.personal.name();
+    String commonType = EdulineConstant.Commontype.personal.name();
     String name;
 
     String chapter;

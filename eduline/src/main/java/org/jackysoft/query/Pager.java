@@ -235,9 +235,15 @@ public final class Pager<T> {
 			map.putAll( URLMapper.with(query.semanticHttpQuery()));
 			map.forEach((name,value)->{
 				if("_csrf".equals(name))return;
-				//URLMapper.encode
-				pset.add(name+"="+(value));						
-			});	
+				if("page".equals(name)){
+					pset.add("page="+page);
+				}else {
+					pset.add(name + "=" + (value));
+				}
+			});
+			if(map.keySet().contains("page")){
+				baseURI = parts[0];
+			}
 		}	
 		String query = Joiner.on('&').join(pset);
 		return contextPath+baseURI+ (Strings.isNullOrEmpty(query)?"":"?")+query;		

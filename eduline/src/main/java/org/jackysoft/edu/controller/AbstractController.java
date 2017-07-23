@@ -57,6 +57,7 @@ public abstract class AbstractController<S, T> {
 	@PostMapping("/save")
 	@ResponseBody
 	public ActionResult save(@RequestBody T bean){
+		logger.info(bean);
 		if(bean!=null){
 			return getService().save(bean);
 
@@ -352,15 +353,15 @@ public abstract class AbstractController<S, T> {
 	public ResponseEntity<InputStreamResource> download(@PathVariable("id") S id)throws IOException {
 	  
 	    T t = getService().findById(id);
-	    if(!(t instanceof MediaFile)) return new ResponseEntity<InputStreamResource>(HttpStatus.NOT_IMPLEMENTED);
+	    if(!(t instanceof MediaFile)) return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 	    
 	    MediaFile mfile = (MediaFile) t;
 	    HttpHeaders headers = new HttpHeaders();
 	    headers.setContentType(MediaType.valueOf(mfile.getContentType()));
 	    headers.setContentLength(mfile.getContentLength());
 	    headers.setContentDispositionFormData("attachment", StringUtils.toDownloadFileName(mfile.getFilename()));
-        InputStreamResource isr = new InputStreamResource(new FileInputStream(new File(String.format("%s%s%s", filelocation,File.separator,mfile.getRealPath()))));
-	    return new ResponseEntity<InputStreamResource>(isr, headers, HttpStatus.OK);
+        InputStreamResource isr = new InputStreamResource(new FileInputStream(new File(String.format("%s%s%s", filelocation,File.separator,mfile.getRealpath()))));
+	    return new ResponseEntity<>(isr, headers, HttpStatus.OK);
 	}
 	
 
@@ -380,7 +381,7 @@ public abstract class AbstractController<S, T> {
 
 	@RequestMapping(value = "/input")
 	public ModelAndView input(@RequestParam(value="param",required = false)String param) {
-		ModelAndView mav = new ModelAndView("/input");
+		ModelAndView mav = new ModelAndView("input");
 		mav.addObject("param",param);
 		this.getService().beforeInput(mav);
 		return mav;

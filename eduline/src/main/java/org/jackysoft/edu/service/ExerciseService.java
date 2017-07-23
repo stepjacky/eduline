@@ -35,6 +35,9 @@ public class ExerciseService extends AbstractMongoService<Exercise> {
     @Autowired
     ChapterService chapterService;
 
+    @Autowired
+    UploadService uploadService;
+
     /**
      * 上传并分析答案
      *
@@ -101,27 +104,10 @@ public class ExerciseService extends AbstractMongoService<Exercise> {
      * 上传答案
      */
     public ActionResult uploadExercise(Part part) {
-        ActionResult result = new ActionResult();
-        if (part == null) {
-            result.setFlag(false);
-            result.setMessage("习题不能为空");
-            return result;
-        }
-        String fileName = part.getSubmittedFileName();
-        String extision = fileName.substring(fileName.lastIndexOf('.'));
-        String newName = UUID.randomUUID().toString();
-        try (InputStream ins = part.getInputStream()) {
+        ActionResult result = uploadService.upload(part);
 
-            Files.copy(ins, new File(baseDir, newName + extision).toPath());
-            ChannelManager.getManager().addCMD(CMD.getCMD(extision, newName + extision), extision);
-            result.put("filename", newName + CMD.PDF_EXTISION);
-            result.put("name", fileName);
-            result.setFlag(true);
-        } catch (IOException e) {
-            result.setFlag(false);
-            result.setMessage(e.getMessage());
-            return result;
-        }
+        ChannelManager.getManager().addCMD(CMD.getCMD(result.get("suffix")+"",
+                result.get("filename")+""+result.get("suffix")), result.get("suffix")+"");
         return result;
     }
 

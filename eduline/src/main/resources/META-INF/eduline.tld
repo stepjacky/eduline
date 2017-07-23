@@ -73,5 +73,10 @@
     <name>datetimeFormat</name>
     <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
     <function-signature>java.lang.String datetimeFormat(java.lang.Long)</function-signature>
-  </function> 
+  </function>
+  <function>
+    <name>datasize</name>
+    <function-class>org.jackysoft.edu.jsp.el.function.ELFunctions</function-class>
+    <function-signature>java.lang.String datasize(java.lang.Long)</function-signature>
+  </function>
  </taglib>

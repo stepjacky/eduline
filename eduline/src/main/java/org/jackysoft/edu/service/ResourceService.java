@@ -1,10 +1,10 @@
 package org.jackysoft.edu.service;
 
+import com.google.common.base.Strings;
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jackysoft.edu.entity.Chapter;
-import org.jackysoft.edu.entity.Resource;
-import org.jackysoft.edu.entity.Textbook;
+import org.jackysoft.edu.entity.*;
 import org.jackysoft.edu.service.base.AbstractMongoService;
 import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.lang.reflect.InvocationTargetException;
 import java.time.Instant;
 import java.util.List;
 
@@ -26,80 +27,66 @@ public class ResourceService extends AbstractMongoService<Resource> {
 
     @Autowired
     ChapterService chapterService;
+    @Autowired
+    SysUserService userService;
 
-    public ActionResult save(
-            String commonType,
-            String styleType,
-            String fileType,
-            String name,
-            String owner,
-            String chapter,
-            String realpath,
-            int size
-    ) {
 
+    @Override
+    public ActionResult save(Resource bean) {
 
         ActionResult result = new ActionResult();
-        Resource bean = new Resource();
-        Chapter chp = chapterService.findById(chapter);
+        Chapter chp = chapterService.findById(bean.getChapter());
+        bean.setModifyDate(Instant.now().toEpochMilli());
+        logger.info(chp);
         if (chp == null) {
             result.setFlag(false);
             result.setMessage("章节不存在");
             return result;
         }
-
-        bean.setChapter(chapter);
-        bean.setCourse(chp.getCourse());
-        bean.setGrade(chp.getGrade());
-        bean.setCommonType(commonType);
-        bean.setStyleType(styleType);
-        bean.setFileType(fileType);
-        bean.setName(name);
-        bean.setOwner(owner);
-        bean.setRealpath(realpath);
-        bean.setSize(size);
-        bean.setModifyDate(Instant.now().toEpochMilli());
-        dataStore.save(bean);
-        result.setFlag(true);
+        result = super.save(bean);
+        if(EdulineConstant.Commontype.common.getKey().equals(bean.getCommontype())){
+            Resource target = new Resource();
+            try {
+                BeanUtils.copyProperties(target,bean);
+            } catch (IllegalAccessException |InvocationTargetException  e) {
+                e.printStackTrace();
+            }
+            target.setId(null);
+            target.setCommontype(EdulineConstant.Commontype.personal.getKey());
+            target.setModifyDate(Instant.now().toEpochMilli());
+            super.save(bean);
+        }
         return result;
 
     }
-
-
     /**
      * 共享特定资源分页
      *
-     * @param commonType while personal is true,persent a teacher,else shared
-     * @param styleType
-     * @param fileType 内容类型
+     * @param commontype while personal is true,persent a teacher,else shared
+     * @param styletype
+     * @param filetype 内容类型
      * @param owner  用户
      * @param page 页码
      */
     public Pager<Resource> findSpecialPager(
             int page,
             String owner,
-            String commonType,
-            String styleType,
-            String fileType
+            String chapter,
+            String commontype,
+            String styletype,
+            String filetype
     ) {
 
+        if(Strings.isNullOrEmpty(chapter)) return Pager.EMPTY_PAGER();
         Query<Resource> query = query();
-        if (commonType!=null) {
-            query.field("commonType").equal(commonType);
-            if(EdulineConstant.CommonType.personal.getKey().equals(commonType)){
-                query.field("owner").equal(owner);
-            }
-
+        query.field("commontype").equal(commontype);
+        if(EdulineConstant.Commontype.personal.getKey().equals(commontype)){
+            query.field("owner.value").equal(owner);
         }
-
-        if (styleType != null) {
-            query.field("styleType").equal(styleType);
-        }
-
-        if (fileType != null) {
-            query.field("fileType").equal(fileType);
-        }
-        query.order("-modifyDate");
+        query.field("styletype").equal(styletype)
+             .field("filetype").equal(filetype)
+             .field("chapter").equal(chapter)
+             .order("-modifyDate");
 
         long count = dataStore.getCount(query);
 
@@ -108,6 +95,7 @@ public class ResourceService extends AbstractMongoService<Resource> {
                         .skip(page * Pager.DEFAULT_OFFSET)
                         .limit(Pager.DEFAULT_OFFSET));
         Pager<Resource> pager = Pager.build(page, Pager.DEFAULT_OFFSET, count, dataList, false);
+        logger.info(pager.getDataList());
         return pager;
     }
 

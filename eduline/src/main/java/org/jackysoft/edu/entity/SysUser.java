@@ -340,7 +340,7 @@ Authentication ,MediaFile{
 	}
 
 	@Override
-	public String getRealPath() {
+	public String getRealpath() {
 		return "";
 	}
 	

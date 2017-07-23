@@ -1,30 +1,37 @@
 package org.jackysoft.edu.entity;
 
 import org.jackysoft.edu.annotation.Table;
+import org.jackysoft.edu.formbean.MediaFile;
 import org.jackysoft.utils.EdulineConstant;
+import org.mongodb.morphia.annotations.Embedded;
 
 @Table(label = "教学资源")
-public class Resource extends NoEntity{
+public class Resource extends NoEntity implements MediaFile {
 
     /**
      * 公共或者个人
      * */
-    String commonType  = EdulineConstant.CommonType.personal.name();
+    String commontype;
 
     /**
      * 类别
      * */
-    String styleType  = EdulineConstant.StyleType.course.name();
+    String styletype;
 
     /**
      * 内容类别
      * */
-    String fileType  = EdulineConstant.FileType.word.name();
+    String filetype;
 
     String name;
 
     String realpath;
 
+    //所属课本
+    String textbook;
+
+    //文件后缀
+    String suffix;
 
     //所属章节
     String chapter;
@@ -36,36 +43,36 @@ public class Resource extends NoEntity{
     int grade;
 
     //拥有者
-    String owner;
+    @Embedded
+    NameValue owner;
 
     long modifyDate;
 
     int size;
 
 
-
-    public String getCommonType() {
-        return commonType;
+    public String getCommontype() {
+        return commontype;
     }
 
-    public void setCommonType(String commonType) {
-        this.commonType = commonType;
+    public void setCommontype(String commontype) {
+        this.commontype = commontype;
     }
 
-    public String getStyleType() {
-        return styleType;
+    public String getStyletype() {
+        return styletype;
     }
 
-    public void setStyleType(String styleType) {
-        this.styleType = styleType;
+    public void setStyletype(String styletype) {
+        this.styletype = styletype;
     }
 
-    public String getFileType() {
-        return fileType;
+    public String getFiletype() {
+        return filetype;
     }
 
-    public void setFileType(String fileType) {
-        this.fileType = fileType;
+    public void setFiletype(String filetype) {
+        this.filetype = filetype;
     }
 
     public String getName() {
@@ -76,6 +83,7 @@ public class Resource extends NoEntity{
         this.name = name;
     }
 
+    @Override
     public String getRealpath() {
         return realpath;
     }
@@ -84,13 +92,20 @@ public class Resource extends NoEntity{
         this.realpath = realpath;
     }
 
-
-    public String getOwner() {
-        return owner;
+    public String getTextbook() {
+        return textbook;
     }
 
-    public void setOwner(String owner) {
-        this.owner = owner;
+    public void setTextbook(String textbook) {
+        this.textbook = textbook;
+    }
+
+    public String getSuffix() {
+        return suffix;
+    }
+
+    public void setSuffix(String suffix) {
+        this.suffix = suffix;
     }
 
     public String getChapter() {
@@ -117,6 +132,14 @@ public class Resource extends NoEntity{
         this.grade = grade;
     }
 
+    public NameValue getOwner() {
+        return owner;
+    }
+
+    public void setOwner(NameValue owner) {
+        this.owner = owner;
+    }
+
     public long getModifyDate() {
         return modifyDate;
     }
@@ -132,6 +155,23 @@ public class Resource extends NoEntity{
     public void setSize(int size) {
         this.size = size;
     }
+
+    //method for download
+    @Override
+    public long getContentLength() {
+        return size;
+    }
+
+    @Override
+    public String getContentType() {
+        return "application/octet-stream";
+    }
+
+    @Override
+    public String getFilename() {
+        return name+(suffix.startsWith(".")?suffix:suffix.substring(1));
+    }
+
 }
 
 

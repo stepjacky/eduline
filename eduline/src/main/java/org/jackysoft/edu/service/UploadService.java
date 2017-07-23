@@ -1,4 +1,5 @@
-package org.jackysoft.edu.service.base;
+package org.jackysoft.edu.service;
+
 
 import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.file.CMD;
@@ -19,35 +20,34 @@ public class UploadService {
     @Value("${uploaded.location}")
     protected String baseDir;
 
+    public ActionResult upload(Part part){
 
-    public ActionResult upload(Part part) {
         ActionResult result = new ActionResult();
-        if(part==null){
+        if (part == null) {
             result.setFlag(false);
-            result.setMessage("信息体为空");
+            result.setMessage("文件不能为空");
             return result;
         }
-
         String fileName = part.getSubmittedFileName();
-        //not include dot
-        String extision = fileName.substring(fileName.lastIndexOf('.')+1);
-        try(InputStream ins = part.getInputStream()){
-            String newfileName = UUID.randomUUID().toString();
-            long size = Files.copy(ins,new File(baseDir,newfileName+"."+extision).toPath());
-            ChannelManager.getManager().addCMD(CMD.getCMD(extision,newfileName+"."+extision),extision);
-            if(CMD.isOffice(extision)){
-                result.setMessage(newfileName+CMD.PDF_EXTISION);
-            }else{
-                result.setMessage(newfileName+"."+extision);
-            }
+        String suffix = fileName.substring(fileName.lastIndexOf('.'));
+        String newName = UUID.randomUUID().toString();
+        try (InputStream ins = part.getInputStream()) {
+
+            long size = Files.copy(ins, new File(baseDir, newName + suffix).toPath());
+            result.put("filename",newName);
+            result.put("realpath", newName + suffix);
+            result.put("name", fileName.substring(0,fileName.lastIndexOf('.')));
             result.put("size",size);
+            result.put("suffix",suffix);
             result.setFlag(true);
-            return result;
         } catch (IOException e) {
             result.setFlag(false);
             result.setMessage(e.getMessage());
             return result;
         }
-
+        return result;
     }
+
+
+
 }

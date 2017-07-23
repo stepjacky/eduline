@@ -30,6 +30,8 @@ import org.mongodb.morphia.query.Query;
 
 import com.google.common.base.Strings;
 import com.mongodb.MongoClient;
+import org.springframework.web.servlet.view.BeanNameViewResolver;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 public class TestCommons {
 	final Log logger = LogFactory.getLog(TestCommons.class);
@@ -47,6 +49,10 @@ public class TestCommons {
 		} catch (IOException e) {
 			logger.error(e);
 		}
+
+		BeanNameViewResolver resolver;
+
+		InternalResourceViewResolver ire;
 	}
 
 	

@@ -15,9 +15,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -38,39 +38,46 @@ public class ResourceController extends AbstractController<String, Resource>{
 
     @RequestMapping(value = "/listresource")
     public void list(
-            @RequestParam(
-                    value="textbook",required = false) String param,
-            @RequestParam(value = "page",required = false,defaultValue = "0")
-            int page,
-            @RequestParam(value="commonType",required = false,defaultValue = "personal") String commonType,
-            @RequestParam(value="styleType",required = false,defaultValue = "course")String styleType,
-            @RequestParam(value="fileType",required = false,defaultValue = "word")String fileType,
+            @RequestParam(value="textbook",required = false) String textbook,
+            @RequestParam(value="chapter",required = false) String chapter,
+            @RequestParam(value="page",required = false,defaultValue = "0")int page,
+            @RequestParam(value="commontype",required = false,defaultValue = "personal") String commontype,
+            @RequestParam(value="styletype",required = false,defaultValue = "course")String styletype,
+            @RequestParam(value="filetype",required = false,defaultValue = "word")String filetype,
             @AuthenticationPrincipal SysUser user,
             Model model
             ) {
 
-        Textbook book = textbookService.findById(param);
+        Textbook book = textbookService.findById(textbook);
         logger.info(book);
         if(book!=null) {
-            List<Chapter> chapters = chapterService.findByParent("root", param);
+            List<Chapter> chapters = chapterService.findByParent("root", textbook);
             logger.info(chapters);
             if (chapters != null && !chapters.isEmpty()) {
                 for (Chapter c : chapters) {
-                    c.getChildren().addAll(chapterService.findByParent(c.getId(), param));
+                    c.getChildren().addAll(chapterService.findByParent(c.getId(), textbook));
                 }
             }
             model.addAttribute("chapters",chapters);
             model.addAttribute("book",book);
         }
-        Pager pager = service.findSpecialPager(page,user.getUsername(),commonType,styleType,fileType);
+        Pager pager = service.findSpecialPager(page,user.getUsername(),chapter,commontype,styletype,filetype);
         List<Textbook> books =  textbookService.findAll();
 
         model.addAttribute("pager",pager);
         model.addAttribute("books",books);
-        model.addAttribute("commonTypes",EdulineConstant.CommonType.values());
-        model.addAttribute("styleTypes",EdulineConstant.StyleType.values());
-        model.addAttribute("fileTypes",EdulineConstant.FileType.values());
+        model.addAttribute("commontypes", EdulineConstant.Commontype.values());
+        model.addAttribute("styletypes", EdulineConstant.Styletype.values());
+        model.addAttribute("filetypes", EdulineConstant.filetype.values());
 
+    }
+
+    @PostMapping("/openupload")
+    public void openupload(
+            Resource resource,
+            Model model
+            ){
+        model.addAttribute("bean",resource);
     }
 
     @Override

@@ -4,5 +4,5 @@ public interface MediaFile {
     long getContentLength();
     String getContentType();
     String getFilename();
-    String getRealPath();
+    String getRealpath();
 }
