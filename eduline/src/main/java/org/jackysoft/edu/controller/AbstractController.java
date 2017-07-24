@@ -13,6 +13,7 @@ import javax.servlet.http.Part;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.jackysoft.edu.entity.SysUser;
 import org.jackysoft.edu.formbean.MediaFile;
 import org.jackysoft.edu.service.base.AbstractService;
 import org.jackysoft.edu.view.ActionResult;
@@ -28,6 +29,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -100,7 +102,10 @@ public abstract class AbstractController<S, T> {
 
 	@ResponseBody
 	@RequestMapping("/remove/{id}")
-	public ActionResult remove(@PathVariable("id") S id) {
+	public ActionResult remove(
+			@PathVariable("id") S id
+			) {
+
 
 		return this.getService().removeById(id);
 

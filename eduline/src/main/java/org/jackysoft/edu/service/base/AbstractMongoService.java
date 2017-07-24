@@ -219,8 +219,18 @@ public abstract class AbstractMongoService<E extends NoEntity> extends AbstractS
 
 	@Override
 	public ActionResult removeById(String s) {
+
+		if(!beforeRemoveKey(s)) {
+			ActionResult result = new ActionResult();
+			result.put("message","删除前置条件不满足");
+			result.setFlag(false);
+			return result;
+		}
 		dataStore.delete(queryById(s));
-		return ActionResult.SUCCESS;
+		ActionResult result = ActionResult.SUCCESS;
+		result.put("message","ok");
+		result.setFlag(false);
+		return result;
 		
 	}
 

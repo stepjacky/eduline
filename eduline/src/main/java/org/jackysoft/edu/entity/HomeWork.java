@@ -12,10 +12,10 @@ public class HomeWork extends NoEntity {
     String name;
 
     //作业内容
-    String contentText;
+    String content;
 
     //所涉及的习题
-    Set<NameValue> exercises;
+    Set<String> exercises;
 
     //班级
     Set<String> groups;
@@ -32,20 +32,17 @@ public class HomeWork extends NoEntity {
     @Embedded
     NameValue teacher;
 
-    //发布日期
-    long publishDate;
-
      //起始日期
-    long startDate;
+    long startdate;
 
     //截至日期
-    long deadDate;
+    long deaddate;
 
     //总共接受作业人数
     int amount;
 
     //已交作业人数
-    int amountSubmited;
+    int amountsubmited;
 
 
     public String getName() {
@@ -56,24 +53,32 @@ public class HomeWork extends NoEntity {
         this.name = name;
     }
 
-    public String getContentText() {
-        return contentText;
+    public String getContent() {
+        return content;
     }
 
-    public void setContentText(String contentText) {
-        this.contentText = contentText;
+    public void setContent(String content) {
+        this.content = content;
     }
 
-    public Set<NameValue> getExercises() {
+    public Set<String> getExercises() {
         return exercises;
     }
 
-    public void setExercises(Set<NameValue> exercises) {
+    public void setExercises(Set<String> exercises) {
         this.exercises = exercises;
     }
 
+    public Set<String> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(Set<String> groups) {
+        this.groups = groups;
+    }
+
     public String getChoice() {
-        return choice==null?"":choice;
+        return choice;
     }
 
     public void setChoice(String choice) {
@@ -96,28 +101,21 @@ public class HomeWork extends NoEntity {
         this.teacher = teacher;
     }
 
-    public long getPublishDate() {
-        return publishDate;
+
+    public long getStartdate() {
+        return startdate;
     }
 
-    public void setPublishDate(long publishDate) {
-        this.publishDate = publishDate;
+    public void setStartdate(long startdate) {
+        this.startdate = startdate;
     }
 
-    public long getStartDate() {
-        return startDate;
+    public long getDeaddate() {
+        return deaddate;
     }
 
-    public void setStartDate(long startDate) {
-        this.startDate = startDate;
-    }
-
-    public long getDeadDate() {
-        return deadDate;
-    }
-
-    public void setDeadDate(long deadDate) {
-        this.deadDate = deadDate;
+    public void setDeaddate(long deaddate) {
+        this.deaddate = deaddate;
     }
 
     public int getAmount() {
@@ -128,20 +126,11 @@ public class HomeWork extends NoEntity {
         this.amount = amount;
     }
 
-    public int getAmountSubmited() {
-        return amountSubmited;
+    public int getAmountsubmited() {
+        return amountsubmited;
     }
 
-    public void setAmountSubmited(int amountSubmited) {
-        this.amountSubmited = amountSubmited;
-    }
-
-
-    public Set<String> getGroups() {
-        return groups;
-    }
-
-    public void setGroups(Set<String> groups) {
-        this.groups = groups;
+    public void setAmountsubmited(int amountsubmited) {
+        this.amountsubmited = amountsubmited;
     }
 }

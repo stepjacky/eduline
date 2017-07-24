@@ -18,6 +18,12 @@ public class TextbookService extends AbstractMongoService<Textbook> {
     protected CourseService courseService;
 
 
+    public Textbook getDefaultTextbook(String id,String username){
+
+        Textbook textbook = findById(id);
+        return textbook;
+    }
+
     @Override
     public void beforeInput(ModelAndView mav) {
         mav.addObject("grades", gradeService.findAll());

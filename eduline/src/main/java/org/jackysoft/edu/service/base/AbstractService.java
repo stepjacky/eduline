@@ -3,6 +3,7 @@ package org.jackysoft.edu.service.base;
 import org.apache.poi.hwpf.extractor.WordExtractor;
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.jackysoft.edu.entity.SysUser;
 import org.jackysoft.edu.formbean.ZtreeNode;
 import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
@@ -130,6 +131,17 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 		throw new UnsupportedOperationException();
 	}
 
+
+	@Override
+	public boolean beforeRemove(T bean) {
+		return true;
+	}
+
+	@Override
+	public boolean beforeRemoveKey(S s) {
+		return true;
+	}
+
 	@Override
 	public void sort(S s, int sort) {
 		throw new UnsupportedOperationException();
@@ -165,22 +177,23 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 
 	}
 
-	protected StringBuffer parseDocx(Path file)throws IOException{
+	protected StringBuffer parseDocx(File file){
 
 		StringBuffer sb = new StringBuffer();
 		try(XWPFWordExtractor extractor =
-					new XWPFWordExtractor(new XWPFDocument(new FileInputStream(file.toFile())))){
+					new XWPFWordExtractor(new XWPFDocument(new FileInputStream(file)))){
 
 			String text = extractor.getText();
 			sb.append(text);
 
 		} catch (IOException e) {
-			throw e;
+			e.printStackTrace();
+			return null;
 		}
 
 		return sb;
 	}
-	protected StringBuffer parseDocx(InputStream file)throws IOException{
+	protected StringBuffer parseDocx(InputStream file){
 
 		StringBuffer sb = new StringBuffer();
 		try(XWPFWordExtractor extractor = new XWPFWordExtractor(new XWPFDocument(file))){
@@ -189,9 +202,22 @@ public abstract class AbstractService<S, T> implements ServiceProvider<S, T> {
 			sb.append(text);
 
 		} catch (IOException e) {
-			throw e;
+			e.printStackTrace();
+			return null;
 		}
 
 		return sb;
+	}
+
+	protected StringBuffer parseWord(String suffix,File file){
+		String lowerSuffix = suffix.toLowerCase();
+		if(lowerSuffix.endsWith("doc")){
+			return parseDoc(file);
+		}
+		if(lowerSuffix.endsWith("docx")){
+			return parseDocx(file);
+		}
+
+		return null;
 	}
 }

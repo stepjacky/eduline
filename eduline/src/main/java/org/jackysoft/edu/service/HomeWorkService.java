@@ -23,6 +23,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.google.common.base.Strings;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.Part;
 
@@ -51,7 +52,7 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 		Query<HomeWork> query = query(HomeWork.class)
 				.field("teacher.value").equal(EdulineConstant.HoweworkStatus.notreaded)
 				.field("status").equal(EdulineConstant.HoweworkStatus.notreaded.getKey())
-				.order("-publishDate");
+				.order("-publishdate");
 		List<HomeWork> list =query.asList();
 		return 	list;
 
@@ -70,7 +71,7 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 				.field(participantKey+".value").equal(participantValue)
 				.field(statusKey)
 				.equal(status.getKey())
-				.order("-submitDate");
+				.order("-submitdate");
 
 		long count = dataStore.getCount(query);
 		List<HomeWorkTaken> dataList = query.limit(Pager.DEFAULT_OFFSET).offset((page < 0 ? 0 : page) * Pager.DEFAULT_OFFSET)
@@ -98,7 +99,7 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 		dataStore.update(query,
 				updates(HomeWorkTaken.class)
 						.set("status", EdulineConstant.HoweworkStatus.submited.getKey())
-						.set("submitDate", Instant.now().toEpochMilli())
+						.set("submitdate", Instant.now().toEpochMilli())
 						.set("choice", choice)
 						.set("explain", fileId));
 
@@ -110,16 +111,18 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 				.field(Mapper.ID_KEY).equal(new ObjectId(id));
 
 		HomeWorkTaken slaver = query.get();
-		HomeWork master = slaver.getHomework();
+		HomeWork master = findById(slaver.getHomework());
 		char[] source  = master.getChoice().toCharArray();
 		char[] target  = slaver.getChoice().toCharArray();
 		int choiceScore = 0;
 		for(int i=0;i<source.length;i++){
 			if(target.length<(i+1)) break;
-			if(source[i]==target[i])choiceScore++;
+			if(Character.toLowerCase(source[i])==
+				Character.toLowerCase(target[i]))
+				choiceScore++;
 		}
 		dataStore.update(query, updates(HomeWorkTaken.class)
-				.set("readDate", Instant.now().toEpochMilli())
+				.set("readdate", Instant.now().toEpochMilli())
 				.set("score", score+choiceScore)
 				.set("status", EdulineConstant.HoweworkStatus.readed.getKey())
 				.set("yelp", yelp));
@@ -147,7 +150,7 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 			tmp.forEach(gm->{
 				HomeWorkTaken taken = new HomeWorkTaken();
 				taken.setStudent(new NameValue(gm.getStudentName(),gm.getStudent()));
-				taken.setHomework(homeWork);
+				taken.setHomework(homeWork.getId());
 				taken.setTeacher(new NameValue(owner.getNickname(),owner.getUsername()));
 				dataStore.save(taken);
 			});
@@ -155,4 +158,10 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 		return rst;
 	}
 
+	@Override
+	public void beforeInput(ModelAndView mav) {
+		SysUser user = (SysUser) SecurityContextHolder.getContext().getAuthentication();
+		List<GroupMember> lists = groupService.findTeacherGroups(user.getUsername());
+	    mav.addObject("groups",lists);
+	}
 }

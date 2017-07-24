@@ -5,7 +5,7 @@ import org.jackysoft.utils.EdulineConstant;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Reference;
 
-@Table(label = "做作业")
+@Table(label = "学生持有作业")
 public class HomeWorkTaken {
 
     //做作业学生
@@ -17,8 +17,8 @@ public class HomeWorkTaken {
     NameValue teacher;
 
     //作业编号
-    @Reference
-    HomeWork homework;
+
+    String homework;
 
     //学生选择题答案
     String choice;
@@ -61,11 +61,11 @@ public class HomeWorkTaken {
         this.teacher = teacher;
     }
 
-    public HomeWork getHomework() {
+    public String getHomework() {
         return homework;
     }
 
-    public void setHomework(HomeWork homework) {
+    public void setHomework(String homework) {
         this.homework = homework;
     }
 

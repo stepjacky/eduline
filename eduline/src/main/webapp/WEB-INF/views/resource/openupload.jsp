@@ -82,8 +82,9 @@
                     odata.realpath = data.result.realpath;
                     odata.size = data.result.size;
                     console.log(odata);
+                    //return;
                     postJson('/resource/save',odata,function (rst) {
-                        console.log(rst);
+                        //console.log(rst);
                         reloadPage();
                     })
                 }

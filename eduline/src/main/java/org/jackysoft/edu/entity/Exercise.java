@@ -2,18 +2,24 @@ package org.jackysoft.edu.entity;
 
 
 import org.jackysoft.edu.annotation.Table;
+import org.jackysoft.edu.formbean.MediaFile;
 import org.jackysoft.utils.EdulineConstant;
+import org.mongodb.morphia.annotations.Embedded;
 
 @Table(label = "习题")
-public class Exercise extends NoEntity{
+public class Exercise extends NoEntity implements MediaFile {
 
-    String commonType = EdulineConstant.Commontype.personal.name();
+    String commontype;
+
     String name;
+
+    String textbook;
 
     String chapter;
 
     //拥有者
-    String owner;
+    @Embedded
+    NameValue owner;
     //课程
     int course;
 
@@ -30,9 +36,21 @@ public class Exercise extends NoEntity{
     String explain;
 
     //选择题数目
-    int choicesize;
+    int csize;
+
     //解答题数目
-    int explainsize;
+    int esize;
+
+    int size;
+
+    long modifyDate;
+    public String getCommontype() {
+        return commontype;
+    }
+
+    public void setCommontype(String commontype) {
+        this.commontype = commontype;
+    }
 
     public String getName() {
         return name;
@@ -50,52 +68,12 @@ public class Exercise extends NoEntity{
         this.chapter = chapter;
     }
 
-    public String getRealpath() {
-        return realpath;
+    public NameValue getOwner() {
+        return owner;
     }
 
-    public void setRealpath(String realpath) {
-        this.realpath = realpath;
-    }
-
-    public String getCommonType() {
-        return commonType;
-    }
-
-    public void setCommonType(String commonType) {
-        this.commonType = commonType;
-    }
-
-    public String getChoice() {
-        return choice;
-    }
-
-    public void setChoice(String choice) {
-        this.choice = choice;
-    }
-
-    public String getExplain() {
-        return explain;
-    }
-
-    public void setExplain(String explain) {
-        this.explain = explain;
-    }
-
-    public int getChoicesize() {
-        return choicesize;
-    }
-
-    public void setChoicesize(int choicesize) {
-        this.choicesize = choicesize;
-    }
-
-    public int getExplainsize() {
-        return explainsize;
-    }
-
-    public void setExplainsize(int explainsize) {
-        this.explainsize = explainsize;
+    public void setOwner(NameValue owner) {
+        this.owner = owner;
     }
 
     public int getCourse() {
@@ -114,11 +92,84 @@ public class Exercise extends NoEntity{
         this.grade = grade;
     }
 
-    public String getOwner() {
-        return owner;
+
+
+    public String getRealpath() {
+        return realpath;
     }
 
-    public void setOwner(String owner) {
-        this.owner = owner;
+    public void setRealpath(String realpath) {
+        this.realpath = realpath;
+    }
+
+    public String getChoice() {
+        return choice;
+    }
+
+    public void setChoice(String choice) {
+        this.choice = choice;
+    }
+
+    public String getExplain() {
+        return explain;
+    }
+
+    public void setExplain(String explain) {
+        this.explain = explain;
+    }
+
+    public int getCsize() {
+        return csize;
+    }
+
+    public void setCsize(int csize) {
+        this.csize = csize;
+    }
+
+    public int getEsize() {
+        return esize;
+    }
+
+    public void setEsize(int esize) {
+        this.esize = esize;
+    }
+
+    public String getTextbook() {
+        return textbook;
+    }
+
+    public void setTextbook(String textbook) {
+        this.textbook = textbook;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public long getModifyDate() {
+        return modifyDate;
+    }
+
+    public void setModifyDate(long modifyDate) {
+        this.modifyDate = modifyDate;
+    }
+
+    @Override
+    public long getContentLength() {
+        return size;
+    }
+
+    @Override
+    public String getContentType() {
+        return "application/octet-stream";
+    }
+
+    @Override
+    public String getFilename() {
+        return name;
     }
 }

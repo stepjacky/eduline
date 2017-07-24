@@ -12,6 +12,8 @@ import org.apache.commons.lang.builder.ToStringStyle;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.poi.hwpf.extractor.WordExtractor;
+import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.bson.types.ObjectId;
 import org.jackysoft.edu.entity.HomeWork;
 import org.jackysoft.edu.entity.NoEntity;
@@ -38,21 +40,24 @@ public class TestCommons {
 
 	@Test
 	public void test() throws Exception {
-		String fileName = "j:/test0621.doc";
-	    
-		try(WordExtractor extractor = 
-				new WordExtractor(new FileInputStream(new File(fileName)))){
-		   
-			String text = extractor.getTextFromPieces();
-			logger.info(text);
-			
+		String fileName = "e:\\jacky\\Desktop\\abcde";
+
+		StringBuffer sb = new StringBuffer();
+		try(XWPFWordExtractor extractor = new XWPFWordExtractor(new XWPFDocument(
+				new FileInputStream(fileName)
+
+		))){
+
+			String text = extractor.getText();
+			sb.append(text);
+
 		} catch (IOException e) {
-			logger.error(e);
+			e.printStackTrace();
 		}
 
-		BeanNameViewResolver resolver;
+		logger.info(sb);
 
-		InternalResourceViewResolver ire;
+
 	}
 
 	

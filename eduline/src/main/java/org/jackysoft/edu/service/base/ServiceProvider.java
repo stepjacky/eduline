@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.Part;
 
+import org.jackysoft.edu.entity.SysUser;
 import org.jackysoft.edu.formbean.ZtreeNode;
 import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
@@ -38,7 +39,12 @@ public interface ServiceProvider<S,T> {
     ActionResult removeById(S s);
     void upload(T bean , Part part);
     List<ZtreeNode> ztree(String parent);
-    
 
+
+    //event of curd
+
+    boolean beforeRemove(T bean);
+
+    boolean beforeRemoveKey(S s);
     
 }

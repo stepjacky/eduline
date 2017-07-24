@@ -12,6 +12,7 @@ import org.jackysoft.utils.EdulineConstant;
 import org.mongodb.morphia.query.FindOptions;
 import org.mongodb.morphia.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -37,7 +38,7 @@ public class ResourceService extends AbstractMongoService<Resource> {
         ActionResult result = new ActionResult();
         Chapter chp = chapterService.findById(bean.getChapter());
         bean.setModifyDate(Instant.now().toEpochMilli());
-        logger.info(chp);
+
         if (chp == null) {
             result.setFlag(false);
             result.setMessage("章节不存在");
@@ -95,7 +96,7 @@ public class ResourceService extends AbstractMongoService<Resource> {
                         .skip(page * Pager.DEFAULT_OFFSET)
                         .limit(Pager.DEFAULT_OFFSET));
         Pager<Resource> pager = Pager.build(page, Pager.DEFAULT_OFFSET, count, dataList, false);
-        logger.info(pager.getDataList());
+
         return pager;
     }
 
@@ -107,5 +108,26 @@ public class ResourceService extends AbstractMongoService<Resource> {
         super.beforeInput(mav);
         List<Textbook> books =  textbookService.findAll();
         mav.addObject("books",books);
+    }
+
+    @Override
+    public boolean beforeRemoveKey(String s) {
+        SysUser user = (SysUser) SecurityContextHolder.getContext().getAuthentication();
+        if (user == null) {
+            logger.error("illegal access ,denied");
+            return false;
+        }
+        Resource bean = queryById(s).get();
+        if (bean == null) {
+            logger.error("illegal access ,denied");
+            return false;
+        }
+        if (user.getUsername().equals(bean.getOwner().getValue())) {
+            return true;
+        }
+
+        return false;
+
+
     }
 }

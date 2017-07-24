@@ -1,6 +1,7 @@
 package org.jackysoft.edu.controller;
 
 
+import org.jackysoft.edu.entity.GroupMember;
 import org.jackysoft.edu.entity.HomeWork;
 import org.jackysoft.edu.entity.HomeWorkTaken;
 import org.jackysoft.edu.entity.SysUser;
@@ -94,6 +95,37 @@ public class HomeWorkController extends AbstractController<String, HomeWork> {
 
                 service.scoredHomeWork(id,score,yelp);
                 return "read";
+
+    }
+
+    //选择班级
+    @PostMapping("/select-groups")
+    public void selectgroups(
+            @RequestParam("exercises")String exercises,
+            @AuthenticationPrincipal SysUser owner,
+            Model model
+
+    ){
+
+                List<GroupMember> groups =  groupService.findTeacherGroups(owner.getUsername());
+                model.addAttribute("groups",groups);
+
+
+    }
+
+    //执行具体布置作业过程
+    @PostMapping("/put-homework")
+    public void puthomework(
+            @RequestParam("exercises")String exercises,
+            @RequestParam("groups")String groups,
+            @RequestParam("startdate")long startdate,
+            @RequestParam("deaddate")long deaddate,
+            @AuthenticationPrincipal SysUser owner,
+            Model model
+
+
+
+    ){
 
     }
 

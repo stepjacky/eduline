@@ -41,18 +41,16 @@ public class ResourceController extends AbstractController<String, Resource>{
             @RequestParam(value="textbook",required = false) String textbook,
             @RequestParam(value="chapter",required = false) String chapter,
             @RequestParam(value="page",required = false,defaultValue = "0")int page,
-            @RequestParam(value="commontype",required = false,defaultValue = "personal") String commontype,
-            @RequestParam(value="styletype",required = false,defaultValue = "course")String styletype,
-            @RequestParam(value="filetype",required = false,defaultValue = "word")String filetype,
+            @RequestParam(value="commontype",required = false) String commontype,
+            @RequestParam(value="styletype",required = false)String styletype,
+            @RequestParam(value="filetype",required = false)String filetype,
             @AuthenticationPrincipal SysUser user,
             Model model
             ) {
 
         Textbook book = textbookService.findById(textbook);
-        logger.info(book);
         if(book!=null) {
             List<Chapter> chapters = chapterService.findByParent("root", textbook);
-            logger.info(chapters);
             if (chapters != null && !chapters.isEmpty()) {
                 for (Chapter c : chapters) {
                     c.getChildren().addAll(chapterService.findByParent(c.getId(), textbook));

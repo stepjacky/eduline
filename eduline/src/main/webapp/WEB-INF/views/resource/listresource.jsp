@@ -48,7 +48,7 @@
 
 </div>
 <div class="row">
-    <div class="col-md-4" id="leftside">
+    <div class="col-md-3" id="leftside">
         <select class="form-control action-textbook-change"   v-model="textbook" >
             <c:forEach items="${books}" var="item">
                 <option ${textbook==item.id?'selected':''}
@@ -77,7 +77,7 @@
 
 
     </div><!-- left list group of chapter -->
-    <div class="col-md-8">
+    <div class="col-md-9">
         <div class="btn-group">
             <button class="btn btn-info action-start-upload"
                     data-textbook="${textbook}"
@@ -99,12 +99,13 @@
                  <th>大小</th>
                  <th>所有者</th>
                  <th>上传日期</th>
+                 <th>管理</th>
              </tr>
 
            </thead>
             <tbody>
                <c:forEach items="${pager.dataList}" var="item">
-                   <tr>
+                   <tr class="btn-gp">
                    <td>
                        <a href="/resource/download/${item.id}" target="_blank">
                          <i class="fa fa-download"></i>${item.name}
@@ -113,12 +114,21 @@
                    <td>${jxf:datasize(item.size)}</td>
                    <td>${item.owner.name}</td>
                    <td>${jxf:dateFormat(item.modifyDate)}</td>
+                       <td >
+                           <c:if test="${item.owner.value==sysUser.username}">
+                               <a href="javascript:;" class="btn btn-danger btn-xs action-remove"
+                                  data-id="${item.id}"
+                               >
+                                   <i class="fa fa-remove"></i>
+                               </a>
+                           </c:if>
+                       </td>
                    </tr>
                </c:forEach>
             </tbody>
             <tfoot>
               <tr>
-                  <td colspan="4">
+                  <td colspan="5">
                       ${pager.pagination}
                   </td>
               </tr>

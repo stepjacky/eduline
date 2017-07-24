@@ -1,22 +1,30 @@
 package org.jackysoft.edu.service;
 
+import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.jackysoft.edu.entity.Chapter;
 import org.jackysoft.edu.entity.Exercise;
+import org.jackysoft.edu.entity.SysUser;
 import org.jackysoft.edu.service.base.AbstractMongoService;
 import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.file.CMD;
 import org.jackysoft.file.ChannelManager;
+import org.jackysoft.query.Pager;
+import org.jackysoft.utils.EdulineConstant;
+import org.mongodb.morphia.query.FindOptions;
+import org.mongodb.morphia.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Files;
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -42,6 +50,7 @@ public class ExerciseService extends AbstractMongoService<Exercise> {
      * 上传并分析答案
      *
      * @param part 答案文件
+     * @return 返回结果包括, 解答题路径, 选择题答案, 选择题数目
      */
 
     public ActionResult uploadAnswer(Part part) {
@@ -49,9 +58,9 @@ public class ExerciseService extends AbstractMongoService<Exercise> {
         StringBuffer answer = new StringBuffer();
         String fileName = part.getSubmittedFileName();
         //like  .doc
-        String extision = fileName.substring(fileName.lastIndexOf('.'));
-        if (CMD.isOffice(extision)) {
-            if (!extision.toLowerCase().startsWith(".doc")) {
+        String suffix = fileName.substring(fileName.lastIndexOf('.'));
+        if (CMD.isOffice(suffix)) {
+            if (!suffix.toLowerCase().startsWith(".doc")) {
                 result.setFlag(false);
                 result.setMessage("答案必须为Word文档形式");
                 return result;
@@ -61,30 +70,31 @@ public class ExerciseService extends AbstractMongoService<Exercise> {
             String newfileName = newName + CMD.PDF_EXTISION;
             try (InputStream ins = part.getInputStream()) {
 
-                long size = Files.copy(ins, new File(baseDir, newName + extision).toPath());
+                File target = new File(baseDir, newName + suffix);
+                long size = Files.copy(ins, target.toPath());
                 result.put("size", size);
-                ChannelManager.getManager().addCMD(CMD.getCMD(extision, newName + extision), extision);
+                ChannelManager.getManager().addCMD(CMD.getCMD(suffix, newName + suffix), suffix);
 
                 result.put("explain", newfileName);
-                StringBuffer sb = extision.toLowerCase().contains("x") ? parseDocx(ins) : parseDoc(ins);
+                StringBuffer sb = parseWord(suffix, target);
                 if (sb != null) {
                     String str = sb.toString();
                     if (str.indexOf(CHOICE_TAIL) < 0) {
-                        result.setMessage("未发现选择题分隔符:" + CHOICE_TAIL);
+                        result.put("message", "未发现选择题分隔符:" + CHOICE_TAIL);
                         result.setFlag(false);
                         return result;
                     }
                     String choiceOri = str.substring(0, str.indexOf(CHOICE_TAIL));
                     char[] chars = choiceOri.toCharArray();
+
                     for (char c : chars) {
-                        if (FIXED_CHOICE.contains(Character.valueOf(c))) {
+                        if (FIXED_CHOICE.contains(Character.toUpperCase(Character.valueOf(c)))) {
                             answer.append(c);
                         }
                     }
                     result.setFlag(true);
                     result.put("choice", answer.toString());
-                    result.put("choicesize", answer.toString().length());
-                    //end collect choice
+                    result.put("csize", answer.toString().length());
 
                 }
             } catch (IOException e) {
@@ -105,45 +115,81 @@ public class ExerciseService extends AbstractMongoService<Exercise> {
      */
     public ActionResult uploadExercise(Part part) {
         ActionResult result = uploadService.upload(part);
-
-        ChannelManager.getManager().addCMD(CMD.getCMD(result.get("suffix")+"",
-                result.get("filename")+""+result.get("suffix")), result.get("suffix")+"");
+        ChannelManager.getManager().addCMD(CMD.getCMD(result.get("suffix") + "",
+                result.get("filename") + "" + result.get("suffix")), result.get("suffix") + "");
         return result;
     }
 
-    public ActionResult save(
-            String commonStyle,
+    public Pager<Exercise> findSpecialPager(
+            int page,
+            String owner,
             String chapter,
-            String name,
-            String realpath,
-            String choice,
-            int choicesize,
-            int explainsize,
-            String explain,
-            String owner
+            String commontype
+
     ) {
+        Query<Exercise> query = query()
+                .field("commontype").equal(commontype)
+                .field("chapter").equal(chapter)
+                .order("-modifyDate");
 
-        ActionResult result = new ActionResult();
-
-        Chapter chp = chapterService.findById(chapter);
-        if (chp == null) {
-            result.setFlag(false);
-            result.setMessage("章节不存在");
-            return result;
+        if (EdulineConstant.Commontype.personal.getKey().equals(commontype)) {
+            query.field("owner.value").equal(owner);
         }
-        Exercise bean = new Exercise();
-        bean.setChapter(chapter);
-        bean.setCourse(chp.getCourse());
-        bean.setGrade(chp.getGrade());
-        bean.setRealpath(realpath);
-        bean.setCommonType(commonStyle);
-        bean.setName(name);
-        bean.setChoice(choice);
-        bean.setExplain(explain);
-        bean.setChoicesize(choicesize);
-        bean.setExplainsize(explainsize);
-        bean.setOwner(owner);
-        dataStore.save(bean);
-        return result;
+
+        long count = query.count();
+
+        List<Exercise> list = query.asList(new FindOptions()
+
+                .skip(page * Pager.DEFAULT_OFFSET)
+                .limit(Pager.DEFAULT_OFFSET)
+        );
+
+        ;
+        Pager<Exercise> pager = Pager.build(page, count, list);
+        return pager;
+    }
+
+
+    @Override
+    public ActionResult save(Exercise exercise) {
+        if (exercise == null) return null;
+        if (EdulineConstant.Commontype.common.getKey().equals(exercise.getCommontype())) {
+            Exercise bean = new Exercise();
+            try {
+
+                BeanUtils.copyProperties(bean, exercise);
+                bean.setCommontype(EdulineConstant.Commontype.personal.getKey());
+            } catch (IllegalAccessException | InvocationTargetException e) {
+                ActionResult rst = new ActionResult();
+                rst.setFlag(false);
+                rst.setMessage(e.getMessage());
+            }
+            bean.setModifyDate(Instant.now().toEpochMilli());
+            super.save(bean);
+
+        }
+        exercise.setModifyDate(Instant.now().toEpochMilli());
+        return super.save(exercise);
+    }
+
+
+    @Override
+    public boolean beforeRemoveKey(String s) {
+        SysUser user = (SysUser) SecurityContextHolder.getContext().getAuthentication();
+        if (user == null) {
+            logger.info("illegal access ,denied");
+            return false;
+        }
+        Exercise bean = queryById(s).get();
+        if (bean == null) {
+            logger.info("illegal access ,denied");
+            return false;
+        }
+        if (user.getUsername().equals(bean.getOwner().getValue())) {
+            return true;
+        }
+
+        return false;
+
     }
 }

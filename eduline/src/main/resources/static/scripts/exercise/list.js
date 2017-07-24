@@ -7,14 +7,15 @@ $(function(){
 
     $('.action-start-upload').on('click',function (e) {
         var data = $(this).data();
+        if(!data.commontype || !data.chapter){
+            bootbox.alert("请选择章节或者公开形式");
+            return;
+        }
 
-        console.log(data);
-        $.post('/resource/openupload',data,function (data) {
-
+        $.post('/exercise/openupload',data,function (data) {
             bootbox.dialog(
-
                 {
-                    title:'上传资源',
+                    title:'添加习题',
                     message: data
                 }
 
@@ -25,13 +26,13 @@ $(function(){
 
     $('.action-remove').on('click',function (e) {
         e.preventDefault();
-        $.get('/resource/remove/'+$(this).data('id'))
+        $.get('/exercise/remove/'+$(this).data('id'))
             .done(function(data){
-                if(data.message!="ok"){
-                    bootbox.alert(data.message);
-                }else{
-                    reloadPage();
-                }
+               if(data.message!="ok"){
+                   bootbox.alert(data.message);
+               }else{
+                   reloadPage();
+               }
             })
     })
 })
