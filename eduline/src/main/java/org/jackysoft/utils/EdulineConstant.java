@@ -63,7 +63,9 @@ public interface EdulineConstant {
     enum HoweworkStatus{
         submited("已交"),
         unsubmit("未交"),
+        onsave("保存中"),
         readed("已阅"),
+        finished("已收结"),
         notreaded("未阅");
 
         private String name;

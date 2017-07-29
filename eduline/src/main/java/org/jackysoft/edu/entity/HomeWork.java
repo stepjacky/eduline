@@ -1,8 +1,10 @@
 package org.jackysoft.edu.entity;
 
+import org.apache.poi.xssf.usermodel.ListAutoNumber;
 import org.jackysoft.edu.annotation.Table;
 import org.mongodb.morphia.annotations.Embedded;
 
+import java.util.List;
 import java.util.Set;
 
 @Table(label = "作业")
@@ -15,11 +17,12 @@ public class HomeWork extends NoEntity {
     String content;
 
     //所涉及的习题
-    Set<String> exercises;
+    String exercise;
 
     //班级
-    Set<String> groups;
+    List<String> groups;
 
+    int course;
 
     //选择题答案
     String choice;
@@ -44,6 +47,7 @@ public class HomeWork extends NoEntity {
     //已交作业人数
     int amountsubmited;
 
+    String status;
 
     public String getName() {
         return name;
@@ -61,19 +65,19 @@ public class HomeWork extends NoEntity {
         this.content = content;
     }
 
-    public Set<String> getExercises() {
-        return exercises;
+    public String getExercise() {
+        return exercise;
     }
 
-    public void setExercises(Set<String> exercises) {
-        this.exercises = exercises;
+    public void setExercise(String exercise) {
+        this.exercise = exercise;
     }
 
-    public Set<String> getGroups() {
+    public List<String> getGroups() {
         return groups;
     }
 
-    public void setGroups(Set<String> groups) {
+    public void setGroups(List<String> groups) {
         this.groups = groups;
     }
 
@@ -132,5 +136,21 @@ public class HomeWork extends NoEntity {
 
     public void setAmountsubmited(int amountsubmited) {
         this.amountsubmited = amountsubmited;
+    }
+
+    public int getCourse() {
+        return course;
+    }
+
+    public void setCourse(int course) {
+        this.course = course;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

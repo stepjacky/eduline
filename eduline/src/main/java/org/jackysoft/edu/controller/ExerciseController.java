@@ -63,7 +63,7 @@ public class ExerciseController extends AbstractController<String,Exercise> {
             @RequestParam(value = "commontype",required = false)String commontype,
             @RequestParam(value = "textbook",required = false)String textbook,
             @RequestParam(value = "chapter",required = false)String chapter,
-            @RequestParam(value = "exercises",required = false)String exercises,
+            @RequestParam(value = "exercise",required = false)String exercise,
             @RequestParam(value = "page",defaultValue = "0")int page,
             @AuthenticationPrincipal SysUser owner,
             Model model

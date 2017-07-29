@@ -36,23 +36,26 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 	protected String baseDir;
 	@Autowired
 	private GroupMemberService groupService;
+	@Autowired
+	private CourseService courseService;
+
 	//学生的作业
 	public Pager<HomeWorkTaken> studentHomeworks(int page, String username,String status) {
-		return homeworkByStatus(page, "student", username,"status", EdulineConstant.HoweworkStatus.valueOf(status));
+		return homeworkByStatus(page, "student", username, EdulineConstant.HoweworkStatus.valueOf(status));
 	}
 
 
 	//老师的作业
 	public Pager<HomeWorkTaken> teacherHomeworks(int page, String username,String status) {
-		return homeworkByStatus(page, "teacher", username, "status", EdulineConstant.HoweworkStatus.valueOf(status));
+		return homeworkByStatus(page, "teacher", username,  EdulineConstant.HoweworkStatus.valueOf(status));
 	}
 
 	//老师作业时间线
 	public List<HomeWork> teacherHomeworkTimeline(String username) {
 		Query<HomeWork> query = query(HomeWork.class)
-				.field("teacher.value").equal(EdulineConstant.HoweworkStatus.notreaded)
+				.field("teacher.value").equal(username)
 				.field("status").equal(EdulineConstant.HoweworkStatus.notreaded.getKey())
-				.order("-publishdate");
+				.order("-startdate");
 		List<HomeWork> list =query.asList();
 		return 	list;
 
@@ -62,14 +65,13 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 			int page,
 			String participantKey,
 			String participantValue,
-			String statusKey,
 			EdulineConstant.HoweworkStatus status) {
 
 		if (Strings.isNullOrEmpty(participantKey))
 			return Pager.EMPTY_PAGER();
 		Query<HomeWorkTaken> query = query(HomeWorkTaken.class)
 				.field(participantKey+".value").equal(participantValue)
-				.field(statusKey)
+				.field("status")
 				.equal(status.getKey())
 				.order("-submitdate");
 
@@ -81,27 +83,20 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 	}
 
 	//交作业
-	public void submitHomework(String id, String choice, Part part) {
+	public void saveToHomework(String id, String choice, List<String> explains,String status) {
 
-		String fileId = UUID.randomUUID()+".png";
-		try(InputStream ins = part.getInputStream()) {
-			Files.copy(ins, new File(baseDir, fileId).toPath());
-		}catch (IOException e){
-			Writer w = new StringWriter();
-			PrintWriter pw = new PrintWriter(w);
-			e.printStackTrace(pw);
-			logger.error(w.toString());
-
-		}
 		Query<HomeWorkTaken> query = query(HomeWorkTaken.class)
 				.field(Mapper.ID_KEY)
 				.equal(new ObjectId(id));
+		HomeWorkTaken taken = query.get();
+		if(taken==null) return;
+
 		dataStore.update(query,
 				updates(HomeWorkTaken.class)
-						.set("status", EdulineConstant.HoweworkStatus.submited.getKey())
+						.set("status", status)
 						.set("submitdate", Instant.now().toEpochMilli())
 						.set("choice", choice)
-						.set("explain", fileId));
+						.set("explains", explains));
 
 	}
 
@@ -141,21 +136,55 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 		if(homeWork==null
 				|| homeWork.getGroups()==null
 				|| homeWork.getGroups().isEmpty()
-				) return ActionResult.FAILURE;
-		ActionResult rst = super.save(homeWork);
-		SysUser owner = (SysUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+				|| Strings.isNullOrEmpty(homeWork.getExercise())
+
+				) {
+			ActionResult result = new ActionResult();
+			result.put("message","作业条件不满足,没用习题或者没用班级");
+			result.put("flag",false);
+			return result;
+		}
+		Course course = courseService.findById(homeWork.getCourse());
+
+		if(course!=null){
+			homeWork.setName(homeWork.getTeacher().getName()+" "+course.getName());
+		}else{
+			homeWork.setName(homeWork.getTeacher().getName()+" 未知课程");
+		}
+
+		SysUser owner = (SysUser) SecurityContextHolder.getContext().getAuthentication();
+		List<HomeWorkTaken> takens = new ArrayList<>();
+		int amount = 0;
 		for(String gid:homeWork.getGroups()){
 			List<GroupMember> tmp = groupService.findMembersOfGroup(gid);
 			if(tmp==null || tmp.isEmpty()) continue;
-			tmp.forEach(gm->{
+			for (GroupMember groupMember : tmp) {
 				HomeWorkTaken taken = new HomeWorkTaken();
-				taken.setStudent(new NameValue(gm.getStudentName(),gm.getStudent()));
-				taken.setHomework(homeWork.getId());
+				taken.setStudent(new NameValue(groupMember.getStudentName(),groupMember.getStudent()));
 				taken.setTeacher(new NameValue(owner.getNickname(),owner.getUsername()));
-				dataStore.save(taken);
-			});
+				takens.add(taken);
+				amount++;
+			}
+
+		}
+		homeWork.setAmount(amount);
+		homeWork.setStatus(EdulineConstant.HoweworkStatus.notreaded.getKey());
+		ActionResult rst = super.save(homeWork);
+		for (HomeWorkTaken taken : takens) {
+			taken.setHomework(homeWork.getId());
+			dataStore.save(taken);
 		}
 		return rst;
+	}
+
+	public List<HomeWorkTaken> findSubmitedByHomework(String homework){
+		if(Strings.isNullOrEmpty(homework)) return new ArrayList<>();
+		List<HomeWorkTaken> list= query(HomeWorkTaken.class)
+				.field("homework").equal(homework)
+				.field("status").equal(EdulineConstant.HoweworkStatus.submited.getKey())
+		.asList();
+		return list;
+
 	}
 
 	@Override

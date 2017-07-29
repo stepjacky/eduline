@@ -1,0 +1,12 @@
+.taken-list{
+    min-height: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.abdc{
+    list-style: none;
+}
+.abcd li{
+    display:inline;
+}

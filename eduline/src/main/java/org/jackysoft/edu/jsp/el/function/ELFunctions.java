@@ -9,6 +9,7 @@ import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.jackysoft.utils.RelativeDateFormat;
 import org.jackysoft.utils.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -170,6 +171,10 @@ public class ELFunctions {
 		Instant instant = Instant.ofEpochMilli(mills);
 		LocalDateTime ldt = LocalDateTime.ofInstant(instant, ZoneOffset.systemDefault());
 		return DateTimeFormatter.ofPattern("y-M-d H:m:s").format(ldt);
+	}
+
+	public static String relativetime(Long millis){
+		return RelativeDateFormat.format(millis);
 	}
 	
 	public static String datetimeFmt(Long mills,String pattern){

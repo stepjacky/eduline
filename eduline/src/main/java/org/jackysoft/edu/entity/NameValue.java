@@ -25,6 +25,10 @@ public class NameValue {
         this.value = value;
     }
 
+    public NameValue(NameValue target){
+        this(target.getName(),target.getValue());
+    }
+
     public String getName() {
         return name;
     }

@@ -41,7 +41,11 @@ function guid() {
 
 
 function notify(text) {
-	bootbox.alert(text);
+    bootbox.alert({
+        size: "small",
+        title: "系统消息",
+        message: text
+    })
 }
 
 function redirectTo(url) {

@@ -1,6 +1,7 @@
 $(function(){
     var odata = {
-        'exercises':exercises
+        'exercise':exercise,
+        'course':0,
     };
     var vm = new Vue({
         'el':'#tlabe-exercises',
@@ -10,16 +11,14 @@ $(function(){
         var opt = $('option:selected',this);
         redirectTo(opt.data('url'));
     }); 
-    
-    $('.action-next-step').on('click',function () {
 
-    })
 
     $('a').on('click',function (e) {
-        //e.preventDefault();
         var href =  $(this).attr('href')
-        $(this).attr('href',href+'&exercises='+odata['exercises'].join(','));
+        var cp = href.indexOf('?')>0?'&':'?';
+        $(this).attr('href',href+cp+'exercise='+odata['exercise'].join(','));
         return true;
     })
+
 
 })

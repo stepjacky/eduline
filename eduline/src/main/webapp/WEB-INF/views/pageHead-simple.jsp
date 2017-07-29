@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <c:set var="base" value="http://${domain}/" />
 <c:set var="sbase" value="${base}" />
@@ -24,7 +25,7 @@
 
 
     <link href="${sbase}static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="${sbase}static/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+    <link href="${sbase}static/lib/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet">
 
     <link href="${sbase}static/lib/bootstrap/docs.min.css" rel="stylesheet">
 
@@ -34,8 +35,9 @@
 
     <script src="${sbase}static/lib/jquery-1.11.2.min.js"></script>
     <script src="${sbase}static/lib/lodash.js"></script>
-    <script src="${sbase}static/lib/bootstrap/js/bootstrap.min.js"></script>
-
+    <script src="${sbase}static/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="${sbase}static/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+    <script src="${sbase}static/lib/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
     <script src="${sbase}static/lib/moment/moment.js"></script>
     <script src="${sbase}static/lib/moment/locale/zh-cn.js"></script>
     <script src="${sbase}static/lib/vue/vue.js"></script>

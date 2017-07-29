@@ -20,5 +20,8 @@ public interface GroupMemberMapper extends AbstractMapper<String, GroupMember> {
     
     @Select("select * from jq_groupmember g where g.teacher=#{teacher} group by teacher,groupId order by grade desc")
     List<GroupMember> findGroupOfTeacher(@Param("teacher")String teacher);
+
+    @Select("select * from jq_groupmember g where g.groupId in ('${idz}') group by groupId")
+    List<GroupMember> findByGroupIds(@Param("idz")String idz);
     
 }

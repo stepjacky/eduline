@@ -8,20 +8,9 @@
 <link rel="stylesheet" href="${sbase}static/css/exercise/list.css" />
 <div class="alert alert-info">
     选择习题
-    <div class="btn-group pull-right">
-        <button class="btn btn-info action-next-step"
-                data-textbook="${textbook}"
-                data-chapter="${chapter}"
-                data-commontype="${commontype}"
-                data-course="${book.course.value}"
-                data-grade="${book.grade.value}"
-                type="button">
-            下一步
-            <i class="fa fa-arrow-right "></i>
-        </button>
 
-    </div>
 </div>
+
 <div class="alert alert-info">
     <ol class="breadcrumb">
         <li>公开形式</li>
@@ -68,6 +57,13 @@
 
     </div><!-- left list group of chapter -->
     <div class="col-md-9">
+        <div class="pull-right">
+
+            <a href="/homework/select-groups?course=${book.course.value}" class="btn btn-info action-next-step">
+                下一步
+                <i class="fa fa-arrow-right "></i>
+            </a>
+        </div>
 
         <table class="${tableClass}" id="tlabe-exercises">
             <thead>
@@ -87,7 +83,7 @@
             <c:forEach items="${pager.dataList}" var="item">
                 <tr class="btn-gp">
                     <td>
-                        <input type="checkbox" v-model="exercises" value="${item.id}"  />
+                        <input type="radio" v-model="exercise" value="${item.id}"  />
                     </td>
                     <td>
 
@@ -114,7 +110,7 @@
     </div>
 </div>
 <script>
-    var exercises = '${exercises}'.split(',');
+    var exercise = '${exercise}'.split(',');
 </script>
 <script src="${sbase}static/scripts/exercise/homework.js"></script>
-<%@ include file="../pageFoot-simple.jsp" %>
+

@@ -3,6 +3,7 @@ package org.jackysoft.edu.service;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.bson.types.ObjectId;
 import org.jackysoft.edu.entity.Exercise;
 import org.jackysoft.edu.entity.SysUser;
 import org.jackysoft.edu.service.base.AbstractMongoService;
@@ -11,6 +12,7 @@ import org.jackysoft.file.CMD;
 import org.jackysoft.file.ChannelManager;
 import org.jackysoft.query.Pager;
 import org.jackysoft.utils.EdulineConstant;
+import org.mongodb.morphia.mapping.Mapper;
 import org.mongodb.morphia.query.FindOptions;
 import org.mongodb.morphia.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +27,11 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.nio.file.Files;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class ExerciseService extends AbstractMongoService<Exercise> {
@@ -45,6 +49,7 @@ public class ExerciseService extends AbstractMongoService<Exercise> {
 
     @Autowired
     UploadService uploadService;
+    private Query<Exercise> query;
 
     /**
      * 上传并分析答案
@@ -191,5 +196,12 @@ public class ExerciseService extends AbstractMongoService<Exercise> {
 
         return false;
 
+    }
+
+    public List<Exercise> findIn(List<String> idz){
+        if(idz==null || idz.isEmpty()) return new ArrayList<>();
+        List<ObjectId> ids = idz.stream().map(ObjectId::new).collect(Collectors.toList());
+        List<Exercise> list = query().field(Mapper.ID_KEY).in(ids).asList();
+        return list;
     }
 }

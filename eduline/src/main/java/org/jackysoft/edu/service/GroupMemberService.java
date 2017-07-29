@@ -2,6 +2,7 @@ package org.jackysoft.edu.service;
 
 import java.util.List;
 
+import com.google.common.base.Joiner;
 import org.jackysoft.edu.entity.GroupMember;
 import org.jackysoft.edu.formbean.MemberBean;
 import org.jackysoft.edu.mapper.AbstractMapper;
@@ -98,6 +99,10 @@ public class GroupMemberService extends AbstractSQLService<String, GroupMember> 
 		super.updatePartial(id, props);
 	}
 
+	public List<GroupMember> findByGroupIds(List<String> ids){
+		List<GroupMember> list = mapper.findByGroupIds(Joiner.on("','").join(ids));
+		return list;
+	}
 	@Override
 	public AbstractMapper<String, GroupMember> getMapper() {
 		return mapper;

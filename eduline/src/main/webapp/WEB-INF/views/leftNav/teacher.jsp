@@ -37,7 +37,7 @@
 				<li class="list-group-item"><a href="/exercise/listexercise?commontype=personal">习题资源</a></li>
 
 <li class="list-group-item"><a href="/exercise/homework-exercise">布置作业</a></li>
-<li class="list-group-item"><a href="/homework/teacher/unsubmit/0">我的作业</a></li>
+<li class="list-group-item"><a href="/homework/teacher/timeline">我的作业</a></li>
 
 			</ul>
 

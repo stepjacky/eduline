@@ -1,15 +1,16 @@
 package org.jackysoft.edu.controller;
 
 
-import org.jackysoft.edu.entity.GroupMember;
-import org.jackysoft.edu.entity.HomeWork;
-import org.jackysoft.edu.entity.HomeWorkTaken;
-import org.jackysoft.edu.entity.SysUser;
+import com.google.common.base.Splitter;
+import com.google.common.base.Strings;
+import org.jackysoft.edu.entity.*;
+import org.jackysoft.edu.service.ExerciseService;
 import org.jackysoft.edu.service.GroupMemberService;
 import org.jackysoft.edu.service.HomeWorkService;
 import org.jackysoft.edu.service.ChapterService;
 import org.jackysoft.edu.service.base.AbstractService;
 import org.jackysoft.query.Pager;
+import org.jackysoft.utils.EdulineConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
@@ -17,8 +18,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.Part;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 
 @Controller
@@ -34,6 +39,9 @@ public class HomeWorkController extends AbstractController<String, HomeWork> {
 
     @Autowired
     protected ChapterService chapterService;
+
+    @Autowired
+    protected ExerciseService exerciseService;
 
     @Value("${noteDir}")
     protected String noteDir;
@@ -77,14 +85,18 @@ public class HomeWorkController extends AbstractController<String, HomeWork> {
         return "student-homework-pager";
     }
 
-    @PostMapping("/submit/homework/{id}")
-    public String submitHomework(
-            @PathVariable("id")String id,
-            @RequestParam("choice") String choice,
-            @RequestParam("file") Part part){
-        service.submitHomework(id,choice,part);
-        return "homework";
+
+    @PostMapping("/save/homework/{id}")
+    public void savehomework( @PathVariable("id")String id,
+                              @RequestParam("choice") String choice,
+                              @RequestParam("explains[]") List<String> explains,
+                              @RequestParam("status")String status
+    ){
+        service.saveToHomework(id,choice,explains, status);
+
     }
+
+
 
     @PostMapping("/scorehomework/{id}")
     public String readAndScore(
@@ -99,34 +111,133 @@ public class HomeWorkController extends AbstractController<String, HomeWork> {
     }
 
     //选择班级
-    @PostMapping("/select-groups")
+    @RequestMapping("/select-groups")
     public void selectgroups(
-            @RequestParam("exercises")String exercises,
+            @RequestParam("exercise")String exercise,
+            @RequestParam("course") int course,
             @AuthenticationPrincipal SysUser owner,
             Model model
 
     ){
 
-                List<GroupMember> groups =  groupService.findTeacherGroups(owner.getUsername());
-                model.addAttribute("groups",groups);
-
+           List<GroupMember> groups =  groupService.findTeacherGroups(owner.getUsername());
+           model.addAttribute("groups",groups);
 
     }
 
     //执行具体布置作业过程
     @PostMapping("/put-homework")
     public void puthomework(
-            @RequestParam("exercises")String exercises,
+            @RequestParam("exercise")String exercise,
             @RequestParam("groups")String groups,
+            @RequestParam("course")int course,
             @RequestParam("startdate")long startdate,
-            @RequestParam("deaddate")long deaddate,
+            @RequestParam(value ="content",required = false,defaultValue = "")String content,
             @AuthenticationPrincipal SysUser owner,
             Model model
 
 
 
     ){
+        if(exercise!=null && groups!=null){
+            HomeWork bean = new HomeWork();
+            bean.setContent(content);
+            bean.setExercise(exercise);
+            bean.setGroups(Splitter.on(',')
+                    .splitToList(groups)
+                    .stream()
+                    .filter(s->!Strings.isNullOrEmpty(s))
+                    .collect(Collectors.toList()));
+            bean.setCourse(course);
+            if(startdate>0) {
+                bean.setStartdate(startdate);
+            }else{
+                bean.setStartdate(Instant.now().toEpochMilli());
+            }
+            bean.setTeacher(new NameValue(owner.getNickname(),owner.getUsername()));
+            service.save(bean);
+            model.addAttribute("bean",bean);
+        }
+    }
 
+
+    //老师作业阅卷习题总览
+    @GetMapping("/teacher-summary")
+    public void teachersummary(
+            @RequestParam("homework")String homework,
+            Model model
+    ) {
+
+        HomeWork master = service.findById(homework);
+        Exercise exercise = exerciseService.findById(master.getExercise());
+        List<HomeWorkTaken> takens = service.findSubmitedByHomework(homework);
+        List<GroupMember> groups = groupService.findByGroupIds(master.getGroups());
+
+        //每个题答对的人数
+        Map<String,Integer> rights = new HashMap<>();
+
+
+        //每个选择题选项回答的列表
+        //key index+answer, value user
+        Map<String,List<NameValue>> choiceUser = new HashMap<>();
+
+        //选择题标准答案
+        String stdChoice = master.getChoice();
+
+        Map<NameValue,String> userAnswers =
+                takens.stream().collect(
+                        Collectors.toMap(HomeWorkTaken::getStudent,HomeWorkTaken::getChoice,(e1,e2)->e1));
+
+
+        for(Map.Entry<NameValue,String> entry : userAnswers.entrySet()){
+            NameValue user = entry.getKey();
+            String userChoice = entry.getValue();
+            if(user==null || Strings.isNullOrEmpty(userChoice)) continue;
+            for(int i=0;i<stdChoice.length();i++){
+                char src = Character.toUpperCase(stdChoice.charAt(i));
+                if(i<userChoice.length()){
+                    char dest = Character.toUpperCase(userChoice.charAt(i));
+                    //答对人数
+                    String rkey = "rgt#"+i;
+                    if(dest==src){
+                        Integer val = rights.get(rkey);
+                        if(val==null){
+                            rights.put(rkey,1);
+                        }else{
+                            rights.put(rkey,val+1);
+                        }
+                        //某道题答对人数
+                    }
+
+                    //统计某个答案都有谁选
+                    String key = dest+"#"+i;
+                    List<NameValue> ansUsers = choiceUser.get(key);
+                    if(ansUsers==null){
+                        ansUsers = new ArrayList<>();
+                        choiceUser.put(key,ansUsers);
+                    }
+                    ansUsers.add(new NameValue(user));
+
+
+
+                }
+                continue;
+            }
+
+        }
+
+        Map<String,String> stdChoices = new HashMap<>();
+        for(int i=0;i<exercise.getChoice().length();i++){
+            stdChoices.put("std#"+i,(exercise.getChoice().charAt(i)+"").toUpperCase());
+        }
+
+        model.addAttribute("stdchoices",stdChoices);
+        model.addAttribute("rights",rights);
+        model.addAttribute("choiceuser",choiceUser);
+        model.addAttribute("bean", master);
+        model.addAttribute("groups", groups);
+        model.addAttribute("exercise", exercise);
+        model.addAttribute("takens", takens);
     }
 
     @Override

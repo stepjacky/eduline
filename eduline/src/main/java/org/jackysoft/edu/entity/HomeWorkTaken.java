@@ -5,6 +5,8 @@ import org.jackysoft.utils.EdulineConstant;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Reference;
 
+import java.util.List;
+
 @Table(label = "学生持有作业")
 public class HomeWorkTaken {
 
@@ -16,34 +18,31 @@ public class HomeWorkTaken {
     @Embedded
     NameValue teacher;
 
-    //作业编号
 
+    //作业编号
     String homework;
 
     //学生选择题答案
     String choice;
 
     //学生解答题答案
-    String explain;
+    List<String> explains;
 
     //作业状态
-    String status = EdulineConstant.HoweworkStatus.unsubmit.name();
+    String status ;
+
     //得分
     float score = 0f;
 
 
     //批阅时间
-    long readDate;
+    long readdate;
 
     //交作业时间
-    long submitDate;
-
-    //逾期天数
-    int exceeds;
+    long submitdate;
 
     //老师点评
     String yelp;
-
 
     public NameValue getStudent() {
         return student;
@@ -70,19 +69,19 @@ public class HomeWorkTaken {
     }
 
     public String getChoice() {
-        return choice==null?"":choice;
+        return choice;
     }
 
     public void setChoice(String choice) {
         this.choice = choice;
     }
 
-    public String getExplain() {
-        return explain;
+    public List<String> getExplains() {
+        return explains;
     }
 
-    public void setExplain(String explain) {
-        this.explain = explain;
+    public void setExplains(List<String> explains) {
+        this.explains = explains;
     }
 
     public String getStatus() {
@@ -101,20 +100,20 @@ public class HomeWorkTaken {
         this.score = score;
     }
 
-    public long getReadDate() {
-        return readDate;
+    public long getReaddate() {
+        return readdate;
     }
 
-    public void setReadDate(long readDate) {
-        this.readDate = readDate;
+    public void setReaddate(long readdate) {
+        this.readdate = readdate;
     }
 
-    public long getSubmitDate() {
-        return submitDate;
+    public long getSubmitdate() {
+        return submitdate;
     }
 
-    public void setSubmitDate(long submitDate) {
-        this.submitDate = submitDate;
+    public void setSubmitdate(long submitdate) {
+        this.submitdate = submitdate;
     }
 
     public String getYelp() {
@@ -123,13 +122,5 @@ public class HomeWorkTaken {
 
     public void setYelp(String yelp) {
         this.yelp = yelp;
-    }
-
-    public int getExceeds() {
-        return exceeds;
-    }
-
-    public void setExceeds(int exceeds) {
-        this.exceeds = exceeds;
     }
 }
