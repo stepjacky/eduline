@@ -5,6 +5,7 @@ import org.jackysoft.utils.EdulineConstant;
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Reference;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Table(label = "学生持有作业")
@@ -31,9 +32,10 @@ public class HomeWorkTaken {
     //作业状态
     String status ;
 
-    //得分
+    //总得分
     float score = 0f;
 
+    List<Integer> explainscores;
 
     //批阅时间
     long readdate;
@@ -122,5 +124,13 @@ public class HomeWorkTaken {
 
     public void setYelp(String yelp) {
         this.yelp = yelp;
+    }
+
+    public List<Integer> getExplainscores() {
+        return explainscores;
+    }
+
+    public void setExplainscores(List<Integer> explainscores) {
+        this.explainscores = explainscores;
     }
 }

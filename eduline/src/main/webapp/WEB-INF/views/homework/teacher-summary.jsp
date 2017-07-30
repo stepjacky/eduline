@@ -11,14 +11,14 @@
 </div>
 <div class="row">
     <div class="col-md-9">
-        <div class="panel panel-default">
+        <div class="panel panel-info">
 
             <div class="panel-heading">作业信息</div>
             <div class="panel-body">
-                <p>${not empty bean.content?bean.content:'无要求'}</p>
-                <p>${bean.name}</p>
-                <p>${jxf:relativetime(bean.startdate)}</p>
-                <p><a href="/exercise/view/${exercise.id}">习题正文</a></p>
+                <p class="bg-success">${not empty bean.content?bean.content:'无要求'}</p>
+                <p class="bg-success">${bean.name}</p>
+                <p class="bg-success">${jxf:relativetime(bean.startdate)}</p>
+                <p class="bg-success"><a href="/exercise/view/${exercise.id}">习题正文</a></p>
             </div>
         </div>
 
@@ -34,8 +34,8 @@
 
 </div>
 <ul class="nav nav-tabs tab-answer" role="tablist">
-    <li role="presentation">
-        <a href="#home" class="active" aria-controls="home" role="tab" data-toggle="tab">选择题</a>
+    <li role="presentation" class="active">
+        <a href="#home"  aria-controls="home" role="tab" data-toggle="tab">选择题</a>
     </li>
     <c:forEach begin="1" end="${exercise.esize}" var="item">
         <li role="presentation">
@@ -130,9 +130,54 @@
         </c:forEach>
 
     </div>
-    <c:forEach begin="1" end="${exercise.esize}" var="item">
-        <div role="tabpanel" class="tab-pane" id="explan-${item}-panel">
-            大题答案${item}
+    <c:forEach begin="1" end="${exercise.esize}" var="eitem">
+        <div role="tabpanel" class="tab-pane" id="explan-${eitem}-panel">
+             <c:forEach items="${takens}" var="taken">
+
+                <div class="panel panel-warning">
+                    <div class="panel-heading">${taken.student.name}</div>
+                    <div class="panel-body">
+                        <img src="${taken.explains[eitem]}" style="height: 50px;">
+                    </div>
+                    <div class="panel-footer">
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-success">
+                                <input type="radio"
+                                       class="action-score-explain"
+                                       name="options_${taken.student.value}_${eitem}"
+                                       data-takenid="${taken.id}"
+                                       data-eindex="${eitem}"
+                                       value="2"
+                                       autocomplete="off" >全对
+                            </label>
+                            <label class="btn btn-warning">
+                                <input type="radio"
+                                       class="action-score-explain"
+                                       name="options_${taken.student.value}_${eitem}"
+                                       data-takenid="${taken.id}"
+                                       data-eindex="${eitem}"
+                                       value="1"
+                                       autocomplete="off">半对
+                            </label>
+                            <label class="btn btn-danger">
+                                <input type="radio"
+                                       class="action-score-explain"
+                                       name="options_${taken.student.value}_${eitem}"
+                                       data-taken="${taken.id}"
+                                       data-eindex="${eitem}"
+                                       data-score="0"
+                                       autocomplete="off">全错
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </c:forEach>
         </div>
     </c:forEach>
 </div>
@@ -140,6 +185,13 @@
     $(function () {
         $('[data-toggle="popover"]').popover({
             'html':true
+        });
+        $('.action-score-explain').on('click',function () {
+            var url = '/homework/scoreexplain';
+            $.post(url,$(this).data()).done(function (rst) {
+                console.log(rst);
+            })
+
         })
     })
 

@@ -110,6 +110,17 @@ public class HomeWorkController extends AbstractController<String, HomeWork> {
 
     }
 
+    @ResponseBody
+    @PostMapping("/scoreexplain")
+    public List<Integer> sccoreexplain(
+            @RequestParam("taken")String taken,
+            @RequestParam("eindex")int eindex,
+            @RequestParam("score")int score
+    ){
+        List<Integer> list = service.updateExplain(taken,eindex,score);
+        return list;
+    }
+
     //选择班级
     @RequestMapping("/select-groups")
     public void selectgroups(

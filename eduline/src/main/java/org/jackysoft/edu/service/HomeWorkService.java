@@ -4,6 +4,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -38,6 +39,8 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 	private GroupMemberService groupService;
 	@Autowired
 	private CourseService courseService;
+	@Autowired
+	private ExerciseService exerciseService;
 
 	//学生的作业
 	public Pager<HomeWorkTaken> studentHomeworks(int page, String username,String status) {
@@ -123,6 +126,17 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 				.set("yelp", yelp));
 	}
 
+	public List<Integer>  updateExplain(String taken,int eindex,int score){
+		Query<HomeWorkTaken> query = query(HomeWorkTaken.class)
+				.field(Mapper.ID_KEY).equal(new ObjectId(taken));
+
+		HomeWorkTaken slaver = query.get();
+		List<Integer> eanswers = slaver.getExplainscores();
+		eanswers.add(eindex,score);
+		dataStore.updateFirst(query,slaver,false);
+		return eanswers;
+	}
+
 	@Override
 	public List<ActionResult> saveAll(List<HomeWork> list) {
 		List<ActionResult> rs = new ArrayList<>();
@@ -153,6 +167,8 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 		}
 
 		SysUser owner = (SysUser) SecurityContextHolder.getContext().getAuthentication();
+		Exercise exercise = exerciseService.findById(homeWork.getExercise());
+
 		List<HomeWorkTaken> takens = new ArrayList<>();
 		int amount = 0;
 		for(String gid:homeWork.getGroups()){
@@ -160,6 +176,11 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 			if(tmp==null || tmp.isEmpty()) continue;
 			for (GroupMember groupMember : tmp) {
 				HomeWorkTaken taken = new HomeWorkTaken();
+				List<Integer> eanswers = new ArrayList<>(exercise.getEsize());
+				for(int i=0;i<exercise.getEsize();i++){
+					eanswers.add(0);
+				}
+				taken.setExplainscores(eanswers);
 				taken.setStudent(new NameValue(groupMember.getStudentName(),groupMember.getStudent()));
 				taken.setTeacher(new NameValue(owner.getNickname(),owner.getUsername()));
 				takens.add(taken);

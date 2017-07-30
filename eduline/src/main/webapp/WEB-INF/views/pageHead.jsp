@@ -43,7 +43,7 @@
 <script src="${sbase}static/lib/bloodhound.js"></script>
 <script src="${sbase}static/lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="${sbase}static/lib/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>  
-<script src="${sbase}static/lib/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.min.js"></script> 
+<script src="${sbase}static/lib/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
 <script src="${sbase}static/lib/bootstrap3-typeahead.js"></script>
 <script src="${sbase}static/lib/bootstrap-calendar/js/underscore-min.js"></script>
 <script src="${sbase}static/lib/bootstrap-calendar/js/calendar.js"></script>
