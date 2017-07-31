@@ -2,15 +2,12 @@
 </div><!-- end of main content -->	
 </div><!-- end of main row -->
 </div><!-- end of main container -->
-<footer class="bs-docs-footer" role="contentinfo">
-  <div class="container">
-    <ul class="bs-docs-footer-links text-muted">
-      <li>当前版本 v1.0</li>
-      <li>·</li>
-      <li><a href="http://www.bjnewtalent.com/">北京市新英才学校——为孩子提供卓越的世界同步课程</a></li>      
-    </ul>
-  </div>
-</footer>
+
+
+<div class="container-fluid page-footer bg-warning" role="contentinfo">
+    当前版本 <code>v2.0</code>
+    <a href="http://www.bjnewtalent.com/">北京市新英才学校——为孩子提供卓越的世界同步课程</a>
+</div>
 
 
 	

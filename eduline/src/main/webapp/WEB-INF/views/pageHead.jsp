@@ -1,7 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn" %>
 <%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
+
+
 <c:set var="base" value="http://${domain}/" />
 <c:set var="sbase" value="${base}" scope="session" />
 <c:set var="tableClass" value="table table-striped table-bordered table-hover table-condensed" scope="session" />
@@ -22,13 +25,13 @@
 <title><fmt:message key="appName" bundle="${appctx}" /></title>
 
 <!-- Bootstrap core CSS -->
-<link href="${sbase}static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="${sbase}static/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="${sbase}static/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
 <!-- <link href="static/lib/ztree/css/zTreeStyle/zTreeStyle.css" rel="stylesheet">
  -->
 <link href="static/lib/ztree/css/zTreeStyle/zTreeStyle.css" rel="stylesheet">
 
-<link href="${sbase}static/lib/bootstrap/docs.min.css" rel="stylesheet">
+
 <link rel="stylesheet"
 	href="${sbase}static/lib/bootstrap-calendar/css/calendar.css">
 <link rel="stylesheet"
@@ -37,6 +40,7 @@
 	href="${sbase}static/lib/font-awesome/css/font-awesome.css">
 <link href="${sbase}static/css/index.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="${sbase}static/lib/bootstrap/bootstrap-custom-nav.css">
 <script src="${sbase}static/lib/jquery-1.11.2.js"></script>
 
 <script src="${sbase}static/lib/jquery.md5.js"></script>
@@ -86,71 +90,65 @@
 
 <body>
 
- <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <div class="headlogo">
-      <img src="${sbase}static/images/headlogo.png" >
-      </div>
-    </div>
-    <nav class="collapse navbar-collapse navbar-blues bs-navbar-collapse">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/">主页</a></li>
-					<li><a href="/profile">个人设置</a></li>
-		<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-             ${sysUser.username}
-              <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">${sysUser.nickname}</a></li>
-                <li><a href="#">${jxf:grade(sysUser.grade)}</a></li>
-                <li><a href="#">${jxf:userType(sysUser.userType)}</a></li>
-                <li class="divider"></li>
-                <li><a href="/logout">退出</a></li>
-              </ul>
-            </li>				
-					 
-      </ul>
-         
-    </nav>
-  </div>
-</header> 
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="${sbase}static/images/headlogo.png" >
+            </a>
+        </div>
 
-<div class="bs-docs-header" id="content">
-      <div class="container">
-        <a href="#">
-		<img src="${sbase}static/images/hotlogo/hotlogo.png" style="width:100%;height:200px">
-		</a>       
-      </div>
-</div>
-<div class="container bs-docs-container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/">主页<span class="sr-only">(current)</span></a></li>
+                <li><a href="/profile">设置</a></li>
+                <c:choose>
+                    <c:when test="${sysUser.userType==0}">
+                        <%@include file="leftNav/admin-navbar.jsp" %>
+                    </c:when>
+                    <c:when test="${sysUser.userType==1}">
+                        <%@include file="leftNav/student-navbar.jsp" %>
+                    </c:when>
+                    <c:when test="${sysUser.userType==2}">
+                        <%@include file="leftNav/teacher-navbar.jsp" %>
+                    </c:when>
+
+                    <c:when test="${sysUser.userType==3}">
+                        <%@include file="leftNav/parents-navbar.jsp" %>
+                    </c:when>
+                    <c:when test="${sysUser.userType==4}">
+                        <%@include file="leftNav/teacher-navbar.jsp" %>
+                    </c:when>
+                </c:choose>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        ${sysUser.nickname}[${sysUser.username}] <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">${sysUser.nickname}</a></li>
+                        <li><a href="#">${jxf:grade(sysUser.grade)}</a></li>
+                        <li><a href="#">${jxf:userType(sysUser.userType)}</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/logout">退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
 <div class="row">
-<div class="col-md-3" role="complementary">
-<c:choose>
-   <c:when test="${sysUser.userType==0}">
-       <%@include file="leftNav/admin.jsp" %>
-   </c:when>
-   <c:when test="${sysUser.userType==1}">
-       <%@include file="leftNav/student.jsp" %>
-   </c:when>
-   <c:when test="${sysUser.userType==2}">
-       <%@include file="leftNav/teacher.jsp" %>
-   </c:when>
-  
-   <c:when test="${sysUser.userType==3}">
-       <%@include file="leftNav/parents.jsp" %>
-   </c:when>
-    <c:when test="${sysUser.userType==4}">
-       <%@include file="leftNav/teacher.jsp" %>
-   </c:when>
-</c:choose>
-  
-</div> <!-- end of left side -->
-<div class="col-md-9" role="main" id="contentbody">
+<div class="col-md-12 main-body" role="main" id="contentbody">
  

@@ -1,0 +1,89 @@
+.navbar-default {
+    background-color: #334f60;
+    border-color: #1c4d67;
+}
+.navbar-default .navbar-brand {
+    color: #daedee;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #6bafba;
+}
+.navbar-default .navbar-text {
+    color: #daedee;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #daedee;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #6bafba;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #6bafba;
+    background-color: #1c4d67;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #6bafba;
+    background-color: #1c4d67;
+}
+.navbar-default .navbar-toggle {
+    border-color: #1c4d67;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #1c4d67;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #daedee;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+    border-color: #daedee;
+}
+.navbar-default .navbar-link {
+    color: #daedee;
+}
+.navbar-default .navbar-link:hover {
+    color: #6bafba;
+}
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #daedee;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #6bafba;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #6bafba;
+        background-color: #1c4d67;
+    }
+}
+
+/**other customer style**/
+
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 60px;
+}
+.page-footer{
+    height: 30px;
+    text-align: center;
+}
+
+.main-body{
+    min-height: 500px;
+    height:auto;
+}
