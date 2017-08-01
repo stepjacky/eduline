@@ -18,10 +18,10 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
         资源&作业 <span class="caret"></span></a>
     <ul class="dropdown-menu">
-        <li><a href="/resource/listresource?commontype=personal">教学资源</a></li>
-        <li><a href="/exercise/listexercise?commontype=personal">习题资源</a></li>
+        <li><a href="/resource/listresource?commontype=personal&textbook=${sysUser.textbook}">教学资源</a></li>
+        <li><a href="/exercise/listexercise?commontype=personal&textbook=${sysUser.textbook}">习题资源</a></li>
 
-        <li><a href="/exercise/homework-exercise">布置作业</a></li>
+        <li><a href="/exercise/homework-exercise?&textbook=${sysUser.textbook}">布置作业</a></li>
         <li><a href="/homework/teacher/timeline">我的作业</a></li>
         
     </ul>

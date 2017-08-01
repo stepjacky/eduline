@@ -4,7 +4,7 @@
   Date: 2017/7/24 0024 11:18  
 --%>
 <%@ page pageEncoding="UTF-8" %>
-<%@ include file="../pageHead-simple.jsp" %>
+<%@ include file="../pageHead.jsp" %>
 <link rel="stylesheet" href="${sbase}static/css/exercise/list.css" />
 <div class="alert alert-info">
     习题资源
@@ -15,7 +15,7 @@
         <c:forEach items="${commontypes}" var="item">
             <li>
                 <a href="/exercise/listexercise?textbook=${textbook}&chapter=${chapter}&page=${page}&commontype=${item.key}" >
-                    <span class="${commontype==item.key?'label label-info':''}">${item.name}</span>
+                    <span class="${commontype==item.key?'label label-primary':''}">${item.name}</span>
                 </a>
             </li>
         </c:forEach>
@@ -36,14 +36,14 @@
         </select>
 
         <c:forEach items="${chapters}" var="item">
-            <div class="panel panel-info panel-item">
+            <div class="panel panel-primary panel-item">
 
                 <div class="panel-heading">${item.name}</div>
                 <ul class="list-group">
                     <c:forEach items="${item.children}" var="child">
                         <li class="list-group-item">
                             <a href="/exercise/listexercise?textbook=${textbook}&chapter=${child.id}&page=${page}&commontype=${commontype}" >
-                                <span class="${chapter==child.id?'label label-info':''}">${child.name}</span>
+                                <span class="${chapter==child.id?'label label-primary':''}">${child.name}</span>
                             </a>
                         </li>
                     </c:forEach>
@@ -116,4 +116,4 @@
     </div>
 </div>
 <script src="${sbase}static/scripts/exercise/list.js"></script>
-<%@ include file="../pageFoot-simple.jsp" %>
+<%@ include file="../pageFoot.jsp" %>

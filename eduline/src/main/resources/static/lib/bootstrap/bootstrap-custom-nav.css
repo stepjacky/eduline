@@ -1,4 +1,4 @@
-.navbar-default {
+/*.navbar-default {
     background-color: #334f60;
     border-color: #1c4d67;
 }
@@ -69,9 +69,16 @@
         color: #6bafba;
         background-color: #1c4d67;
     }
-}
+}*/
 
 /**other customer style**/
+
+.navbar-default .navbar-brand {
+    color: #daedee;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
 
 .container{
     padding-left: 15px;

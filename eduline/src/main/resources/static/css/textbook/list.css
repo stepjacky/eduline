@@ -1,0 +1,8 @@
+.panel-heading .action-remove,.panel-heading .action-new,.panel-heading .action-new-child ,.list-group-item .action-remove {
+    visibility: hidden;
+}
+.panel-heading:hover  .action-remove,.panel-heading:hover  .action-new ,.panel-heading:hover  .action-new-child,.list-group-item:hover .action-remove{
+    visibility: visible;
+}
+
+

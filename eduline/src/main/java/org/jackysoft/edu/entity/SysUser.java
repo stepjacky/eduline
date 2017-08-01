@@ -94,7 +94,9 @@ Authentication ,MediaFile{
 	@Column(label="中文名")
 	private String givename;
 	
-	
+	@Column(label="课本")
+	private String textbook;
+
 	@Transient
 	private String passwordn;
 	@Transient
@@ -285,7 +287,16 @@ Authentication ,MediaFile{
 	public int getGrade() {
 		return this.grade;
 	}
-	
+
+
+	public String getTextbook() {
+		return textbook;
+	}
+
+	public void setTextbook(String textbook) {
+		this.textbook = textbook;
+	}
+
 	public int myGrade() {
 	    if(userType!=1 || Strings.isNullOrEmpty(username) || username.length()<4) return 0;
 		LocalDate date = LocalDate.now();

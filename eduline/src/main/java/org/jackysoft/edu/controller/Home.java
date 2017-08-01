@@ -4,17 +4,25 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.jackysoft.edu.entity.NameValue;
 import org.jackysoft.edu.entity.SysUser;
+import org.jackysoft.edu.entity.Textbook;
 import org.jackysoft.edu.service.SysUserService;
+import org.jackysoft.edu.service.TextbookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.common.base.Strings;
+
+import java.util.List;
+import java.util.Map;
 
 @Controller
 public class Home {
@@ -23,6 +31,8 @@ public class Home {
 
 	@Autowired
 	private SysUserService userService;
+	@Autowired
+	private TextbookService textbookService;
 
 	@RequestMapping("/")
 	public String index() {
@@ -40,14 +50,18 @@ public class Home {
 	public ModelAndView profile(@AuthenticationPrincipal SysUser loginuser) {
 		ModelAndView mav = new ModelAndView("profile");
 		SysUser user = userService.findById(loginuser.getName());
+		Map<NameValue,List<Textbook>> books = textbookService.findGroupedTextbook();
+		mav.addObject("textbooks",books);
 		mav.addObject("ownerUser", user);
 		return mav;
 	}
 
 	@RequestMapping("/modify/password")
-	public ModelAndView modifypassword(@RequestParam String username,
-			@RequestParam String password, @RequestParam String passwordn,
-			@RequestParam String passwordr) {
+	public ModelAndView modifypassword(
+			@RequestParam("username") String username,
+			@RequestParam("password") String password,
+			@RequestParam("passwordn") String passwordn,
+			@RequestParam("passwordr") String passwordr) {
 		ModelAndView mav = new ModelAndView("profile");
 
 		SysUser user = userService.findById(username);
@@ -71,6 +85,25 @@ public class Home {
 		mav.addObject("ownerUser", user);
 		mav.addObject("message", "密码已修改");
 		return mav;
+	}
+
+	@PostMapping("/modify/textbook")
+	public String modifytextbook(
+			@RequestParam("username")String username,
+			@RequestParam("textbook")String textbook,
+			Model model
+			){
+		String result = "profile";
+		SysUser user = userService.findById(username);
+		if (user == null) {
+			model.addAttribute("message", "用户不存在");
+			return result;
+		}
+
+		userService.updatePartial(username, "textbook:" + textbook);
+		model.addAttribute("ownerUser", user);
+		model.addAttribute("message", "课本已经修改");
+		return result;
 	}
 
 	@RequestMapping("/reset/password/{username}")

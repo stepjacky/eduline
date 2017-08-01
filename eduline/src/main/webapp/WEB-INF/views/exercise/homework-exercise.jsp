@@ -4,7 +4,7 @@
   Date: 2017/7/24 0024 11:18  
 --%>
 <%@ page pageEncoding="UTF-8" %>
-<%@ include file="../pageHead-simple.jsp" %>
+<%@ include file="../pageHead.jsp" %>
 <link rel="stylesheet" href="${sbase}static/css/exercise/list.css" />
 <div class="alert alert-info">
     选择习题
@@ -38,7 +38,7 @@
         </select>
 
         <c:forEach items="${chapters}" var="item">
-            <div class="panel panel-info panel-item">
+            <div class="panel panel-primary panel-item">
 
                 <div class="panel-heading">${item.name}</div>
                 <ul class="list-group">

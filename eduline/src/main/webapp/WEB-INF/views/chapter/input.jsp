@@ -2,24 +2,24 @@
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
 
-<%@ include file="../pageHead-simple.jsp" %>
-
+<%@ include file="../pageHead.jsp" %>
+<link rel="stylesheet" href="${sbase}static/css/textbook/list.css">
 <div class="alert alert-info">
-   <a href="/textbook/pager/0?ajax=false">
-       <i class="fa fa-list"></i>返回课本
+   <a class="btn btn-xs btn-info " href="/textbook/pager/0?ajax=false">
+       <i class="fa fa-list"></i>
 
    </a> ${book.name}
 
         章节添加,年级,${book.grade.name},课程,${book.course.name}
 </div>
-<div class="alert alert-warning">
+<div class="alert alert-success">
 
     <ul class="breadcrumb">
-        <li>点击</li>
-        <li>标题编辑章节</li>
-        <li><i class="fa fa-plus"></i>添加新章节</li>
+        <li>点击标题</li>
+        <li>修改</li>
+        <li><i class="fa fa-plus"></i>添加</li>
         <li><i class="fa fa-address-book"></i>添加二级章节</li>
-        <li><i class="fa fa-times-circle"></i>删除章节</li>
+        <li><i class="fa fa-times-circle"></i>删除</li>
 
     </ul>
 </div>
@@ -34,27 +34,27 @@
                         <a href="javascript:;" class="action-edit" data-id="${item.id}">
                                 ${item.name}
                         </a>
-                        <a href="javascript:;" class="action-new" data-id="${item.id}">
+                        <button class="btn btn-danger btn-xs action-new" data-id="${item.id}">
                             <i class="fa fa-plus"></i>
 
-                        </a>
-                            <a href="javascript:;" class="action-new-child" data-id="${item.id}">
+                        </button>
+                            <button class="btn btn-danger btn-xs action-new-child" data-id="${item.id}">
                                <i class="fa fa-address-book"></i>
 
-                            </a>
-                            <a href="javascript:;" class="action-remove" data-id="${item.id}">
+                            </button>
+                            <button class="btn btn-danger btn-xs action-remove" data-id="${item.id}">
                                 <i class="fa fa-times-circle"></i>
 
-                            </a>
+                            </button>
                 </div>
                 <ul class="list-group">
                     <c:forEach items="${item.children}" var="child">
                         <li class="list-group-item">
                             <a href="javascript:;" class="action-edit" data-id="${child.id}">${child.name}</a>
-                            <a href="javascript:;" class="action-remove" data-id="${child.id}">
+                            <button class="btn btn-danger btn-xs action-remove" data-id="${child.id}">
                                 <i class="fa fa-times-circle"></i>
 
-                            </a>
+                            </button>
                         </li>
                     </c:forEach>
                 </ul>
@@ -66,7 +66,7 @@
       </div><!-- left list group of chapter -->
       <div class="col-md-8">
           <div class="panel panel-info" id="input-body">
-              <div class="panel-heading">添加<span class="label label-info">{{ parent=='root'?'顶级':'子' }}</span>章节</div>
+              <div class="panel-heading">添加{{ parent=='root'?'顶级':'子' }}章节</div>
               <div class="panel-body">
                   <div class="form-group">
                       <label >名称</label>
@@ -104,4 +104,4 @@
 
 </script>
 <script src="static/scripts/chapter/input.js"></script>
-<%@ include file="../pageFoot-simple.jsp" %>
+<%@ include file="../pageFoot.jsp" %>

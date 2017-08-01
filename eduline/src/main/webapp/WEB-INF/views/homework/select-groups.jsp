@@ -5,7 +5,7 @@
 --%>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<%@ include file="../pageHead-simple.jsp" %>
+<%@ include file="../pageHead.jsp" %>
 <div id="input-body">
     <c:if test="${empty exercises}">
         <div class="alert alert-warning">
@@ -95,4 +95,4 @@
         })
     });
 </script>
-<%@ include file="../pageFoot-simple.jsp" %>
+<%@ include file="../pageFoot.jsp" %>

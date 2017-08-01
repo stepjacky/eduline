@@ -25,8 +25,12 @@
 <title><fmt:message key="appName" bundle="${appctx}" /></title>
 
 <!-- Bootstrap core CSS -->
+
 <link href="${sbase}static/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="${sbase}static/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="${sbase}static/lib/bootstrap/css/theme.css">
+    <link href="${sbase}static/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
 <!-- <link href="static/lib/ztree/css/zTreeStyle/zTreeStyle.css" rel="stylesheet">
  -->
 <link href="static/lib/ztree/css/zTreeStyle/zTreeStyle.css" rel="stylesheet">
@@ -100,16 +104,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">
-                <img src="${sbase}static/images/headlogo.png" >
+            <a class="navbar-brand" href="/">
+                <img src="${sbase}static/images/brand.png" >
             </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active">
-                    <a href="/">主页<span class="sr-only">(current)</span></a></li>
                 <li><a href="/profile">设置</a></li>
                 <c:choose>
                     <c:when test="${sysUser.userType==0}">
