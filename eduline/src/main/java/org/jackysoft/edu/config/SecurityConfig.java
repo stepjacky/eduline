@@ -42,7 +42,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Appl
             		"/weixin/**",
             		"/favorate.ico")
             .permitAll()
-            .antMatchers("/home").hasAnyRole("USER")          
+            .antMatchers("/home").hasAnyRole("USER")
+			.anyRequest().authenticated()
             .and()
             .formLogin()
                 .loginPage("/login")
@@ -55,7 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Appl
                     .logoutUrl("/logout")
                     .logoutSuccessUrl("/login?logout")
             .permitAll();
-        //super.configure(http);
+       // super.configure(http);
     }
 	
 	@Autowired
