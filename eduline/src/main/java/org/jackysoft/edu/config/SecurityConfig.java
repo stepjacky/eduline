@@ -39,6 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Appl
             		"/static/images/**",
             		"/static/lib/**",
             		"/rest/**",
+            		"/weixin/**",
             		"/favorate.ico")
             .permitAll()
             .antMatchers("/home").hasAnyRole("USER")          
@@ -54,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Appl
                     .logoutUrl("/logout")
                     .logoutSuccessUrl("/login?logout")
             .permitAll();
-        super.configure(http);
+        //super.configure(http);
     }
 	
 	@Autowired
