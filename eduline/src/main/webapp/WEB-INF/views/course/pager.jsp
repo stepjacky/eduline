@@ -35,7 +35,7 @@
 		<tbody>
 			<c:forEach items="${pager.dataList}" var="item">
 				<tr>
-					<td>${item.name}</td>
+					<td>${item.name}[${item.id}]</td>
 					<td>
 					<label>
 					   <input type="radio" name="${item.id}_ctype" class="set-type" key="${item.id }" value="0" 

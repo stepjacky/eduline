@@ -29,7 +29,7 @@
 <link href="${sbase}static/lib/bootstrap/css/bootstrap.css" rel="stylesheet">
 
 
-    <link rel="stylesheet" href="${sbase}static/lib/bootstrap/css/theme.css">
+<link rel="stylesheet" href="${sbase}static/lib/bootstrap/css/theme.css">
     <link href="${sbase}static/lib/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet">
 <!-- <link href="static/lib/ztree/css/zTreeStyle/zTreeStyle.css" rel="stylesheet">
  -->
@@ -93,8 +93,14 @@
 </head>
 
 <body>
-
-<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <img src="static/images/head-brand.png">
+        </div>
+    </div>
+</div>    
+<nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
