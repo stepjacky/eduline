@@ -40,6 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Appl
             		"/static/lib/**",
             		"/rest/**",
             		"/weixin/**",
+            		"/externaldata/**",
             		"/favorate.ico")
             .permitAll()
             .antMatchers("/home").hasAnyRole("USER")
