@@ -77,40 +77,23 @@ $(function(){
 				}
 				//return;
 			}
-			
-			
-		
-		
-			$.blockUI(
-					{
-						message: confirmDlg,
-						css:{
-							border:'1px solid #ccc'
-						},
-						onUnblock:function(element, options){
-                           
-							var actBtn = $(options.originalEvent.target);
-							if(actBtn.val()=='yes'){
-							
-								var url = '/homework/student/homework/submit/'+hwid;
-								var postData = {
-									'answer':answer.join(''),
-									'fileId':fileId					
-								};
-								postData[csrfinfo.name]=csrfinfo.token;
-								console.log(postData);
-								$.post(url,postData).done(function(){
-									window.location.href='/homework/student/unscored/0';
-								});
-								
-							}
 
+        layer.confirm('is not?', function(index){
 
-						}
-					}
-				);
-		 
-		 
+        	if(index==0){
+                var url = '/homework/student/homework/submit/'+hwid;
+                var postData = {
+                    'answer':answer.join(''),
+                    'fileId':fileId
+                };
+                postData[csrfinfo.name]=csrfinfo.token;
+                $.post(url,postData).done(function(){
+                    window.location.href='/homework/student/unscored/0';
+                });
+			}
+
+            layer.close(index);
+        });
 		
 	});
 	

@@ -28,7 +28,7 @@ function postJson(url,data,cak){
 }
 
 function reloadPage() {
-	window.location.href = window.location.href;
+	location.reload();
 }
 function guid() {
 	function s4() {
@@ -41,18 +41,24 @@ function guid() {
 
 
 function notify(text) {
-    bootbox.alert({
-        size: "small",
-        title: "系统消息",
-        message: text
-    })
+   layer.msg(text);
 }
 
 function redirectTo(url) {
 	window.location.href = url;
 }
 
+function loadUrl(url) {
 
+	if(url && url.indexOf('javascript')<0 && url!='/' ){
+        $('#contentbody').load(url);
+    }
+
+    if(url=='/'){
+		reloadPage();
+	}
+
+}
 
 $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
 
@@ -64,7 +70,6 @@ $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
 		else
 			options.url += '&' + csrfinfo.param();
 
-		console.log(options.url);
 	}
 
 	// log(options);

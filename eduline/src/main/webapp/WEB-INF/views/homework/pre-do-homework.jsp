@@ -1,4 +1,4 @@
-<%@include file="../pageHead-new.jsp"%>
+<%@include file="../pageHead.jsp"%>
 <%@ page pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>

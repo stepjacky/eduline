@@ -71,23 +71,15 @@
 	   	 }
 	   	 var param = "data="+JSON.stringify(sdata);
 	   	 $.post(url,param,function(){
-	   		$.blockUI(
-					{
-						message: redirectDlg,
 
-						onUnblock:function(element, options){
+             layer.confirm('确定跳转?', function(index){
+                 //do something
+				 if(index==1){
+                     redirectTo('/violates/query/0?order=fireTime desc');
+				 }
+                 layer.close(index);
+             });
 
-							var actBtn = $(options.originalEvent.target);
-							if(actBtn.val()=='yes'){
-	 							 
-							}else{
-								redirectTo('/violates/query/0?order=fireTime desc');
-							}
-
-
-						}
-					}
-				);
 	   	 });
     	
     	

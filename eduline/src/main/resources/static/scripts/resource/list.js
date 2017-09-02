@@ -1,14 +1,13 @@
 $(function(){
 
+
     $('.action-textbook-change').on('change',function () {
         var opt = $('option:selected',this);
-        redirectTo(opt.data('url'));
+        loadUrl(opt.data('url'));
     });
 
     $('.action-start-upload').on('click',function (e) {
         var data = $(this).data();
-
-        console.log(data);
         $.post('/resource/openupload',data,function (data) {
 
             bootbox.dialog(
@@ -29,8 +28,6 @@ $(function(){
             .done(function(data){
                 if(data.message!="ok"){
                     bootbox.alert(data.message);
-                }else{
-                    reloadPage();
                 }
             })
     })

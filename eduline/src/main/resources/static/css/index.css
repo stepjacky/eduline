@@ -33,3 +33,7 @@ a:hover{
 .panel-item{
     margin-bottom: 0px;
 }
+
+.layui-body{
+    padding: 20px;
+}

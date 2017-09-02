@@ -1,4 +1,4 @@
-<%@ include file="../pageHead-new.jsp"%>
+
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <link href="static/css/course/pager.css" rel="stylesheet">
@@ -79,4 +79,3 @@
 </div>
 <div id="inputArea" class="table-responsive"></div>
 <script src="static/scripts/course/pager.js"></script>
-<%@ include file="../pageFoot.jsp"%>

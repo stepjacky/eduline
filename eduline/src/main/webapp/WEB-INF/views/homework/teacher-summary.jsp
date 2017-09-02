@@ -4,7 +4,11 @@
   Date: 2017/7/26 0026 8:32  
 --%>
 <%@ page pageEncoding="UTF-8" %>
-<%@ include file="../pageHead-new.jsp" %>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
+
 <link rel="stylesheet" href="${sbase}static/css/homework/summary.css">
 <div class="alert alert-info">
     作业批阅
@@ -13,7 +17,6 @@
     <div class="col-md-9">
         <div class="panel panel-info">
 
-            <div class="panel-heading">作业信息</div>
             <div class="panel-body">
                 <p class="bg-success">${not empty bean.content?bean.content:'无要求'}</p>
                 <p class="bg-success">${bean.name}</p>
@@ -24,22 +27,22 @@
 
     </div>
     <div class="col-md-3 taken-list">
-      <ul>
-          <c:forEach items="${takens}" var="item">
-              <li>${item.student.name}</li>
-          </c:forEach>
-      </ul>
+        <ul>
+            <c:forEach items="${takens}" var="item">
+                <li>${item.student.name}</li>
+            </c:forEach>
+        </ul>
 
     </div>
 
 </div>
 <ul class="nav nav-tabs tab-answer" role="tablist">
     <li role="presentation" class="active">
-        <a href="#home"  aria-controls="home" role="tab" data-toggle="tab">选择题</a>
+        <a href="#home" aria-controls="home" role="tab" data-toggle="tab">选择题</a>
     </li>
     <c:forEach begin="1" end="${exercise.esize}" var="item">
         <li role="presentation">
-            <a  href="#explan-${item}-panel" aria-controls="explan-${item}-panel" role="tab" data-toggle="tab">
+            <a href="#explan-${item}-panel" aria-controls="explan-${item}-panel" role="tab" data-toggle="tab">
                 解答题${item}
             </a></li>
     </c:forEach>
@@ -50,81 +53,97 @@
         <c:forEach begin="0" end="${exercise.csize-1}" var="item">
             <c:set var="itemkey">std#${item}</c:set>
             <ul class="abcd">
-             <li>
-             <span class="label label-info">${item+1}</span></li>
-             <li>
-                 <c:set var="userkeyA">A#${item}</c:set>
-                 <c:set var="userkeyB">B#${item}</c:set>
-                 <c:set var="userkeyC">C#${item}</c:set>
-                 <c:set var="userkeyD">D#${item}</c:set>
+                <li>
+                    <span class="label label-info">${item+1}</span></li>
+                <li>
+                    <c:set var="userkeyA">A#${item}</c:set>
+                    <c:set var="userkeyB">B#${item}</c:set>
+                    <c:set var="userkeyC">C#${item}</c:set>
+                    <c:set var="userkeyD">D#${item}</c:set>
 
-                 <button class="btn btn-sm ${stdchoices[itemkey]=='A'?'btn-warning':'btn-info'}"
-                         type="button"
-                         data-container="body"
-                         data-toggle="popover"
-                         data-placement="top"
+                    <button class="btn btn-sm ${stdchoices[itemkey]=='A'?'btn-warning':'btn-info'}"
+                            type="button"
+                            data-container="body"
+                            data-toggle="popover"
+                            data-placement="top"
 
-                         data-content="<ul>
+                            data-content="<ul>
                           <c:forEach items="${choiceUser[userkeyA]}" var="cuser">
                            <li>${cuser.name}</li>
                           </c:forEach>
                          </ul>"
-                 >A</button>
+                    >A
+                    </button>
 
 
+                    [${fn:length(choiceUser[userkeyA])}
+                    <small>选择</small>
+                    ]
+                </li>
+                <li>
+                    <button
+                            class="btn btn-sm ${stdchoices[itemkey]=='B'?'btn-warning':'btn-info'}"
+                            type="button"
+                            data-container="body"
+                            data-toggle="popover"
+                            data-placement="top"
 
-
-                 [${fn:length(choiceUser[userkeyA])}<small>选择</small>]</li>
-             <li>
-                 <button
-                         class="btn btn-sm ${stdchoices[itemkey]=='B'?'btn-warning':'btn-info'}"
-                         type="button"
-                         data-container="body"
-                         data-toggle="popover"
-                         data-placement="top"
-
-                         data-content="<ul>
+                            data-content="<ul>
                           <c:forEach items="${choiceUser[userkeyB]}" var="cuser">
                            <li>${cuser.name}</li>
                           </c:forEach>
                          </ul>"
-                 >B</button>
-                 [${fn:length(choiceUser[userkeyB])}<small>选择</small>]</li>
-             <li>
-                 <button
-                         class="btn btn-sm ${stdchoices[itemkey]=='C'?'btn-warning':'btn-info'}"
-                         type="button"
-                         data-container="body"
-                         data-toggle="popover"
-                         data-placement="top"
+                    >B
+                    </button>
+                    [${fn:length(choiceUser[userkeyB])}
+                    <small>选择</small>
+                    ]
+                </li>
+                <li>
+                    <button
+                            class="btn btn-sm ${stdchoices[itemkey]=='C'?'btn-warning':'btn-info'}"
+                            type="button"
+                            data-container="body"
+                            data-toggle="popover"
+                            data-placement="top"
 
-                         data-content="<ul>
+                            data-content="<ul>
                           <c:forEach items="${choiceUser[userkeyC]}" var="cuser">
                            <li>${cuser.name}</li>
                           </c:forEach>
                          </ul>"
-                 >C</button>
+                    >C
+                    </button>
 
-                 [${fn:length(choiceUser[userkeyC])}<small>选择</small>]</li>
-             <li>
-                 <button class="btn btn-sm ${stdchoices[itemkey]=='D'?'btn-warning':'btn-info'}"
-                         type="button"
-                         data-container="body"
-                         data-toggle="popover"
-                         data-placement="top"
+                    [${fn:length(choiceUser[userkeyC])}
+                    <small>选择</small>
+                    ]
+                </li>
+                <li>
+                    <button class="btn btn-sm ${stdchoices[itemkey]=='D'?'btn-warning':'btn-info'}"
+                            type="button"
+                            data-container="body"
+                            data-toggle="popover"
+                            data-placement="top"
 
-                         data-content="<ul>
+                            data-content="<ul>
                           <c:forEach items="${choiceUser[userkeyD]}" var="cuser">
                            <li>${cuser.name}</li>
                           </c:forEach>
                          </ul>"
-                 >D</button>
-                 [${fn:length(choiceUser[userkeyD])}<small>选择</small>]</li>
-             <li>
-                 <c:set var="ritemkey">rgt#${item}</c:set>
-                     ${rights[ritemkey]}<small>人答对</small></li>
+                    >D
+                    </button>
+                    [${fn:length(choiceUser[userkeyD])}
+                    <small>选择</small>
+                    ]
+                </li>
+                <li>
+                    <c:set var="ritemkey">rgt#${item}</c:set>
+                        ${rights[ritemkey]}
+                    <small>人答对</small>
+                </li>
 
-         </ul>
+            </ul>
 
 
         </c:forEach>
@@ -132,7 +151,7 @@
     </div>
     <c:forEach begin="1" end="${exercise.esize}" var="eitem">
         <div role="tabpanel" class="tab-pane" id="explan-${eitem}-panel">
-             <c:forEach items="${takens}" var="taken">
+            <c:forEach items="${takens}" var="taken">
 
                 <div class="panel panel-warning">
                     <div class="panel-heading">${taken.student.name}</div>
@@ -148,7 +167,7 @@
                                        data-takenid="${taken.id}"
                                        data-eindex="${eitem}"
                                        value="2"
-                                       autocomplete="off" >全对
+                                       autocomplete="off">全对
                             </label>
                             <label class="btn btn-warning">
                                 <input type="radio"
@@ -173,10 +192,6 @@
                 </div>
 
 
-
-
-
-
             </c:forEach>
         </div>
     </c:forEach>
@@ -184,11 +199,11 @@
 <script>
     $(function () {
         $('[data-toggle="popover"]').popover({
-            'html':true
+            'html': true
         });
-        $('.action-score-explain').on('click',function () {
+        $('.action-score-explain').on('click', function () {
             var url = '/homework/scoreexplain';
-            $.post(url,$(this).data()).done(function (rst) {
+            $.post(url, $(this).data()).done(function (rst) {
                 console.log(rst);
             })
 
@@ -196,4 +211,4 @@
     })
 
 </script>
-<%@ include file="../pageFoot.jsp" %>
+

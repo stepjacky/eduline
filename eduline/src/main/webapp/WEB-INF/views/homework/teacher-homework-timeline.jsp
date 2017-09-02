@@ -4,86 +4,45 @@
   Date: 2017/7/25 0025 15:51  
 --%>
 <%@ page pageEncoding="UTF-8" %>
-<%@ include file="../pageHead-new.jsp" %>
-<link rel="stylesheet" href="${sbase}static/css/homework/timeline.css">
-   <div class="page-header">
-        <h1>作业</h1>
-    </div>
-    <div id="timeline">
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 
-        <c:forEach items="${list}" var="item">
-        <div class="timeline-movement">
+<ul class="layui-timeline">
+<c:forEach items="${list}" var="item">
+    <li class="layui-timeline-item">
+        <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+        <div class="layui-timeline-content layui-text">
+            <h3 class="layui-timeline-title">
+                    ${jxf:relativetime(item.startdate)}
+                       <i class="glyphicon glyphicon-time"></i>
+                    ${jxf:dateFormat(item.startdate)}
+            </h3>
+            <p>
+                <div class="layui-collapse timeline-panel" data-homework="${item.id}">
+                    <div class="layui-colla-item" >
+                        <h4 class="layui-colla-title">${item.name}</h4>
+                        <div class="layui-colla-content layui-show">
+                            <div class="layui-progress layui-bg-orange">
+                                <div class="layui-progress-bar" lay-percent="${item.amountsubmited*100/(item.amount==0?1:item.amount)}%"></div>
+                            </div>
+                            ${item.amountsubmited}/${item.amount} 已交作业
+                            ${jxf:dateFormat(item.startdate)}
 
-            <div class="timeline-badge">
-
-            </div>
-
-
-            <div class="col-sm-4  timeline-item">
-                <div class="row">
-                    <div class="col-sm-11">
-                        <div class="timeline-panel credits">
-                            <ul class="timeline-panel-ul">
-                                <li>
-                                        ${jxf:relativetime(item.startdate)}
-                                        <i class="glyphicon glyphicon-time"></i>
-                                        ${jxf:dateFormat(item.startdate)}
-
-                                </li>
-                            </ul>
-                        </div>
-
+                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-sm-8  timeline-item">
-                <div class="row">
-                    <div class="col-sm-offset-1 col-sm-11">
-                        <div class="timeline-panel debits" data-homework="${item.id}">
-                            <ul class="timeline-panel-ul">
-                                <li>
-                                    <span class="importo">
-
-                                            ${item.name}
-                                    </span>
-                                </li>
-                                <li>
-                                    <div class="progress" style="height: 8px;">
-                                        <div class="progress-bar progress-bar-info progress-bar-striped"
-                                             role="progressbar"
-                                             aria-valuenow="${item.amountsubmited}"
-                                             aria-valuemin="0"
-                                             aria-valuemax="${item.amount}"
-                                             style="width: ${item.amountsubmited*100/(item.amount==0?1:item.amount)}%">
-                                            <span class="sr-only"></span>
-                                        </div>
-                                    </div>
-                                    ${item.amountsubmited}/${item.amount} 已交作业
-                                </li>
-                                <li>
-                                    <p>
-                                        <small class="text-muted"><i class="glyphicon glyphicon-time"></i> 
-                                            ${jxf:dateFormat(item.startdate)}
-                                        </small>
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+               </div>
+            </p>
         </div>
-        </c:forEach>
-        <!-- end of one timeline -->
-    </div>
-
+    </li>
+</c:forEach>
+</ul>
 <script>
     $(function () {
-        $('.timeline-panel').on('click',function () {
-            redirectTo('/homework/teacher-summary?homework='+$(this).data('homework'));
+        $('.timeline-panel').on('click', function () {
+            loadUrl('/homework/teacher-summary?homework=' + $(this).data('homework'));
         })
     })
 </script>
-<%@ include file="../pageFoot.jsp" %>
+

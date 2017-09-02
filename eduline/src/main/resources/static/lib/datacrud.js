@@ -113,27 +113,18 @@ window.DataAdmin = {};
 							url = that.settings.context + that.settings.namespace
 							+ '/remove/qc?query=' + keyname+"`"+key;
 						}
-						
-						$.blockUI(
-								{
-									message: confirmDlg,
-
-									onUnblock:function(element, options){
-
-										var actBtn = $(options.originalEvent.target);
-										if(actBtn.val()=='yes'){
-											$.post(url, function() {
-												$(that).parent('td').parent('tr').remove();
-					                            window.location.href=window.location.href;
-											}); 
-										}else{
-											
-										}
 
 
-									}
-								}
-							);			
+                        layer.confirm('确定删除?', function(index){
+                            //do something
+							if(index==0){
+                                $.post(url, function() {
+                                    $(that).parent('td').parent('tr').remove();
+                                    window.location.reload()
+                                });
+                            }
+                            layer.close(index);
+                        });
 						
 					});
 		},
@@ -199,34 +190,20 @@ window.DataAdmin = {};
 						
 						var url = that.settings.context
 								+ that.settings.namespace + '/persisties';
-						
-						
-						$.blockUI(
-								{
-									message: confirmDlg,
-
-									onUnblock:function(element, options){
-
-										var actBtn = $(options.originalEvent.target);
-										if(actBtn.val()=='yes'){
-
-											$.post(url, pstr, function(data) {
-												window.location.href=that.settings.context
-												+ 
-												
-												that.settings.namespace + (that.settings.addCallback?that.settings.addCallback:'/pager/0?ajax=false');
-											});
-										}else{
-											
-										}
 
 
-									}
-								}
-							);	
-						
-						
-						
+                        layer.confirm('确定操作?', function(index){
+                            //do something
+							if(index==0){
+                                $.post(url, pstr, function(data) {
+                                    window.location.href=that.settings.context
+                                        +
+
+                                        that.settings.namespace + (that.settings.addCallback?that.settings.addCallback:'/pager/0?ajax=false');
+                                });
+							}
+                            layer.close(index);
+                        });
 
 					});
 		},
@@ -248,25 +225,14 @@ window.DataAdmin = {};
 						var data = "data="+JSON.stringify(sdata);
 						var url = that.settings.context
 									+ that.settings.namespace + '/persiste';
-						
-						$.blockUI(
-								{
-									message: confirmDlg,
 
-									onUnblock:function(element, options){
-
-										var actBtn = $(options.originalEvent.target);
-										if(actBtn.val()=='yes'){
-
-											$.post(url, data);
-										}else{
-											
-										}
-
-
-									}
-								}
-							);	
+                        layer.confirm('确定操作?', function(index){
+                            //do something
+                            if(index==0){
+                                $.post(url, data);
+                            }
+                            layer.close(index);
+                        });
 						
 						
 					});
@@ -285,35 +251,21 @@ window.DataAdmin = {};
 					function() {
 						
 						var dthat =  this;
-						
-						
-						$.blockUI(
-								{
-									message: confirmDlg,
-
-									onUnblock:function(element, options){
-
-										var actBtn = $(options.originalEvent.target);
-										if(actBtn.val()=='yes'){
-
-											that.removeItem($(dthat).attr('keyname'));
-											if (!that.settings.lineInfo.single) {
-												$(dthat).parent('td').parent('tr').nextUntil(
-														that.settings.lineInfo.endselector)
-														.remove();
-											}
-											$(dthat).parent('td').parent('tr').remove();
-
-										}else{
-											
-										}
 
 
-									}
-								}
-							);	
-						
-						
+                        layer.confirm('is not?', function(index){
+                            //do something
+							if(index==0){
+                                that.removeItem($(dthat).attr('keyname'));
+                                if (!that.settings.lineInfo.single) {
+                                    $(dthat).parent('td').parent('tr').nextUntil(
+                                        that.settings.lineInfo.endselector)
+                                        .remove();
+                                }
+                                $(dthat).parent('td').parent('tr').remove();
+							}
+                            layer.close(index);
+                        });
 						
 					});
 		},

@@ -3,28 +3,21 @@
   User: qujiakang@126.com  
   Date: 2017/7/24 0024 11:18  
 --%>
-<%@ page pageEncoding="UTF-8" %>
-<%@ include file="../pageHead-new.jsp" %>
-<link rel="stylesheet" href="${sbase}static/css/exercise/list.css" />
-<div class="alert alert-info">
-    选择习题
+<%@ page pageEncoding="UTF-8" %><%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %><%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn" %><%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %><%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 
-</div>
+<link rel="stylesheet" href="${sbase}static/css/resource/list.css" />
 
-<div class="alert alert-info">
-    <ol class="breadcrumb">
-        <li>公开形式</li>
-        <c:forEach items="${commontypes}" var="item">
-            <li>
-                <a href="/exercise/homework-exercise?textbook=${textbook}&chapter=${chapter}&page=${page}&commontype=${item.key}" >
-                    <span class="${commontype==item.key?'label label-info':''}">${item.name}</span>
-                </a>
-            </li>
-        </c:forEach>
+<span class="list-types" >
+    <a href="javascript:;">公开形式</a>
+    <c:forEach items="${commontypes}" var="item">
+           <a href="/exercise/homework-exercise?textbook=${textbook}&chapter=${chapter}&page=${page}&commontype=${item.key}"  >
+               <span class="layui-badge-rim layui-bg-${commontype==item.key?'cyan':'blue'}">${item.name}</span>
+           </a>
+
+    </c:forEach>
+</span>
 
 
-    </ol>
-</div>
 
 <div class="row">
     <div class="col-md-3" id="leftside">

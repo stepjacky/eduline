@@ -1,4 +1,4 @@
-<%@ include file="../pageHead-new.jsp"%>
+
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <link href="static/css/ebook/query.css" rel="stylesheet">
@@ -61,4 +61,3 @@
 </div>
 <div id="inputArea" class="table-responsive"></div>
 <script src="static/scripts/ebook/query.js"></script>
-<%@ include file="../pageHead-new.jsp"%>

@@ -1,4 +1,4 @@
-<%@ include file="../pageHead-new.jsp"%>
+
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf"%>
@@ -80,4 +80,3 @@
   var grade = ${bean.grade};
 </script>
 <script src="static/scripts/groupmember/edit.js"></script>
-<%@ include file="../pageFoot.jsp"%>

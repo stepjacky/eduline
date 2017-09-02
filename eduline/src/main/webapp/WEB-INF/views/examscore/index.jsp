@@ -1,5 +1,5 @@
 
-<%@ include file="../pageHead-new.jsp"%>
+
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <link href="static/css/groupmember/query.css" rel="stylesheet">
@@ -46,4 +46,3 @@
 </div>
 
 <script src="static/scripts/groupmember/query.js"></script>
-<%@ include file="../pageFoot.jsp"%>

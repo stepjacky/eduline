@@ -150,18 +150,15 @@ function isIE() {
 
 }
 
-var confirmDlg, redirectDlg;
 $(function() {
 	$('[data-toggle="tooltip"]').tooltip();
-	confirmDlg = $("#confirm_dialog");
-	redirectDlg = $("#redirect_dialog");
-	$(document.body).on('click', '.closeBlock', $.unblockUI);
+
 });
 
 
 function tellUser(text, jump) {
 	
-	window.location.href = window.location.href;
+	location.reload();
 
 }
 

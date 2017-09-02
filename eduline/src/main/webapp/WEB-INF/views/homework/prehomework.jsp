@@ -1,4 +1,4 @@
-<%@ include file="../pageHead-new.jsp"%>
+
 <%@ page pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
 <div class="table-responsive">
@@ -34,4 +34,3 @@
      </tfoot> --%>
   </table>
   </div>
-<%@ include file="../pageFoot.jsp"%>

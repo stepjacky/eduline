@@ -1,4 +1,4 @@
-<%@ include file="pageHead-new.jsp" %>
+<%@ include file="pageHead.jsp" %>
  <c:choose>
    <c:when test="${sysUser.userType==0}">
       <%@ include file="admin.jsp" %>

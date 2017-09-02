@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<%@ include file="../pageHead-new.jsp"%>
+
 <c:set var="info" value="${ examinfo.scoreInfo }"></c:set>
 <link href="static/css/sysuser/query.css" rel="stylesheet">
 
@@ -76,4 +76,3 @@
 		</tbody>
 	</table>
 </div>
-<%@ include file="../pageFoot.jsp"%>

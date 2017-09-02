@@ -2,7 +2,7 @@ $(function(){
 
     $('.action-textbook-change').on('change',function () {
         var opt = $('option:selected',this);
-        redirectTo(opt.data('url'));
+        loadUrl(opt.data('url'));
     });
 
     $('.action-start-upload').on('click',function (e) {
@@ -30,8 +30,6 @@ $(function(){
             .done(function(data){
                if(data.message!="ok"){
                    bootbox.alert(data.message);
-               }else{
-                   reloadPage();
                }
             })
     })

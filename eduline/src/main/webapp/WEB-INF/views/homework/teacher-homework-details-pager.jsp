@@ -1,4 +1,4 @@
-<%@include file="../pageHead-new.jsp"%>
+<%@include file="../pageHead.jsp"%>
 <%@ page pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf"%>
 

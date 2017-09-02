@@ -3,8 +3,8 @@
   User: qujiakang@126.com  
   Date: 2017/7/18 0018 23:16  
 --%>
-<%@ page pageEncoding="UTF-8" %>
-<%@ include file="../pageHead-new.jsp" %>
+<%@ page pageEncoding="UTF-8" %><%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %><%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn" %><%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %><%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
+
 <div class="alert alert-info">
     课本管理
 </div>
@@ -59,4 +59,4 @@
 </table>
 <script src="static/scripts/textbook/pager.js"></script>
 
-<%@ include file="../pageFoot.jsp" %>
+
