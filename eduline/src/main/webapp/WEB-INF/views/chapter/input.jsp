@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
 
-<%@ include file="../pageHead.jsp" %>
+<%@ include file="../pageHead-new.jsp" %>
 <link rel="stylesheet" href="${sbase}static/css/textbook/list.css">
 <div class="alert alert-info">
    <a class="btn btn-xs btn-info " href="/textbook/pager/0?ajax=false">

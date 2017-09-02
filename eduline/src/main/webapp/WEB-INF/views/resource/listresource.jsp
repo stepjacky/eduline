@@ -4,7 +4,7 @@
   Date: 2017/7/22 0022 22:15  
 --%>
 <%@ page pageEncoding="UTF-8" %>
-<%@ include file="../pageHead.jsp" %>
+<%@ include file="../pageHead-new.jsp" %>
 <link rel="stylesheet" href="${sbase}static/css/resource/list.css" />
 <div class="alert alert-info">
     教学资源管理

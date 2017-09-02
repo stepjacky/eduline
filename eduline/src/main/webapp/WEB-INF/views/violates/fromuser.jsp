@@ -1,3 +1,3 @@
-<%@ include file="../pageHead.jsp"%>
+<%@ include file="../pageHead-new.jsp"%>
 
 <%@ include file="../pageFoot.jsp"%>

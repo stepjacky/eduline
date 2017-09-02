@@ -1,4 +1,4 @@
-<%@include file="../pageHead.jsp"%>
+<%@include file="../pageHead-new.jsp"%>
 <%@ page pageEncoding="UTF-8"%>
 
 <div class="table-responsive">

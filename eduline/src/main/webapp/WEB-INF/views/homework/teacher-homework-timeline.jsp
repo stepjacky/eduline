@@ -4,7 +4,7 @@
   Date: 2017/7/25 0025 15:51  
 --%>
 <%@ page pageEncoding="UTF-8" %>
-<%@ include file="../pageHead.jsp" %>
+<%@ include file="../pageHead-new.jsp" %>
 <link rel="stylesheet" href="${sbase}static/css/homework/timeline.css">
    <div class="page-header">
         <h1>作业</h1>

@@ -1,4 +1,4 @@
-<%@ include file="../pageHead.jsp"%>
+<%@ include file="../pageHead-new.jsp"%>
 <div class="panel panel-info">
 	<div class="panel-heading">信息</div>
 	<div class="panel-body">

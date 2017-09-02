@@ -4,7 +4,7 @@
   Date: 2017/7/18 0018 23:16  
 --%>
 <%@ page pageEncoding="UTF-8" %>
-<%@ include file="../pageHead.jsp" %>
+<%@ include file="../pageHead-new.jsp" %>
 <div class="alert alert-info">
     课本管理
 </div>

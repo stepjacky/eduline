@@ -5,7 +5,7 @@
 --%>
 <%@ page pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<%@ include file="../pageHead.jsp" %>
+<%@ include file="../pageHead-new.jsp" %>
 <div id="input-body">
     <c:if test="${empty exercises}">
         <div class="alert alert-warning">

@@ -4,7 +4,7 @@
   Date: 2017/7/26 0026 8:32  
 --%>
 <%@ page pageEncoding="UTF-8" %>
-<%@ include file="../pageHead.jsp" %>
+<%@ include file="../pageHead-new.jsp" %>
 <link rel="stylesheet" href="${sbase}static/css/homework/summary.css">
 <div class="alert alert-info">
     作业批阅

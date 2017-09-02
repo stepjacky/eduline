@@ -4,7 +4,7 @@
   Date: 2017/7/24 0024 11:18  
 --%>
 <%@ page pageEncoding="UTF-8" %>
-<%@ include file="../pageHead.jsp" %>
+<%@ include file="../pageHead-new.jsp" %>
 <link rel="stylesheet" href="${sbase}static/css/exercise/list.css" />
 <div class="alert alert-info">
     习题资源

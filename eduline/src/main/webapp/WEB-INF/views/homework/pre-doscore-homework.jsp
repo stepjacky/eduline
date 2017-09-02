@@ -1,4 +1,4 @@
-<%@include file="../pageHead.jsp"%>
+<%@include file="../pageHead-new.jsp"%>
 <%@ page pageEncoding="UTF-8"%>
 <%@ taglib tagdir="/WEB-INF/tags" prefix="edu" %>
 <div class="alert alert-info">

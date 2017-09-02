@@ -351,6 +351,10 @@ public class ExamScoreService extends AbstractSQLService<String, ExamScore> impl
 					Row row = rows.next();
 
 					cells = row.cellIterator();
+					if(!cells.hasNext()){
+						logger.info(row.getRowNum()+" 行是空的");
+						continue;
+					}
 					cell = cells.next();
 					String studentName = StringUtils.trimAllWhitespace(cell.getStringCellValue());
 					String student = userService.retriveCachedUsername(studentName);
@@ -371,6 +375,10 @@ public class ExamScoreService extends AbstractSQLService<String, ExamScore> impl
 						String courseName = cnameItr.next();
 						int ctype = ctypeItr.next();
 						double scoreValue = StringUtils.getCellNumberValue(cell);
+						if(scoreValue<0){
+							logger.info("score less zero "+scoreValue);
+							continue;
+						}
 						int inyear = Integer.parseInt(student.substring(2, 4)) + 2000;
 						ExamScore data = new ExamScore();
 						data.setId(UUID.randomUUID().toString());

@@ -4,6 +4,6 @@
   Date: 2017/7/20 0020 0:57  
 --%>
 <%@ page pageEncoding="UTF-8" %>
-<%@ include file="../pageHead.jsp" %>
+<%@ include file="../pageHead-new.jsp" %>
 
 <%@ include file="../pageFoot.jsp" %>

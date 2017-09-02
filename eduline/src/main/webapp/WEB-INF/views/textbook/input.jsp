@@ -4,7 +4,7 @@
   Date: 2017/7/18 0018 23:15  
 --%>
 <%@ page  pageEncoding="UTF-8" %>
-<%@ include file="../pageHead.jsp" %>
+<%@ include file="../pageHead-new.jsp" %>
 <div class="panel panel-primary">
     <div class="panel-heading">添加课本</div>
     <div class="panel-body" id="input-item">
