@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
 
 <ul class="layui-timeline">
-<c:forEach var="y" begin="0" end="7">
+<c:forEach var="y" begin="0" end="10">
     <li class="layui-timeline-item">
         <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
         <div class="layui-timeline-content layui-text">
