@@ -57,7 +57,8 @@ public class ViolatesService extends AbstractSQLService<String, Violates> {
 		bean.setDownPoint(dwpot==null?0f:dwpot);
 		bean.setStudent(student);
 		bean.setGrade(grade);
-		bean.setGradeName(gservice.findById(grade).getName());
+		Grade grd = gservice.findById(grade);
+		bean.setGradeName(grd!=null?grd.getName():"");
 		bean.setStudentName(userService.findById(student).getNickname());
 		bean.setWeekOfyear(wr.getWeekOfyear());	
 		bean.setWeekStart(DateUtils.formatLocalDate(wr.getStart(), null));

@@ -13,11 +13,18 @@ $(function(){
     }); 
 
 
-    $('a').on('click',function (e) {
+    $('.action-next-step').on('click',function (event) {
+        event.preventDefault();
+
         var href =  $(this).attr('href')
         var cp = href.indexOf('?')>0?'&':'?';
-        $(this).attr('href',href+cp+'exercise='+odata['exercise'].join(','));
-        return true;
+        var url = href+cp+'exercise='+odata['exercise'];
+        if(odata['exercise'].length<=0){
+            layer.alert('请先选择习题!');
+            return false;
+        }
+        loadUrl(url);
+        return false;
     })
 
 

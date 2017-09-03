@@ -62,7 +62,7 @@ public final class Pager<T> {
 		Pager<T> p = new Pager<T>();
 		p.setPage(page);
 		p.setCount(count);
-		p.setOffset(offset);
+		p.setOffset(offset==0?DEFAULT_OFFSET:offset);
 		p.setDataList(dataList);
 		p.setAjaxable(false);
 		return p;

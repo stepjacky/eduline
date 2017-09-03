@@ -44,7 +44,7 @@ $(function(){
     });
 
     $(document).on('click',
-        'ul.layui-nav li.layui-nav-item dl.layui-nav-child dd a,ul.layui-nav li.layui-nav-item a,span.list-types a,ul.pagination li a ',function (event) {
+        'ul.layui-nav li.layui-nav-item dl.layui-nav-child dd a,ul.layui-nav li.layui-nav-item a,span.list-types a,ul.pagination li a ,.action-href-nav',function (event) {
 
         event.preventDefault();
         var url = $(this).attr('href');

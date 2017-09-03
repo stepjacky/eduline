@@ -3,7 +3,11 @@
   User: qujiakang@126.com  
   Date: 2017/7/31 0031 22:40  
 --%>
-<%@ page pageEncoding="UTF-8" %><%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %><%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn" %><%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %><%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <ul class="layui-nav layui-nav-tree" lay-filter="test">
     <li class="layui-nav-item layui-nav-itemed">
         <a class="" href="javascript:;">班级管理</a>
@@ -32,8 +36,7 @@
                 成绩查询 </a></dd>
             <dd role="separator" class="divider"></dd>
             <dd><a href="/violates/violate/0">行为规范录入</a></dd>
-            <dd><a
-                    href="/violates/query/0?order=fireTime desc"> 行为规范查询 </a></dd>
+            <dd><a href="/violates/query/0"> 行为规范查询 </a></dd>
 
         </dl>
     </li>

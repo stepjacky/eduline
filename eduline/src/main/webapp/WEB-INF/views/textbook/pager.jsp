@@ -3,17 +3,15 @@
   User: qujiakang@126.com  
   Date: 2017/7/18 0018 23:16  
 --%>
-<%@ page pageEncoding="UTF-8" %><%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %><%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn" %><%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %><%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 
-<div class="alert alert-info">
-    课本管理
-</div>
-<div class="btn-group">
-    <a href="/textbook/input" class="btn btn-success btn-sm action-input">
-        <i class="fa fa-plus-square-o" aria-hidden="true"></i>添加
-    </a>
-
-</div>
+<a href="/textbook/input" class="btn btn-success action-href-nav">
+    <i class="fa fa-plus-square-o" aria-hidden="true"></i>添加
+</a>
 
 <table
         class="table table-striped table-bordered table-hover table-condensed">
@@ -33,12 +31,11 @@
             <td>${item.course.name}</td>
             <td>
 
-                <a href="/textbook/edit/${item.id}" class="btn btn-xs btn-info editItem"
-                        data-id="${item.id}">
+                <a href="/textbook/edit/${item.id}" class="btn btn-xs btn-info action-href-nav">
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </a>
 
-                <a href="/chapter/input?param=${item.id}" class="btn btn-xs btn-info">
+                <a href="/chapter/input?param=${item.id}" class="btn btn-xs btn-info action-href-nav">
                     <i class="fa fa-book" aria-hidden="true"></i>
                 </a>
 

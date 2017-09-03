@@ -47,7 +47,8 @@ $(function(){
     	var param = "data="+JSON.stringify(parray);
     	var url="/violates/persisties";
     	$.post(url,param,function(){
-    		window.location.href='/violates/query/0?order=fireTime desc';
+    		//loadUrl('/violates/violate/0?order=fireTime desc');
+			layer.alert('录入成功');
     	})
     });
     

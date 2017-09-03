@@ -11,7 +11,7 @@ $(function() {
            bootbox.alert('名称不能为空');
        }
        postJson(url,odata,function (rst) {
-           reloadPage();
+           layer.alert('添加成功');
        })
    })
 
@@ -60,9 +60,11 @@ $(function() {
 
     $('.action-remove').on('click',function () {
         var id = $(this).data('id');
+        var that = $(this);
         $.get('/chapter/remove/'+id)
             .done(function () {
-                reloadPage();
+                that.parent('li').remove();
+                layer.alert('删除成功');
             })
     })
 

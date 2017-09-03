@@ -33,7 +33,9 @@ $(function(){
 		      sdataz.push(sdata);
 		  }
 		  var pstr = "data=" + JSON.stringify(sdataz);
-		  $.post('/groupmember/persisties',pstr);
+		  $.post('/groupmember/persisties',pstr).done(function () {
+			  layer.alert('新成员成功添加');
+          });
 	});
 });
 var users={};

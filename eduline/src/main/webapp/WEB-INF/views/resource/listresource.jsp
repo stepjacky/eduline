@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <link rel="stylesheet" href="${sbase}static/css/resource/list.css">
 <p>
-<span class="list-types" >
+<span class="list-types">
     <a href="javascript:;">公开形式</a>
     <c:forEach items="${commontypes}" var="item">
            <a href="/resource/listresource?textbook=${textbook}&chapter=${chapter}&page=${page}&commontype=${item.key}&styletype=${styletype}&filetype=${filetype}">
@@ -15,10 +15,9 @@
     </c:forEach>
 </span>
 </p>
-<br>
 <p>
-<span class="list-types" >
-      <a href="javascript:;">公开形式</a>
+<span class="list-types">
+      <a href="javascript:;">所属类型</a>
     <c:forEach items="${styletypes}" var="item">
               <a href="/resource/listresource?textbook=${textbook}&chapter=${chapter}&page=${page}&commontype=${commontype}&styletype=${item.key}&filetype=${filetype}">
                   <span class="layui-badge-rim layui-bg-${styletype==item.key?'cyan':'blue'}">${item.name}</span>
@@ -26,7 +25,7 @@
     </c:forEach>
 </span>
 </p>
-<br>
+
 <p>
 <span class="list-types">
      <a href="javascript:;">文件类型</a>
@@ -41,7 +40,7 @@
 
 </span>
 </p>
-<br>
+
 <div class="layui-col-xs3 layui-col-sm3 layui-col-md3" id="leftside">
     <select class="action-textbook-change" v-model="textbook">
         <c:forEach items="${books}" var="item">
@@ -52,14 +51,14 @@
         </c:forEach>
     </select>
 
-    <ul class="layui-nav layui-nav-tree layui-nav-tree-inner layui-bg-cyan">
+    <ul class="layui-nav layui-nav-tree layui-nav-tree-inner layui-bg-chapter">
         <c:forEach items="${chapters}" var="item">
 
             <li class="layui-nav-item layui-nav-itemed">
                 <a href="javascript:;">${item.name}</a>
                 <dl class="layui-nav-child">
                     <c:forEach items="${item.children}" var="child">
-                        <dd>
+                        <dd class="${chapter==child.id?'layui-bg-chapter-selected':''}">
                             <a href="/resource/listresource?textbook=${textbook}&chapter=${child.id}&page=${page}&commontype=${commontype}&styletype=${styletype}&filetype=${filetype}">
                                     ${child.name}
                             </a>

@@ -3,7 +3,11 @@
   User: qujiakang@126.com  
   Date: 2017/7/23 0023 18:48  
 --%>
-<%@ page pageEncoding="UTF-8" %><%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %><%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn" %><%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %><%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <%@ include file="../uploadrs.jsp" %>
 <div class="panel panel-info">
     <!-- Default panel contents -->
@@ -17,7 +21,7 @@
         </span>
         </p>
         <p>
-        <span class="label label-info file-added"></span>
+            <span class="label label-info file-added"></span>
 
         <div class="progress hide" style="height:10px">
             <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar"
@@ -36,18 +40,18 @@
 <script>
     $(function () {
         var odata = {
-            'name':null,
-            'realpath':null,
-            'size':null,
-            'suffix':null,
-            'grade':'${bean.grade}',
-            'course':'${bean.course}',
-            'textbook':'${bean.textbook}',
-            'chapter':'${bean.chapter}',
-            'owner':{'value':'${sysUser.username}','name':'${sysUser.nickname}'},
-            'commontype':'${bean.commontype}',
-            'styletype':'${bean.styletype}',
-            'filetype':'${bean.filetype}'
+            'name': null,
+            'realpath': null,
+            'size': null,
+            'suffix': null,
+            'grade': '${bean.grade}',
+            'course': '${bean.course}',
+            'textbook': '${bean.textbook}',
+            'chapter': '${bean.chapter}',
+            'owner': {'value': '${sysUser.username}', 'name': '${sysUser.nickname}'},
+            'commontype': '${bean.commontype}',
+            'styletype': '${bean.styletype}',
+            'filetype': '${bean.filetype}'
         }
 
         $('#fileupload').fileupload({
@@ -56,26 +60,26 @@
                 data.context =
                     $('<button/>').html("<i class='fa fa-upload'></i>上传")
                         .addClass('btn btn-success btn-xs')
-                    .appendTo("#file-body")
-                    .click(function () {
-                        $('.progress').removeClass('hide');
-                        data.context = $('<p/>').text('上传中...').replaceAll($(this));
-                        data.submit();
+                        .appendTo("#file-body")
+                        .click(function () {
+                            $('.progress').removeClass('hide');
+                            data.context = $('<p/>').text('上传中...').replaceAll($(this));
+                            data.submit();
 
-                    });
+                        });
                 $('.file-added').html(data.files[0].name);
                 console.log(data);
             },
             progressall: function (e, data) {
                 var progress = parseInt(data.loaded / data.total * 100, 10);
                 $('.progress .progress-bar').css(
-                    'width',progress + '%'
+                    'width', progress + '%'
                 );
             },
             done: function (e, data) {
                 data.context.text('上传完成');
                 $('.progress').addClass('hide');
-                if(data.result){
+                if (data.result) {
                     odata.name = data.result.name;
                     odata.filename = data.result.filename;
                     odata.suffix = data.result.suffix;
@@ -83,7 +87,7 @@
                     odata.size = data.result.size;
                     console.log(odata);
                     //return;
-                    postJson('/resource/save',odata,function (rst) {
+                    postJson('/resource/save', odata, function (rst) {
                         //console.log(rst);
                         reloadPage();
                     })

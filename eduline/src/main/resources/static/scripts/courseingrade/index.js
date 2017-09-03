@@ -40,7 +40,7 @@ $(function(){
 		var pdata = "data="+JSON.stringify(ds);
 		//log(pdata);
 		$.post(url,pdata,function(){
-			alert("保存成功");
+			layer.alert("保存成功");
 		});
 	});
 	

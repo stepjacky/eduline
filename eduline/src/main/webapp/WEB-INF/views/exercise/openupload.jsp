@@ -3,7 +3,11 @@
   User: qujiakang@126.com  
   Date: 2017/7/24 0024 11:19  
 --%>
-<%@ page pageEncoding="UTF-8" %><%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %><%@ taglib uri="http://java.sun.com/jsp/jstl/functions"  prefix="fn" %><%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %><%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
+<%@ page pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
 <%@ include file="../uploadrs.jsp" %>
 <div class="panel panel-info">
     <!-- Default panel contents -->
@@ -11,7 +15,7 @@
     <div id="file-body" class="panel-body">
         <p>
             第一步:
-        <span class="btn btn-info btn-xs fileinput-button">
+            <span class="btn btn-info btn-xs fileinput-button">
                     <i class="fa fa-plus"></i>
                     <span>添加习题</span>
                     <input id="exercise-upload" type="file" name="file" data-url="/exercise/upload-exercise">
@@ -24,7 +28,7 @@
 
         <p>
             第二步:
-        <span class="btn btn-info btn-xs fileinput-button">
+            <span class="btn btn-info btn-xs fileinput-button">
                     <i class="fa fa-plus"></i>
                     <span>添加答案</span>
                     <input id="answer-upload" type="file" name="file" data-url="/exercise/upload-answer">
@@ -62,25 +66,25 @@
         //习题返回,name,realpath,size,suffix,
         //答案返回,choice,csize,explain,esize
         var odata = {
-            'name':null,
-            'realpath':null,
-            'size':null,
-            'suffix':null,
-            'choice':null,
-            'csize':0,
-            'explain':null,
-            'esize':0,
-            'grade':'${bean.grade}',
-            'course':'${bean.course}',
-            'textbook':'${bean.textbook}',
-            'chapter':'${bean.chapter}',
-            'owner':{'value':'${sysUser.username}','name':'${sysUser.nickname}'},
-            'commontype':'${bean.commontype}'
+            'name': null,
+            'realpath': null,
+            'size': null,
+            'suffix': null,
+            'choice': null,
+            'csize': 0,
+            'explain': null,
+            'esize': 0,
+            'grade': '${bean.grade}',
+            'course': '${bean.course}',
+            'textbook': '${bean.textbook}',
+            'chapter': '${bean.chapter}',
+            'owner': {'value': '${sysUser.username}', 'name': '${sysUser.nickname}'},
+            'commontype': '${bean.commontype}'
         };
 
         var vm = new Vue({
-            'el':'#file-body',
-            data:odata
+            'el': '#file-body',
+            data: odata
         });
 
         $('#exercise-upload').fileupload({
@@ -93,13 +97,13 @@
             progressall: function (e, data) {
                 var progress = parseInt(data.loaded / data.total * 100, 10);
                 $('.progress .progress-bar').css(
-                    'width',progress + '%'
+                    'width', progress + '%'
                 );
             },
             done: function (e, data) {
                 $('.progress').addClass('hide');
                 console.log(data.result);
-                if(data.result){
+                if (data.result) {
                     odata.name = data.result.name;
                     odata.suffix = data.result.suffix;
                     odata.realpath = data.result.realpath;
@@ -119,12 +123,12 @@
             progressall: function (e, data) {
                 var progress = parseInt(data.loaded / data.total * 100, 10);
                 $('.progress .progress-bar').css(
-                    'width',progress + '%'
+                    'width', progress + '%'
                 );
             },
             done: function (e, data) {
                 $('.progress').addClass('hide');
-                if(data.result){
+                if (data.result) {
                     odata.choice = data.result.choice;
                     odata.csize = data.result.csize;
                     odata.explain = data.result.explain;
@@ -134,11 +138,11 @@
             }
         });
 
-        $('.action-save').on('click',function () {
-            if(!odata.commontype){
-                odata.commontype="personal";
+        $('.action-save').on('click', function () {
+            if (!odata.commontype) {
+                odata.commontype = "personal";
             }
-            postJson('/exercise/save',odata,function (rst) {
+            postJson('/exercise/save', odata, function (rst) {
                 reloadPage();
             });
         })

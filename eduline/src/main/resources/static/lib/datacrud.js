@@ -151,12 +151,10 @@ window.DataAdmin = {};
 			$(that.settings.selectors.queryItem).on(
 					'click',
 					function() {
-						var fthis = this;
-						var fobj = $(fthis).parents('form');
-						
+						var form = $(this).parents('form');
 						var url = that.settings.context
 								+ that.settings.namespace + '/query/0';
-						doQuery(fobj, url);
+                        doQuery(form,url);
 					});
 		},
 		/***********************************************************************
@@ -198,7 +196,6 @@ window.DataAdmin = {};
                                 $.post(url, pstr, function(data) {
                                     window.location.href=that.settings.context
                                         +
-
                                         that.settings.namespace + (that.settings.addCallback?that.settings.addCallback:'/pager/0?ajax=false');
                                 });
 							}
@@ -465,7 +462,9 @@ window.DataAdmin = {};
          }
          var query = param.join(';');
 		 var qdata = {query:query};
-		 doForm(url, qdata);
+		 $.post(url, qdata,function (rst) {
+			 $('#contentbody').html(rst);
+         });
 	}
 	
 	

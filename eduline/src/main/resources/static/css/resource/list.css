@@ -17,8 +17,15 @@
 .list-types{
     display: block;
     margin-top: 5px;
+    margin-bottom: 10px;
     padding: 5px;
 }
 .layui-badge-rim{
     height: auto;
+}
+.layui-bg-chapter{
+    background-color: rgba(16, 8, 19, 0.62);
+}
+.layui-bg-chapter-selected{
+    background-color:#009688;
 }

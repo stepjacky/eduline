@@ -50,12 +50,16 @@ function redirectTo(url) {
 
 function loadUrl(url) {
 
-	if(url && url.indexOf('javascript')<0 && url!='/' ){
+	if(url && url.indexOf('javascript')<0 && url!='/' && url!='/logout' ){
         $('#contentbody').load(url);
     }
 
     if(url=='/'){
 		reloadPage();
+	}
+
+	if(url=='/logout'){
+    	location.href = url;
 	}
 
 }

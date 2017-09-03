@@ -30,7 +30,7 @@ $(function(){
 		  }
 		  var pstr = "data=" + JSON.stringify(sdataz);
 		  $.post('/groupmember/persisties',pstr,function(){
-			  window.location.href=window.location.href;
+			  layer.alert("班级已经创建");
 		  });
 		  
 	  });

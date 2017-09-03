@@ -181,16 +181,18 @@ public class ViolatesController extends AbstractController<String,Violates>{
 		ViolateResult points = new ViolateResult();
 		if(studentName!=null) {
 			child = userService.findByNickname(studentName);
+			logger.info(studentName);
+			logger.info(child);
 			if(child!=null) {
 				query+=";grade`"+child.getGrade();
 				points = service.accumulatePoints(child.getUsername(), child.getGrade());					
 			}
 		}
-		Pager<Violates> pager = queryPager(query,group,order, page, offset, ajax);	
+		Pager<Violates> pager = queryPager(query,group,order, page, offset, false);
 		mav.addObject("query", query);
 		mav.addObject("pager", pager);
 		mav.addObject("qstring", String.format("query=%s&group=%s&order=%s", query,group,order));
-		mav.addObject("ajax", ajax);		
+		mav.addObject("ajax", false);
 		
 		String username = qeb.findValue("student");
 		child = userService.findById(username);		
@@ -227,7 +229,7 @@ public class ViolatesController extends AbstractController<String,Violates>{
 	@RequestMapping(value = "/currentgrade/{page}")
 	public ModelAndView currentGrade(
 			@RequestParam(value = "offset", required = false, defaultValue = "10") int offset,
-			@PathVariable("page") int page,
+			@RequestParam(value = "page",required = false,defaultValue = "0") int page,
 			@RequestParam(value = "eduyear", required = false, defaultValue ="0" ) int eduyear,
 			@RequestParam(value = "grade", required = false, defaultValue = "0") int grade
 			

@@ -75,7 +75,7 @@
              layer.confirm('确定跳转?', function(index){
                  //do something
 				 if(index==1){
-                     redirectTo('/violates/query/0?order=fireTime desc');
+                     loadUrl('/violates/query/0');
 				 }
                  layer.close(index);
              });
@@ -93,16 +93,32 @@
     	 var params = form.serializeArray();    	 
     	 var querys = [];    	
     	 for(var d in params){
-    		 if('_csrf'==params[d].name||'query'==params[d].name)continue;
-    		 querys.push(params[d].name+'`'+params[d].value);
+    		querys.push(params[d].name+'`'+params[d].value);
     	 }    
     	
-    	 var q = querys.join(';');
-    	 $("input:hidden.query",form).val(q);
-    	 form.submit();
+    	 var qstr = querys.join(';');
+         $.post(form.attr('action'),{query:qstr},function (rst) {
+             $('#contentbody').html(rst);
+         })
     	 
     });
-    
+
+    $('.querybtn2').on('click',function (event) {
+        var form = $(event.currentTarget).parent('form');
+        var params = form.serialize();
+
+        $.post(form.attr('action'),params,function (rst) {
+            $('#contentbody').html(rst);
+        })
+    })
+
+
+     $('.action-href-nav').on('click',function (event) {
+         event.preventDefault();
+         loadUrl($(this).attr('href'));
+         return false;
+     })
+
 });
  
  

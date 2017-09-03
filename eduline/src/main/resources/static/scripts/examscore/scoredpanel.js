@@ -19,7 +19,7 @@ $(function(){
     	
     	var data = "data="+JSON.stringify(scorearray);    	
     	$.post('/examscore/persisties',data,function(res){
-    		window.location.href=window.location.href;	  		
+    		layer.alert('成绩已经录入');
     	});
     });   
     
