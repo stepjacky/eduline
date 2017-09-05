@@ -174,13 +174,8 @@ public final class Pager<T> {
 		Element li = doc.createElement("li");
 		Element a = doc.createElement("a");
 		a.attr("page", page + "");
-		if(ajaxable){
-			a.attr("href", "javascript:void(0);");			
-			a.attr("link", getAction(page));
-		}else{
-			a.attr("href", getAction(page));
-			a.attr("target","_self");
-		}
+		a.attr("href", getAction(page));
+		a.attr("target","_self");
 		if (actived) {
 			li.addClass("active");
 			a.addClass("noclick");

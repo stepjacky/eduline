@@ -43,15 +43,20 @@ $(function(){
         }
     });
 
-    $(document).on('click',
+    $(document.body).on('click',
         'ul.layui-nav li.layui-nav-item dl.layui-nav-child dd a,ul.layui-nav li.layui-nav-item a,span.list-types a,ul.pagination li a ,.action-href-nav',function (event) {
 
         event.preventDefault();
-        var url = $(this).attr('href');
-        if(url.indexOf('javascript')>0){
-            url = $(this).attr('link');
+        var url = $(this).attr('link');
+        if(!url){
+            url = $(this).attr('href');
         }
-        loadUrl(url);
+        if(!url){
+            layer.alert('不存在有效链接')
+        }else{
+            loadUrl(url);
+        }
+
         return false;
     });
 
