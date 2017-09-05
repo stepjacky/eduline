@@ -11,7 +11,7 @@
     dataAdmin.addPagerListener(false);
     dataAdmin.addRemoveListener();
     dataAdmin.addQueryListener('examscore_form');    
-    //dataAdmin.addJsonSourceListener(); 
+    dataAdmin.addJsonSourceListener();
     dataAdmin.addDatePickerListener();   
     var filedata = null;
     $('#fileupload').fileupload({
