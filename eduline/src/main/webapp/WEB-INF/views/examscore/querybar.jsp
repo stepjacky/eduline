@@ -15,7 +15,7 @@
                         <div class="form-group pull-right">
                             <label for="student" class="control-label">学号</label> <input
                                 type="text" class="form-control" name="student" id="student"
-                                placeholder="输入学生学号">
+                                placeholder="学号">
 
                         </div>
                     </td>
@@ -23,7 +23,7 @@
                         <div class="form-group pull-right">
                             <label for="inyear" class="control-label">入学年份</label> <select
                                 class="form-control" name="inyear" id="inyear">
-                            <option value="${atNow.year}">请选择</option>
+                            <option value=''>请选择</option>
                             <c:forEach var="y" begin="2009" end="2016">
                                 <option value="${y}">${y}届</option>
                             </c:forEach>
@@ -33,10 +33,13 @@
                     </td>
                     <td>
                         <div class="form-group pull-right">
-                            <label for="year" class="control-label">年级</label> <select
-                                class="form-control jsonData" name="grade" id="grade"
-                                key="/grade/options">
-                            <option value="">请选择</option>
+                            <label  class="control-label">年级</label>
+                            <select
+                                class="form-control " name="grade" >
+                                <option value=''>请选择</option>
+                            <c:forEach items="${grades}" var="item">
+                                <option value="${item.id}">${item.name}</option>
+                            </c:forEach>
                         </select>
 
                         </div>
@@ -49,7 +52,7 @@
                         <div class="form-group pull-right">
                             <label for="semester" class="control-label">学期</label> <select
                                 id='semester' name='semester' class='form-control withHidden'>
-                            <option value="0">请选择</option>
+                            <option value=''>请选择</option>
                             <option value='0'>上学期</option>
                             <option value='1'>下学期</option>
                         </select>
@@ -59,9 +62,15 @@
                     <td>
 
                         <div class="form-group pull-right">
-                            <label for="courseName" class="control-label">课程</label> <select
-                                class='form-control jsonData' name="course"
-                                key="/course/options"></select>
+                            <label  class="control-label">课程</label>
+                            <select
+                                class='form-control' name="course">
+                                <option value=''>请选择</option>
+                                <c:forEach items="${courses}" var="item">
+                                    <option value="${item.id}">${item.name}</option>
+                                </c:forEach>
+
+                            </select>
 
                         </div>
                     </td>
@@ -69,7 +78,7 @@
                         <div class="form-group pull-right">
                             <label for="monthly" class="control-label">月考</label> <select
                                 id='monthly' name='monthly' class='form-control withHidden'>
-                            <option value="0">请选择</option>
+                            <option value=''>请选择</option>
                             <option value='0'>第一次月考</option>
                             <option value='1'>期中考试</option>
                             <option value='2'>第二次月考</option>

@@ -407,4 +407,8 @@ public abstract class AbstractController<S, T> {
 	}
 
 	public abstract AbstractService<S, T> getService();
+
+	public void beforeInput(ModelAndView mav){
+		this.getService().beforeInput(mav);
+	}
 }

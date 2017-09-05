@@ -28,6 +28,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.jackysoft.edu.entity.Course;
 import org.jackysoft.edu.entity.ExamScore;
+import org.jackysoft.edu.entity.Grade;
 import org.jackysoft.edu.entity.GroupMember;
 import org.jackysoft.edu.formbean.InYearScoreCard;
 import org.jackysoft.edu.formbean.InYearScoreDetail;
@@ -54,6 +55,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
+import org.springframework.web.servlet.ModelAndView;
 
 @Service
 @Transactional("transactionManager")
@@ -410,6 +412,15 @@ public class ExamScoreService extends AbstractSQLService<String, ExamScore> impl
 		} catch (EncryptedDocumentException | InvalidFormatException | IOException e) {
 			logger.error("{}",e);
 		}
+
+	}
+
+	@Override
+	public void beforeInput(ModelAndView mav) {
+		super.beforeInput(mav);
+		List<Grade> grades = gradeService.findAll();
+		mav.addObject("grades",grades);
+		mav.addObject("courses",courseService.findAll());
 
 	}
 

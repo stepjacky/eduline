@@ -1,5 +1,6 @@
 package org.jackysoft.edu.bean;
 
+import java.lang.reflect.Method;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -59,6 +60,8 @@ public class PrePostHandlerInceptor extends HandlerInterceptorAdapter {
 		RequestMapping rm = hd.getBeanType().getAnnotation(RequestMapping.class);
 		String prefix = (rm == null) ? "/" : rm.value()[0];
 
+		Method beforeInput = hd.getBeanType().getMethod("beforeInput",ModelAndView.class);
+		beforeInput.invoke(hd.getBean(),mav);
 		LocalDateTime now = LocalDateTime.now();
 		mav.addObject("atNow", now);
 		mav.addObject("simpleNow", LocalDate.now().toString());

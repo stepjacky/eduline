@@ -9,17 +9,17 @@
             class="table table-striped table-bordered table-hover table-condensed">
         <thead>
         <tr>
-            <th>课程名称</th>
+            <th>课程</th>
 
             <th>分数</th>
-            <th>学生姓名</th>
+            <th>学生</th>
             <th>年级</th>
 
 
             <th>学期</th>
 
 
-            <th>月考序号</th>
+            <th>月考</th>
 
 
         </tr>
