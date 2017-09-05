@@ -60,8 +60,14 @@ public class PrePostHandlerInceptor extends HandlerInterceptorAdapter {
 		RequestMapping rm = hd.getBeanType().getAnnotation(RequestMapping.class);
 		String prefix = (rm == null) ? "/" : rm.value()[0];
 
-		Method beforeInput = hd.getBeanType().getMethod("beforeInput",ModelAndView.class);
-		beforeInput.invoke(hd.getBean(),mav);
+		try{
+			Method beforeInput = hd.getBeanType().getMethod("beforeInput",ModelAndView.class);
+			beforeInput.invoke(hd.getBean(),mav);
+		}catch(NoSuchMethodException|SecurityException e){
+			logger.error(e.getMessage());
+		}
+
+
 		LocalDateTime now = LocalDateTime.now();
 		mav.addObject("atNow", now);
 		mav.addObject("simpleNow", LocalDate.now().toString());
