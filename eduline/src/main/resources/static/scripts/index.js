@@ -48,6 +48,9 @@ $(function(){
 
         event.preventDefault();
         var url = $(this).attr('href');
+        if(url.indexOf('javascript')>0){
+            url = $(this).attr('link');
+        }
         loadUrl(url);
         return false;
     });
