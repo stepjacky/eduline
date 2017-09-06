@@ -48,10 +48,14 @@ function redirectTo(url) {
 	window.location.href = url;
 }
 
-function loadUrl(url) {
+function loadUrl(url,selector) {
 
 	if(url && url.indexOf('javascript')<0 && url!='/' && url!='/logout' ){
-        $('#contentbody').load(url);
+        if(selector){
+        	$(selector).load(url);
+		}else {
+            $('#contentbody').load(url);
+        }
     }
 
     if(url=='/'){
@@ -63,6 +67,8 @@ function loadUrl(url) {
 	}
 
 }
+
+
 
 $.ajaxPrefilter(function(options, originalOptions, jqXHR) {
 

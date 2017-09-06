@@ -37,3 +37,16 @@ a:hover{
 .layui-body{
     padding: 20px;
 }
+.layui-layout-admin .layui-bg-custom{
+    background-color: #FEA11C;
+}
+
+.layui-colla-title {
+    position: relative;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 15px 0 15px;
+    color: #f5f5f5;
+    background-color: #5fb878;
+    cursor: pointer;
+}

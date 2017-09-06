@@ -7,11 +7,10 @@
 			namespace : 'groupmember',			
 			dataFormId:  'groupmember_form'
     }); 
-    dataAdmin.addInputListener("inputArea");
-    dataAdmin.addPagerListener(ajax);
+    dataAdmin.addInputListener("contentbody");
+    dataAdmin.addPagerListener();
     dataAdmin.addRemoveListener();
     dataAdmin.addQueryListener('groupmember_form');  
-    //dataAdmin.addJsonSourceListener(); 
     dataAdmin.addDatePickerListener();
 
     $('.action-open-group,.action-input-score').on('click',function (event) {

@@ -9,7 +9,7 @@ $(function(){
 				dataFormId:  'groupmember_form'
 	    }); 	   
 	    dataAdmin.addJsonSourceListener(loadStudent);  
-	    
+	    dataAdmin.addPagerListener('#dataArea');
 	  $("button.persisteDataItem").on('click',function(){
 		  
 		  var datas  = $("#groupmember_form").serializeArray();
@@ -34,6 +34,9 @@ $(function(){
 		  });
 		  
 	  });
+
+
+
 	    
 	    function loadStudent(event){
 	    	if(this.name=='grade'){

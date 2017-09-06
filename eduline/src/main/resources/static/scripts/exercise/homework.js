@@ -1,12 +1,19 @@
 $(function(){
+
+
+
     var odata = {
         'exercise':exercise,
         'course':0,
     };
     var vm = new Vue({
-        'el':'#tlabe-exercises',
+        'el':'#table-exercises',
         'data':odata
     });
+
+    var dataAdmin  =  window.DataAdmin;
+    dataAdmin.init({});
+    dataAdmin.addPagerListener();
     $('.action-textbook-change').on('change',function () {
         var opt = $('option:selected',this);
         loadUrl(opt.data('url'));
@@ -28,4 +35,4 @@ $(function(){
     })
 
 
-})
+});

@@ -19,7 +19,7 @@ window.DataAdmin = {};
 				earseItem : 'button.earseItem',// 前台删除
 				persisteFormItem : 'button.persisteFormItem',// 提交前台
 				persisteDataItem : 'button.persisteDataItem',// 提交前台
-				pagerItem : 'ul.pagination  li a',// 页码导航
+				pagerItem : 'ul.pagination li a',// 页码导航
 				queryItem : 'button.queryItem',// 查询
 				jsonSource : 'select.jsonData',// json数据源
                 toggleDisabled:'input:checkbox.toggleDisabled',//切换选择checkbox
@@ -68,31 +68,35 @@ window.DataAdmin = {};
 		/***********************************************************************
 		 * 导航监事件听器
 		 **********************************************************************/
-		addPagerListener : function(ajax) {
+		addPagerListener : function(selector) {
 			var that = this;
 			$(that.settings.selectors.pagerItem).off('click');
-			$(that.settings.selectors.pagerItem).on('click', function() {
+			$(that.settings.selectors.pagerItem).on('click', function(event) {
+				event.preventDefault();
 				var link = $(this).attr('link');
-				if (link) {
-					if (ajax) {
-						doGet(link);
-					} else {
-						var p = parseQuery(link);
-						doForm(p.url, p.query);
-					}
-
+				if(!link){
+					link = $(this).attr('href');
 				}
+				if (link) {
+					loadUrl(link,selector);
+				}
+				return false;
 			});
 		},
 		addPagerNodeListener:function(id){
 			var that = this;
 			$(that.settings.selectors.pagerItem).off('click');
-			$(that.settings.selectors.pagerItem).on('click', function() {
+			$(that.settings.selectors.pagerItem).on('click', function(event) {
+				event.preventDefault();
 				var link = $(this).attr('link');
+                if(!link){
+                    link = $(this).attr('href');
+                }
 				if (link) {
 					doAjaxNode(link,id);
 
 				}
+				return false;
 			});
 		},
 		/***********************************************************************
@@ -105,6 +109,7 @@ window.DataAdmin = {};
 			$(that.settings.selectors.removeItem).on(
 					'click',
 					function() {
+						var thatui = this;
 						var key = $(this).attr('key');
 						var keyname = $(this).attr('keyname');
 						var url = that.settings.context + that.settings.namespace
@@ -116,14 +121,13 @@ window.DataAdmin = {};
 
 
                         layer.confirm('确定删除?', function(index){
-                            //do something
-							if(index==0){
-                                $.post(url, function() {
-                                    $(that).parent('td').parent('tr').remove();
-                                    window.location.reload()
-                                });
-                            }
+                            $.post(url, function() {
+                                $(thatui).parent('td').parent('tr').remove();
+
+                            });
+
                             layer.close(index);
+
                         });
 						
 					});
@@ -191,14 +195,12 @@ window.DataAdmin = {};
 
 
                         layer.confirm('确定操作?', function(index){
-                            //do something
-							if(index==0){
-                                $.post(url, pstr, function(data) {
-                                    window.location.href=that.settings.context
-                                        +
-                                        that.settings.namespace + (that.settings.addCallback?that.settings.addCallback:'/pager/0?ajax=false');
-                                });
-							}
+                            $.post(url, pstr, function(data) {
+                                var desturl =that.settings.context
+                                    +
+                                    that.settings.namespace + (that.settings.addCallback?that.settings.addCallback:'/pager/0');
+                                loadUrl(desturl);
+                            });
                             layer.close(index);
                         });
 
@@ -224,10 +226,7 @@ window.DataAdmin = {};
 									+ that.settings.namespace + '/persiste';
 
                         layer.confirm('确定操作?', function(index){
-                            //do something
-                            if(index==0){
-                                $.post(url, data);
-                            }
+                            $.post(url, data);
                             layer.close(index);
                         });
 						
@@ -251,16 +250,13 @@ window.DataAdmin = {};
 
 
                         layer.confirm('is not?', function(index){
-                            //do something
-							if(index==0){
-                                that.removeItem($(dthat).attr('keyname'));
-                                if (!that.settings.lineInfo.single) {
-                                    $(dthat).parent('td').parent('tr').nextUntil(
-                                        that.settings.lineInfo.endselector)
-                                        .remove();
-                                }
-                                $(dthat).parent('td').parent('tr').remove();
-							}
+                            that.removeItem($(dthat).attr('keyname'));
+                            if (!that.settings.lineInfo.single) {
+                                $(dthat).parent('td').parent('tr').nextUntil(
+                                    that.settings.lineInfo.endselector)
+                                    .remove();
+                            }
+                            $(dthat).parent('td').parent('tr').remove();
                             layer.close(index);
                         });
 						

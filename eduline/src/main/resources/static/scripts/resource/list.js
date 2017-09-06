@@ -1,6 +1,9 @@
 $(function(){
 
 
+    var dataAdmin  =  window.DataAdmin;
+    dataAdmin.init({});
+    dataAdmin.addPagerListener();
     $('.action-textbook-change').on('change',function () {
         var opt = $('option:selected',this);
         loadUrl(opt.data('url'));

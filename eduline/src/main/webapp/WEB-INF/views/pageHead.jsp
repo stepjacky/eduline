@@ -38,9 +38,10 @@
           href="${sbase}static/lib/bootstrap-datetimepicker/css/bootstrap-datetimepicker.css">
     <link rel="stylesheet"
           href="${sbase}static/lib/font-awesome/css/font-awesome.css">
-    <link href="${sbase}static/css/index.css" rel="stylesheet">
+
     <link rel="stylesheet" href="${sbase}static/lib/bootstrap/bootstrap-custom-nav.css">
     <link rel="stylesheet" href="${sbase}/static/lib/layui/css/layui.css">
+    <link href="${sbase}static/css/index.css" rel="stylesheet">
     <script src="${sbase}static/lib/jquery-1.11.2.js"></script>
 
     <script src="${sbase}static/lib/jquery.md5.js"></script>
@@ -75,9 +76,8 @@
 <body>
 
 <div class="layui-layout layui-layout-admin ">
-    <div class="layui-header layui-bg-black">
+    <div class="layui-header layui-bg-custom">
         <div class="layui-logo"><img src="${sbase}static/images/brand.png"></div>
-        <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="/">桌面</a></li>
 

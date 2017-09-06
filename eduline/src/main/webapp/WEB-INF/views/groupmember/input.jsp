@@ -2,9 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
 <link href="static/css/groupmember/input.css" rel="stylesheet">
-<p class="lead">
-    <span class="label label-info">添加班级成员</span>
-</p>
 <div class="table-responsive">
     <form id="groupmember_form">
         <input type="hidden" name="teacher" value="${sysUser.username}">
@@ -33,9 +30,8 @@
             <tfoot>
             <tr>
                 <td colspan="10">
-                    <button class="btn btn-info persisteDataItem" type="button">
-                        <span class="glyphicon glyphicon-ok"></span>提交
-                    </button>
+                    <button class="btn btn-primary persisteDataItem" type="button">
+                        <span class="glyphicon glyphicon-ok"></span>提交</button>
                 </td>
             </tr>
             </tfoot>

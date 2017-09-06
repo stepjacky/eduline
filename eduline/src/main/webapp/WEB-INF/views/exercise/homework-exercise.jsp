@@ -59,7 +59,7 @@
         下一步
         <i class="fa fa-arrow-right "></i>
     </a>
-    <table class="${tableClass}" id="tlabe-exercises">
+    <table class="${tableClass}" id="table-exercises">
         <thead>
         <tr>
             <th>选择</th>
@@ -78,6 +78,7 @@
             <tr class="btn-gp">
                 <td>
                     <input type="radio" v-model="exercise" value="${item.id}"/>
+
                 </td>
                 <td>
 
