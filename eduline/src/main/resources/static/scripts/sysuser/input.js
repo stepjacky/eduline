@@ -7,9 +7,8 @@ $(function(){
 			namespace : 'sysuser',			
 			dataFormId:  'sysuser_form'
     }); 
-    dataAdmin.addAppendListener();
-    dataAdmin.addEarseListener();
-    dataAdmin.addPersisteDataListener(); 
+
+    dataAdmin.addPersisteFormListener();
     dataAdmin.addJsonSourceListener();  
     dataAdmin.addDatePickerListener();    
 });

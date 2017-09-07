@@ -143,7 +143,7 @@ window.DataAdmin = {};
 					function() {
 						var url = that.settings.context
 								+ that.settings.namespace + '/input';
-						$("#" + inputarea).load(url)
+						loadUrl(url);
 					});
 		},
 		/***********************************************************************
@@ -226,7 +226,10 @@ window.DataAdmin = {};
 									+ that.settings.namespace + '/persiste';
 
                         layer.confirm('确定操作?', function(index){
-                            $.post(url, data);
+                            $.post(url, data,function () {
+								form.get(0).reset();
+
+                            });
                             layer.close(index);
                         });
 						
@@ -299,7 +302,7 @@ window.DataAdmin = {};
 						var key = $(this).attr('key');
 						var url = that.settings.context
 								+ that.settings.namespace + '/edit/' + key;
-						window.location.href=url;
+						loadUrl(url);
 						//doForm(url);
 					});
 		},

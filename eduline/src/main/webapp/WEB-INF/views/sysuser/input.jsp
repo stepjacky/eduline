@@ -3,39 +3,6 @@
 <%@ taglib uri="http://java.jackysoft.com/jsp/jstl/jxf" prefix="jxf" %>
 <link href="static/css/sysuser/input.css" rel="stylesheet">
 <span class="label label-info">添加用户</span>
-
-<div class="table-responsive">
-
-    <table
-            class="table table-hover table-condensed table-bordered table-striped">
-        <thead>
-        <tr>
-            <th>学号</th>
-            <th>昵称</th>
-            <th>姓</th>
-            <th>名</th>
-            <th>性别</th>
-            <th>生日</th>
-            <th>用户类型</th>
-            <th>擦除</th>
-        </tr>
-        </thead>
-        <tbody id="dataBody">
-
-        </tbody>
-        <tfoot>
-        <tr>
-            <td colspan="8">
-                <button class="btn btn-info persisteDataItem" type="button">
-                    <span class="glyphicon glyphicon-ok"></span>保存
-                </button>
-            </td>
-        </tr>
-        </tfoot>
-    </table>
-
-</div>
-
 <div class="table-responsive">
     <form id="sysuser_form">
         <table
@@ -58,7 +25,7 @@
                            class='form-control'></td>
             </tr>
             <tr>
-                <td>名</td>
+                <td>名</td>
                 <td><input type='text' id='givename' name='givename'
                            class='form-control'></td>
             </tr>
@@ -72,17 +39,15 @@
                 </select></td>
             </tr>
             <tr>
-                <td>生日</td>
-                <td><input type='text' class='datepicker form-control'><input
-                        type='hidden' id='birthday' name='birthday'></td>
+                <td>生日</td>
+                <td><input type='text' class='datepicker form-control' readonly><input
+                        type='hidden' id='birthday' name='birthday' ></td>
             </tr>
             <tr>
-                <td>用户类型</td>
+                <td>用户类型</td>
                 <td><select id='userType' name='userType' class='form-control'>
-                    <option
-                            value='1'>学生
-                    </option>
-                    <option value='2'>老师</option>
+                    <option value='1'>学生</option>
+                    <option value='2'>老师</option>
                     <option value='3'>家长</option>
                 </select></td>
             </tr>
@@ -90,7 +55,7 @@
             <tfoot>
             <tr>
                 <td colspan="2">
-                    <button class="btn btn-info appendItem" type="button">
+                    <button class="btn btn-info persisteFormItem" type="button">
                         <span class="glyphicon glyphicon-plus"></span>添加
                     </button>
                 </td>
@@ -99,19 +64,4 @@
         </table>
     </form>
 </div>
-<script id="dataTemp" type="text/html">
-    <tr>
-        {{each list}}
-        {{if $index!='keyname'}}
-        <td>{{$value}}</td>
-        {{/if}}
-        {{/each}}
-        <td>
-            <button type='button' class='btn btn-danger btn-xs earseItem' keyname='{{list[' keyname
-            ']}}'>
-            <span class="glyphicon glyphicon-erase"></span>
-            </button>
-        </td>
-    </tr>
-</script>
 <script src="static/scripts/sysuser/input.js"></script>

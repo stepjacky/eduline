@@ -38,7 +38,7 @@ a:hover{
     padding: 20px;
 }
 .layui-layout-admin .layui-bg-custom{
-    background-color: #FEA11C;
+    background-color: rgba(254, 161, 28, 0.56);
 }
 
 .layui-colla-title {
@@ -49,4 +49,20 @@ a:hover{
     color: #f5f5f5;
     background-color: #5fb878;
     cursor: pointer;
+}
+
+.layui-nav-tree .layui-nav-child a{
+    padding-left: 35px;
+}
+
+.layui-nav-tree .layui-nav-item a:hover {
+    background-color: #a9690e;
+}
+
+ul.layui-nav-tree>li.layui-nav-item>a{
+    background-color: #a9690e;
+}
+
+ul.layui-nav-tree>li.layui-nav-item>dl>dd>a{
+    background-color: #FEA11c;
 }

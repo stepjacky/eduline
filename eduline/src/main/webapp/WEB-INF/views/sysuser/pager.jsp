@@ -44,7 +44,6 @@
                     </button>
                     <button type="button" class="btn btn-xs  btn-danger removeItem"
                             key="${item.username}">
-                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                     </button>
                     <button type="button" class="btn btn-xs  btn-warning resetItem"
                             key="${item.username}">

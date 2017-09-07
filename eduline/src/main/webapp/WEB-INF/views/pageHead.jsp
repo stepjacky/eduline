@@ -76,7 +76,7 @@
 <body>
 
 <div class="layui-layout layui-layout-admin ">
-    <div class="layui-header layui-bg-custom">
+    <div class="layui-header layui-bg-cyan">
         <div class="layui-logo"><img src="${sbase}static/images/brand.png"></div>
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="/">桌面</a></li>
@@ -100,7 +100,7 @@
         </ul>
     </div>
 
-    <div class="layui-side layui-bg-black">
+    <div class="layui-side layui-bg-custom">
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <c:choose>
