@@ -32,8 +32,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Appl
 	@Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-            .authorizeRequests()
-            .antMatchers(
+			.csrf().ignoringAntMatchers("/rest/**")
+				.and()
+
+			.authorizeRequests()
+				.antMatchers(
             		"/static/css/**",
             		"/static/scripts/**",
             		"/static/images/**",
@@ -42,6 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Appl
             		"/weixin/**",
             		"/externaldata/**",
             		"/favorate.ico")
+
             .permitAll()
             .antMatchers("/home").hasAnyRole("USER")
 			.anyRequest().authenticated()
@@ -56,8 +60,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Appl
                     .invalidateHttpSession(false)
                     .logoutUrl("/logout")
                     .logoutSuccessUrl("/login?logout")
-            .permitAll();
-       // super.configure(http);
+            .permitAll()
+
+		;
+
     }
 	
 	@Autowired

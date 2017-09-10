@@ -68,7 +68,7 @@ public class AppDataController {
         if(!passwordEncoder.matches(password,user.getPassword()))
             return new Message(Message.BAD_CODE,null,"密码错误");
         String token = UUID.randomUUID().toString();
-        tokenSession.put(username,token);
+        tokenSession.put(token,username);
         return new Message(Message.OK_CODE,token,"登录成功");
 
     }
