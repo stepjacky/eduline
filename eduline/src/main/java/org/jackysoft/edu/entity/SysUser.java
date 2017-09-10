@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import com.google.common.primitives.Ints;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 import org.jackysoft.edu.annotation.Column;
@@ -18,6 +19,7 @@ import org.jackysoft.edu.annotation.OptionValue;
 import org.jackysoft.edu.annotation.Table;
 import org.jackysoft.edu.annotation.Transient;
 import org.jackysoft.edu.formbean.MediaFile;
+import org.jackysoft.utils.SchoolUtils;
 import org.jackysoft.utils.StringUtils;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -298,21 +300,12 @@ Authentication ,MediaFile{
 	}
 
 	public int myGrade() {
-	    if(userType!=1 || Strings.isNullOrEmpty(username) || username.length()<4) return 0;
-		LocalDate date = LocalDate.now();
-	    boolean downed = date.getMonthValue()>=8;
-	    int cy = date.getYear();
-	    String iy = username.substring(2, 4);
-	    if(!StringUtils.isInteger(iy))return 0;
-	    int niy = Integer.parseInt(iy);
-	    return cy-(niy+2000)+(downed?0:-1)+7;
+	    return SchoolUtils.getGrade(this.getUsername());
 	}
 
 	public int beginYear() {
-		String iy = username.substring(2, 4);
-	    if(!StringUtils.isInteger(iy))return 0;
-	    int niy = Integer.parseInt(iy);
-	    return niy+2000;
+
+	    return SchoolUtils.getInyear(this.getUsername());
 	}
 
 	public String getChildren() {

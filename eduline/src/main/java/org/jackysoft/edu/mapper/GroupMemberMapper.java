@@ -13,8 +13,10 @@ public interface GroupMemberMapper extends AbstractMapper<String, GroupMember> {
     List<MemberBean> findMemberDetails(@Param("qc") QueryBuilder qc);
     
     List<GroupMember> findScorePanel(@Param("groupId")String groupId);
-    
-    
+
+    @Select("select * from jq_groupmember where student=#{student} and grade=${grade} and  course=${course} group by teacher,grade,course limit 1;")
+    GroupMember findParticipated(@Param("student")String student,@Param("grade") int grade,@Param("course")int course);
+
     @Select("select * from jq_groupmember g where g.groupId=#{groupId} group by groupId,student")
     List<GroupMember> findMembers(@Param("groupId")String groupId);
     

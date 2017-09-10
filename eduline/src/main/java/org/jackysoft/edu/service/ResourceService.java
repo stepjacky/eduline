@@ -30,7 +30,8 @@ public class ResourceService extends AbstractMongoService<Resource> {
     ChapterService chapterService;
     @Autowired
     SysUserService userService;
-
+    @Autowired
+    TextbookService textbookService;
 
     @Override
     public ActionResult save(Resource bean) {
@@ -44,6 +45,7 @@ public class ResourceService extends AbstractMongoService<Resource> {
             result.setMessage("章节不存在");
             return result;
         }
+        bean.setChapterName(chp.getName());
         result = super.save(bean);
         if(EdulineConstant.Commontype.common.getKey().equals(bean.getCommontype())){
             Resource target = new Resource();
@@ -100,8 +102,18 @@ public class ResourceService extends AbstractMongoService<Resource> {
         return pager;
     }
 
-    @Autowired
-    TextbookService textbookService;
+
+    public List<Resource> findforStudent(String teacher,int grade,int course,int page){
+           return query().field("owner.value").equal(teacher)
+                    .field("grade").equal(grade)
+                    .field("course").equal(course)
+                    .order("chapter")
+                    .asList(
+                            new FindOptions().skip(page* Pager.DEFAULT_OFFSET).limit( Pager.DEFAULT_OFFSET)
+
+                    );
+    }
+
 
     @Override
     public void beforeInput(ModelAndView mav) {

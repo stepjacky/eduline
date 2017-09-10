@@ -37,7 +37,6 @@ public class StudentScoreCard {
 	
 	public StudentScoreCard() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public StudentScoreCard(ExamScore info,int page) {

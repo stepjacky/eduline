@@ -39,7 +39,11 @@ public class GroupMemberService extends AbstractSQLService<String, GroupMember> 
 		
 		return beans;
 	}
-	
+
+	public GroupMember findGroupParticipated(String student,int grade,int course){
+        return mapper.findParticipated(student,grade,course);
+	}
+
 	public GroupMember findGroupFeature(String groupId) {
 		return mapper.findGroupFeature(groupId);
 	}

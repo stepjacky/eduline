@@ -37,11 +37,22 @@ public class HomeWorkTaken {
 
     List<Integer> explainscores;
 
+    long startdate;
+
     //批阅时间
     long readdate;
 
     //交作业时间
     long submitdate;
+
+    //选择题数目
+    int choiceAmount;
+
+    //解答题数目
+    int explainAmount;
+
+    //习题路径
+    String exercisePath;
 
     //老师点评
     String yelp;
@@ -132,5 +143,38 @@ public class HomeWorkTaken {
 
     public void setExplainscores(List<Integer> explainscores) {
         this.explainscores = explainscores;
+    }
+
+
+    public int getChoiceAmount() {
+        return choiceAmount;
+    }
+
+    public void setChoiceAmount(int choiceAmount) {
+        this.choiceAmount = choiceAmount;
+    }
+
+    public int getExplainAmount() {
+        return explainAmount;
+    }
+
+    public void setExplainAmount(int explainAmount) {
+        this.explainAmount = explainAmount;
+    }
+
+    public String getExercisePath() {
+        return exercisePath;
+    }
+
+    public void setExercisePath(String exercisePath) {
+        this.exercisePath = exercisePath;
+    }
+
+    public long getStartdate() {
+        return startdate;
+    }
+
+    public void setStartdate(long startdate) {
+        this.startdate = startdate;
     }
 }

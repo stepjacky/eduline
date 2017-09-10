@@ -156,19 +156,16 @@ public class ExamScoreService extends AbstractSQLService<String, ExamScore> impl
 			page = 0;
 		StudentScoreCard bean;
 		List<ExamScore> infos = mapper.findStudentExamInfo(user);
-		logger.info(page+"");
+
 		int pages = (infos != null && !infos.isEmpty()) ? infos.size() : 0;
-		logger.info(pages+"");
+
 		if(page<0||page>=pages) page=0;
 		ExamScore info = (infos != null && !infos.isEmpty()) ? infos.get(page) : null;
-		logger.info(infos+"");
 		if (info == null)
 			return new StudentScoreCard();
-		
 		bean = new StudentScoreCard(info, page);
-
 		SortedTotalScore sts = mapper.findExamTotalDetail(info);
-		logger.info(sts+"");
+
 		if (sts == null)
 			return bean;
 		bean.setTotalScore(sts.getTotalScore());

@@ -13,8 +13,10 @@ import org.jackysoft.edu.entity.*;
 import org.jackysoft.edu.service.base.AbstractMongoService;
 import org.jackysoft.edu.view.ActionResult;
 import org.jackysoft.query.Pager;
+import org.jackysoft.utils.DateUtils;
 import org.jackysoft.utils.EdulineConstant;
 import org.mongodb.morphia.mapping.Mapper;
+import org.mongodb.morphia.query.FindOptions;
 import org.mongodb.morphia.query.Query;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,8 +87,25 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 		return pager;
 	}
 
+	public List<HomeWorkTaken> findforStudent(String student,int page){
+
+		if (Strings.isNullOrEmpty(student))
+			return new ArrayList<>();
+		Query<HomeWorkTaken> query = query(HomeWorkTaken.class)
+				.field("student.value").equal(student)
+				.order("-status,-submitdate");
+
+
+		List<HomeWorkTaken> dataList =
+				query.asList(new FindOptions()
+					             .skip(page*Pager.DEFAULT_OFFSET)
+						         .limit(page)
+				);
+		return dataList;
+	}
+
 	//交作业
-	public void saveToHomework(String id, String choice, List<String> explains,String status) {
+	public void saveToHomeworkTaken(String id, String choice, List<String> explains, String status) {
 
 		Query<HomeWorkTaken> query = query(HomeWorkTaken.class)
 				.field(Mapper.ID_KEY)
@@ -96,7 +115,7 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 
 		dataStore.update(query,
 				updates(HomeWorkTaken.class)
-						.set("status", status)
+						.set("status", status!=null?status: EdulineConstant.HoweworkStatus.unsubmit.getKey())
 						.set("submitdate", Instant.now().toEpochMilli())
 						.set("choice", choice)
 						.set("explains", explains));
@@ -180,7 +199,11 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 				for(int i=0;i<exercise.getEsize();i++){
 					eanswers.add(0);
 				}
+				taken.setStartdate(DateUtils.currentMillis());
+				taken.setExercisePath(exercise.getRealpath());
 				taken.setExplainscores(eanswers);
+				taken.setChoiceAmount(exercise.getCsize());
+				taken.setExplainAmount(exercise.getEsize());
 				taken.setStudent(new NameValue(groupMember.getStudentName(),groupMember.getStudent()));
 				taken.setTeacher(new NameValue(owner.getNickname(),owner.getUsername()));
 				takens.add(taken);
@@ -188,7 +211,10 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 			}
 
 		}
+		homeWork.setExercisePath(exercise.getRealpath());
 		homeWork.setAmount(amount);
+		homeWork.setChoiceAmount(exercise.getCsize());
+		homeWork.setExplainAmount(exercise.getEsize());
 		homeWork.setStatus(EdulineConstant.HoweworkStatus.notreaded.getKey());
 		ActionResult rst = super.save(homeWork);
 		for (HomeWorkTaken taken : takens) {
@@ -205,6 +231,12 @@ public class HomeWorkService extends AbstractMongoService<HomeWork> {
 				.field("status").equal(EdulineConstant.HoweworkStatus.submited.getKey())
 		.asList();
 		return list;
+
+	}
+
+	public HomeWorkTaken findforStudent(String takenId){
+		if(Strings.isNullOrEmpty(takenId) || !ObjectId.isValid(takenId)) return null;
+		return query(HomeWorkTaken.class).field(Mapper.ID_KEY).equal(new ObjectId(takenId)).get();
 
 	}
 

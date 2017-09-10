@@ -9,7 +9,6 @@ public class ViolateResult {
 	private int inyear;
 	private int grade;
 	private String gradeName;
-
 	private String weekStart;
 	private String weekEnd;
 	

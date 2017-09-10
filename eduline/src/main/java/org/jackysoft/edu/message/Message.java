@@ -5,10 +5,14 @@ import java.util.Map;
 
 public class Message {
 
+    public static final int OK_CODE=0;
+    public static final int BAD_CODE=1;
+
+
     static final Map<Integer,String> messages = new HashMap<>();
     static {
-        messages.put(0,"登录成功");
-        messages.put(1,"登录失败,用户名或者密码错误");
+        messages.put(OK_CODE,"登录成功");
+        messages.put(BAD_CODE,"登录失败,用户名或者密码错误");
     }
 
 
@@ -17,15 +21,16 @@ public class Message {
     Object data;
     String message;
 
-    public Message(int status, String token) {
+    public Message(int status, String token, String message) {
         this.status = status;
-        this.message =
         this.token = token;
+        this.message = message;
     }
 
-    public Message(int status, String message, String token, Object data) {
-        this(status,token);
+    public Message(int status, String token,  String message,Object data) {
+        this(status,token,message);
         this.data = data;
+
     }
 
     public int getStatus() {

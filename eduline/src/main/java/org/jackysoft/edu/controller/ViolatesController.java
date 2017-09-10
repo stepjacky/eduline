@@ -126,9 +126,9 @@ public class ViolatesController extends AbstractController<String,Violates>{
 
 	@RequestMapping(value = "/student/{page}")
 	public ModelAndView studentindex(
+			@AuthenticationPrincipal SysUser author,
 			@PathVariable("page") int page) {
 		ModelAndView mav = new ModelAndView("studentindex");
-		SysUser author = (SysUser) SecurityContextHolder.getContext().getAuthentication();
 		QueryBuilder qc = new QueryBuilder();
 		qc.setQueries("student`"+author.getName());
 		qc.setOrders("fireTime desc,affirmative desc");

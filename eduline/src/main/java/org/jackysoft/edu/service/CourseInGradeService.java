@@ -74,8 +74,8 @@ public class CourseInGradeService extends AbstractSQLService<String, CourseInGra
 		map.put("inyear", inyear);
 		map.put("grade",grade);
 		qb = new QueryBuilder(map);
-		List<CourseInGrade> cigs = findAll(qb);
-		return cigs;
+		List<CourseInGrade> list = findAll(qb);
+		return list;
     	
     }
 

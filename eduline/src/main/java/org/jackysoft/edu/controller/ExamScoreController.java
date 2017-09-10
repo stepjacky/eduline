@@ -160,8 +160,10 @@ public class ExamScoreController extends AbstractController<String, ExamScore> {
 		return mav;
 	}
 
-	@RequestMapping({ "/student/score/{user}/{page}" })
-	public ModelAndView studentindex(@PathVariable("user") String user, @PathVariable("page") int page) {
+	@RequestMapping("/student/score/{user}/{page}")
+	public ModelAndView studentindex(
+			@PathVariable("user") String user,
+			@PathVariable("page") int page) {
 
 		ModelAndView mav = new ModelAndView("studentindex");
 		SysUser ou = userService.findById(user);

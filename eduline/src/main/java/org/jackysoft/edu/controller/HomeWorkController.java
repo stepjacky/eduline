@@ -10,7 +10,6 @@ import org.jackysoft.edu.service.HomeWorkService;
 import org.jackysoft.edu.service.ChapterService;
 import org.jackysoft.edu.service.base.AbstractService;
 import org.jackysoft.query.Pager;
-import org.jackysoft.utils.EdulineConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
@@ -92,7 +91,7 @@ public class HomeWorkController extends AbstractController<String, HomeWork> {
                               @RequestParam("explains[]") List<String> explains,
                               @RequestParam("status")String status
     ){
-        service.saveToHomework(id,choice,explains, status);
+        service.saveToHomeworkTaken(id,choice,explains, status);
 
     }
 

@@ -36,6 +36,8 @@ public class Resource extends NoEntity implements MediaFile {
     //所属章节
     String chapter;
 
+    String chapterName;
+
     //课程
     int course;
 
@@ -154,6 +156,14 @@ public class Resource extends NoEntity implements MediaFile {
 
     public void setSize(int size) {
         this.size = size;
+    }
+
+    public String getChapterName() {
+        return chapterName;
+    }
+
+    public void setChapterName(String chapterName) {
+        this.chapterName = chapterName;
     }
 
     //method for download
