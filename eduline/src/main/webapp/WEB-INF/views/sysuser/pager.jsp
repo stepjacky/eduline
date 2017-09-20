@@ -14,6 +14,11 @@
 
     </div>
     <input type="file" name="file" id="fileupload">
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" >
+            <span class="msg"></span>
+        </div>
+    </div>
     <table
             class="table table-striped table-bordered table-hover table-condensed">
         <thead>

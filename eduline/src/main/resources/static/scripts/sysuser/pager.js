@@ -43,10 +43,10 @@
 		maxFileSize : 10000000,// 10m
 		progressall : function(e, data) {
 			var progress = parseInt(data.loaded / data.total * 100, 10);
-			$('#progress .progress-bar').css('width', progress + '%');
+			$('.progress .progress-bar').css('width', progress + '%');
 		},
 		done : function(e, data) {
-			window.location.href='/sysuser/pager/0?ajax=false';
+            bootbox.alert("用户导入完毕");
 		}
 	});
     

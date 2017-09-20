@@ -55,7 +55,11 @@
        `firstName`,
        `lastName`,
        `surname`,
-       `givename`
+       `givename`,
+       `father`,
+       `fatherPhone`,
+       `mother`,
+       `motherPhone`
        ) 
        values(
        #{password},
@@ -69,7 +73,11 @@
        #{firstName},
        #{lastName},
        #{surname},
-       #{givename}
+       #{givename},
+       #{father},
+       #{fatherPhone},
+       #{mother},
+       #{motherPhone}
        )
        ON DUPLICATE KEY UPDATE
        sex=VALUES(`sex`),
@@ -80,7 +88,11 @@
        lastName=VALUES(`lastName`),
        surname=VALUES(`surname`),
        givename=VALUES(`givename`),
-       userType=VALUES(`userType`);
+       userType=VALUES(`userType`),
+       father=VALUES(`father`),
+       fatherPhone=VALUES(`fatherPhone`),
+       mother=VALUES(`mother`),
+       motherPhone=VALUES(`motherPhone`);
     </insert> 
    
     

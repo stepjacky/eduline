@@ -99,6 +99,22 @@ Authentication ,MediaFile{
 	@Column(label="课本")
 	private String textbook;
 
+
+	@Column(label = "父亲")
+	private String father;
+
+	@Column(label = "父亲电话")
+	private String fatherPhone;
+
+	@Column(label = "母亲")
+	private String mother;
+
+	@Column(label = "母亲电话")
+	private String motherPhone;
+
+
+
+
 	@Transient
 	private String passwordn;
 	@Transient
@@ -418,12 +434,37 @@ Authentication ,MediaFile{
 	}
 
 
+	public String getFather() {
+		return father;
+	}
 
+	public void setFather(String father) {
+		this.father = father;
+	}
 
+	public String getFatherPhone() {
+		return fatherPhone;
+	}
 
+	public void setFatherPhone(String fatherPhone) {
+		this.fatherPhone = fatherPhone;
+	}
 
+	public String getMother() {
+		return mother;
+	}
 
+	public void setMother(String mother) {
+		this.mother = mother;
+	}
 
+	public String getMotherPhone() {
+		return motherPhone;
+	}
+
+	public void setMotherPhone(String motherPhone) {
+		this.motherPhone = motherPhone;
+	}
 
 	public static interface UserType{
 		//0管理员 1学生 2老师 3家长

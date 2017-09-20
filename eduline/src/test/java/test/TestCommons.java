@@ -40,22 +40,11 @@ public class TestCommons {
 
 	@Test
 	public void test() throws Exception {
-		String fileName = "e:\\jacky\\Desktop\\abcde";
+		double d = 13901258326D;
+		String s = String.valueOf(d);
 
-		StringBuffer sb = new StringBuffer();
-		try(XWPFWordExtractor extractor = new XWPFWordExtractor(new XWPFDocument(
-				new FileInputStream(fileName)
 
-		))){
-
-			String text = extractor.getText();
-			sb.append(text);
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		logger.info(sb);
+		logger.info(s);
 
 
 	}

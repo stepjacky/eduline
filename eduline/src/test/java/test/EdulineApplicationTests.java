@@ -21,6 +21,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = EdulineApplication.class)
 public class EdulineApplicationTests {
@@ -37,8 +41,9 @@ public class EdulineApplicationTests {
 	protected UserEventService service;
     @Test
 	public void contextLoads() throws Exception {
-    	Pager<UserEvent> pager = service.myRepeatedEvents("cuizheng", 0);
-    	logger.info(pager);
+    	try(InputStream ins = new FileInputStream(new File("f:/temps/7A学号.xls"))) {
+			userService.importsUsers(ins);
+		}
 	}
 
 }

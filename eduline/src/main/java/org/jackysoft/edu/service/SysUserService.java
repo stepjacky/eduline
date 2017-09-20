@@ -2,22 +2,18 @@ package org.jackysoft.edu.service;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.DecimalFormat;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.ss.usermodel.*;
 import org.jackysoft.edu.entity.SysUser;
 import org.jackysoft.edu.entity.UserLogger;
 import org.jackysoft.edu.mapper.AbstractMapper;
@@ -90,7 +86,7 @@ public class SysUserService extends AbstractSQLService<String, SysUser> implemen
 	}
 	
 	public ActionResult importsUsers(InputStream inputs) throws IOException, EncryptedDocumentException, InvalidFormatException{
-		
+		DecimalFormat df = new DecimalFormat("0");
 			Workbook wb = WorkbookFactory.create(inputs);				
 				for (int s = 0; s < wb.getNumberOfSheets(); s++) {
 					Sheet sheet = wb.getSheetAt(s);
@@ -112,17 +108,28 @@ public class SysUserService extends AbstractSQLService<String, SysUser> implemen
 						
 						String nickname = row.getCell(1).getStringCellValue();
 						user.setNickname(nickname);
-						
-					    String bird = row.getCell(4).getStringCellValue().trim();
-					    
-						LocalDate ldt = LocalDate.parse(bird,DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
+						Cell cell = row.getCell(4);
+
+						Date bridath = cell.getDateCellValue();
 
 						String surname = row.getCell(2).getStringCellValue();
 						user.setSurname(surname);
 						String givename = row.getCell(3).getStringCellValue();
 						user.setGivename(givename);
-						user.setBirthday(DateUtils.withMillis(ldt));
+						user.setBirthday(bridath.getTime());
 						user.setUserType(1);
+
+
+						String father = row.getCell(6).getStringCellValue();
+						user.setFather(father);
+						String fatherPhone = df.format(row.getCell(7).getNumericCellValue());
+						user.setFatherPhone(fatherPhone);
+						String mother = row.getCell(8).getStringCellValue();
+						user.setMother(mother);
+						String motherPhone = df.format(row.getCell(9).getNumericCellValue());
+						user.setMotherPhone(motherPhone);
+
 						save(user);					
 					}
 
