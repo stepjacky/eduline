@@ -40,6 +40,7 @@
           href="${sbase}static/lib/font-awesome/css/font-awesome.css">
 
     <link rel="stylesheet" href="${sbase}static/lib/bootstrap/bootstrap-custom-nav.css">
+    <link rel="stylesheet" href="${sbase}static/lib/selectpage/selectpage.bootstrap3.css">
     <link rel="stylesheet" href="${sbase}/static/lib/layui/css/layui.css">
     <link href="${sbase}static/css/index.css" rel="stylesheet">
     <script src="${sbase}static/lib/jquery-1.11.2.js"></script>
@@ -66,6 +67,8 @@
     <script src="${sbase}static/lib/vue/vue.js"></script>
     <script src="${sbase}static/lib/bootbox.js"></script>
     <script src="${sbase}static/lib/pdftool.js"></script>
+
+    <script src="${sbase}static/lib/selectpage/selectpage.js"></script>
 
     <script src="${sbase}static/lib/template.js"></script>
     <script src="${sbase}static/lib/tools-simple.js"></script>

@@ -82,13 +82,21 @@ public class ResourceService extends AbstractMongoService<Resource> {
 
         if(Strings.isNullOrEmpty(chapter)) return Pager.EMPTY_PAGER();
         Query<Resource> query = query();
-        query.field("commontype").equal(commontype);
+        if(!Strings.isNullOrEmpty(commontype)) {
+            query.field("commontype").equal(commontype);
+        }
         if(EdulineConstant.Commontype.personal.getKey().equals(commontype)){
             query.field("owner.value").equal(owner);
         }
-        query.field("styletype").equal(styletype)
-             .field("filetype").equal(filetype)
-             .field("chapter").equal(chapter)
+        if(!Strings.isNullOrEmpty(styletype)) {
+            query.field("styletype").equal(styletype);
+        }
+
+        if(!Strings.isNullOrEmpty(filetype)){
+            query.field("filetype").equal(filetype);
+        }
+
+        query.field("chapter").equal(chapter)
              .order("-modifyDate");
 
         long count = dataStore.getCount(query);

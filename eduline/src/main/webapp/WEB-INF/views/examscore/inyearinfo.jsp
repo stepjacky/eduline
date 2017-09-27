@@ -61,6 +61,7 @@
 </form>
 <script>
     $(function () {
+        applyUserauto('.studentNo');
         $('.action-query-voilate').on('click',function () {
             var form = $(this).parents('form');
             $.get(form.attr('action'),form.serialize(),function (rst) {

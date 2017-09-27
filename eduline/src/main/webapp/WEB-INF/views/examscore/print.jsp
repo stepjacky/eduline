@@ -29,6 +29,14 @@
     </div>
 </div>
 <script>
+
+
+    $(function () {
+        applyUserauto('.studentNo');
+    })
+
+
+
     function printform(event) {
         var form = $(event.currentTarget).parent('form');
         var datas = form.serializeArray();

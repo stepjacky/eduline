@@ -18,3 +18,8 @@
         </form>
     </div>
 </div>
+<script>
+    $(function () {
+        applyUserauto('.studentNo');
+    })
+</script>
